@@ -1,65 +1,14 @@
 /**
  * Bharath Bazar Mobile-First Multilingual Store Inventory & Product Locator Logic
- * Supports English, Telugu, and Hindi search transliterations, Viewport Bottom Search,
- * Smooth Keyboard Handling, and Anonymous Device & Visitor Profile Analytics.
+ * Data & Code completely decoupled:
+ * - Products: product_names.json
+ * - Multilingual Dictionary: multilingual_dictionary.csv
+ * - Store Aisles: store_aisles.json
  */
 
-// Multilingual Search Alias Dictionary (English, Hindi, Telugu)
-const MULTILINGUAL_DICTIONARY = {
-  "turmeric": { en: "Turmeric", te: "Pasupu (పసుపు)", hi: "Haldi (हल्दी)", keywords: ["turmeric", "haldi", "pasupu"] },
-  "haldi": { en: "Turmeric", te: "Pasupu", hi: "Haldi", keywords: ["turmeric", "haldi", "pasupu"] },
-  "pasupu": { en: "Turmeric", te: "Pasupu", hi: "Haldi", keywords: ["turmeric", "haldi", "pasupu"] },
-
-  "cumin": { en: "Cumin Seeds", te: "Jilakarra (జిలకర)", hi: "Jeera (जीरा)", keywords: ["cumin", "jeera", "jilakarra"] },
-  "jeera": { en: "Cumin Seeds", te: "Jilakarra", hi: "Jeera", keywords: ["cumin", "jeera", "jilakarra"] },
-  "jilakarra": { en: "Cumin Seeds", te: "Jilakarra", hi: "Jeera", keywords: ["cumin", "jeera", "jilakarra"] },
-
-  "coriander": { en: "Coriander", te: "Dhaniyalu / Kotthimera", hi: "Dhania", keywords: ["coriander", "dhania", "dhaniyalu", "kotthimera"] },
-  "dhania": { en: "Coriander", te: "Dhaniyalu", hi: "Dhania", keywords: ["coriander", "dhania", "dhaniyalu"] },
-  "dhaniyalu": { en: "Coriander", te: "Dhaniyalu", hi: "Dhania", keywords: ["coriander", "dhania", "dhaniyalu"] },
-
-  "curd": { en: "Yogurt / Curd", te: "Perugu (పెరుగు)", hi: "Dahi (दही)", keywords: ["curd", "yogurt", "dahi", "perugu", "milk"] },
-  "dahi": { en: "Yogurt / Curd", te: "Perugu", hi: "Dahi", keywords: ["curd", "yogurt", "dahi", "perugu", "milk"] },
-  "perugu": { en: "Yogurt / Curd", te: "Perugu", hi: "Dahi", keywords: ["curd", "yogurt", "dahi", "perugu", "milk"] },
-  "milk": { en: "Milk & Dairy", te: "Palu / Perugu", hi: "Doodh / Dahi", keywords: ["milk", "dahi", "perugu", "doodh", "dairy", "paneer"] },
-
-  "ghee": { en: "Clarified Butter", te: "Neyyi (నెయ్యి)", hi: "Ghee (घी)", keywords: ["ghee", "neyyi", "clarified-butter"] },
-  "neyyi": { en: "Clarified Butter", te: "Neyyi", hi: "Ghee", keywords: ["ghee", "neyyi"] },
-
-  "rice": { en: "Rice / Basmati", te: "Biyyam (బియ్యం)", hi: "Chawal (चावल)", keywords: ["rice", "basmati", "chawal", "biyyam"] },
-  "chawal": { en: "Rice", te: "Biyyam", hi: "Chawal", keywords: ["rice", "chawal", "biyyam"] },
-  "biyyam": { en: "Rice", te: "Biyyam", hi: "Chawal", keywords: ["rice", "biyyam", "chawal"] },
-
-  "atta": { en: "Wheat Flour", te: "Godhumapindi", hi: "Atta", keywords: ["atta", "flour", "godhumapindi"] },
-
-  "sugar": { en: "Sugar", te: "Panchadara / Chakkera", hi: "Chini", keywords: ["sugar", "chini", "panchadara", "chakkera"] },
-  "chini": { en: "Sugar", te: "Panchadara", hi: "Chini", keywords: ["sugar", "chini", "panchadara"] },
-  "panchadara": { en: "Sugar", te: "Panchadara", hi: "Chini", keywords: ["sugar", "panchadara", "chini"] },
-
-  "jaggery": { en: "Jaggery", te: "Bellam (బెల్లం)", hi: "Gud (गुड़)", keywords: ["jaggery", "gud", "bellam"] },
-  "gud": { en: "Jaggery", te: "Bellam", hi: "Gud", keywords: ["jaggery", "gud", "bellam"] },
-  "bellam": { en: "Jaggery", te: "Bellam", hi: "Gud", keywords: ["jaggery", "bellam", "gud"] },
-
-  "garlic": { en: "Garlic", te: "Vellulli", hi: "Lahsun", keywords: ["garlic", "lahsun", "vellulli"] },
-  "onion": { en: "Onion", te: "Ullipaya / Erragaddalu", hi: "Pyaz", keywords: ["onion", "pyaz", "ullipaya", "erragaddalu"] },
-  "ginger": { en: "Ginger", te: "Allam", hi: "Adrak", keywords: ["ginger", "adrak", "allam"] },
-  "mustard": { en: "Mustard", te: "Aavalu", hi: "Rai", keywords: ["mustard", "rai", "aavalu"] },
-  "paneer": { en: "Cottage Cheese", te: "Paneer", hi: "Paneer", keywords: ["paneer", "cottage-cheese"] }
-};
-
-// Store Aisles Metainfo (8 Aisles)
-const STORE_AISLES = {
-  1: { name: "Spices & Masala", icon: "🌶️", color: "var(--aisle-1)", keywords: ["masala", "powder", "spice", "chili", "chilli", "coriander", "cumin", "turmeric", "seeds", "mdh", "everest", "laxmi", "curry", "garam", "hing", "salt", "jeera", "dhania", "haldi", "saunf", "methi", "cardamom", "clove", "cinnamon"] },
-  2: { name: "Atta, Rice & Grains", icon: "🌾", color: "var(--aisle-2)", keywords: ["atta", "flour", "rice", "basmati", "sujata", "rava", "dal", "lentil", "chana", "moong", "toor", "urad", "wheat", "poha", "sooji", "besan", "maida", "matar", "rajma", "pulao", "biryani"] },
-  3: { name: "Frozen Foods", icon: "❄️", color: "var(--aisle-3)", keywords: ["frozen", "paneer", "samosa", "naan", "kulcha", "vadilal", "tindora", "okra", "roti", "vegetable", "paratha", "cut-veg", "peas", "gobi", "tikka", "patra", "sweet-corn"] },
-  4: { name: "Snacks & Sweets", icon: "🍬", color: "var(--aisle-4)", keywords: ["muruku", "murukku", "mix", "haldiram", "gulab", "jamun", "snack", "chevda", "laddu", "chips", "biscuit", "namkeen", "sweet", "cookie", "mathri", "bhujia", "khakhra", "chikki", "rasgulla"] },
-  5: { name: "Dairy, Oils & Ghee", icon: "🧈", color: "var(--aisle-5)", keywords: ["ghee", "oil", "amul", "butter", "milk", "cheese", "paneer-raw", "mustard-oil", "sesame-oil", "sunflower", "coconut-oil", "dahi", "yogurt", "cream"] },
-  6: { name: "Pickles, Sauces & Instant", icon: "🫙", color: "var(--aisle-6)", keywords: ["pickle", "sauce", "chutney", "paste", "mtr", "ready", "gravy", "chings", "noodle", "soup", "papad", "pickle", "achaar", "schezwan", "ketchup", "soy"] },
-  7: { name: "Tea & Beverages", icon: "☕", color: "var(--aisle-7)", keywords: ["tea", "chai", "coffee", "drink", "badam", "label", "wagh", "bakri", "juice", "syrup", "rooh", "afza", "sharbat", "thums", "limca", "maaza", "bournvita", "horlicks"] },
-  8: { name: "Personal Care & Household", icon: "🧼", color: "var(--aisle-8)", keywords: ["dettol", "soap", "herbal", "shampoo", "incense", "agarbatti", "puja", "cleaner", "toothpaste", "dabur", "patanjali", "neem", "oil-hair", "face"] }
-};
-
-// Application State
+// Global State Data Containers (Populated asynchronously from data files)
+let MULTILINGUAL_DICTIONARY = {};
+let STORE_AISLES = {};
 let allProducts = [];
 let filteredProducts = [];
 let locationOverrides = {};
@@ -69,6 +18,79 @@ let currentView = "searchView";
 let isStaffLoggedIn = false;
 let visitorProfile = null;
 let deviceAnalyticsList = [];
+
+// -------------------------------------------------------------
+// ASYNCHRONOUS DATA LOADERS (Separating Data from Code)
+// -------------------------------------------------------------
+async function loadExternalDataFiles() {
+  try {
+    // 1. Load Multilingual Dictionary CSV
+    const csvResponse = await fetch("multilingual_dictionary.csv");
+    if (csvResponse.ok) {
+      const csvText = await csvResponse.text();
+      parseMultilingualCsv(csvText);
+    }
+
+    // 2. Load Store Aisles Matrix JSON
+    const aislesResponse = await fetch("store_aisles.json");
+    if (aislesResponse.ok) {
+      STORE_AISLES = await aislesResponse.json();
+    }
+
+    // 3. Load Product Names JSON
+    const prodResponse = await fetch("product_names.json");
+    if (prodResponse.ok) {
+      const rawSlugs = await prodResponse.json();
+      allProducts = rawSlugs.map((slug, idx) => {
+        const loc = categorizeProduct(slug);
+        const name = formatProductName(slug);
+        const aliases = getMultilingualAliases(slug, name);
+        return {
+          id: idx,
+          slug: slug,
+          name: name,
+          aisle: loc.aisle,
+          rack: loc.rack,
+          categoryName: loc.categoryName,
+          icon: loc.icon,
+          aliases: aliases
+        };
+      });
+
+      document.getElementById("totalBadge").textContent = `${allProducts.length.toLocaleString()} Items`;
+    }
+  } catch (err) {
+    console.error("Error loading external data files:", err);
+  }
+}
+
+function parseMultilingualCsv(csvText) {
+  const lines = csvText.split(/\r?\n/);
+  MULTILINGUAL_DICTIONARY = {};
+
+  // Skip header line (key,en,te,hi,keywords)
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+
+    const parts = line.split(",");
+    if (parts.length >= 5) {
+      const key = parts[0].trim().toLowerCase();
+      const en = parts[1].trim();
+      const te = parts[2].trim();
+      const hi = parts[3].trim();
+      const keywordsStr = parts.slice(4).join(","); // Rejoin keywords if pipe separated
+      const keywords = keywordsStr.split("|").map(k => k.trim().toLowerCase());
+
+      MULTILINGUAL_DICTIONARY[key] = {
+        en: en,
+        te: te,
+        hi: hi,
+        keywords: keywords
+      };
+    }
+  }
+}
 
 function getHash(str) {
   let hash = 0;
@@ -84,19 +106,21 @@ function categorizeProduct(slug) {
   
   if (locationOverrides[slug]) {
     const ov = locationOverrides[slug];
-    return { aisle: ov.aisle, rack: ov.rack, categoryName: STORE_AISLES[ov.aisle].name, icon: STORE_AISLES[ov.aisle].icon };
+    const aisleData = STORE_AISLES[ov.aisle] || { name: "General Aisle", icon: "📦" };
+    return { aisle: ov.aisle, rack: ov.rack, categoryName: aisleData.name, icon: aisleData.icon };
   }
 
   let assignedAisle = 1;
   for (const [id, meta] of Object.entries(STORE_AISLES)) {
-    if (meta.keywords.some(kw => lower.includes(kw))) {
+    if (meta.keywords && meta.keywords.some(kw => lower.includes(kw))) {
       assignedAisle = parseInt(id);
       break;
     }
   }
 
   const rack = (getHash(slug) % 30) + 1;
-  return { aisle: assignedAisle, rack: rack, categoryName: STORE_AISLES[assignedAisle].name, icon: STORE_AISLES[assignedAisle].icon };
+  const aisleMeta = STORE_AISLES[assignedAisle] || { name: "General Spices", icon: "🌶️" };
+  return { aisle: assignedAisle, rack: rack, categoryName: aisleMeta.name, icon: aisleMeta.icon };
 }
 
 function getMultilingualAliases(slug, name) {
@@ -228,14 +252,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   loadStorageData();
   initVisitorProfile();
   checkAuthSession();
-  await loadProductData();
+
+  // Async load data from decoupled files
+  await loadExternalDataFiles();
+
   setupEventListeners();
   renderMobileMap();
   applySearchAndFilter();
   renderAnalyticsList();
   renderDeviceAnalyticsDashboard();
 
-  // Gentle auto-focus without forcing scroll layout jump
   setTimeout(() => {
     const searchInput = document.getElementById("searchInput");
     if (searchInput) {
@@ -359,34 +385,6 @@ function updateAuthUI() {
   }
 }
 
-async function loadProductData() {
-  try {
-    const response = await fetch("product_names.json");
-    if (!response.ok) throw new Error("Failed to fetch product_names.json");
-    const rawSlugs = await response.json();
-
-    allProducts = rawSlugs.map((slug, idx) => {
-      const loc = categorizeProduct(slug);
-      const name = formatProductName(slug);
-      const aliases = getMultilingualAliases(slug, name);
-      return {
-        id: idx,
-        slug: slug,
-        name: name,
-        aisle: loc.aisle,
-        rack: loc.rack,
-        categoryName: loc.categoryName,
-        icon: loc.icon,
-        aliases: aliases
-      };
-    });
-
-    document.getElementById("totalBadge").textContent = `${allProducts.length.toLocaleString()} Items`;
-  } catch (err) {
-    console.error("Error loading products:", err);
-  }
-}
-
 function formatProductName(slug) {
   let clean = slug.replace(/^[0-9]{6,14}/, "").replace(/-/g, " ").trim();
   if (!clean) clean = slug.replace(/-/g, " ");
@@ -423,10 +421,12 @@ function applySearchAndFilter() {
 
 function renderProductList() {
   const container = document.getElementById("productListContainer");
+  if (!container) return;
   container.innerHTML = "";
 
   const total = filteredProducts.length;
-  document.getElementById("resultsCount").textContent = `${total.toLocaleString()} products found`;
+  const countElem = document.getElementById("resultsCount");
+  if (countElem) countElem.textContent = `${total.toLocaleString()} products found`;
 
   if (total === 0) {
     container.innerHTML = `
@@ -477,6 +477,7 @@ function renderProductList() {
 
 function renderMobileMap() {
   const container = document.getElementById("mobileMapContainer");
+  if (!container) return;
   container.innerHTML = "";
 
   Object.entries(STORE_AISLES).forEach(([id, meta]) => {
@@ -514,16 +515,12 @@ function setupEventListeners() {
   const clearBtn = document.getElementById("clearSearchBtn");
   const dismissKeyboardBtn = document.getElementById("dismissKeyboardBtn");
 
-  // CRITICAL FIX: REMOVED window 'scroll' blur listener that was prematurely closing the mobile keyboard!
-  // Keyboard will only be blurred on explicit action (Dismiss button, Enter key, or suggestion chip tap).
-
   if (dismissKeyboardBtn) {
     dismissKeyboardBtn.addEventListener("click", () => {
       searchInput.blur();
     });
   }
 
-  // Enter key dismisses virtual keyboard cleanly
   searchInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       searchInput.blur();
@@ -659,8 +656,8 @@ function setupEventListeners() {
     if (p) {
       p.aisle = newAisle;
       p.rack = newRack;
-      p.categoryName = STORE_AISLES[newAisle].name;
-      p.icon = STORE_AISLES[newAisle].icon;
+      p.categoryName = STORE_AISLES[newAisle] ? STORE_AISLES[newAisle].name : "Custom Aisle";
+      p.icon = STORE_AISLES[newAisle] ? STORE_AISLES[newAisle].icon : "📦";
     }
 
     closeMobileEditModal();

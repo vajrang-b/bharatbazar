@@ -1,0 +1,50 @@
+{
+  "1": {
+    "name": "Spices & Masala",
+    "icon": "🌶️",
+    "color": "var(--aisle-1)",
+    "keywords": ["masala", "powder", "spice", "chili", "chilli", "coriander", "cumin", "turmeric", "seeds", "mdh", "everest", "laxmi", "curry", "garam", "hing", "salt", "jeera", "dhania", "haldi", "saunf", "methi", "cardamom", "clove", "cinnamon"]
+  },
+  "2": {
+    "name": "Atta, Rice & Grains",
+    "icon": "🌾",
+    "color": "var(--aisle-2)",
+    "keywords": ["atta", "flour", "rice", "basmati", "sujata", "rava", "dal", "lentil", "chana", "moong", "toor", "urad", "wheat", "poha", "sooji", "besan", "maida", "matar", "rajma", "pulao", "biryani"]
+  },
+  "3": {
+    "name": "Frozen Foods",
+    "icon": "❄️",
+    "color": "var(--aisle-3)",
+    "keywords": ["frozen", "paneer", "samosa", "naan", "kulcha", "vadilal", "tindora", "okra", "roti", "vegetable", "paratha", "cut-veg", "peas", "gobi", "tikka", "patra", "sweet-corn"]
+  },
+  "4": {
+    "name": "Snacks & Sweets",
+    "icon": "🍬",
+    "color": "var(--aisle-4)",
+    "keywords": ["muruku", "murukku", "mix", "haldiram", "gulab", "jamun", "snack", "chevda", "laddu", "chips", "biscuit", "namkeen", "sweet", "cookie", "mathri", "bhujia", "khakhra", "chikki", "rasgulla"]
+  },
+  "5": {
+    "name": "Dairy, Oils & Ghee",
+    "icon": "🧈",
+    "color": "var(--aisle-5)",
+    "keywords": ["ghee", "oil", "amul", "butter", "milk", "cheese", "paneer-raw", "mustard-oil", "sesame-oil", "sunflower", "coconut-oil", "dahi", "yogurt", "cream"]
+  },
+  "6": {
+    "name": "Pickles, Sauces & Instant",
+    "icon": "🫙",
+    "color": "var(--aisle-6)",
+    "keywords": ["pickle", "sauce", "chutney", "paste", "mtr", "ready", "gravy", "chings", "noodle", "soup", "papad", "pickle", "achaar", "schezwan", "ketchup", "soy"]
+  },
+  "7": {
+    "name": "Tea & Beverages",
+    "icon": "☕",
+    "color": "var(--aisle-7)",
+    "keywords": ["tea", "chai", "coffee", "drink", "badam", "label", "wagh", "bakri", "juice", "syrup", "rooh", "afza", "sharbat", "thums", "limca", "maaza", "bournvita", "horlicks"]
+  },
+  "8": {
+    "name": "Personal Care & Household",
+    "icon": "🧼",
+    "color": "var(--aisle-8)",
+    "keywords": ["dettol", "soap", "herbal", "shampoo", "incense", "agarbatti", "puja", "cleaner", "toothpaste", "dabur", "patanjali", "neem", "oil-hair", "face"]
+  }
+}
