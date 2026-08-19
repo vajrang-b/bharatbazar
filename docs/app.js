@@ -66,6 +66,26 @@ async function loadExternalDataFiles() {
   }
 }
 
+function parseCsvLine(text) {
+  const result = [];
+  let cell = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === '"' || c === "'") {
+      inQuotes = !inQuotes;
+    } else if (c === "," && !inQuotes) {
+      result.push(cell.trim());
+      cell = "";
+    } else {
+      cell += c;
+    }
+  }
+  result.push(cell.trim());
+  return result;
+}
+
 function parseMultilingualCsv(csvText) {
   const lines = csvText.split(/\r?\n/);
   MULTILINGUAL_DICTIONARY = {};
@@ -75,17 +95,20 @@ function parseMultilingualCsv(csvText) {
     const line = lines[i].trim();
     if (!line) continue;
 
-    const parts = line.split(",");
+    const parts = parseCsvLine(line);
     if (parts.length >= 5) {
-      const key = parts[0].trim().toLowerCase();
-      const en = parts[1].trim();
-      const te = parts[2].trim();
-      const hi = parts[3].trim();
-      const keywordsStr = parts[4].trim();
+      const key = parts[0].toLowerCase();
+      const en = parts[1];
+      const te = parts[2];
+      const hi = parts[3];
+      const keywordsStr = parts[4];
       const keywords = keywordsStr.split("|").map(k => k.trim().toLowerCase());
       
-      const aisle = (parts.length >= 6 && parts[5].trim()) ? parseInt(parts[5].trim()) : null;
-      const rack = (parts.length >= 7 && parts[6].trim()) ? parseInt(parts[6].trim()) : null;
+      const aisleVal = (parts.length >= 6 && parts[5]) ? parseInt(parts[5]) : null;
+      const rackVal = (parts.length >= 7 && parts[6]) ? parseInt(parts[6]) : null;
+
+      const aisle = (!isNaN(aisleVal) && aisleVal > 0) ? aisleVal : null;
+      const rack = (!isNaN(rackVal) && rackVal > 0) ? rackVal : null;
 
       MULTILINGUAL_DICTIONARY[key] = {
         en: en,
