@@ -178,6 +178,62 @@ function getMultilingualAliases(slug, name) {
 }
 
 // Anonymous Device Profiler
+function generateDeviceFingerprint() {
+  const components = [];
+
+  // Screen properties
+  components.push(window.screen.width + 'x' + window.screen.height);
+  components.push(window.screen.colorDepth);
+  components.push(window.devicePixelRatio || 1);
+
+  // Timezone
+  components.push(Intl.DateTimeFormat().resolvedOptions().timeZone);
+
+  // Platform & language
+  components.push(navigator.platform);
+  components.push(navigator.language);
+  components.push(navigator.hardwareConcurrency || 'unknown');
+
+  // Canvas fingerprint
+  try {
+    const canvas = document.createElement('canvas');
+    canvas.width = 200;
+    canvas.height = 50;
+    const ctx = canvas.getContext('2d');
+    ctx.textBaseline = 'top';
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#f60';
+    ctx.fillRect(0, 0, 200, 50);
+    ctx.fillStyle = '#069';
+    ctx.fillText('BharatBazar🛒', 2, 15);
+    components.push(canvas.toDataURL().slice(-50));
+  } catch (e) {
+    components.push('no-canvas');
+  }
+
+  // WebGL renderer
+  try {
+    const gl = document.createElement('canvas').getContext('webgl');
+    if (gl) {
+      const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+      if (dbg) {
+        components.push(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL));
+      }
+    }
+  } catch (e) {
+    components.push('no-webgl');
+  }
+
+  // Hash all components into a short hex ID
+  const raw = components.join('|');
+  let hash = 0;
+  for (let i = 0; i < raw.length; i++) {
+    hash = ((hash << 5) - hash) + raw.charCodeAt(i);
+    hash |= 0;
+  }
+  return 'DID-' + Math.abs(hash).toString(16).toUpperCase().padStart(8, '0');
+}
+
 function detectDeviceProfile() {
   const ua = navigator.userAgent;
   let deviceType = "Desktop";
@@ -198,13 +254,15 @@ function detectDeviceProfile() {
 
   const screenRes = `${window.screen.width}x${window.screen.height}`;
   const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const deviceId = generateDeviceFingerprint();
 
   return {
     deviceType,
     os,
     browser,
     screenRes,
-    isTouch
+    isTouch,
+    deviceId
   };
 }
 
@@ -217,10 +275,12 @@ function initVisitorProfile() {
       visitorProfile = JSON.parse(saved);
       visitorProfile.visitCount = (visitorProfile.visitCount || 1) + 1;
       visitorProfile.lastVisit = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      visitorProfile.deviceId = info.deviceId; // Always refresh fingerprint
     } else {
       const randomID = 'BB-DEV-' + Math.random().toString(36).substring(2, 7).toUpperCase();
       visitorProfile = {
         visitorId: randomID,
+        deviceId: info.deviceId,
         deviceType: info.deviceType,
         os: info.os,
         browser: info.browser,
