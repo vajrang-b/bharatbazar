@@ -10,10 +10,13 @@ Complete End-to-End Pipeline:
 
 Usage:
     # Run full automated pipeline across all items:
-    python3 scripts/generate_multilingual_dict.py --pipeline
+    python3 scripts/generate_multilingual_dict.py
+
+    # Run fast generation mode without DeepSeek audit wait:
+    python3 scripts/generate_multilingual_dict.py --fast
 
     # Run pipeline on a sample of 10 items:
-    python3 scripts/generate_multilingual_dict.py --pipeline --max-items 10
+    python3 scripts/generate_multilingual_dict.py --max-items 10
 """
 
 import os
@@ -23,6 +26,7 @@ import csv
 import argparse
 import urllib.request
 import urllib.error
+import socket
 
 OLLAMA_URL = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -56,7 +60,7 @@ Candidate Entries To Audit:
 {entries_json}
 """
 
-def query_ollama(model_name, prompt, timeout=300):
+def query_ollama(model_name, prompt, timeout=600):
     url = f"{OLLAMA_URL}/api/generate"
     payload = {
         "model": model_name,
@@ -133,13 +137,14 @@ def save_dictionary_to_csv(dictionary_map):
             writer.writerow([item["key"], item["en"], item["te"], item["hi"], item["keywords"]])
     print(f"💾 Updated {len(dictionary_map)} entries in {DICTIONARY_CSV_PATH}.")
 
-def run_automated_pipeline(gen_model, val_model, batch_size=5, max_items=None):
+def run_automated_pipeline(gen_model, val_model, batch_size=5, max_items=None, fast_mode=False):
     """Executes 3-Stage Pipeline: Read -> Generate -> DeepSeek Validate -> Write CSV."""
     print("=" * 70)
     print("🚀 BHARATH BAZAR AUTOMATED MULTILINGUAL PIPELINE")
     print(f"   Stage 1: Read Catalog (docs/product_names.json)")
     print(f"   Stage 2: Generate via '{gen_model}'")
-    print(f"   Stage 3: Validate via DeepSeek-R1 '{val_model}'")
+    if not fast_mode:
+        print(f"   Stage 3: Validate via DeepSeek-R1 '{val_model}'")
     print(f"   Stage 4: Write Verified Entries to docs/multilingual_dictionary.csv")
     print("=" * 70)
 
@@ -169,21 +174,31 @@ def run_automated_pipeline(gen_model, val_model, batch_size=5, max_items=None):
 
         # --- STAGE 1: GENERATION ---
         print(f"  ⚡ Step 1: Generating candidates via '{gen_model}'...")
-        gen_prompt = SYSTEM_PROMPT_GENERATE + "\nInput Slugs:\n" + json.dumps(batch_slugs, indent=2)
-        raw_gen = query_ollama(gen_model, gen_prompt)
-        candidates = parse_ollama_json(raw_gen)
+        try:
+            gen_prompt = SYSTEM_PROMPT_GENERATE + "\nInput Slugs:\n" + json.dumps(batch_slugs, indent=2)
+            raw_gen = query_ollama(gen_model, gen_prompt, timeout=300)
+            candidates = parse_ollama_json(raw_gen)
+        except Exception as e:
+            print(f"  ⚠️ Generation error: {e}. Skipping batch.")
+            continue
 
         if not candidates:
             print(f"  ⚠️ Warning: Generation returned empty result for batch. Skipping.")
             continue
 
-        # --- STAGE 2: DEEPSEEK-R1 VALIDATION ---
-        print(f"  🧠 Step 2: Validating etymology & accuracy via DeepSeek-R1 '{val_model}'...")
-        val_prompt = SYSTEM_PROMPT_VALIDATE.format(entries_json=json.dumps(candidates, indent=2))
-        raw_val = query_ollama(val_model, val_prompt)
-        validated_entries = parse_ollama_json(raw_val)
+        final_entries = candidates
 
-        final_entries = validated_entries if validated_entries else candidates
+        # --- STAGE 2: DEEPSEEK-R1 VALIDATION (IF NOT FAST MODE) ---
+        if not fast_mode:
+            print(f"  🧠 Step 2: Validating etymology & accuracy via DeepSeek-R1 '{val_model}'...")
+            try:
+                val_prompt = SYSTEM_PROMPT_VALIDATE.format(entries_json=json.dumps(candidates, indent=2))
+                raw_val = query_ollama(val_model, val_prompt, timeout=600)
+                validated_entries = parse_ollama_json(raw_val)
+                if validated_entries:
+                    final_entries = validated_entries
+            except (TimeoutError, socket.timeout, Exception) as e:
+                print(f"  ⚠️ DeepSeek validation timed out or deferred ({e}). Saving Stage 1 candidates.")
 
         # --- STAGE 3: PERSISTENCE ---
         added_count = 0
@@ -199,25 +214,26 @@ def run_automated_pipeline(gen_model, val_model, batch_size=5, max_items=None):
                 }
                 added_count += 1
 
-        print(f"  ✅ Step 3: Verified {added_count} entries.")
+        print(f"  ✅ Step 3: Saved {added_count} entries.")
         save_dictionary_to_csv(dictionary_map)
 
     print(f"\n🎉 Pipeline Complete! Total entries in CSV: {len(dictionary_map)}")
 
 def main():
     parser = argparse.ArgumentParser(description="Bharath Bazar Multilingual Pipeline.")
-    parser.add_argument("--pipeline", action="store_true", default=True, help="Run complete Read -> Generate -> DeepSeek Validate -> Write CSV pipeline (default: True)")
     parser.add_argument("--gen-model", default=GENERATOR_MODEL, help=f"Generator model (default: {GENERATOR_MODEL})")
     parser.add_argument("--val-model", default=VALIDATOR_MODEL, help=f"Validator model (default: {VALIDATOR_MODEL})")
     parser.add_argument("--batch-size", type=int, default=5, help="Batch size per request (default: 5)")
     parser.add_argument("--max-items", type=int, default=None, help="Limit total items to process")
+    parser.add_argument("--fast", action="store_true", help="Fast mode: skips DeepSeek reasoning wait and persists Stage 1 generation directly")
     args = parser.parse_args()
 
     run_automated_pipeline(
         gen_model=args.gen_model,
         val_model=args.val_model,
         batch_size=args.batch_size,
-        max_items=args.max_items
+        max_items=args.max_items,
+        fast_mode=args.fast
     )
 
 if __name__ == "__main__":
