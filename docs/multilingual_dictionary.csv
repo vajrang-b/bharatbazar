@@ -34,25 +34,1181 @@ key,en,te,hi,keywords
 3-rose6281006817845,Rose,விதை (விதை) (விதை),गुलाब (गुलाब) (गुलाब),rose
 329red-chori,Red Chori,சிவப்பு (சிவப்பு) (சிவப்பு),लाल चोरी (लाल चोरी) (लाल चोरी),red+chori
 3498793906183633toor-dal-luxmi4lb,Toor Dal Luxmi 4lb,தூர் தால் (தூர் தால்) (தூர் தால்),तूर दाल लक्ष्मी 4लब (तूर दाल लक्ष्मी 4लब) (तूर दाल लक्ष्मी 4लब),toor+dal+luxmi
+449potato-samosa-baked,Baked Potato Samosa,Pasupu (పసుపు) వంటి సమోసా,बेक्ड पोटेटो सामोसा,baked potato|samosa|pasupu|potato
+479plain-bhujiya,Plain Bhujiya,విశిష్టంగా భుజియా (విశిష్టంగా భుజియా),सादा भुजिया,plain|bhujia|bhujia
+499deep-ginger-garlic-paste,Deep Ginger Garlic Paste,గరిళ్లు (గరిళ్లు) పెస్ట్,गहरा अदरक-लहसुन का पेस्ट,deep ginger|garlic paste|garlic
+50-50-maska-chaska,50-50 Maska Chaska,మాస్కా చష్క (మాస్కా చష్క),मास्का चश्का,maska chaska|masca chaska
+71265100572haldirams-aloo-tikki,Haldiram's Aloo Tikki,హాల్డిరామ్స్ అలూ టిక్కి (హాల్డిరామ్స్ అలూ టిక్కి),हाल्दीराम्स आलू टिक्की,haldirams aloo tikki|aloo tikki
+723246170381peanuts,Peanuts,నారియెలు (నారియెలు),नारियल,peanuts|peanuts
+723246170459alomand,Alomand,అలోమండ్ (అలోమండ్),अलोमंड,alomand|alomand
+723246177205laxmi-turmeric-powder,Laxmi Turmeric Powder,లక్ష్మి పసుపు పౌడర్ (లక్ష్మి పసుపు పౌడర్),लक्ष्मी हल्दी पाउडर,laxmi turmeric powder|turmeric powder
+723246184067luxmi-rajma,Luxmi Rajma,లక్ష్మి రాజమా (లక్ష్మి రాజమా),लक्ष्मी राजमा,luxmi rajma|rajma
+723246222332mdh-garam-masala,MDH Garam Masala,ఎండిఎచ్ గరమ్ మసాలా (ఎండిఎచ్ గరమ్ మసాలా),एमडीएच गरम मसाला,mdh garam masala|garam masala
+7232garvi-gujarat-bhavnagri-ganthia,Gujarati Ganthia,Pasupu (పసుపు),Ganthia (गांठिया),gujarati-ganthia|pasupu|powder
+735426351015rajbhog-peanut-chikki,Peanut Chikki,Peanut Chikki (పెన్ను చిక్కి),Peanut Chikki (पेंट चिक्की),peanut-chikki|rajbhog|chikki
+73542635rajbhog-sweet-almond-chikki,Sweet Almond Chikki,Sweet Almond Chikki (మీనపప్పు చిక్కి),Sweet Almond Chikki (मीठा अल्मोंड चिक्की),sweet-almond-chikki|rajbhog|chikki
+73542635rajbhog-sweet-cashew-chikki,Sweet Cashew Chikki,Sweet Cashew Chikki (నెమ్మది చిక్కి),Sweet Cashew Chikki (मीठा कश्मीर चिक्की),sweet-cashew-chikki|rajbhog|chikki
+7354263rajbhog-sweets-sesame-chikki,Sesame Chikki,Sesame Chikki (సెసం చిక్కి),Sesame Chikki (सेसम चिक्की),sesame-chikki|rajbhog|chikki
+735426700226spicy-boondi,Spicy Boondi,Spicy Boondi (స్పిసీ బూడి),Spicy Boondi (स्पिशी बूड़ी),spicy-boondi|boondi|snack
+755270000358maaza-guava-glass-btl,Guava Glass Bottle,Maaza Guava Glass Bottle (మాజా గువా గ్లాస్ బాటిల్),Maaza Guava Glass Bottle (माजा गुवा ग्लास बोतल),maaza-guava-glass-bottle|guava|juice
+788821063076shan-lauki-halwa-mix,Shan Lauki Halwa Mix,Shan Lauki Halwa Mix (షాన్ లౌకి హల్వా మిక్స్),Shan Lauki Halwa Mix (शान लौकी हलवा मिक्स),shan-lauki-halwa-mix|lauki|halwa
+797677704705nanak-aloo-tikki,Nanak Aloo Tikki,Nanak Aloo Tikki (నానక్ ఆలూ టిక్కీ),Nanak Aloo Tikki (नानक आलू टिक्की),nanak-aloo-tikki|aloo|tikki
+807522006929super-shyne-iron-karahi,Super Shyne Iron Karahi,Super Shyne Iron Karahi (సూపర్ షైన్ ఇరాన్ కరహి),Super Shyne Iron Karahi (सुपर शाइन आयरन कराही),super-shyne-iron-karahi|iron|karahi
+808042000ayur-shahi-ubtan-face-pack,Ayurvedic Face Pack,ఆయుర్వేద ముఖచిత్రం (ఆయుర్వేద ముఖచిత్రం),आयुर्वेदिक मुख चित्र (आयुर्वेदिक मुख चित्र),ayurvedic face pack|ayurvedic face mask|face mask
+815990011079roshni-white-chick-peas,Roshni White Chick Peas,రోష్ణి వైట్ చిక్ పీస్ (రోష్ణి వైట్ చిక్ పీస్),रोशनी सफेद चिक पीस (रोशनी सफेद चिक पीस),roshni white chick peas|white chick peas|chick peas
+855664004051quick-tea,Quick Tea,క్విక్ టీ (క్విక్ టీ),क्विक टी (क्विक टी),quick tea|quik tea|black tea
+878776002722hyd-mixture,Hyd Mixture,హైదరాబాద్ మిశ్రమం (హైదరాబాద్ మిశ్రమం),हैदराबाद मिश्रण (हैदराबाद मिश्रण),hyd mixture|hyd mixture|hyd
+8793906183640toor-dal,Toor Dal,తూర్ దాల్ (తూర్ దాల్),तूर दाल (तूर दाल),toor dal|toor dal|split red gram
+8901063136632tiger-biscuits,Tiger Biscuits,టైగర్ బిస్క్యూట్స్ (టైగర్ బిస్క్యూట్స్),टाइगर बिस्क्यूट्स (टाइगर बिस्क्यूट्स),tiger biscuits|tiger biscuits|biscuits
+8901063151482pista-almond,Pista Almond,పిస్తా అల్మండ్ (పిస్తా అల్మండ్),पिस्ता अल्मंड (पिस्ता अल्मंड),pista almond|pista almond|almond
+8901155113gits-vermicelli-kheer-mix,Gits Vermicelli Kheer Mix,గిట్స్ వర్మికెల్ ఖీర్ మిక్స్ (గిట్స్ వర్మికెల్ ఖీర్ మిక్స్),गिट्स वर्मेल खीर मिश्रण (गिट्स वर्मेल खीर मिश्रण),gits vermicelli kheer mix|gits vermicelli kheer mix|vermicelli
+8901414000056bikano-aloo-bhuja,Bikano Aloo Bhuja,బికానో అలూ భుజా (బికానో అలూ భుజా),बिकानो आलू भुजा (बिकानो आलू भुजा),bikano aloo bhuja|bikano aloo bhuja|aloo
+8901571004409boost,Boost,బూస్ట్ (బూస్ట్),बूस्ट (बूस्ट),boost|boost|energy drink
+8901701101107hesh-aritha-powder,Hesh Aritha Powder,Pasupu (పసుపు),Haldi (हल्दी),haldi|pasupu|powder
+8901701102104hesh-mehandi-powder,Hesh Mehendi Powder,Pasupu (పసుపు),हल्दी (हल्दी),haldi|pasupu|powder
+8901774002134badshah-chat-masala,Badshah Chat Masala,Chat Masala,चाट मसाला,chat masala
+8901777968178,Whole Cashew,కాశవ్ (కాశవ్),कशवा (कशवा),cashew
+8904063202437bajra-roti,Bajra Roti,బాజ్ర (బాజ్ర),बाजरा रोटी,bajra roti
+8904083506874org-besan,Org Besan,ఓర్గ్ బెసన్ (ఓర్గ్ బెసన్),ओर्ग बेसन,besan
+89041176006khazana-pani-puri-masala,Khazana Pani Puri Masala,ఖజాన (ఖజాన) పాని పురి మసాలా (ఖజాన) పాని పురి మసాలా,खजाना पानी पुरी मसाला,khazana pani puri masala
+8908003115948yellow-vatana,Yellow Vatana,సోంకలు (సోంకలు),सफेद वटाना,yellow vatana
+9011119121105whole-cashwe,Whole Cashew,కాశవ్ (కాశవ్),कशवा (कशवा),cashew
+a1-cassava,Cassava,కాసవ (కాసవ్),कसावा (कसावा),cassava
+aachi-garlic-pickle,Aachi Garlic Pickle,Aachi (ఆచీ) మరియు పచ్చికాయ (పచ్చికాయ),आची अंडा की चटनी,aachi|garlic|pickle|chutney
+aachi-ginger-pickle,Aachi Ginger Pickle,Aachi (ఆచీ) మరియు ఇనుము (ఇనుము),आची अदरक की चटनी,aachi|ginger|pickle|chutney
+aachi-idiyappam-powder,Aachi Idiyappam Powder,Aachi (ఆచీ) ఇద్యాపమ్ (ఇద్యాపమ్) పౌడర్,आची इडियापम पाउडर,aachi|idiyappam|powder
+aachi-kadai-chicken-masala,Aachi Kadai Chicken Masala,Aachi (ఆచీ) కడై (కడై) చికెన్ మసాలా,आची कड़ाई चिकन मसाला,aachi|kadai|chicken|masala
+aachi-mutton-curry-masala,Aachi Mutton Curry Masala,Aachi (ఆచీ) మామిడి (మామిడి) కర్రీ (కర్రీ) మసాలా,आची मटन करी मसाला,aachi|mutton|curry|masala
+aachi-puttu-powder,Aachi Puttu Powder,Aachi (ఆచీ) పుట్టు (పుట్టు) పౌడర్,आची पुट्टु पाउडर,aachi|puttu|powder
+aachi-rasam-powder,Aachi Rasam Powder,Aachi (ఆచీ) రసం (రసం) పౌడర్,आची रसम पाउडर,aachi|rasam|powder
+aahu-barah,Aahu Barah,ఆహు (ఆహు) బరాహ (బరాహ),आहु बराह,aahu|barah
+aara-brown-sugar,Aara Brown Sugar,ఆరా (ఆరా) బ్రाउన్ సికరెట్ (బ్రౌన్ సికరెట్),आरा ब्राउन सिकरेट,aara|brown sugar
+aas-pas-panmasala,Aas Pas Panmasala,ఆస్ (ఆస్) పాన్ మసాలా (పాన్ మసాలా),आस पान मसाला,aas|pan masala
+aashirvaad,Aashirvaad,Aashirvaad (ఆశిర్వాద),Aashirvaad (आशीर्वाद),aashirvaad|atta|whole+wheat|multigrain
+aashirvaad-20-lbs,Aashirvaad 20 Lbs,Aashirvaad 20 లబ్స్ (ఆశిర్వాద 20 లబ్స్),Aashirvaad 20 लब्स (आशीर्वाद 20 लब्स),aashirvaad|20|lbs|atta|whole+wheat|multigrain
+aashirvaad-multigrain-atta,Aashirvaad Multigrain Atta,Aashirvaad మ్యూల్టైగ్రీన్ అట్టా (ఆశిర్వాద మ్యూల్టైగ్రీన్ అట్టా),Aashirvaad म्यूल्टाइग्रीन अट्टा (आशीर्वाद म्यूल्टाइग्रीन अट्टा),aashirvaad|multigrain|atta|whole+wheat
+aashirvad-multigrain-atta-10-lbs,Aashirvad Multigrain Atta 10 Lbs,Aashirvad 10 లబ్స్ మ్యూల్టైగ్రీన్ అట్టా (ఆశిర్వాద 10 లబ్స్ म्यूल्टाइग्रीन अट्टा),Aashirvad 10 लब्स म्यूल्टाइग्रीन अट्टा (आशीर्वाद 10 लब्स म्यूल्टाइग्रीन अट्टा),aashirvad|10|lbs|multigrain|atta|whole+wheat
+aashirvad-select-sharbati-atta-whole-wheat-10-lbs,Aashirvad Select Sharbati Whole Wheat Atta 10 Lbs,Aashirvad Select శర్బతి హల్లు అట్టా 10 లబ్స్ (ఆశిర్వాద సెలెక్ట్ శర్బతి హల్లు అట్టా 10 లబ్స్),Aashirvad Select शर्बती हल्लू अट्टा 10 लब्स (आशीर्वाद सेलेक्ट शर्बती हल्लू अट्टा 10 लब्स),aashirvad|select|sharbati|whole+wheat|atta
+aashirvad-sharbati-whole-wheat-atta,Aashirvad Sharbati Whole Wheat Atta,Aashirvad శర్బతి హల్లు అట్టా (ఆశిర్వాద శర్బతి హల్లు అట్టా),Aashirvad शर्बती हल्लू अट्टा (आशीर्वाद शर्बती हल्लू अट्टा),aashirvad|sharbati|whole+wheat|atta
+aata,Aata,అట్టా (అట్టా),अट्टा (अट्टा),atta|whole+wheat
+ab-mathura-peda,AB Mathura Peda,AB మథుర పేడా (ఎబ్ మథుర పేడా),AB मथुरा पेड़ा (एब मथुरा पेड़ा),ab|mathura|peda
+achi-pav-bhaji,Achi Pav Bhaji,అచి పవ్ భాజి (అచి పవ్ భాజి),अची पव भाजी (अची पव भाजी),achi|pav|bhaji
+advil-200-mg-2-tablets,Advil 200mg 2 Tablets,Advil (ఆద్విల్) (200mg) 2 టేబులెట్స్,Advil (आद्विल) (200mg) 2 टैबलेट्स,advil|ibuprofen|pain relief|200mg|tablets
+agar-agar,Agar Agar,అగర్-అగర్ (Agar-Agar),अगर-अगर (Agar-Agar),agar-agar|agar|china grass|vegan|vegetarian
+agar-agar-china-grass,Agar Agar China Grass,అగర్-అగర్ (Agar-Agar) చైనా గ్రాస్ (Agar-Agar China Grass),अगर-अगर (Agar-Agar) चाइना ग्रास (Agar-Agar China Grass),agar-agar-china-grass|agar|china grass|vegan|vegetarian
+aged-basmati-rice-10-lb,Aged Basmati Rice 10 Lb,వయస్సు చెందిన బస్మతి చావల్ 10 పౌండ్లు (Aged Basmati Rice 10 Lb),वयस्स चेंद बसमती चावल 10 पाउंड (Aged Basmati Rice 10 Lb),aged-basmati-rice|basmati rice|rice|10lb|pound
+ajma-dates,Ajma Dates,అజ్మా డేట్స్ (Ajma Dates),अज्मा डेट्स (Ajma Dates),ajma-dates|dates|ajma|fruit
+ajwain,Ajwain,అజ్వైన్ (Ajwain),अज्वाइन (Ajwain),ajwain|ajwain seeds|ajwain paratha|ajwain biscuits
+ajwain-paratha,Ajwain Paratha,అజ్వైన్ పరోఠా (Ajwain Paratha),अज्वाइन पार्था (Ajwain Paratha),ajwain-paratha|ajwain|paratha|flatbread
+ajwain-paratha-deep,Ajwain Paratha Deep,అజ్వైన్ పరోఠా డీప్ (Ajwain Paratha Deep),अज्वाइन पार्था डीप (Ajwain Paratha Deep),ajwain-paratha-deep|ajwain|paratha|deep fried
+ajwain-salted-biscuits,Ajwain Salted Biscuits,అజ్వైన్ సల్ట్డ్ బిస్కుట్స్ (Ajwain Salted Biscuits),अज्वाइन साल्टेड बिस्कुट्स (Ajwain Salted Biscuits),ajwain-salted-biscuits|ajwain|biscuits|salted
+ajwain-seeds,Ajwain Seeds,అజ్వైన్ బీజాలు (Ajwain Seeds),अज्वाइन बीज (Ajwain Seeds),ajwain-seeds|ajwain|seeds|herbs
+aleve-1-caplet,Aleve Caplet,ఆలెవ్ క్యాప్లెట్ (ఆలెవ్ క్యాప్లెట్),एलेव कैपलेट (एलेव कैपलेट),aleve|caplet|pain reliever
+allegro-olive,Allegro Olive,అలెగ్రో ఓలివ్ (అలెగ్రో ఓలివ్),अलेग्रो ओलिव (अलेग्रो ओलिव),allegro|olive|oil
+almond051179190207,Almond,అల్మండ్ (అల్మండ్),अल्मंड (अल्मंड),almond|nut|oil
+almonds051179190108,Almonds,అల్మండ్స (అల్మండ్స),अल्मंड्स (अल्मंड्स),almonds|nut|oil
+aloo-achari8904063208279,Aloo Achari,ఆలూ ఆచారి (ఆలూ ఆచారి),आलू अचारी (आलू अचारी),aloo|achari|spice
+aloo-bghujhi,Aloo Bghujhi,ఆలూ భజ్జి (ఆలూ భజ్జి),आलू भज्जी (आलू भज्जी),aloo|bhujjhi|spice
+aloo-gobhi,Aloo Gobhi,ఆలూ గోభి (ఆలూ గోభి),आलू गोभी (आलू गोभी),aloo|gobhi|spice
+aloo-paratha,Aloo Paratha,ఆలూ పరాథా (ఆలూ పరాథా),आलू पराठा (आलू पराठा),aloo|paratha|flatbread
+aloo-paratha-bulk,Aloo Paratha (Bulk),ఆలూ పరాథా (బాల్క్) (ఆలూ పరాథా (బాల్క్)),आलू पराठा (बुल्क) (आलू पराठा (बुल्क)),aloo|paratha|flatbread|bulk
+aloo-pyaz-paratha,Aloo Pyaz Paratha,ఆలూ ప్యాజ్ పరాథా (ఆలూ ప్యాజ్ పరాథా),आलू प्याज पराठा (आलू प्याज पराठा),aloo|pyaz|paratha|flatbread
+alphanjo-mango,Alphonso Mango,Alphonso (అల్ఫోన్సో),अल्फोंसो (Alphonsō),alphonso mango|mango|indian fruit
+alphanso-mango-icecream,Alphanso Mango Ice Cream,Alphanso (అల్ఫాన్సో) మాంగో ఆయిస్ క్రీం,अल्फान्सो (Alphānsō) मांगो आइस क्रीम,alphonso mango ice cream|mango ice cream|indian desserts
+alphonso-cup,Alphonsa Cup,Alphonsa (అల్ఫోన్సా) కప్,अल्फोंसा (Alphonsā) कप,alphonsa cup|cup|indian tea
+alphonso-mango,Alphonsa Mango,Alphonsa (అల్ఫోన్సా) మాంగో,अल्फोंसा (Alphonsā) मांगो,alphonsa mango|mango|indian fruit
+alphonso-mango-pulp,Alphonsa Mango Pulp,Alphonsa (అల్ఫోన్సా) మాంగో పల్పు,अल्फोंसा (Alphonsā) मांगो पल्प,alphonsa mango pulp|mango pulp|indian fruit
+alphonso-mango8901777583975,Alphonsa Mango,Alphonsa (అల్ఫోన్సా) మాంగో,अल्फोंसा (Alphonsā) मांगो,alphonsa mango|mango|indian fruit
+alsafa-chicken-nuggets,Al Safa Chicken Nuggets,Al Safa (అల్ సఫా) చికెన్ నిగ్గిట్స్,अल सफा (Al Safā) चिकन निगगिट्स,al safa chicken nuggets|chicken nuggets|indian fast food
+alsafa-chicken-patties,Al Safa Chicken Patties,Al Safa (అల్ సఫా) చికెన్ పాటీస్,अल सफा (Al Safā) चिकन पाटी,al safa chicken patties|chicken patties|indian fast food
+alsi051179329003,Alsi,Alsi (అల్సి),अल्सी (Alsi),alsi|alsi seeds|indian spice
+aluminum-wok-kahari,Aluminum Wok Kahari,Aluminum Wok (అల్యూమినియం వోక్) కహారి,अल्यूमिनियम वोक (Aluminium Vok) काहारी,aluminum wok kahari|wok|indian cooking pot
+amla-muraba,Indian Lime Juice,Nimbu (నింబు),नींबू का रस,indian lime juice|nimbu|citrus juice
+ammas,Amma's Mix,అమ్మస్ (అమ్మస్ మిక్స్),अम्मा का मिश्रण,ammas mix|ammas iyer mixture|indian spice mix
+ammas-iyer-mixture,Amma's Iyer Mix,అమ్మస్ ఇయర్ మిక్స్ (అమ్మస్ ఇయర్ మిక్స్),अम्मा के आयर मिश्रण,ammas iyer mixture|indian spice mix|ammas mix
+amrutanjan8901803001541,Amrutanjan Medicine,అమ్రతనాటన్ (అమ్రతనాటన్ మెడిసిన్),अमृतनातन (अमृतनातन दवा),amrutanjan medicine|amrutanjan tablet|indian medicine
+amul-badam-6pack,Amul Badam 6 Pack,అముల్ బాదం 6 పేక్ (అముల్ బాదం 6 పేక్),अमुल बादाम 6 पैक (अमुल बादाम 6 पैक),amul badam 6 pack|amul badam|indian sweets
+amul-butter,Amul Butter,అముల్ బట్టర్ (అముల్ బట్టర్),अमुल बटर (अमुल बटर),amul butter|amul butter price|indian butter
+amul-butter-salted,Amul Salted Butter,అముల్ సల్ట్ బట్టర్ (అముల్ సల్ట్ బట్టర్),अमुल साल्ट बटर (अमुल साल्ट बटर),amul salted butter|amul butter price|indian butter
+amul-butter-unsalted,Amul Unsalted Butter,అముల్ అన్సల్ట్ బట్టర్ (అముల్ అన్సల్ట్ బట్టర్),अमुल अनसल्ट बटर (अमुल अनसल्ट बटर),amul unsalted butter|amul butter price|indian butter
+amul-cheese,Amul Cheese,అముల్ చీజ్ (అముల్ చీజ్),अमुल चीज़ (अमुल चीज़),amul cheese|amul cheese price|indian cheese
+amul-cheese-block,Amul Cheese Block,అముల్ చీజ్ బ్లాక్ (అముల్ చీజ్ బ్లాక్),अमुल चीज़ ब्लॉक (अमुल चीज़ ब्लॉक),amul cheese block|amul cheese price|indian cheese
+amul-cheese-chiplet,Amul Cheese Chiplet,Pasupu (పసుపు),हल्दी (हल्दी),amul cheese|chiplet|cheese
+amul-cheese-slices,Amul Cheese Slices,Pasupu (పసుపు),हल्दी (हल्दी),amul cheese|slices|cheese
+amul-dry-fruit,Amul Dry Fruit,Pasupu (పసుపు),हल्दी (हल्दी),amul dry fruit|fruit|pasupu
+amul-malai-paneer-1-kg,Amul Malai Paneer 1kg,Pasupu (పసుపు),हल्दी (हल्दी),amul malai paneer|paneer|malai
+amul-masti,Amul Masti,Pasupu (పసుపు),हल्दी (हल्दी),amul masti|mastis|pasupu
+amul-paneer,Amul Paneer,Pasupu (పసుపు),हल्दी (हल्दी),amul paneer|paneer|pasupu
+amul-pure-ghee,Amul Pure Ghee,Pasupu (పసుపు),हल्दी (हल्दी),amul pure ghee|ghee|pasupu
+amul-shrikhand-mango,Amul Shrikhand Mango,Pasupu (పసుపు),हल्दी (हल्दी),amul shrikhand mango|mango|shrikhand
+amul-shrikhand-saffron,Amul Shrikhand Saffron,Pasupu (పసుపు),हल्दी (हल्दी),amul shrikhand saffron|saffron|shrikhand
+amul-shrikhand-saffron-1,Amul Shrikhand Saffron 1,Pasupu (పసుపు),हल्दी (हल्दी),amul shrikhand saffron 1|saffron|shrikhand
+amul8901262151382,Amul Butter,Amul (అముల్),अमुल दूध,amul butter|doodh|ghee
+anand-banana-chips-salted-400g,Anand Banana Chips,అనంద బనానా చిప్స్ (సల్ట్) (400g),अनंद बनाना चिप्स (साल्ट) (400ग्राम),banana chips|anand|salted|snacks
+anand-bhog-andhra-murruku-5-99oz,Anand Bhog Andhra Murruku,అనంద భోగ ఆంధ్ర మురుకు (5-99oz),अनंद भोग आंध्र मुरुकु (5-99 औज),anand bhog|andhra murruku|murruku|snacks
+anand-bhog-chennai-murukku-200g,Anand Bhog Chennai Murukku,అనంద భోగ చెన్నై మురుకు (200g),अनंद भोग चेन्नई मुरुकु (200ग्राम),anand bhog|chennai murukku|murukku|snacks
+anand-bhogh-banana-chips-300-gm-s-snacks,Anand Bhogh Banana Chips,అనంద భోగ బనానా చిప్స్ (300gము) - స్నాక్స్,अनंद भोग बनाना चिप्स (300ग्राम) - स्नैक्स,anand bhogh|banana chips|snacks
+anand-bhogh-dry-mix-sweets,Anand Bhogh Dry Mix Sweets,అనంద భోగ ద్రయ మిశ్రమ మీట్లు,अनंद भोग द्र्य मिश्र मीठे,anand bhogh|dry mix sweets|sweet
+anand-bhogh-lightly-salted-banana-chips-300g,Anand Bhogh Lightly Salted Banana Chips,అనంద భోగ తక్కువ సల్ట్ బనానా చిప్స్ (300g),अनंद भोग हल्के साल्ट बनाना चिप्स (300ग्राम),anand bhogh|banana chips|lightly salted|snacks
+anand-bhogh-spicy-chakri-200g,Anand Bhogh Spicy Chakri,అనంద భోగ స్పిషీ చక్రి (200g),अनंद भोग स्पिशी चक्री (200ग्राम),anand bhogh|spicy chakri|snacks
+anand-bhogh-thenkulai-200g,Anand Bhogh Thenkuli,అనంద భోగ తెన్కులి (200g),अनंद भोग तेंकुली (200ग्राम),anand bhogh|thenkuli|snacks
+anand-bhujia,Anand Bhujia,అనంద భుజియా,अनंद भुजिया,anand bhujia|snacks
+anand-bitter-gourd-chips,Anand Bitter Gourd Chips,Pasupu (పసుపు),हल्दी (Haldi),bitter gourd|chips|anand
+anand-bombay-mixture-400g,Anand Bombay Mixture 400g,Pasupu (పసుపు),हल्दी (Haldi),bombay mixture|anand|pasupu|400g
+anand-boondi-masala,Anand Boondi Masala,Pasupu (పసుపు),हल्दी (Haldi),boondi masala|anand|pasupu
+anand-curd-chilli,Anand Curd Chilli,Pasupu (పసుపు),हल्दी (Haldi),curd chilli|anand|pasupu
+anand-dry-whole-chilli-wrinkled,Anand Dry Whole Chilli Wrinkled,Pasupu (పసుపు),हल्दी (Haldi),dry whole chilli|anand|pasupu|wrinkled
+anand-frynus-bhindi-cut,Anand Frynus Bhindi Cut,Pasupu (పసుపు),हल्दी (Haldi),frynus bhindi|anand|pasupu|cut
+anand-fryums-star-color,Anand Fryums Star Color,Pasupu (పసుపు),हल्दी (Haldi),fryums star color|anand|pasupu
+anand-instant-rava-dosa-mix,Anand Instant Rava Dosa Mix,Pasupu (పసుపు),हल्दी (Haldi),instant rava dosa mix|anand|pasupu
+anand-kachori,Anand Kachori,Pasupu (పసుపు),हल्दी (Haldi),kachori|anand|pasupu
+anand-kerala-mixture,Anand Kerala Mixture,Pasupu (పసుపు),हल्दी (Haldi),kerala mixture|anand|pasupu
+anand-nelakadale-laddu,Anand Nelakadale Laddu,అనంద నెలకడలే లడ్డు (పసుపు),अनंद नेलकडले लड्डू (हल्दी),anand-nelakadale-laddu|pasupu|laddu
+anand-nelakadle-chkki-bar,Anand Nelakadle Chkki Bar,అనంద నెలకడలే చక్కి బార్ (పసుపు),अनंद नेलकडले चक्की बार (हल्दी),anand-nelakadle-chkki-bar|pasupu|chikki
+anand-pappadam,Anand Pappadam,అనంద పప్పాదం (పసుపు),अनंद पप्पादम (हल्दी),anand-pappadam|pasupu
+anand-peanut-chikki,Anand Peanut Chikki,అనంద మారపెట్టె చక్కి (పసుపు),अनंद मारपेट चक्की (हल्दी),anand-peanut-chikki|pasupu|chikki
+anand-potato-chips-masala,Anand Potato Chips Masala,అనంద కాయి చిప్స్ మసాలా (పసుపు),अनंद पोटैटो चिप्स मसाला (हल्दी),anand-potato-chips-masala|pasupu|potato-chips
+anand-ragi-flour-regular,Anand Ragi Flour Regular,అనంద రాగి అడుగు సాధారణం (పసుపు),अनंद रागी फ्लोर नियमित (हल्दी),anand-ragi-flour-regular|pasupu|ragi-flour
+anand-sandige-garlic,Anand Sandige Garlic,అనంద సండిగె కాయలు (పసుపు),अनंद संडिगे गार्लिक (हल्दी),anand-sandige-garlic|pasupu|garlic
+anand-sesame-chikki-bar,Anand Sesame Chikki Bar,అనంద సేసం చక్కి బార్ (పసుపు),अनंद सेसम चक्की बार (हल्दी),anand-sesame-chikki-bar|pasupu|chikki
+anand-sesame-laddu,Anand Sesame Laddu,అనంద సేసం లడ్డు (పసుపు),अनंद सेसम लड्डू (हल्दी),anand-sesame-laddu|pasupu|laddu
+anand-sev-laddu,Anand Sev Laddu,అనంద సేవ్ లడ్డు (పసుపు),अनंद सेव लड्डू (हल्दी),anand-sev-laddu|pasupu|laddu
+anand-spicy-mixture-hot,Anand Spicy Mixture Hot,అనంద్ స్పాటిక్ మిశ్రమ్ హాట్ (అనంద్ స్పాటిక్ మిశ్రమ్ హాట్),अनंद स्पाटिक मिश्रम हॉट (अनंद स्पाटिक मिश्रम हॉट),anand-spicy-mixture-hot|spicy-mixture|hot-snacks
+anar-dana,Anar Dana,అనార్ దాన (అనార్ దాన),अनार दाना (अनार दाना),anar-dana|dried-fruit|snacks
+ani-rice-vermicelli,Ani Rice Vermicelli,అని రైస్ వర్మిచెల్లి (అని రైస్ వర్మిచెల్లి),अनी राइस वर्मिचेल्ली (अनी राइस वर्मिचेल्ली),ani-rice-vermicelli|rice-vermicelli|south-indian-snacks
+anil-lemon-semia,Anil Lemon Semia,అనిల్ లెమన్ సెమియా (అనిల్ లెమన్ సెమియా),अनिल लेमन सेमिया (अनिल लेमन सेमिया),anil-lemon-semia|lemon-semia|south-indian-snacks
+anil-ragi-vermicelli,Anil Ragi Vermicelli,అనిల్ రాగి వర్మిచెల్లి (అనిల్ రాగి వర్మిచెల్లి),अनिल रागी वर्मिचेल्ली (अनिल रागी वर्मिचेल्ली),anil-ragi-vermicelli|ragi-vermicelli|south-indian-snacks
+anil-rice-sevai,Anil Rice Sevai,అనిల్ రైస్ సేవాయి (అనిల్ రైస్ సేవాయి),अनिल राइस सेवाई (अनिल राइस सेवाई),anil-rice-sevai|rice-sevai|south-indian-snacks
+anil-roasted-rava,Anil Roasted Rava,అనిల్ రోస్ట్ రవా (అనిల్ రోస్ట్ రవా),अनिल रोस्ट रवा (अनिल रोस्ट रवा),anil-roasted-rava|roasted-rava|south-indian-snacks
+anil-roasted-vermicelli,Anil Roasted Vermicelli,అనిల్ రోస్ట్ వర్మిచెల్లి (అనిల్ రోస్ట్ వర్మిచెల్లి),अनिल रोस्ट वर्मिचेल्ली (अनिल रोस्ट वर्मिचेल्ली),anil-roasted-vermicelli|roasted-vermicelli|south-indian-snacks
+anil-soya-bari,Anil Soya Bari,అనిల్ సోయా బారి (అనిల్ సోయా బారి),अनिल सोया बारी (अनिल सोया बारी),anil-soya-bari|soya-bari|south-indian-snacks
+anil-tamarind-semia,Anil Tamarind Semia,అనిల్ తామరండ్ సెమియా (అనిల్ తామరండ్ సెమియా),अनिल तamarind सेमिया (अनिल तamarind सेमिया),anil-tamarind-semia|tamarind-semia|south-indian-snacks
+anil-tamrind-semia,Anil Tamrind Semia,Pasupu (పసుపు),Haldi (हल्दी),tamrind|semia|pasupu|haldi
+anil-wheat-vermicelli,Anil Wheat Vermicelli,Ragi (రాగి),Aata (आटा),wheat|vermicelli|ragi|ata
+anjali-silvera-steel,Anjali Silvera Steel,Puli (పులి),Chakki (चक्की),silvera|steel|puli|chakki
+annapoorna-biryani,Annapoorna Biryani,Biryani (బిర్యాణి),Biryani (बिरयानी),biryani|annapoorna|pasupu
+annapoorna-chicken-65,Annapoorna Chicken 65,Pasupu (పసుపు),Chicken 65 (चिकन ६५),chicken|65|pasupu|haldi
+araku-boomi-coffee,Araku Boomi Coffee,Bamu (బాము),Bamu (बामू),coffee|araku|bamu
+archi-puliyodhari-rice-powder,Archi Puliyodhari Rice Powder,Puliyodhari (పులియోధరి),Puliyodhari (पुलियोधरी),puliyodhari|rice powder|pasupu
 atta,Wheat Flour,Godhumapindi,Atta,atta|flour|godhumapindi
+atta-biscits,Att Biscits,Biscits (బిస్కిట్స్),Biscits (बिस्किट्स),biscits|atta|ragi
+atta-multi-grains-flour,Att Multi Grains Flour,Ragi (రాగి),Aata (आटा),multi grains|atta|ragi|ata
+atta-noodles,Att Noodles,Noodles (నూడిళ్ళు),Noodles (नूडल्स),noodles|atta|ragi
+ayur-anti-sun-tan-face-pack,Ayurvedic Anti Sun Tan Face Pack,Pasupu (పసుపు),हल्दी (Haldi),ayurvedic|anti sun tan|face pack
+ayur-cucumber-face-pack-1,Ayurvedic Cucumber Face Pack 1,Aam (ఆమ్),आम (आम),ayurvedic|cucumber|face pack
+ayur-deep-cleaning,Ayurvedic Deep Cleaning,Pasupu (పసుపు),हल्दी (Haldi),ayurvedic|deep cleaning
+ayur-rose-face-pack,Ayurvedic Rose Face Pack,Gulab (గులాబ్),गुलाब (गुलाब),ayurvedic|rose|face pack
+baba-120,Baba 120,Baba 120,बाबा 120,baba 120
+baby-mango,Baby Mango,Babalu (బాబలు),बेबी मांगो,baby mango
+badam-coconut,Badam Coconut,Badam (బాదం),बादाम (बादाम),badam coconut
+badam-drink797677719983,Badam Drink,Badam (బాదం),बादाम (बादाम),badam drink
+bajji-masala-archi,Bajji Masala Archi,Bajji (బాజ్జి),बाज्जी मसाला (बाज्जी मसाला),bajji masala archi
+bajri-khakhara,Bajri Khakhara,Bajri (బాజ్రి),बाजरी खखरा (बाजरी खखरा),bajri khakhara
+bajriflour,Bajri Flour,Bajri (బాజ్రి),Bajri (बाजरी),bajri flour|gram flour|indian flour
+bambino-roasted-vermicelli,Bambino Roasted Vermicelli,Bambino Roasted Vermicelli (బంబినో రోస్ట్డ్ వర్మిసెల్లీ),बम्बिनो रोस्टेड वर्मिसेल्ली (बम्बिनो),bambino roasted vermicelli|vermicelli|roasted vermicelli
+bambino-roasted-vermicelli8901242107118,Bambino Roasted Vermicelli,Bambino Roasted Vermicelli (బంబినో రోస్ట్డ్ వర్మిసెల్లీ),बम्बिनो रोस्टेड वर्मिसेल्ली (बम्बिनो),bambino roasted vermicelli|vermicelli|roasted vermicelli
+bambino-roasted-vermicelli8901242107415,Bambino Roasted Vermicelli,Bambino Roasted Vermicelli (బంబినో రోస్ట్డ్ వర్మిసెల్లీ),बम्बिनो रोस्टेड वर्मिसेल्ली (बम्बिनो),bambino roasted vermicelli|vermicelli|roasted vermicelli
+bambino-vermicelli,Bambino Vermicelli,Bambino Vermicelli (బంబినో వర్మిసెల్లీ),बम्बिनो वर्मिसेल्ली (बम्बिनो),bambino vermicelli|vermicelli
+bambino-vermicelli8901242101215,Bambino Vermicelli,Bambino Vermicelli (బంబినో వర్మిసెల్లీ),बम्बिनो वर्मिसेल्ली (बम्बिनो),bambino vermicelli|vermicelli
+bambino-vermicelli8901242101512,Bambino Vermicelli,Bambino Vermicelli (బంబినో వర్మిసెల్లీ),बम्बिनो वर्मिसेल्ली (बम्बिनो),bambino vermicelli|vermicelli
+banana,Banana,Banana (బనానా),बनाना (बनाना),banana|banana fruit
+banana-1,Banana,Banana (బనానా),बनाना (बनाना),banana|banana fruit
+banana-chips051179277014,Banana Chips,Banana Chips (బనానా చిప్స్),बनाना चिप्स (बनाना चिप्स),banana chips|banana snack
+banganaptlli,Bengal Mustard Oil,Bengal Mustard Oil (బెంగాల్ మస్తర్డ్ ఆఇల్),बेंगल मस्टर्ड ऑयल (बेंगल),bengal mustard oil|oil|mustard oil
+banne-butter-chicken-masala,Butter Chicken Masala,Butter Chicken Masala (బట్టర్ చికెన్ మసాలా),बटर चिकन मसाला (बटर चिकन),butter chicken masala|chicken|masala
+banne-chicken-masala,Chicken Masala,Chicken Masala (చికెన్ మసాలా),चिकन मसाला (चिकन),chicken masala|chicken|masala
+banne-haleem-masala,Haleem Masala,Haleem Masala (హలీం మసాలా),हालीम मसाला (हालीम),halim masala|haleem|masala
+banne-mutton-biryani-masala,Mutton Biryani Masala,Mutton Biryani Masala (మార్బుల్ బిర్యాణి మసాలా),मटन बिरयानी मसाला (मटन बिरयानी),mutton biryani masala|mutton|biryani|masala
+banne-nawab,Nawab,Nawab (నవాబ్),नवाब (नवाब),nawab|nawab|
+banne-nawab-vegetable-khorma,Nawab Vegetable Khorma,Nawab Vegetable Khorma (నవాబ్ వేగెటారి ఖర్మా),नवाब वेजिटेबल खोरमा (नवाब वेजिटेबल खोरमा),nawab vegetable khorma|nawab|vegetable|khorma
+banne-nawabs-mutton-curry-masala,Nawab's Mutton Curry Masala,Nawab's Mutton Curry Masala (నవాబ్ మార్బుల్ కరీ మసాలా),नवाब के मटन कुर्री मसाला (नवाब के मटन कुर्री मसाला),nawab's mutton curry masala|nawab|mutton|curry|masala
+bansi-chora-vadi,Bansi Chora Vadi,Bansi Chora Vadi (బాన్సి చోరా వడి),बांसी चोरा वड़ी (बांसी चोरा वड़ी),bansi chora vadi|bansi|chora|vadi
+bansi-idli-rice-10-lb,Bansi Idli Rice 10 Lb,Bansi Idli Rice 10 Lb (బాన్సి ఇడ్లి రైస్ 10 లబ్),बांसी इड्ली राइस 10 लब (बांसी इड्ली राइस 10 लब),bansi idli rice 10 lb|bansi|idli|rice
+bansi-kolhapuri-murmura,Bansi Kolhapuri Murmura,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|murmura|kolhapuri
+bansi-moong-vadi,Bansi Moong Vadi,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|moong vadi
+bansi-murmura,Bansi Murmura,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|murmura
+bansi-phool-makhana,Bansi Phool Makhana,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|phool makhana
+bansi-poha-thick-4lb,Bansi Poha Thick 4lb,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|poha|thick
+bansi-rajgira-ladoo,Bansi Rajgira Ladoo,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|rajgira|ladoo
+bansi-sev-batata-puri-kit,Bansi Sev Batata Puri Kit,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|sev|batata puri kit
+bansi-sona-massori011433115544,Bansi Sona Massori011433115544,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|sona|massori
+barars-paneer,Barars Paneer,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|paneer
+barley-flour,Barley Flour,Pasupu (పసుపు),Haldi (हल्दी),pasupu|haldi|barley flour
+barnyard-millet,Barnyard Millet,Barnyard Millet (బార్న్యార్డ్ మిల్లెట్),बार्नयार्ड मिलेट (बार्नयार्ड मिलेट),barnyard millet|millets|millet
+basmati-rice-10-lb,Basmati Rice (10 lbs),Basmati Rice (10 లబ్బలు) (బస్మతి చావార్),बसमती चावल (10 लब्स) (बसमती चावल),basmati rice|basmati|chawal
+basmati-rice-org,Basmati Rice (Original),Basmati Rice (మూల) (బస్మతి చావార్),बसमती चावल (मूल) (बसमती चावल),basmati rice|basmati|chawal
+batata-vada,Batata Vada,Batata Vada (బాటాట వడ),बटाटा वड़ा (बटाटा वड़ा),batata vada|batata|vada
+batata-vada011433160902,Batata Vada (Batch No. 011433160902),Batata Vada (బ్యాచ్ నంబర్ 011433160902) (బాటాట వడ),बटाटा वड़ा (बैच नंबर 011433160902) (बटाटा वड़ा),batata vada|batata|vada
+bbq-sticks,BBQ Sticks,BBQ Sticks (బిబికె స్టిక్స్),बीबीके स्टिक्स (बीबीके स्टिक्स),bbq sticks|bbq|stiks
+beacon-sparklers-20-5-pcs,Beacon Sparklers (20-5 PCs),Beacon Sparklers (20-5 సెట్లు) (బీకాన్ స్పార్క్లర్స్),बीकान स्पार्कलर्स (20-5 सेट) (बीकान स्पार्कलर्स),beacon sparklers|beacon|sparklers
+beater,Beater,Beater (బీటర్),बीटर (बीटर),beater|beater|beater
+bedekar-golden-chiwda,Bedekar Golden Chiwda,Bedekar Golden Chiwda (బెడెకర్ గోల్డన్ చివ్దా),बेडेकार गोल्डन चिवड़ा (बेडेकार गोल्डन चिवड़ा),bedekar golden chiwda|bedekar|chiwda
+bedekar-green-chilli-pickle,Bedekar Green Chilli Pickle,Bedekar Green Chilli Pickle (బెడెకర్ గ్రీన్ చిల్లీ పిచ్చు),बेडेकार ग्रीन चिल्ली पिचली (बेडेकार ग्रीन चिल्ली पिचली),bedekar green chilli pickle|bedekar|green chilli
+bedekar-mango-lime-pickle,Bedekar Mango Lime Pickle,Bedekar (బెడెకర్) మాంగో లైమ్ పిచ్చలు,बेडेकर मांगो लाइम पिचल,bedekar|mango|lime|pickle
+bedekar-mixed-pickle,Bedekar Mixed Pickle,Bedekar (బెడెకర్) మిక్స్డ్ పిచ్చలు,बेडेकर मिश्रित पिचल,bedekar|mixed|pickle
+bedekar-pickle,Bedekar Pickle,Bedekar (బెడెకర్) పిచ్చలు,बेडेकर पिचल,bedekar|pickle
+bedekar-spical-chawda,Bedekar Spical Chawda,Bedekar (బెడెకర్) స్పికల్ చావ్డా,बेडेकर स्पिकल चावड़ा,bedekar|spical|chawda
 bellam,Jaggery,Bellam,Gud,jaggery|bellam|gud
+bengali-sweets,Bengali Sweets,బెంగాలీ మిఠాయిళ్ళు,बंगाली मिठाइयाँ,bengali|sweets
+ber,Ber,బెర్,बेर,ber
+berry-fantasy,Berry Fantasy,బర్రీ ఫ్యాంటసీ,बेरी फैंटेसी,berry|fantasy
+best-bakery-almond-cookies,Best Bakery Almond Cookies,అత్యుత్తమ బేకరీ అల్మండ్ కోకీస్,बेस्ट बेकरी एलमंड कुकीज,best|bakery|almond|cookies
+bhagwatis-patra-vagar,Bhagwatis Patra Vagar,భాగవతి పత్ర వాగర్,भागवति पत्र वागर,bhagwatis|patra|vagar
+bhagwatis-sandwich-dhokla,Bhagwatis Sandwich Dhokla,భాగవతి సండ్విచ్ ధోక్లా,भागवति सैंडविच धोकला,bhagwatis|sandwich|dhokla
+bhagwatis-surti-khaman,Surti Khakhra,Pasupu (పసుపు),हल्दी (खखरा),khakhra|surti|pasupu|haldi
+bhakri,Bhakri,భాక్రి (భాక్రి),भाक्री,bhakri|bhakri-jeera|bhakri-chili
+bhakri-chili,Bhakri Chili,భాక్రి చిలీ (భాక్రి),भाक्री चिली,bhakri-chili|bhakri|bhakri-jeera
+bhakri-jeera,Bhakri Jeera,భాక్రి జీరా (భాక్రి),भाक्री जीरा,bhakri-jeera|bhakri|bhakri-chili
+bhatura,Bhatura,భాటూరా (భాటూరా),भटूरा,bhatura|bhatura-ka-atta|bhature-ka-atta
+bhatura-bulk,Bhatura Bulk,భాటూరా బాల్క్ (భాటూరా),भटूरा बुल्क,bhatura-bulk|bhatura|bhatura-ka-atta
+bhature-ka-atta,Bhature Ka Atta,భాటూరా కా అట్టా (భాటూరా),भटूरा का आटा,bhature-ka-atta|bhatura|bhatura-bulk
+bhindi,Bhindi,భిండి (భిండి),भिंडी,bhindi|bhindi-whole|bhindi-recipe
+bhindi-whole,Bhindi Whole,భిండి పూర్తి (భిండి),भिंडी पूरी,bhindi-whole|bhindi|bhindi-recipe
+bhuji-plain-haldibhuji-plain-hald,Bhuji Plain Haldi,భుజి ప్రసాద హల్ది (భుజి),भुजी प्लेन हाल्दी,bhuji-plain-haldibhuji-plain-hald|bhuji|haldi
+bhujia249,Bhujia,Bhujia (భుజియ),Bhujia (भुजिया),bhujia|masala|spice
+big-eggplant,Big Eggplant,Baga Vepudu (బాగ వేపుడు),Baga Vepu (बाग वेपु),eggplant|big|vepudu
+birds-custard-poweder,Birds Custard Powder,Pilli Pappalu (పిల్లి పప్పలు),Pilli Pappalu (पिल्ली पप्पल),custard powder|birds|pappalu
+biryani-masala-1,Biryani Masala 1,Biryani Masala (బిర్యాణి మసాలా),Biryani Masala (बिरयानी मसाला),biryani masala|masala|spice
+biryani-masala8901440011019,Biryani Masala 8901440011019,Biryani Masala (బిర్యాణి మసాలా),Biryani Masala (बिरयानी मसाला),biryani masala|masala|spice
+biryani8904063281609,Biryani 8904063281609,Biryani (బిర్యాణి),Biryani (बिरयानी),biryani|masala|spice
+bitta-misal,Bitta Misal,Bitta Misal (బిట్టా మిసాల్),Bitta Misal (बिट्टा मिसाल),bitta misal|misal|curry
 biyyam,Rice,Biyyam,Chawal,rice|biyyam|chawal
+black-beans,Black Beans,Rasam (రసం),Rasam (रसम),black beans|rasam|legumes
+black-bourbone,Black Bourbone,Kokam (కొకం),Kokam (कोकम),black bourbone|kokam|fruit
+black-salt051179340954,Black Salt,Kala Namak (కల నామక),Kala Namak (कला नमक),black salt|kala namak|salt
+black-urad-whole,Black Urad Whole,Rasam (రసం),Rasam (रसाम),black urad whole|urad dal|black gram
+blanded-almond,Blanded Almond,Bilva (బిల్వ),Bilva (बिल्व),blanded almond|bilva|almond
+blossom-hill-clover-honey,Blossom Hill Clover Honey,Madhu (మధు),Madhu (मधु),blossom hill clover honey|madhu|honey
+bombay-kitchen-achari-kitchen,Bombay Kitchen Achari Kitchen,Achari (ఆచారి),Achari (आचारी),bombay kitchen achari kitchen|achari kitchen|chutney
+bombay-kitchen-chicken-65,Bombay Kitchen Chicken 65,Ninne Pili (నిన్నె పిలి),Ninne Pili (निन्ने पिली),bombay kitchen chicken 65|ninne pili|chicken 65
+bombay-kitchen-chicken-biryani,Bombay Kitchen Chicken Biryani,Biryani (బిర్యాణి),Biryani (बिरयानी),bombay kitchen chicken biryani|chicken biryani|biryan
+bombay-kitchen-chicken-chettinad,Bombay Kitchen Chicken Chettinad,Chettinad (చెట్టినాడ్),Chettinad (छेट्टीनाड),bombay kitchen chicken chettinad|chettinad chicken|chettinad masala
+bombay-kitchen-chicken-kabab,Bombay Kitchen Chicken Kabab,Kabab (కబాబ),Kabab (कबाब),bombay kitchen chicken kabab|chicken kabab|kabab
+bombay-kitchen-chicken-korma,Bombay Kitchen Chicken Korma,Korma (కోర్మ),Korma (कोरमा),bombay kitchen chicken korma|chicken korma|korma masala
+bombay-kitchen-chicken-makhani,Bombay Kitchen Chicken Makhani,Makhani (మఖానీ),Makhani (मखानी),bombay kitchen chicken makhani|chicken makhani|makhani masala
+bombay-kitchen-chicken-samosa,Chicken Samosa,Pasupu (పసుపు),मसाला चिकन (मसाला चिकन),chicken|samosa|pasupu|indian
+bombay-kitchen-chicken-tikka-masala,Chicken Tikka Masala,Pasupu (పసుపు),तिक्का मसाला चिकन (तिक्का मसाला चिकन),chicken|tikka|masala|pasupu|indian
+bombay-kitchen-kadai-chicken,Kadai Chicken,Pasupu (పసుపు),कड़ाई चिकन (कड़ाई चिकन),chicken|kadai|pasupu|indian
+bombay-kitchen-lamb-biryani,Lamb Biryani,Pasupu (పసుపు),लैम्ब बिरयानी (लैम्ब बिरयानी),lamb|biryani|pasupu|indian
+bombay-kitchen-spicy-punjabi-mix-10oz,Spicy Punjabi Mix,Pasupu (పసుపు),स्पिशी पंजाबी मिश्र (स्पिशी पंजाबी मिश्र),spicy|punjabi|pasupu|mix
+boomdi,Boomdi,Boomdi (బూమ్డి),बूमडी (बूमडी),boomdi|boondi|jain sweets
+boondi-jain-sweets,Boondi Jain Sweets,Boondi (బూమ్డి) జైన సుగంధాలు,बूंदी जैन स्वादिष्ट (बूंदी जैन स्वादिष्ट),boondi|jain sweets|sweets
+boondi-masala,Boondi Masala,Boondi (బూమ్డి) మసాలా,बूंदी मसाला (बूंदी मसाला),boondi|masala
+boondi-sev,Boondi Sev,Boondi (బూమ్డి) సేవ,बूंदी सेव (बूंदी सेव),boondi|sev
+boost,Boost,Boost (బూస్ట్),बूस्ट (बूस्ट),boost|energy drink
+boro-plus-1,Bor Plus 1,Bor Plus 1 (బోర్ ప్లస్ 1),Bor Plus 1 (बोर प्लस 1),bor+plus+1
+borwicks-baking-powder,Borwicks Baking Powder,Borwicks Baking Powder (బోర్‌విక్స్ బేకింగ్ పౌడర్),Borwicks Baking Powder (बोरविक्स बेकिंग पाउडर),borwicks+baking+powder
+bourbon,Bourbon,Bourbon (బౌర్బన్),Bourbon (बौरबन),bourbon
+bowl-1,Bowl 1,Bowl 1 (బోల్ 1),Bowl 1 (बोल 1),bowl+1
+brahmi-brahmi-capsules-60,Brahmi Brahmi Capsules 60,Brahmi Brahmi Capsules 60 (బ్రహ్మి బ్రహ్మి క్యాప్సుల్స్ 60),Brahmi Brahmi Capsules 60 (ब्रह्मि ब्रह्मि कैप्सूल्स 60),brahmi+brahmi+60
+brahmins-broken-samba-wheat,Brahmins Broken Samba Wheat,Brahmins Broken Samba Wheat (బ్రహ్మిన్స్ బ్రేకెన్ సాంబా గోధుమ),Brahmins Broken Samba Wheat (ब्राह्मिन्स ब्रेकन साम्बा गेहूं),brahmins+broken+samba+wheat
+brahmins-chemba-puttu-podi,Brahmins Chemba Puttu Podi,Brahmins Chemba Puttu Podi (బ్రహ్మిన్స్ చెంబ పుట్టు పొడి),Brahmins Chemba Puttu Podi (ब्राह्मिन्स चेंबा पुट्टू पोड़ी),brahmins+chemba+puttu+podi
+brahmins-dosa-podi,Brahmins Dosa Podi,Brahmins Dosa Podi (బ్రహ్మిన్స్ డోసా పొడి),Brahmins Dosa Podi (ब्राह्मिन्स डोसा पोड़ी),brahmins+dosa+podi
+brahmins-fried-rava,Brahmins Fried Rava,Brahmins Fried Rava (బ్రహ్మిన్స్ ఫ్రైడ్ రవా),Brahmins Fried Rava (ब्राह्मिन्स फ्राइड रावा),brahmins+fried+rava
+bras-sev-sancha,Bras Sev Sancha,Bras Sev Sancha (బ్రాస్ సేవ్ సాంచ),Bras Sev Sancha (ब्रास सेव सांचा),bras+sev+sancha
+britannia-5-grain-biscuit,Britannia 5 Grain Biscuit,బ్రిటాన్నియా 5 గ్రేయిన్ బిస్క్యూట్ (బ్రిటాన్నియా 5 గ్రేయిన్ బిస్క్యూట్),ब्रिटानिया ५ ग्रेन बिस्कुट (ब्रिटानिया ५ ग्रेन बिस्कुट),britannia-5-grain-biscuit|britannia-5-grain-biscuit|5 grain biscuit|britannia-5-grain-biscuit
+britannia-50-50,Britannia 50 50,బ్రిటాన్నియా 50 50 (బ్రిటాన్నియా 50 50),ब्रिटानिया 50 50 (ब्रिटानिया 50 50),britannia-50-50|britannia-50-50|50 50|britannia-50-50
+britannia-bourbon,Britannia Bourbon,బ్రిటాన్నియా బౌబన్ (బ్రిటాన్నియా బౌబన్),ब्रिटानिया बोर्बन (ब्रिटानिया बोर्बन),britannia-bourbon|britannia-bourbon|bourbon|britannia-bourbon
+britannia-chocolate-cream-wafers,Britannia Chocolate Cream Wafers,బ్రిటాన్నియా చెక్కిన క్రీమ్ వాఫర్స్ (బ్రిటాన్నియా చెక్కిన క్రీమ్ వాఫర్స్),ब्रिटानिया चॉकलेट क्रीम वाफर्स (ब्रिटानिया चॉकलेट क्रीम वाफर्स),britannia-chocolate-cream-wafers|britannia-chocolate-cream-wafers|chocolate cream wafers|britannia-chocolate-cream-wafers
+britannia-chocolate-wafers,Britannia Chocolate Wafers,బ్రిటాన్నియా చెక్కిన వాఫర్స్ (బ్రిటాన్నియా చెక్కిన వాఫర్స్),ब्रिटानिया चॉकलेट वाफर्स (ब्रिटानिया चॉकलेट वाफर्स),britannia-chocolate-wafers|britannia-chocolate-wafers|chocolate wafers|britannia-chocolate-wafers
+britannia-cows-ghee,Britannia Cows Ghee,బ్రిటాన్నియా కుండల గీత (బ్రిటాన్నియా కుండల గీత),ब्रिटानिया कोयला गhee (ब्रिटानिया कोयला गhee),britannia-cows-ghee|britannia-cows-ghee|cows ghee|britannia-cows-ghee
+britannia-date-rolls,Britannia Date Rolls,బ్రిటాన్నియా డేట్ రోల్స్ (బ్రిటాన్నియా డేట్ రోల్స్),ब्रिटानिया डेट रोल्स (ब्रिटानिया डेट रोल्स),britannia-date-rolls|britannia-date-rolls|date rolls|britannia-date-rolls
+britannia-digestive,Britannia Digestive,బ్రిటాన్నియా పాచక పదార్థం (బ్రిటాన్నియా పాచక పదార్థం),ब्रिटानिया पाचक पदार्थ (ब्रिटानिया पाचक पदार्थ),britannia-digestive|britannia-digestive|digestive|britannia-digestive
+britannia-fig-rolls,Britannia Fig Rolls,బ్రిటాన్నియా ఫిగ్ రోల్స్ (బ్రిటాన్నియా ఫిగ్ రోల్స్),ब्रिटानिया फिग रोल्स (ब्रिटानिया फिग रोल्स),britannia-fig-rolls|britannia-fig-rolls|fig rolls|britannia-fig-rolls
+britannia-funky-choco,Britannia Funky Choco,బ్రిటాన్నియా ఫ్యంకీ చొక్కెలు (బ్రిటాన్నియా ఫ్యంకీ చొక్కెలు),ब्रिटानिया फंकी चोको (ब्रिटानिया फंकी चोको),britannia-funky-choco|britannia-funky-choco|funky choco|britannia-funky-choco
+britannia-funky-choco-1,Britannia Funky Choco,Pasupu (పసుపు),हल्दी (हल्दी),funky choco|britannia|chocolate|pasupu|haldi
+britannia-good-day-butter,Britannia Good Day Butter,Pasupu (పసుపు),हल्दी (हल्दी),good day|britannia|butter|pasupu|haldi
+britannia-good-day-butter-cookies,Britannia Good Day Butter Cookies,Pasupu (పసుపు),हल्दी (हल्दी),good day|britannia|butter cookies|pasupu|haldi
+britannia-good-day-butter-cookies-75g,Britannia Good Day Butter Cookies 75g,Pasupu (పసుపు),हल्दी (हल्दी),good day|britannia|butter cookies|pasupu|haldi|75g
+britannia-good-day-butter8901063136083,Britannia Good Day Butter 8901063136083,Pasupu (పసుపు),हल्दी (हल्दी),good day|britannia|butter|pasupu|haldi|8901063136083
+britannia-good-day-cashew,Britannia Good Day Cashew,Pasupu (పసుపు),हल्दी (हल्दी),good day|britannia|cashew|pasupu|haldi
+britannia-good-day-chunkies-choco-chip-224-gms-cookies,Britannia Good Day Chunkies Choco Chip 224gms Cookies,Pasupu (పసుపు),हल्दी (हल्दी),good day|britannia|chunkies|choco chip|pasupu|haldi|cookies|224gms
+britannia-good-day-pista-almd,Britannia Good Day Pista Almond,Pasupu (పసుపు),हल्दी (हल्दी),good day|britannia|pista almond|pasupu|haldi
+britannia-good-day-pista-almond,Britannia Good Day Pista Almond,Pasupu (పసుపు),हल्दी (हल्दी),good day|britannia|pista almond|pasupu|haldi
+britannia-hazelnut-wafers,Britannia Hazelnut Wafers,Pasupu (పసుపు),हल्दी (हल्दी),hazelnut|britannia|wafers|pasupu|haldi
+britannia-little-hearts,Britannia Little Hearts,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-marie-gold,Britannia Marie Gold,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-maska-chaska,Britannia Maska Chaska,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-milk-bikis,Britannia Milk Bikis,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-milk-rusk,Britannia Milk Rusk,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-nice-time,Britannia Nice Time,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-nice-time8901063028104,Britannia Nice Time,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-suji-toast,Britannia Suji Toast,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-treat,Britannia Treat,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-treat-choco-100-gms,Britannia Treat Choco 100gms,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|powder
+britannia-treat-creme-wafers-3-pack,Creme Wafers,క్రీమ్ వాఫర్స్ (క్రీమ్ వాఫర్స్),क्रीम वाफर्स (क्रीम वाफर्स),creme wafers|britannia|treat|wafers
+britannia-treat-pineapple,Pineapple,పినెపాల్ (పినెపాల్),पिनेल (पिनेल),pineapple|britannia|treat
+brooke-bond-red-label-tea-bags,Red Label Tea Bags,రెడ్ లేబుల్ టీ బ్యాగ్స్ (రెడ్ లేబుల్ టీ బ్యాగ్స్),रेड लेबल टी बैग्स (रेड लेबल टी बैग्स),red label tea|brooke bond|tea bags
+brown-basmati-rice-10-lb,Basmati Rice,బస్మతి చావళ్లు (బస్మతి చావళ్లు),बसमती चावल (बसमती चावल),basmati rice|brown|basmati
+brown-basmati-rice-10-lb-1,Basmati Rice,బస్మతి చావళ్లు (బస్మతి చావళ్లు),बसमती चावल (बसमती चावल),basmati rice|brown|basmati
+brown-chana,Chana,చానా (చానా),चना (चना),chana|brown|chickpeas
+brown-nd-polish,ND Polish,ఎన్‌డి పోలిష్ (ఎన్‌డి పోలిష్),एनडी पॉलिश (एनडी पॉलिश),nd polish|brown
+brown-rice8904083512059,Brown Rice,బ్రाउన్ రైస్ (బ్రౌన్ రైస్),ब्राउन राइस (ब्राउन राइस),brown rice|brown
+brown-sona-masoori-rice-10-lb,Sona Masoori Rice,సోన మసూరి చావళ్లు (సోన మసూరి చావళ్లు),सोना मसूरी चावल (सोना मसूरी चावल),sona masoori rice|brown
+bru-green-label,Green Label,గ్రీన్ లేబుల్ (గ్రీన్ లేబుల్),ग्रीन लेबल (ग्रीन लेबल),green label|bru
+butter-chicken-mix,Butter Chicken Mix,Pasupu (పసుపు),Haldi (हल्दी),chicken|butter|mix
+butter-good-day,Butter Good Day,Pasupu (పసుపు),Haldi (हल्दी),good day|butter
+butter-ice-cream,Butter Ice Cream,Pasupu (పసుపు),Haldi (हल्दी),ice cream|butter
+butter-scotch,Butter Scotch,Pasupu (పసుపు),Haldi (हल्दी),scotch|butter
+butterscotch,Butterscotch,Pasupu (పసుపు),Haldi (हल्दी),scotch|butterscotch
+butterscotch-icecream,Butterscotch Ice Cream,Pasupu (పసుపు),Haldi (हल्दी),ice cream|scotch|butterscotch
+butterscotch-kingcone,Butterscotch King Cone,Pasupu (పసుపు),Haldi (हल्दी),king cone|scotch|butterscotch
+buttry-black-lentils,Buttry Black Lentils,Buttry (బుట్టరీ),Buttry (बुट्टरी),black lentils|buttry
+cadury-fruit-nut,Cadury Fruit Nut,Cadury (కాడురీ),Cadury (कादूरी),fruit nut|cadury
+cake-rusk627265002152,Cake Rusk 627265002152,Cake (కేక్),Cake (केक),cake|rusk
+canola-oil,Canola Oil,Canola Oil (కనోలా ఆఇల్),Canola Oil (कनोला ऑयल),canola oil|oil|healthy oil
+canola-oil051179202146,Canola Oil,Canola Oil (కనోలా ఆఇల్),Canola Oil (कनोला ऑयल),canola oil|oil|healthy oil
+cardamom-powder051179341456,Cardamom Powder,Ilaachi Podi (ఇలాచి పొడి),Elaichi Powder (एलाची पाउडर),cardamom powder|ilaachi|elaichi|powder
+cardamon-seeds-1,Cardamom Seeds,Ilaachi Bees (ఇలాచి బీస్),Elaichi Bees (एलाची बीज),cardamom seeds|elaachi|elaichi|bees
+carpet-cleaner,Carpet Cleaner,పత్రికా చీనారు,फर्श क्लीनर,carpet cleaner|carpet cleaning|carpet cleaning products
+carrot8901777012666,Carrot,Gajar (గజర్),गाजर,carrot|gajar|carrot juice|carrot juice powder
+cashew-pieces,Cashew Pieces,కాశవ్ పీసెస్ (కాశవ్ పీసెస్),कशव पीस (कशव पीस),cashew pieces|cashew|cashew nuts
+cashew-whole-2,Cashew Whole,కాశవ్ పూర్తి (కాశవ్ పూర్తి),कशव पूरा (कशव पूरा),cashew whole|cashew|cashew nuts
+cashew-whole723246170275,Cashew Whole,కాశవ్ పూర్తి (కాశవ్ పూర్తి),कशव पूरा (कशव पूरा),cashew whole|cashew|cashew nuts
+cassatta,Cassatta,కసట్టా (కసట్టా),कसट्टा,cassatta|cake|cake ingredients
+cauliflower,Cauliflower,Gobhi (గోభి),गोभी (गोभी),cauliflower|gobhi|vegetable|health
+chai-masala,Chai Masala,Chai Masala (చை మసాలా),चाय मसाला (चाय मसाला),chai-masala|masala|tea|spice
+chakli,Chakli,Chakli (చక్లి),चकली (चकली),chakli|snack|south indian|fritter
+chana,Chana,Chana (చనా),चना (चना),chana|chickpea|legume|protein
+chana-chawal,Chana Chawal,Chana Chawal (చనా చవాల),चना चावल (चना चावल),chana-chawal|chickpea rice|south indian|breakfast
+chana-chor,Chana Chor,Chana Chor (చనా చోర),चना चोर (चना चोर),chana-chor|chickpea curry|south indian|lunch
+chana-dal-3,Chana Dal 3,Chana Dal 3 (చనా దాల్ 3),चना दाल 3 (चना दाल 3),chana-dal-3|chickpea dal|south indian|snack
+chana-dal-organic,Chana Dal Organic,Chana Dal Organic (చనా దాల్ ఆర్గానిక్),चना दाल ऑर्गेनिक (चना दाल ऑर्गेनिक),chana-dal-organic|organic chickpea dal|south indian|health
+chana-dalia051179241855,Chana Dalia 051179241855,Chana Dalia 051179241855 (చనా దాలియా 051179241855),चना दालिया 051179241855 (चना दालिया 051179241855),chana-dalia051179241855|chickpea dal|south indian|snack
+chana8904067702490,Chana 8904067702490,Chana 8904067702490 (చనా 8904067702490),चना 8904067702490 (चना 8904067702490),chana8904067702490|chickpea|south indian|snack
+chandan-6-in-1-mukhwas,Chandan 6 in 1 Mukhwas,Pasupu (పసుపు),Haldi (हल्दी),chandan+mukhwas+haldi+pasupu
+chandan-olympic-mix,Chandan Olympic Mix,Pasupu (పసుపు),Haldi (हल्दी),chandan+mukhwas+haldi+pasupu
+channa,Channa,Channa,चन्ना,channa
+channa-jor-garam,Channa Jor Garam,Channa Jor Garam,चन्ना जोर गरम,channa+jor+garam
+chaokoh-coconut-milk,Chaokoh Coconut Milk,Chakka Hu (చక్కా హు),चक्का हु (चक्का हु),chaokoh+coconut+milk
+chap-stick-1,Chap Stick 1,Chap (చాప్),चप (चप),chap+stick
+chapati,Chapati,Chapati,चपाती,chapati
+char-magaz,Char Magaz,Chara Magaz,चर मागज,char+magaz
+charcole,Charcole,Chara Kolu,चर कोलु,charcole
 chawal,Rice,Biyyam,Chawal,rice|chawal|biyyam
+chefs-secret-basmati-rice-10-lb,Chef's Secret Basmati Rice 10 lb,Chef's Secret Pasupu Rice 10 lb,चेफ की सीक्रेट हल्दी चावल 10 लब,basmati+rice+chef+secret
+chefs-secret-basmati-rice-20-lb,Basmati Rice,Bāsamatī (బాసమతి),बासमती (बासमती),basmati rice|chefs secret|20lb
+chettinad-barnyard-millet,Barnyard Millet,Chettinad (చెట్టినాడ్) మిల్లెట్ (మిల్లెట్),चेट्टीनाड मिलlets (चेट्टीनाड मिललेट्स),chettinad millet|barnyard millet|millets
+chettinad-little-millet,Little Millet,Chettinad (చెట్టినాడ్) చిన్న మిల్లెట్ (చిన్న మిల్లెట్),चेट्टीनाड छोटे मिललेट्स (चेट्टीनाड छोटे मिललेट्स),little millet|chettinad millet|millets
+chheder,Chheder,చెడెర్ (చెడెర్),चेदेर (चेदेर),chheder|chader|chader
+chhole,Chhole,చోళె (చోళె),चोले (चोले),chhole|chole|choli
+chia-seeds051179268906,Chia Seeds,చియా సీడ్స్ (చియా సీడ్స్),चिया सीड्स (चिया सीड्स),chia seeds|chia|health benefits
+chicken-65,Chicken 65,కాయిల్ 65 (కాయిల్ 65),चिकन 65 (चिकन 65),chicken 65|chicken|chicken curry
+chicken-66,Chicken 66,కాయిల్ 66 (కాయిల్ 66),चिकन 66 (चिकन 66),chicken 66|chicken|chicken curry
+chicken-curry-paste,Chicken Curry Paste,కాయిల్ కరీ పేస్ట్ (కాయిల్ కరీ పేస్ట్),चिकन करी पेस्ट (चिकन करी पेस्ट),chicken curry paste|chicken|curry
+chicken-keema,Chicken Keema,కాయిల్ కీమా (కాయిల్ కీమా),चिकन कीमा (चिकन कीमा),chicken keema|chicken|keema
+chicken-marinade,Chicken Marinade,Makkayyam (మక్కయ్యం),Makkayam (मक्कयम),chicken|marinade|makkayam
+chicken-masala,Chicken Masala,Makkayam (మక్కయ్యం),Makkayam (मक्कयम),chicken|masala|makkayam
+chicken-roast-mothers,Chicken Roast Mothers,Makkayam (మక్కయ్యం),Makkayam (मक्कयम),chicken|roast|makkayam
+chicken-vindaloo,Chicken Vindaloo,Makkayam (మక్కయ్యం),Makkayam (मक्कयम),chicken|vindaloo|makkayam
+chickn-tikka-mix,Chicken Tikka Mix,Makkayam (మక్కయ్యం),Makkayam (मक्कयम),chicken|tikka|makkayam
+chicko-icecream,Chicko Icecream,Chikkuru (చిక్కూరు),Chikkuru (चिक्कूर),chicko|icecream|chikkuru
+chickpea-kofta-curry,Chickpea Kofta Curry,Chikkare (చిక్కరే),Chikkare (चिक्करे),chickpea|kofta|chikkare
+chili-garlic-sauce,Chili Garlic Sauce,Chilli (చిల్లి),Chilli (चिल्ली),chili|garlic|chilli
+chili-garlic-sauce024463061040,Chili Garlic Sauce,Chilli (చిల్లి),Chilli (चिल्ली),chili|garlic|chilli
+chilli,Chilli,Chilli (చిల్లి),Chilli (चिल्ली),chilli|chilli
+chilli-banana,Chilli Banana,Chilli Banana (చిల్లి బననా),चिल्ली बनाना (चिल्ली बनाना),chilli|banana|chilli-banana
+chilli-pickle,Chilli Pickle,Chilli Pickle (చిల్లి పిక్లు),चिल्ली पिकल (चिल्ली पिकल),chilli|pickle|chilli-pickle
+chilli-powder-swad,Chilli Powder Swad,Chilli Powder Swad (చిల్లి పౌడర్ స్వాద్),चिल्ली पाउडर स्वाद (चिल्ली पाउडर स्वाद),chilli|powder|chilli-powder-swad
+chilli-powder051179343054,Chilli Powder 051179343054,Chilli Powder 051179343054 (చిల్లి పౌడర్ 051179343054),चिल्ली पाउडर 051179343054 (चिल्ली पाउडर 051179343054),chilli|powder|chilli-powder-051179343054
+chilli-powder8904083500810,Chilli Powder 8904083500810,Chilli Powder 8904083500810 (చిల్లి పౌడర్ 8904083500810),चिल्ली पाउडर 8904083500810 (चिल्ली पाउडर 8904083500810),chilli|powder|chilli-powder-8904083500810
+chilli-whole,Chilli Whole,Chilli Whole (చిల్లి పూర్తి),चिल्ली पूरी (चिल्ली पूरी),chilli|whole|chilli-whole
+chinese-okra,Chinese Okra,Chinese Okra (చైనీస్ ఓక్రా),चीनीसी ओक्रा (चीनीसी ओक्रा),chinese|okra|chinese-okra
+chinese-potato664648729060,Chinese Potato 664648729060,Chinese Potato 664648729060 (చైనీస్ పత్తి 664648729060),चीनीसी पट्टी 664648729060 (चीनीसी पट्टी 664648729060),chinese|potato|chinese-potato-664648729060
+chings-dark-soy-sauce,Chings Dark Soy Sauce,Chings Dark Soy Sauce (చింగ్స్ డార్క్ సోయ్ సౌస్),चिंग्स डार्क सोय सॉस (चिंग्स डार्क सोय सॉस),chings|dark|soy|chings-dark-soy-sauce
+chings-hakka-egg-noodles,Chings Hakka Egg Noodles,Chings Hakka Egg Noodles (చింగ్స్ హక్కా ఆయిల్ నుడ్లెస్),चिंग्स हक्का अयल नूडल्स (चिंग्स हक्का अयल नूडल्स),chings|hakka|egg|chings-hakka-egg-noodles
+chings-hakka-veg-noodles,Hakka Veg Noodles,హాక్కా వెగ్ నుడ్లెస్ (హాక్కా వెగ్ నుడ్లెస్),हक्का वेग नूडल्स (हक्का वेग नूडल्स),hakka veg noodles|noodles|veg|chings
+chings-manchurian-noodles,Manchurian Noodles,మాంచూరియన్ నుడ్లెస్ (మాంచూరియన్ నుడ్లెస్),मंचूरियन नूडल्स (मंचूरियन नूडल्स),manchurian noodles|noodles|chings
+chings-paneer-chilli-masala,Paneer Chilli Masala,పనీర్ చిల్లి మసాలా (పనీర్ చిల్లి మసాలా),पनीर चिल्ली मसाला (पनीर चिल्ली मसाला),paneer chilli masala|chings|paneer|chilli|masala
+chings-schezwan-sauce,Schezwan Sauce,సేజ్వాన్ సాస్ (సేజ్వాన్ సాస్),सेजवान सॉस (सेजवान सॉस),schezwan sauce|chings|schezwan|sauce
 chini,Sugar,Panchadara,Chini,sugar|chini|panchadara
+chitale-idli-mix8906002730216,Chitale Idli Mix,చితాలే ఇడ్లి మిక్స్ (చితాలే ఇడ్లి మిక్స్),चिताले इडली मिक्स (चिताले इडली मिक्स),chitale idli mix|idli|chitale|mix
+chitale-khaman-mix8906002730117,Chitale Khaman Mix,చితాలే ఖమన్ మిక్స్ (చితాలే ఖమన్ మిక్స్),चिताले खमान मिक्स (चिताले खमान मिक्स),chitale khaman mix|khaman|chitale|mix
+chocolate-ice-cream,Chocolate Ice Cream,కొక్కోలేట్ ఆయిస్ క్రీం (కొక్కోలేట్ ఆయిస్ క్రీం),चॉकलेट आइस क्रीम (चॉकलेट आइस क्रीम),chocolate ice cream|chocolate|ice cream
+chocolate5000312000670,Chocolate,కొక్కోలేట్ (కొక్కోలేట్),चॉकलेट (चॉकलेट),chocolate|chocolate bar
+choley-kulcha,Choley Kulcha,చోలీ కుల్చా (చోలీ కుల్చా),चोली कुल्चा (चोली कुल्चा),choley kulcha|choley|kulcha
+chora-dal,Chora Dal,చోరా దాల్ (చోరా దాల్),चोरा दाल (चोरा दाल),chora dal|chora|dal
+chunky-chat-masala,Chunky Chat Masala,Bajji Chat Masala (బాజ్జి చాట్ మసాల),Bajji Chat Masala (बाज्जी चाट मसाला),chunky-chat-masala|bajji|chat|masala
+cilantro,Cilantro,Dhaniya (ధనియా),Dhaniya (धनिया),cilantro|dhaniya|coriander
+cinamon-sticks,Cinnamon Sticks,Dalchini (దల్చిని),Dalchini (दलचीनी),cinnamon-sticks|dalchini|cinnamon
+cinnamon-powder,Cinnamon Powder,Dalchini Powder (దల్చిని పవర్డర్),Dalchini Powder (दलचीनी पाउडर),cinnamon-powder|dalchini powder|cinnamon powder
+cinnman-sticks,Cinnman Sticks,Dalchini (దల్చిని),Dalchini (दलचीनी),cinnman-sticks|dalchini|cinnamon
+classic,Classic,Rasoi (రాసోయి),Rasoi (रासोई),classic|rasoi|classic
+classic-cream,Classic Cream,Rasoi Cream (రాసోయి క్రీమ్),Rasoi Cream (रासोई क्रीम),classic-cream|rasoi cream|classic cream
+classic-malai-kulfi,Classic Malai Kulfi,Rasoi Malai Kulfi (రాసోయి మలై కుల్ఫీ),Rasoi Malai Kulfi (रासोई मलाई कुल्फी),classic-malai-kulfi|rasoi malai kulfi|classic malai kulfi
+classic-malai8901777965184,Classic Malai,Rasoi Malai (రాసోయి మలై),Rasoi Malai (रासोई मलाई),classic-malai|rasoi malai|classic malai
+classic8901777965047,Classic,Rasoi (రాసోయి),Rasoi (रासोई),classic|rasoi|classic
+clay-deepak-1,Clay Deepak,క్లే డీపాక్ (క్లే),क्ले डीपाक (क्ले),clay deepak clay clay powder
+clay-plain-diya-medium-12-pcs,Clay Plain Diya,క్లే ప్లేన్ డియా (క్లే),क्ले प्लेन डिया (क्ले),clay plain diya clay diya clay
+click-emb,Click Emb,క్లిక్ ఎంబ్ (క్లిక్),क्लिक एम्ब (क्लिक),click emb click emb click
+clorox-6-pack-bleach-toilet-bowl-cleaner,Clorox 6 Pack Bleach Toilet Bowl Cleaner,क्लोरॉक्स 6 पैक ब्लीच टॉयलेट बॉल क्लीनर (क्लोरॉक्स),क्लोरॉक्स 6 पैक ब्लीच टॉयलेट बॉल क्लीनर (क्लोरॉक्स),clorox bleach toilet bowl cleaner bleach toilet bowl cleaner
+cocktail-chicken-samosa,Cocktail Chicken Samosa,कॉकटेल चिकन सामोसा (कॉकटेल चिकन),कॉकटेल चिकन सामोसा (कॉकटेल चिकन),cocktail chicken samosa cocktail chicken cocktail
+coconut-cake812042002030,Coconut Cake 812042002030,नारियल केक 812042002030 (नारियल केक),नारियल केक 812042002030 (नारियल केक),coconut cake coconut cake coconut
+coconut-chikki,Coconut Chikki,नारियल चिक्की (नारियल),नारियल चिक्की (नारियल),coconut chikki coconut chikki coconut
+coconut-chutny,Coconut Chutny,नारियल चुटनी (नारियल),नारियल चुटनी (नारियल),coconut chutny coconut chutny coconut
+coconut-powder-org,Coconut Powder Org,नारियल पाउडर ऑर्ग (नारियल),नारियल पाउडर ऑर्ग (नारियल),coconut powder org coconut powder coconut
+coconut8901777072660,Coconut 8901777072660,नारियल 8901777072660 (नारियल),नारियल 8901777072660 (नारियल),coconut 8901777072660 coconut 8901777072660 coconut
+coconuts-flakes,Coconut Flakes,Nariyal (నరియాల్),Nariyal (नरियल),coconut flakes|nariyal|narial
+coffee,Coffee,Brahmi (బ్రహ్మి),Brahmi (ब्राह्मी),coffee|brahmi|coffee beans
+cofresh-jalapeno-grills,Cofresh Jalapeno Grills,Cofresh (కొఫ్రెష్) జలాపేన్ గ్రిల్స్,Cofresh (कॉफ्रेश) जलापेन ग्रिल्स,cofresh|jalapeno|grills|coffreesh
+coke,Coke,Kokka (కోక్క),Kokka (कोक्का),coke|kokka|coca cola
+coke049000061017,Coke,Kokka (కోక్క),Kokka (कोक्का),coke|kokka|coca cola
+colander-1,Colander,Pallu (పల్లు),Pallu (पल्लू),colander|pallu|strainer
+cold-brew-coffee,Cold Brew Coffee,Brahmi (బ్రహ్మి) తేమ కాఫీ,Brahmi (ब्राह्मी) तेम कॉफी,cold brew coffee|brahmi|coffee|iced coffee
+cold-pressed-groundnut-oil,Cold Pressed Groundnut Oil,తేమ చేసిన గ్రౌండ్ నుట్ తేలిక,तेम से प्रेस किया गया मूंगफली तेल,cold pressed groundnut oil|groundnut oil|peanut oil
+color-diyas-9-pcs,Color Diyas,రంగుల దియాలు (రంగుల దివ్యాలు),रंगीन दीया (रंगीन दिव्या),color diyas|color diyas|colorful diyas
+color-sparklers-10-12-boxes,Color Sparklers,రంగుల స్పార్కిలర్స్ (రంగుల స్పార్కిలర్స్),रंगीन स्पार्कलर्स (रंगीन स्पार्कलर्स),color sparklers|color sparklers|colorful sparklers
+combiflam-icy-hot,Combiflam Icy Hot,కంబిఫ్లామ్ ఆసుపు (ఆసుపు),कंबिफ्लाम आसु पु (आसु पु),combiflam|icy|hot|capsaicin
+combo8904063204714,Combo 8904063204714,కంబో 8904063204714,कॉम्बो 8904063204714,combo|8904063204714|product
+complain,Complain,కమ్పైన్ (కమ్పైన్),कम्प्लाइन (कम्प्लाइन),complain|complaint|issue
+concentrate-pani-puri,Concentrate Pani Puri,పాని పురి కాంసెన్ట్రేట్ (పాని పురి),पानी पुरी कॉन्सेंट्रेट (पानी पुरी),pani-puri|concentrate|snack
+cookie-heaven-coconut,Cookie Heaven Coconut,కోకీ హేవెన్ కోకోనోట్ (కోకోనోట్),कुकी हेवन कोकोनट (कोकोनट),cookie|heaven|coconut|dessert
+cookie8906109110195,Cookie 8906109110195,కోకీ 8906109110195,कुकी 8906109110195,cookie|8906109110195|product
+cookies8904063260864,Cookies 8904063260864,కోకీస్ 8904063260864,कुकीज 8904063260864,cookies|8904063260864|product
+cooking-soda,Cooking Soda,కూకింగ్ సోడా (సోడా),कुकिंग सोडा (सोडा),cooking soda|baking soda|cleaning
+copper-ice-cup,Copper Ice Cup,కప్పు ఆసుపు (ఆసుపు),कप्पू आसु पु (आसु पु),copper|ice cup|glassware
 coriander,Coriander,Dhaniyalu / Kotthimera,Dhania,coriander|dhania|dhaniyalu|kotthimera
+coriander-powder,Coriander Powder,ద్రాక్ష పొడి (ద్రాక్ష),द्राक्ष पाउडर (द्राक्ष),coriander powder|dhania|herbs
+corinder-chutny,Coriander Chutney,Cori Andar Chutnu (కొరి అందర్ చూట్ను),कोरी अंडर चटनी (कोरी अंडर चटनी),coriander chutney|chutney|coriander
+corinder-powder,Coriander Powder,Cori Andar (కొరి అందర్),कोरी अंडर (कोरी अंडर),coriander powder|coriander|powder
+corinder-powder051179344204,Coriander Powder,Cori Andar (కొరి అందర్),कोरी अंडर (कोरी अंडर),coriander powder|coriander|powder
+corinder-seeds8904083512271,Coriander Seeds,Cori Andar (కొరి అందర్),कोरी अंडर (कोरी अंडर),coriander seeds|coriander|seeds
+corn-oil-1,Corn Oil,కర్న్ ఆఇల్ (కర్న్ ఆఇల్),कॉर्न ऑयल (कॉर्न ऑयल),corn oil|corn oil|oil
+cornflour-rafhan,Cornflour,కర్న్ ఫ్లౌర్ (కర్న్ ఫ్లౌర్),कॉर्न फ्लोर (कॉर्न फ्लोर),cornflour|corn flour|corn flour
+cothas-coffee-1,Cothas Coffee,కోతస్ కాఫీ (కోతస్ కాఫీ),कोटास कॉफी (कोटास कॉफी),cothas coffee|cothas coffee|coffee
+cracked-wheat723246283425,Cracked Wheat,బ్రాక్కెడ్ వీట్ (బ్రాక్కెడ్ వీట్),ब्रेक्ड वीट (ब्रेक्ड वीट),cracked wheat|cracked wheat|wheat
+cream-roll,Cream Roll,క్రీమ్ రోల్ (క్రీమ్ రోల్),क्रीम रोल (क्रीम रोल),cream roll|cream roll|cream roll
+cream-roll011433161725,Cream Roll,క్రీమ్ రోల్ (క్రీమ్ రోల్),क्रीम रोल (क्रीम रोल),cream roll|cream roll|cream roll
+crispy-ajwain-cookies,Ajwain Cookies,అజ్వైన్ కాకీస్ (అజ్వైన్ కాకీస్),अजवाइन कुकीज (अजवाइन कुकीज),ajwain cookies|crispy cookies|indian cookies
+crispy-almond-cake-rusk,Almond Cake Rusk,ఆల్మండ్ కేక్ రస్క్ (ఆల్మండ్ కేక్ రస్క్),अल्मोंड केक रस्क (अल्मोंड केक रस्क),almond cake rusk|crispy cake|indian snacks
+crispy-eggless-cake-rusk,Eggless Cake Rusk,మూసుకున్న కేక్ రస్క్ (మూసుకున్న కేక్ రస్క్),मूढ़ केक रस्क (मूढ़ केक रस्क),eggless cake rusk|crispy cake|indian snacks
+crispy-fried-chicken-mix,Fried Chicken Mix,బాలిక్ క్యాచ్ మిక్స్ (బాలిక్ క్యాచ్ మిక్స్),बालिक चिकन मिश्र (बालिक चिकन मिश्र),fried chicken mix|chicken snack|indian mix
+crispy-gur-punjabi-cookies,Gur Punjabi Cookies,గుర్ పంజాబీ కాకీస్ (గుర్ పంజాబీ కాకీస్),गुर पंजाबी कुकीज (गुर पंजाबी कुकीज),gur cookies|punjabi cookies|indian cookies
+crispy-peepewali-cookies627265005290,Peepewali Cookies,పీపువాలి కాకీస్ (పీపువాలి కాకీస్),पीपवाली कुकीज (पीपवाली कुकीज),peepewali cookies|crispy cookies|indian cookies
+crispy-punjabi-cookies,Punjabi Cookies,పంజాబీ కాకీస్ (పంజాబీ కాకీస్),पंजाबी कुकीज (पंजाबी कुकीज),punjabi cookies|crispy cookies|indian cookies
+crispy-tea-toast,Tea Toast,టీ టాస్ట్ (టీ టాస్ట్),चाय टोस्ट (चाय टोस्ट),tea toast|crispy toast|indian snack
+crispy-veg-punjabi-cookies627265001520,Veg Punjabi Cookies,వేగ పంజాబీ కాకీస్ (వేగ పంజాబీ కాకీస్),वेज पंजाबी कुकीज (वेज पंजाबी कुकीज),veg cookies|punjabi cookies|indian cookies
+crown-kulfi,Crown Kulfi,క్రౌన్ కుల్ఫీ (క్రౌన్ కుల్ఫీ),क्राउन कुल्फी (क्राउन कुल्फी),crown kulfi|indian ice cream|kulfi
+crown-kulfi860000780612,Crown Kulfi,క్రౌన్ కుల్ఫి (క్రౌన్ కుల్ఫి),क्राउन कुल्फी (क्राउन कुल्फी),crown kulfi|indian dessert|ice cream
+crown-kulfi860000780629,Crown Kulfi,క్రౌన్ కుల్ఫి (క్రౌన్ కుల్ఫి),क्राउन कुल्फी (क्राउन कुल्फी),crown kulfi|indian dessert|ice cream
+crown-kulfi860000780636,Crown Kulfi,క్రౌన్ కుల్ఫి (క్రౌన్ కుల్ఫి),क्राउन कुल्फी (क्राउन कुल्फी),crown kulfi|indian dessert|ice cream
+crown-kulfi860000780650,Crown Kulfi,క్రౌన్ కుల్ఫి (క్రౌన్ కుల్ఫి),क्राउन कुल्फी (क्राउन कुल्फी),crown kulfi|indian dessert|ice cream
+crystal-sona-masoori-rice-20-lb,Crystal Sonam Masoori Rice,క్రిస్టల్ సోనం మసూరి చావళ్లు (క్రిస్టల్ సోనం మసూరి రవాణా),क्रिस्टल सोनम मसूरी चावल (क्रिस्टल सोनम मसूरी रवाणा),sonam masoori rice|indian rice|crystal rice
+ctelugu-chethi,Telugu Chethi,తెలుగు చెత్తి (తెలుగు చెత్తి),तेलुगु चेठी (तेलुगु चेठी),telugu chethi|telugu paper|telugu stationery
 cumin,Cumin Seeds,Jilakarra (జిలకర),Jeera (जीरा),cumin|jeera|jilakarra
+cumin-seeds8904083510246,Cumin Seeds,జీరులు (జీరులు),जीरा बीज (जीरा बीज),cumin seeds|indian spice|jeera
 curd,Yogurt / Curd,Perugu (పెరుగు),Dahi (दही),curd|yogurt|dahi|perugu|milk
+curry-leaves2051,Curry Leaves,కరివేపాకులు (కరివేపాకులు),कड़ी पत्ता (कड़ी पत्ता),curry leaves|indian spice|curry
+curry-powder-1,Curry Powder,కరివేపాకు పొడి (కరివేపాకు పొడి),कड़ी पाउडर (कड़ी पाउडर),curry powder|indian spice|curry
+custaed-powder,Custaed Powder,కస్టేడ్ పొడి (కస్టేడ్ పొడి),कस्टेड पाउडर (कस्टेड पाउडर),custaed powder|indian spice|custaed
+cut-mango,Cut Mango,Aam (ఆమ్),Aam (आम),cut mango|mango|fruit
+cut-mango664648729107,Cut Mango,Aam (ఆమ్),Aam (आम),cut mango|mango|fruit
+daawat-brown-basmati-rice,Daawat Brown Basmati Rice,డావట్ బ్రౌన్ బసమతి చావల్ (డావట్ బ్రౌన్ బసమతి చావల్),डावट ब्राउन बासमती चावल (डावट ब्राउन बासमती चावल),brown basmati rice|daawat|rice
+dabar-real,Dabar Real,డాబర్ రియల్ (డాబర్ రియల్),डाबर रियल (डाबर रियल),dabar real|dabar|real
+dabur-1,Dabur 1,డాబర్ 1 (డాబర్ 1),डाबर 1 (डाबर 1),dabur 1|dabur|1
+dabur-amla-jasmine-hair-oil,Dabur Amla Jasmine Hair Oil,డాబర్ అమ్లా జాస్మిన్ హెర్ ఆయిల్ (డాబర్ అమ్లా జాస్మిన్ హెర్ ఆయిల్),डाबर अम्ला जास्मिन हेयर ऑयल (डाबर अम्ला जास्मिन हेयर ऑयल),dabur amla jasmine hair oil|dabur|hair oil
+dabur-real-litchi,Dabur Real Litchi,డాబర్ రియల్ లిచ్చి (డాబర్ రియల్ లిచ్చి),डाबर रियल लिच्ची (डाबर रियल लिच्ची),dabur real litchi|dabur|litchi
+dabur-real-mosambi,Dabur Real Mosambi,డాబర్ రియల్ మోసంబి (డాబర్ రియల్ మోసంబి),डाबर रियल मोसम्बी (डाबर रियल मोसम्बी),dabur real mosambi|dabur|mosambi
+dabur-red,Dabur Red,డాబర్ రెడ్ (డాబర్ రెడ్),डाबर रेड (डाबर रेड),dabur red|dabur|red
+dabur-red8901207027321,Dabur Red,డాబర్ రెడ్ (డాబర్ రెడ్),डाबर रेड (डाबर रेड),dabur red|dabur|red
+dabur-vatika-hair-cream-1,Dabur Vatika Hair Cream,వాటికా ముక్కు స్నానం క్రీమ్ (పసుపు),वाटिका मुक्का स्नान क्रीम (हल्दी),dabur vatika hair cream turmeric
+dabur-vatika-hair-oil,Dabur Vatika Hair Oil,వాటికా ముక్కు తేలిక (పసుపు),वाटिका मुक्का तेलिक (हल्दी),dabur vatika hair oil turmeric
+dabur-vatika-lemon-210-ml,Dabur Vatika Lemon 210ml,వాటికా నీలం 210ml (పసుపు),वाटिका नींबू 210ml (हल्दी),dabur vatika lemon 210ml turmeric
+dabur-vatika-olive-cactus-henna-hair-cream,Dabur Vatika Olive Cactus Henna Hair Cream,వాటికా తేలిక కాక్టస్ హెన్నా ముక్కు స్నానం క్రీమ్ (పసుపు),वाटिका तेलिक काक्टस हेन्ना मुक्का स्नान क्रीम (हल्दी),dabur vatika olive cactus henna hair cream turmeric
+dabur-vatika-olive-hair,Dabur Vatika Olive Hair,వాటికా తేలిక ముక్కు (పసుపు),वाटिका तेलिक मुक्का (हल्दी),dabur vatika olive hair turmeric
 dahi,Yogurt / Curd,Perugu,Dahi,curd|yogurt|dahi|perugu|milk
+dahi-kebabs,Dahi Kebabs,దహి కేబాబ్స్ (పసుపు),दही कबाब (हल्दी),dahi kebabs turmeric
+dahi-wada,Dahi Wada,దహి వాడా (పసుపు),दही वाडा (हल्दी),dahi wada turmeric
+daily-delight-idiappam,Daily Delight Idiappam,దైలీ డెలిట్ ఇడియప్పం (పసుపు),दैनिक दिलाइट इडियपम (हल्दी),daily delight idiappam turmeric
+daily-delight-idiappam-brown,Daily Delight Idiappam Brown,దైలీ డెలిట్ ఇడియప్పం బ్రౌన్ (పసుపు),दैनिक दिलाइट इडियपम ब्राउन (हल्दी),daily delight idiappam brown turmeric
+daily-delight-idli,Daily Delight Idli,దైలీ డెలిట్ ఇడ్లి (పసుపు),दैनिक दिलाइट इडिली (हल्दी),daily delight idli turmeric
+daily-delight-malabar-porotta,Malabar Porotta,Pasupu (పసుపు),हल्दी (मालाबार पोरोट्ता),malabar porotta|porotta|indian flatbread
+daily-delight-palappam,Palappam,Palappam (పలప్పం),पलापम (पलापम),palappam|steamed rice cake|south indian
+daily-delight-tapioca,Tapioca,Tapioca (టాపియోకా),टैपियोका (तापियोका),tapioca|pearl millet|south indian
+dairy-milk-fruit-nut,Dairy Milk Fruit Nut,Dairy Milk Fruit Nut (డైరీ మిల్క్ ఫ్రూట్ నట్),डेयरी मिल्क फ्रूट नट (डेयरी मिल्क फ्रूट नट),dairy milk fruit nut|milk powder|snack
+dal-chawal-mix,Dal Chawal Mix,Dal Chawal Mix (దల్ చావల్ మిక్స్),दाल चावल मिश्र (दाल चावल मिश्र),dal chawal mix|lentil rice mix|south indian
+dal-fry-chawal,Dal Fry Chawal,Dal Fry Chawal (దల్ ఫ్రై చావల్),दाल फ्राई चावल (दाल फ्राई चावल),dal fry chawal|lentil rice|south indian
+dal-makhani,Dal Makhani,Dal Makhani (దల్ మఖానీ),दाल मखनी (दाल मखनी),dal makhani|black lentil curry|north indian
+dal-palak,Dal Palak,Dal Palak (దల్ పాలక),दाल पालक (दाल पालक),dal palak|spinach curry|north indian
+dal-tadka,Dal Tadka,Dal Tadka (దల్ తడక),दाल तड़का (दाल तड़का),dal tadka|lentil curry|south indian
+dant-kranti,Dant Kranti,Dant Kranti (దంత్ క్రాంటి),दंत क्रांति (दंत क्रांति),dant kranti|tooth powder| Ayurvedic
+date-rolls,Date Rolls,డేట్ రోల్స్ (డేట్ రోల్స్),डेट रोल्स (डेट रोल्स),date rolls|dates|sweet
+dates723246283494,Dates,డేట్స్ (డేట్స్),डेट्स (डेट्स),dates|sweet|fruit
+day-calcutta-pan,Day Calcutta Pan,డే కలకత్తా పాన్ (డే కలకత్తా పాన్),डे कलकत्ता पैन (डे कलकत्ता पैन),day calcutta pan|pan|baking
+dd-chicken-65,DD Chicken 65,DD చికెన్ 65 (DD చికెన్ 65),डीडी चिकन 65 (डीडी चिकन 65),dd chicken 65|chicken|curry
+dd-sambar-mix,DD Sambar Mix,DD సంబార్ మిక్స్ (DD సంబార్ మిక్స్),डीडी साम्बार मिक्स (डीडी साम्बार मिक्स),dd sambar mix|sambar|lentil
+deep-ajman-seeds011433073226,Deep Ajman Seeds,డీప్ అజ్మాన్ సీడ్స్ (డీప్ అజ్మాన్ సీడ్స్),डीप अजमान सीड्स (डीप अजमान सीड्स),deep ajman seeds|ajman seeds|herbs
+deep-ajwain-seeds,Deep Ajwain Seeds,డీప్ అజ్వైన్ సీడ్స్ (డీప్ అజ్వైన్ సీడ్స్),डीप अजवाइन सीड्स (डीप अजवाइन सीड्स),deep ajwain seeds|ajwain seeds|herbs
+deep-all-in-one,Deep All In One,డీప్ అల్ ఇన్ ఒన్ (డీప్ అల్ ఇన్ ఒన్),डीप अल इन वन (डीप अल इन वन),deep all in one|mix|spice
+deep-aloo-paratha,Deep Aloo Paratha,డీప్ ఆలూ పరాఠా (డీప్ ఆలూ పరాఠా),डीप आलू पराठा (डीप आलू पराठा),deep aloo paratha|paratha|bread
+deep-amachur-powder-7oz,Deep Amachur Powder 7oz,డీప్ అమచూర్ పవ్డర్ 7oz (డీప్ అమచూర్ పవ్డర్ 7oz),डीप अमचूर पाउडर 7oz (डीप अमचूर पाउडर 7oz),deep amachur powder|amchur powder|spice
+deep-amba-halder-pickle,Deep Amla Halder Pickle,దీప్ అమ్లా హల్డర్ పిక్లె (దీపం + అమ్ల + హల్డర్ + పిక్లె),दीप अम्ला हल्दर पिकल (दीप + अम्ल + हल्दर + पिकल),deep+amla+halder+pickle
+deep-amchur-mango-powder,Deep Amchur Mango Powder,దీప్ అంచూర్ మాంగో పవ్దర్ (దీప్ + అంచూర్ + మాంగో + పవ్దర్),दीप अमचूर मांगो पाउडर (दीप + अमचूर + मांगो + पाउडर),deep+amchur+mango+powder
+deep-amla,Deep Amla,దీప్ అమ్ల (దీప్ + అమ్ల),दीप अम्ल (दीप + अम्ल),deep+amla
+deep-anardana,Deep Anardana,దీప్ అనార్దన (దీప్ + అనార్దన),दीप अनार्दन (दीप + अनार्दन),deep+anardana
+deep-arvi,Deep Arvi,దీప్ అర్వి (దీప్ + అర్వి),दीप अर्वि (दीप + अर्वि),deep+arvi
+deep-babus-paneer-tikka,Deep Babus Paneer Tikka,దీప్ బాబుస్ పనీర్ టిక్కా (దీప్ + బాబుస్ + పనీర్ + టిక్కా),दीप बाबुस पनीर टिक्का (दीप + बाबुस + पनीर + टिक्का),deep+babus+paneer+tikka
+deep-baingan-bhartha,Deep Baingan Bhartha,దీప్ బాయింగన్ భర్థ (దీప్ + బాయింగన్ + భర్థ),दीप बायंगन भर्था (दीप + बायंगन + भर्था),deep+baingan+bhartha
+deep-bajri-flour,Deep Bajri Flour,దీప్ బాజ్రి ఫ్లౌర్ (దీప్ + బాజ్రి + ఫ్లౌర్),दीप बाज्री फ्लोर (दीप + बाज्री + फ्लोर),deep+bajri+flour
+deep-basmati-rice-2-lb,Deep Basmati Rice 2 lb,దీప్ బస్మతి రైస్ 2 లబ్స్ (దీప్ + బస్మతి + రైస్ + 2+లబ్స్),दीप बस्मती राइस 2 लब्स (दीप + बस्मती + राइस + 2+लब्स),deep+basmati+rice+2+lb
+deep-besan,Deep Besan,దీప్ బేసన్ (దీప్ + బేసన్),दीप बेसन (दीप + बेसन),deep+besan
+deep-besan-flour,Deep Besan Flour,Pasupu (పసుపు),Haldi (हल्दी),besan|deep|flour
+deep-besan-flour011433115537,Deep Besan Flour,Pasupu (పసుపు),Haldi (हल्दी),besan|deep|flour
+deep-besan-ladoo-400-gms,Deep Besan Ladoo (400g),Pasupu Ladoo (400g) (పసుపు లాడు),Haldi Ladoo (400g) (हल्दी लाडू),besan|ladoo|pasupu|400g
+deep-bhakri-flour,Deep Bhakri Flour,Bhakri (భాక్రి),Bhakri (भाक्री),bhakri|deep|flour
+deep-bhatura,Deep Bhatura,Bhatura (భూతర),Bhatura (भूतर),bhatura|deep
+deep-bhel-mix,Deep Bhel Mix,Bhel (భెల),Bhel (भेल),bhel|deep|mix
+deep-bhindi-baby-okra,Deep Bhindi Baby Okra,Bhindi (భిండి) Baby Okra (బాబీ ఓక్రా),Bhindi (भिंडी) Baby Okra (बाबी ओक्रा),bhindi|baby|okra|deep
+deep-bhindi-cut,Deep Bhindi Cut,Bhindi (భిండి) Cut,Bhindi (भिंडी) Cut,bhindi|cut|deep
+deep-boondi,Deep Boondi,Boondi (బూడి),Boondi (बूदी),boondi|deep
+deep-brown-basmati-rice-2-lb,Deep Brown Basmati Rice (2lb),బ్రౌన్ బస్మతి రైస్ (2లీటర్లు) (రాగి),ब्राउन बासमती चावल (2लीटर) (बासमती चावल),brown basmati rice|deep|basmati
+deep-chai-puri-340-gms,Deep Chai Puri,Pasupu (పసుపు),हल्दी पूरी (हल्दी),deep chai|puri|haldi
+deep-chana-dal-samosa,Deep Chana Dal Samosa,Pasupu (పసుపు),हल्दी चना दाल सamosa (हल्दी),deep chana dal|samosa|pasupu
+deep-chauri,Deep Chauri,Pasupu (పసుపు),हल्दी चौरी (हल्दी),deep chauri|pasupu
+deep-chhole,Deep Chhole,Pasupu (పసుపు),हल्दी चhole (हल्दी),deep chhole|pasupu
+deep-chikoo-slices,Deep Chikoo Slices,Pasupu (పసుపు),हल्दी चिकू स्लाइस (हल्दी),deep chikoo|pasupu
+deep-cktail-samosa-chan-dal,Deep Cktail Samosa Chana Dal,Pasupu (పసుపు),हल्दी केक्टेल सamosa चना दाल (हल्दी),deep cktail|samosa|pasupu|chan dal
+deep-coconut,Deep Coconut,Pasupu (పసుపు),हल्दी नारियल (हल्दी),deep coconut|pasupu
+deep-coconut-chutney,Deep Coconut Chutney,Pasupu (పసుపు),हल्दी नारियल चटनी (हल्दी),deep coconut chutney|pasupu
+deep-coconut-water,Deep Coconut Water,Pasupu (పసుపు),हल्दी नारियल पानी (हल्दी),deep coconut water|pasupu
+deep-coriander-chutney,Deep Coriander Chutney,Pasupu (పసుపు),हल्दी धनिया चटनी (हल्दी),deep coriander chutney|pasupu
+deep-coriander-seeds,Coriander Seeds,Dhania (ధానియం),Dhania (धानिया),coriander seeds|dhania|dhania powder
+deep-cow-ghee011433112598,Cow Ghee,Ghee (గోధుమ తేలిక),Ghee (घी),cow ghee|ghee|clarified butter
+deep-cream-role-chocolate,Chocolate Cream Roll,Chokkala (చోక్కల),Chokla (चोकला),chocolate cream roll|chokkala|chocolate
+deep-crispy-fried-onion,Crispy Fried Onion,Pesarapappalu (పెసరపప్పులు),Pesarapappalu (पेसरपप्पल),crispy fried onion|pesarapappalu|onion
+deep-cumin-seeds-7oz,Cumin Seeds,Jeeraka (జీరకం),Jeeraka (जीरका),cumin seeds|jeeraka|jeerakamool
+deep-daabeli,Daabeli,Daabeli (డాబేలి),Daabeli (डाबेली),daabeli|daabeli powder|డాబేలి
+deep-dahi-vada,Dahi Vada,Dahi Vada (దహి వడ),Dahi Vada (दही वडा),dahi vada|dahi vada powder|దహి వడ
+deep-dahi-whole-milk,Whole Milk Dahi,Dahi (దహి),Dahi (दही),whole milk dahi|dahi|దహి
+deep-dhokla-flour,Dhokla Flour,Dhokla (ధోక్లా),Dhokla (धोकला),dhokla flour|dhokla|ధోక్లా
+deep-dosa-mix,Dosa Mix,Dosa (డోస),Dosa (डोसा),dosa mix|dosa|డోస
+deep-dum-aloo,Deep Dum Aloo,Pasupu (పసుపు),Haldi (हल्दी),aloo|deep|dum|haldi
+deep-extra-long-grain-basmati-rice-2-lb,Extra Long Grain Basmati Rice 2 Lb,Basa (బాసా),चावल (चावल),basmati|extra long grain|rice|2 lb
+deep-fada,Deep Fada,Pasupu (పసుపు),हल्दी (हल्दी),haldi|deep|fada
+deep-fada-kansar,Deep Fada Kansar,Pasupu (పసుపు),हल्दी कंसर (हल्दी कंसर),haldi|deep|fada|kansar
+deep-fada-kansar-011433158220,Deep Fada Kansar 011433158220,Pasupu (పసుపు),हल्दी कंसर 011433158220 (हल्दी कंसर 011433158220),haldi|deep|fada|kansar|011433158220
+deep-fansi,Deep Fansi,Pasupu (పసుపు),हल्दी (हल्दी),haldi|deep|fansi
+deep-fennel-seeds,Deep Fennel Seeds,Pasupu (పసుపు),हल्दी (हल्दी),haldi|deep|fennel seeds
+deep-fruity-biscuits,Deep Fruity Biscuits,Pasupu (పసుపు),हल्दी (हल्दी),haldi|deep|fruity biscuits
+deep-garam-masala,Deep Garam Masala,Pasupu (పసుపు),हल्दी (हल्दी),haldi|deep|garam masala
+deep-garam-masala-50-gram,Deep Garam Masala 50 Gram,Pasupu (పసుపు),हल्दी (हल्दी),haldi|deep|garam masala|50 gram
+deep-garlic-green-jeer-papad,Green Jeer Papad,Jeer Papad (జీర్ పపాడ్),Jeer Papad (जीर पपड),jeer papad|green|papad|snack
+deep-garlic-naan,Garlic Naan,Garlic Naan (గార్లిక్ నాన్),Garlic Naan (गर्लिक नान),garlic naan|naan|flatbread
+deep-ginger-paste,Ginger Paste,Pasupu (పసుపు),Haldi (हल्दी),ginger paste|haldi|pasupu
+deep-green-peas,Green Peas,Iddi (ఇడ్డి),Iddi (इड्डी),green peas|ididi|peas
+deep-gulab-jamun-mix,Gulab Jamun Mix,Gulab Jamun (గులాబ్ జామూన్),Gulab Jamun (गुलाब जामुन),gulab jamun mix|gulab jamun|dessert
+deep-guvar-cut,Guvar Cut,Guvar (గువర్),Guvar (गुवर),guvar cut|guvar|fruit
+deep-handva-flour,Handva Flour,Handva (హండ్వా),Handva (हंडवा),handva flour|handva|flour
+deep-handvo-mix,Handvo Mix,Handvo (హండ్వో),Handvo (हंडवो),handvo mix|handvo|mix
+deep-homestyle-paratha,Homestyle Paratha,Homestyle Paratha (హోమ్‌స్టైల్ పరాథా),Homestyle Paratha (होमस्टाइल पार्था),homestyle paratha|paratha|flatbread
+deep-homestyle-paratha011433150811,Homestyle Paratha,Homestyle Paratha (హోమ్‌స్టైల్ పరాథా),Homestyle Paratha (होमस्टाइल पार्था),homestyle paratha|paratha|flatbread
+deep-hot-mango-pickle,Deep Hot Mango Pickle,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|pickle
+deep-hot-mix-ex-hot,Deep Hot Mix Ex Hot,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|ex hot
+deep-hot-mix-original,Deep Hot Mix Original,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|original
+deep-idli-mix,Deep Idli Mix,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|idli mix
+deep-kaju-katli,Deep Kaju Katli,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|katli
+deep-kala-chana-besan,Deep Kala Chana Besan,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|besan
+deep-kala-chana-besan011433158190,Deep Kala Chana Besan,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|besan
+deep-kala-kand,Deep Kala Kand,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|kand
+deep-kamarkas,Deep Kamarkas,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|kamarkas
+deep-kantola,Deep Kantola,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu|kantola
+deep-katki-mango-sweet,Deep Katki Mango Sweet,Pasupu (పసుపు),Haldi (हल्दी),katki|mango|sweet
+deep-khakhara-bajri,Deep Khakhara Bajri,Bajri (బజ్రి),Bajre (बाजरे),khakhara|bajri|khakhra
+deep-khakhara-chorafali,Deep Khakhara Chorafali,Chorafali (చోరఫాలి),Chorafali (चोरफाली),khakhara|chorafali|khakhra
+deep-khakhara-jeera,Deep Khakhara Jeera,Jeera (జీర),Jeera (जीरा),khakhara|jeera|khakhra
+deep-khakhara-masala,Deep Khakhara Masala,Masala (మసాల),Masala (मसाला),khakhara|masala|khakhra
+deep-khakhara-math,Deep Khakhara Math,Math (మథ),Math (मठ),khakhara|math|khakhra
+deep-khakhara-mathia,Deep Khakhara Mathia,Mathia (మథియ),Mathia (मठिया),khakhara|mathia|khakhra
+deep-khakhara-pizza,Deep Khakhara Pizza,Pizza (పిజ్జ),Pizza (पिज्जा),khakhara|pizza|khakhra
+deep-khaman,Deep Khaman,Khaman (ఖమన),Khaman (खमान),khaman|khama
+deep-khaman-mix,Deep Khaman Mix,Khaman Mix (ఖమన మిక్స్),Khaman Mix (खमान मिक्स),khaman|khama|mix
+deep-khari-jeera,Deep Khari Jeera,Pasupu (పసుపు),Haldi (हल्दी),jeera|khari|pasupu|haldi
+deep-khari-methi011433156387,Deep Khari Methi,Pasupu (పసుపు),Haldi (हल्दी),methi|khari|pasupu|haldi
+deep-khichiya-green-chili,Deep Khichiya Green Chili,Pasupu (పసుపు),Haldi (हल्दी),green-chili|khichiya|pasupu|haldi
+deep-khichiya-jeera,Deep Khichiya Jeera,Pasupu (పసుపు),Haldi (हल्दी),jeera|khichiya|pasupu|haldi
+deep-khichiya-plain,Deep Khichiya Plain,Pasupu (పసుపు),Haldi (हल्दी),plain|khichiya|pasupu|haldi
+deep-khichiya-red-chilli-with-garli,Deep Khichiya Red Chilli with Garli,Pasupu (పసుపు),Haldi (हल्दी),red-chilli|garli|khichiya|pasupu|haldi
+deep-khichiya-upvas-sago,Deep Khichiya Upvas Sago,Pasupu (పసుపు),Haldi (हल्दी),upvas|sago|khichiya|pasupu|haldi
+deep-ladoo-besan,Deep Ladoo Besan,Pasupu (పసుపు),Haldi (हल्दी),besan|ladoo|pasupu|haldi
+deep-lilva-kachori,Deep Lilva Kachori,Pasupu (పసుపు),Haldi (हल्दी),lilva|kachori|pasupu|haldi
+deep-lime-pickle-sweet,Deep Lime Pickle Sweet,Pasupu (పసుపు),Haldi (हल्दी),lime|pickle|sweet|pasupu|haldi
+deep-lotus-root-cut,Lotus Root Cut,Pasupu (పసుపు),లోటస్ రూట్ కట్ (లోటస్ రూట్ కట్),lotus root|pasupu|cut|vegetable
+deep-maida,Maida,Maida (మైదా),मैदा (मैदा),maida|flour|deep|maida
+deep-maida-2-lb,Maida (2 lbs),Maida (2 లబ్బలు) (మైదా),मैदा (2 लब्स) (मैदा),maida|flour|2-lbs|deep
+deep-masala-boondi,Boondi Masala,Boondi Masala (బూడిది మసాలా),बूंदी मसाला (बूंदी मसाला),boondi masala|masala|boondi|deep
+deep-masala-paratha,Paratha Masala,Paratha Masala (పరాథా మసాలా),पराठा मसाला (पराठा मसाला),paratha masala|masala|paratha|deep
+deep-masala-paratha011433150040,Paratha Masala (11-433-150-040),Paratha Masala (11-433-150-040) (పరాథా మసాలా),पराठा मसाला (11-433-150-040) (पराठा मसाला),paratha masala|masala|paratha|deep
+deep-mathia,Mathia,Mathia (మథియా),मथिया (मथिया),mathia|mathia|deep|mathia
+deep-methi,Methi,Methi (మెథి),मेथी (मेथी),methi|methi|deep|methi
+deep-methi-paratha,Methi Paratha,Methi Paratha (మెథి పరాథా),मेथी पराठा (मेथी पराठा),methi paratha|methi|paratha|deep
+deep-milk-mava-powder,Milk Powder,Pasupu (పసుపు),Doodh Mava (दूध मावा),milk powder|mava|pasupu
+deep-mini-toast,Mini Toast,Choti Toast (చోటి టోస్ట్),Choti Toast (छोटी टोस्ट),mini toast|choti toast|toast
+deep-mint-chutney,Mint Chutney,Pudina Chutney (పుదిన చట్ని),Pudina Chutney (पुदीना चटनी),mint chutney|pudina chutney|chutney
+deep-mix-vegetable-samosa,Mixed Vegetable Samosa,Mishram Vepudu Samosa (మిశ్రమ వేపుడు సమోసా),Mishram Vepu Samosa (मिश्रम वेपु सामोसा),mixed vegetable samosa|mishram vepu samosa|vegetable samosa
+deep-mixed-pickle,Mixed Pickle,Mishram Achaar (మిశ్రమ అచార్),Mishram Achaar (मिश्रम अचार),mixed pickle|mishram achaar|pickle
+deep-mixed-vegetable,Mixed Vegetable,Mishram Vepudu (మిశ్రమ వేపుడు),Mishram Vepu (मिश्रम वेपु),mixed vegetable|mishram vepu|vegetable
+deep-mooli-paratha,Mooli Paratha,Mooli Parotta (మూలి పరోటా),Mooli Paratha (मूली पराठा),mooli paratha|mooli parotta|paratha
+deep-moong-dal-flour,Moong Dal Flour,Moong Dal Flour (మొగ్గలు దాల్ ఫ్లౌర్),Moong Dal Flour (मूंग दाल फ्लोर),moong dal flour|moong dal flour|mung dal flour
+deep-moong-flour,Moong Flour,Moong Flour (మొగ్గలు ఫ్లౌర్),Moong Flour (मूंग फ्लोर),moong flour|moong flour|mung flour
+deep-mustard,Mustard,Sarson (సర్సన్),Sarson (सरसों),mustard|sarson|mustard oil
+deep-mustard-oil,Deep Mustard Oil,Nalli (నల్లి),Nalli (नल्ली),deep mustard oil|mustard oil|nalli
+deep-mustard-seeds-7oz,Deep Mustard Seeds 7oz,Nalli (నల్లి) పిండి,नल्ली (नल्ली) पिंडी,deep mustard seeds|mustard seeds|nalli pindi
+deep-naan,Deep Naan,Deep (డీప్) నాన్,डीप (डीप) नान,deep naan|naan|deep
+deep-nankhatai,Deep Nankhatai,Deep (డీప్) नखताई,डीप (डीप) नखताई,deep nankhatai|nankhatai|deep
+deep-onion-kulcha,Deep Onion Kulcha,Deep (డీప్) పొగాకి కుల్చా,डीप (डीप) पोगाकी कुल्चा,deep onion kulcha|onion kulcha|deep
+deep-onion-pakora,Deep Onion Pakora,Deep (డీప్) పొగాకి పాకోరా,डीप (डीप) पोगाकी पाकोरा,deep onion pakora|onion pakora|deep
+deep-original-paratha,Deep Original Paratha,Deep (డీప్) మూల పరాథా,डीप (डीप) मूल पराठा,deep original paratha|original paratha|deep
+deep-palak,Deep Palak,Deep (డీప్) पालक,डीप (डीप) पालक,deep palak|palak|deep
+deep-paneer-paratha,Deep Paneer Paratha,Deep (డీప్) पनीर पराठा,डीप (डीप) पनीर पराठा,deep paneer paratha|paneer paratha|deep
+deep-paneer-raw,Deep Paneer Raw,Deep (డీప్) पनीर రెవ్,डीप (डीप) पनीर रेव,deep paneer raw|paneer raw|deep
+deep-parval,Deep Parval,Pasupu (పసుపు),Haldi (हल्दी),"deep parval,haldi, pasupu, powder"
+deep-peanut-chikki,Deep Peanut Chikki,Peanut Chikki (పెన్నట్ చిక్కి),Makhan Chikki (मखन चिक्की),"deep peanut chikki, makhan chikki, peanut chikki"
+deep-peas-carrot,Deep Peas Carrot,Gobhili (గోభిలి),Shakkarwala (शकरवाला),"deep peas carrot, gobhili, shakkarwala"
+deep-plain-boongi,Deep Plain Boongi,Boongi (బుంగి),Boongi (बूंगी),"deep plain boongi, boongi"
+deep-potato-peas-samosas,Deep Potato Peas Samosas,Samosa (సమోసా),Samosa (समोसा),"deep potato peas samosas, samosa"
+deep-potato-samosas,Deep Potato Samosas,Samosa (సమోసా),Samosa (समोसा),"deep potato samosas, samosa"
+deep-pudina-paratha,Deep Pudina Paratha,Pudina Paratha (పుదినా పరాఠ),Pudina Paratha (पुदीना पराठा),"deep pudina paratha, pudina paratha"
+deep-punjabi-tinda,Deep Punjabi Tinda,Tinda (తిండ),Tinda (तिंडा),"deep punjabi tinda, tinda"
+deep-puran-poli,Deep Puran Poli,Puran Poli (పురాణ పోలి),Puran Poli (पुरान पोली),"deep puran poli, puran poli"
+deep-ragi-flour,Deep Ragi Flour,Ragi (రాగి),Ragi (रागी),"deep ragi flour, ragi flour"
+deep-rajgaro-chikki,Deep Rajgaro Chikki,రాజగరో (రాజగరో) చిక్కి,राजगारो (राजगारो) चिक्की,deep rajgaro chikki|chikki|deep|rajgaro
+deep-rasmalai,Deep Rasmalai,డీప్ రస్మలాయి,डीप रसमलाई,deep rasmalai|rasmalai|deep
+deep-ratalu,Deep Ratalu,డీప్ రతలు,डीप रतालू,deep ratalu|ratalu|deep
+deep-ratlami-sev,Deep Ratlami Sev,డీప్ రత్లామి సేవ,डीप रत्लामी सेव,deep ratlami sev|ratlami sev|deep
+deep-rava-dosa-mix,Deep Rava Dosa Mix,డీప్ రవ్వ డోసా మిక్స్,डीप रवा डोसा मिक्स,deep rava dosa mix|rava dosa mix|deep
+deep-rava-idli-mix,Deep Rava Idli Mix,డీప్ రవ్వ ఇడ్లి మిక్స్,डीप रवा इडली मिक्स,deep rava idli mix|rava idli mix|deep
+deep-red-chilli-1,Deep Red Chilli 1,డీప్ రెడ్ చిల్లీ 1,डीप लाल चिली 1,deep red chilli 1|red chilli 1|deep
+deep-red-chilli-powder-7oz,Deep Red Chilli Powder 7oz,డీప్ రెడ్ చిల్లీ పౌడర్ 7oz,डीप लाल चिली पाउडर 7oz,deep red chilli powder 7oz|red chilli powder 7oz|deep
+deep-red-chilli-powder-extra-hot-1,Deep Red Chilli Powder Extra Hot 1,డీప్ రెడ్ చిల్లీ పౌడర్ ఎక్స్‌ట్రా హాట్ 1,डीप लाल चिली पाउडर अत्यधिक गर्म 1,deep red chilli powder extra hot 1|red chilli powder extra hot 1|deep
+deep-red-powder,Deep Red Powder,డీప్ రెడ్ పౌడర్,डीप लाल पाउडर,deep red powder|red powder|deep
+deep-salted-butter,Deep Salted Butter,Pasupu (పసుపు),Haldi (हल्दी),salted butter|haldi|pasupu|ghee
+deep-samosa,Deep Samosa,Bajji (బాజ్జి),Samosa (समोसा),samosa|bajji|snack|deep-fried
+deep-sesame-chikki,Deep Sesame Chikki,Tilagadda (తిలగడ్డ),Til Chikki (तिल चिक्की),sesame chikki|tilagadda|til chikki|snack
+deep-sesame-oil,Deep Sesame Oil,Til Tailam (తిల తైలం),Til Tailam (तिल तेल),sesame oil|til tailam|ghee oil
+deep-sharbati-atta-20-lb,Deep Sharbati Atta 20 Lb,Sharbati Atta (శర్బతి అట్టా),Sharbati Atta (शर्बती अट्टा),atta|sharbati atta|deep-fried|snack
+deep-soan-papdi,Deep Soan Papdi,Soan Papdi (సోన్ పాప్డి),Soan Papdi (सोन पापडी),soan papdi|deep-fried|snack|papdi
+deep-soan-papdi-1,Deep Soan Papdi 1,Soan Papdi (సోన్ పాప్డి),Soan Papdi (सोन पापडी),soan papdi|deep-fried|snack|papdi
+deep-soan-papdi-500-gm,Deep Soan Papdi 500 Gm,Soan Papdi (సోన్ పాప్డి),Soan Papdi (सोन पापडी),soan papdi|deep-fried|snack|papdi
+deep-sooji,Deep Sooji,Sooji (సుజీ),Sooji (सूजी),sooji|deep-fried|snack|puffed rice
+deep-spicy-cashews-blk-pepper,Deep Spicy Cashews Black Pepper,Kurkure (కుర్కూర్),Kurkure (कुर्कूर),cashews|black pepper|deep-fried|snack
+deep-spicy-cashews-red-pepper,Deep Spicy Cashews Red Pepper,బాగా మందమైన కాయి రెడ్ పెప్పర్ (బాగా మందమైన కాయి రెడ్ పెప్పర్),बागा मंदमाईन काय रेड पेपर (बागा मंदमाईन काय रेड पेपर),deep-spicy-cashews|red-pepper|spicy-snacks
+deep-spicy-peanuts,Deep Spicy Peanuts,బాగా మందమైన పిండి (బాగా మందమైన పిండి),बागा मंदमाईन पिन्डी (बागा मंदमाईन पिन्डी),deep-spicy-peanuts|spicy-snacks|peanuts
+deep-spinach-paneer-samosa-value-pa,Deep Spinach Paneer Samosa Value Pa,బాగా మందమైన పసుపు పనీర్ సమోసా వాల్యూ పా (బాగా మందమైన పసుపు పనీర్ సమోసా వాల్యూ పా),बागा मंदमाईन पस्तू पनीर समोसा वैल्यू पा (बागा मंदमाईन पस्तू पनीर समोसा वैल्यू पा),deep-spinach-paneer-samosa|value-pa|spinach-paneer-samosa
+deep-suran,Deep Suran,బాగా మందమైన సూరన్ (బాగా మందమైన సూరన్),बागा मंदमाईन सूरन (बागा मंदमाईन सूरन),deep-suran|suran|deep-suran
+deep-surti-papdi-lilva,Deep Surti Papdi Lilva,బాగా మందమైన సుర్తి పప్డి లిల్వా (బాగా మందమైన సుర్తి పప్డి లిల్వా),बागा मंदमाईन सुर्ती पपड़ी लिल्वा (बागा मंदमाईन सुर्ती पपड़ी लिल्वा),deep-surti-papdi-lilva|surti-papdi-lilva|gujarati-snacks
+deep-surti-undhiu-mix,Deep Surti Undhiu Mix,బాగా మందమైన సుర్తి ఉంధియూ మిక్స్ (బాగా మందమైన సుర్తి ఉంధియూ మిక్స్),बागा मंदमाईन सुर्ती उंडियू मिक्स (बागा मंदमाईन सुर्ती उंडियू मिक्स),deep-surti-undhiu-mix|surti-undhiu-mix|gujarati-snacks
+deep-sweet-corn,Deep Sweet Corn,బాగా మందమైన స్వీట్ కార్న్ (బాగా మందమైన స్వీట్ కార్న్),बागा मंदमाईन स्वीट कॉर्न (बागा मंदमाईन स्वीट कॉर्न),deep-sweet-corn|sweet-corn|corn-snacks
+deep-tandaljo,Deep Tandaljo,బాగా మందమైన తండల్జో (బాగా మందమైన తండల్జో),बागा मंदमाईन तंडल्जो (बागा मंदमाईन तंडल्जो),deep-tandaljo|tandaljo|deep-tandaljo
+deep-tandoori-naan,Deep Tandoori Naan,బాగా మందమైన తండూరీ నాన్ (బాగా మందమైన తండూరీ నాన్),बागा मंदमाईन तंदूरी नान (बागा मंदमाईन तंदूरी नान),deep-tandoori-naan|tandoori-naan|naan-bread
+deep-tandoori-roti,Deep Tandoori Roti,బాగా మందమైన తండూరీ రోటి (బాగా మందమైన తండూరీ రోటి),बागा मंदमाईन तंदूरी रोटी (बागा मंदमाईन तंदूरी रोटी),deep-tandoori-roti|tandoori-roti|roti
+deep-tea-of-assam,Assam Tea,ఆసామ్ చాయిలు (ఆసామ్ చాయి),आसम चाय (आसम चाय),"assam tea,assam chai,assam tea leaves"
+deep-tea-of-assam011433100106,Assam Tea,ఆసామ్ చాయిలు (ఆసామ్ చాయి),आसम चाय (आसम चाय),"assam tea,assam chai,assam tea leaves"
+deep-tindora,Tindora,తిండోర (తిండోర),तिंडोरा (तिंडोरा),"tindora,tindora leaves,tindora masala"
+deep-turmeric-powder-2,Turmeric Powder,పసుపు పొడి (పసుపు పొడి),हल्दी पाउडर (हल्दी पाउडर),"turmeric powder,turmeric powder benefits,turmeric powder recipe"
+deep-turmeric-powder-7oz,Turmeric Powder,పసుపు పొడి (పసుపు పొడి),हल्दी पाउडर (हल्दी पाउडर),"turmeric powder,turmeric powder benefits,turmeric powder recipe"
+deep-tuvar-peas,Tuvar Peas,తువార్ పప్పులు (తువార్ పప్పులు),तुवार पप्पल (तुवार पप्पल),"tuvar peas,tuvar peas recipe,tuvar peas benefits"
+deep-twisted-khari-original,Twisted Khari,కర్హి వికర్ణం (కర్హి వికర్ణం),खरी विकर्ण (खरी विकर्ण),"twisted khari,khari recipe,khari benefits"
+deep-udad-flour,Uddu Flour,ఉడ్డు మీద (ఉడ్డు మీద),उड्डू मैदा (उड्डू मैदा),"uddu flour,uddu flour recipe,uddu flour benefits"
+deep-val-papdi,Val Papdi,వాల్ పాప్డి (వాల్ పాప్డి),वाल पपड़ी (वाल पपड़ी),"val papdi,val papdi recipe,val papdi benefits"
+deep-veg-pilaf,Veg Pilaf,వేగ్ పిలాఫ్ (వేగ్ పిలాఫ్),वेज पिलाफ (वेज पिलाफ),"veg pilaf,veg pilaf recipe,veg pilaf benefits"
+deep-whole-ginger,Whole Ginger,Pasupu (పసుపు),Sonth (सonth),"ginger,whole,sonth"
+deep-whole-red-chilli,Whole Red Chilli,Red Chilli (రెడ్ చిల్లి),Lal Mirch (लाल मिर्च),"chilli,red,lal mirch"
+deer-basil-seed-drink-with-cocktail-flavored,Deer Basil Seed Drink with Cocktail Flavored,Deer Basil Seed Drink (డీర్ బాసిల్ సీడ్ డ్రింక్),Deer Basil Seed Pani (दीर बासिल सीड पानी),"basil,deer,seed,drink"
+dehraduni-basmathi-rice,Dehraduni Basmati Rice,Dehraduni Basmati Rice (డెహ్రాడూని బస్మతి చావల్),Dehraduni Basmati Chawal (देहरादून बasmat चावल),"basmati,rice,dehraduni"
+dehraduni-basmati-rice,Dehraduni Basmati Rice,Dehraduni Basmati Rice (డెహ్రాడూని బస్మతి చావల్),Dehraduni Basmati Chawal (देहरादून बasmat चावल),"basmati,rice,dehraduni"
+dehraduni-basmati-rice-10-lb,Dehraduni Basmati Rice (10 lbs),Dehraduni Basmati Rice (10 లబ్బులు) (డెహ్రాడూని బస్మతి చావల్),Dehraduni Basmati Chawal (10 किलो) (देहरादून बasmat चावल),"basmati,rice,dehraduni,10lb"
+dermi-cool8901177002021,Dermi Cool 8901177002021,Dermi Cool (డెర్మి కూల్),Dermi Cool (देर्मी कूल),"dermi cool,dermi"
+desi-coriander-chutney,Desi Coriander Chutney,Desi Coriander Chutney (డెసి కోరిందర్ చట్నీ),Desi Coriander Chutney (देसी कोरी एंडर चटनी),"chutney,coriander,desi"
+desi-natural-low-fat-yogurt,Desi Natural Low Fat Yogurt,Desi Natural Low Fat Yogurt (డెసి నేచురల్ లో ఫాట్ యోగర్ట్),Desi Natural Low Fat Yogurt (देसी नेचुरल लो फैट योगर्ट),"yogurt,desi,natural,low fat"
+desi-natural-lowfat-yogurt,Desi Natural Low Fat Yogurt,Desi Natural Low Fat Yogurt (డెసి నేచురల్ లో ఫాట్ యోగర్ట్),Desi Natural Low Fat Yogurt (देसी नेचुरल लो फैट योगर्ट),"yogurt,desi,natural,low fat"
+desi-natural-whole-milk-yogurt,Desi Natural Whole Milk Yogurt,ప్రాచీన స్వచ్ఛమైన పూర్తి దుద్దుబాటు పాలు యోగర్ట్,देसी नेचुरल व्हील मिल्क योगर्ट,desi natural whole milk yogurt
+desi-natural-whole-milk-yogurt053600102568,Desi Natural Whole Milk Yogurt,ప్రాచీన స్వచ్ఛమైన పూర్తి దుద్దుబాటు పాలు యోగర్ట్,देसी नेचुरल व्हील मिल्क योगर्ट,desi natural whole milk yogurt
+desi-panipuri-chutney,Desi Panipuri Chutney,ప్రాచీన పానిపురి చట్ని,देसी पानीपुरी चटनी,desi panipuri chutney
+dettol-anti-bacterial-herbal-soap,Dettol Anti-Bacterial Herbal Soap,डेटोल్ అంటీ-బ్యాక్టీరియల్ హర్బల్ సోప్,डेटोल एंटी-बैक्टीरियल हेर्बल साबुन,dettol anti-bacterial herbal soap
+dettol-cool-soap,Dettol Cool Soap,डेटोल్ కూల్ సోప్,डेटोल कूल साबुन,dettol cool soap
+dettol-cool-soap8901396395003,Dettol Cool Soap,डेटोल్ కూల్ సోప్,डेटोल कूल साबुन,dettol cool soap
+dettol-fresh-soap,Dettol Fresh Soap,डेटोल్ ఫ్రెష్ సోప్,डेटोल फ्रेश साबुन,dettol fresh soap
+dettol-original,Dettol Original,डेटोल్ ఆర్గినల్,डेटोल ओरिजिनल,dettol original
+dettol-original-soap,Dettol Original Soap,डेटोल్ ఆర్గినల్ సోప్,डेटोल ओरिजिनल साबुन,dettol original soap
+dettol-original-soap8993560024147,Dettol Original Soap,डेटोल్ ఆర్గినల్ సోప్,डेटोल ओरिजिनल साबुन,dettol original soap
+dettol-skincare-soap,Dettol Skincare Soap,Dettol (డెట్టాల్) స్కిన్‌కేర్ సోప్,डेटोल स्किन केयर साबुन,dettol|skincare|soap
+dettol-soap-1,Dettol Soap 1,Dettol (డెట్టాల్) సోప్ 1,डेटोल साबुन 1,dettol|soap|1
+dettol-soap-2,Dettol Soap 2,Dettol (డెట్టాల్) సోప్ 2,डेटोल साबुन 2,dettol|soap|2
+devdas-pure-brass-small-diya,Devdas Pure Brass Small Diya,దేవదాస్ పారదర్శక బ్రస్ చిన్న దియా,देवदास पारदर्शी ब्रस छोटा दिया,devdas|pure|brass|small|diya
 dhania,Coriander,Dhaniyalu,Dhania,coriander|dhania|dhaniyalu
 dhaniyalu,Coriander,Dhaniyalu,Dhania,coriander|dhania|dhaniyalu
+dhokla,Dhokla,ధోక్లా (ధోక్లా),धोकला,dhokla|gujarati|snack
+dial-hand-soap,Dial Hand Soap,డైల్ హెండ్ సోప్ (డైల్ హెండ్ సోప్),डायल हैंड साबुन,dial|hand|soap
+dial-soap,Dial Soap,డైల్ సోప్ (డైల్ సోప్),डायल साबुन,dial|soap
+diet-bhel,Diet Bhel,డైట్ భెల్ (డైట్ భెల్),डाइट भेल,diet|bhel|gujarati|snack
+diet-chiwda,Diet Chiwda,డైట్ చివ్దా (డైట్ చివ్దా),डाइट चिवडा,diet|chiwda|gujarati|snack
+digestives-1,Digestives 1,డిజిస్టివ్స్ 1 (డిజిస్టివ్స్ 1),डिस्टिव्स 1,digestives|1
+dill-seeds,Dill Seeds,Vriksha (వృక్ష),Vriksha (वृक्ष),dill seeds|vriksha|herbs
+divya-manjan-tooth-powder,Divya Manjan Tooth Powder,Divya Manjan (దివ్య మంజన),दिव्य मंजन (दिव्य मंजन),divya manjan|tooth powder|oral care
+diya-big,Diya Big,Diya (దియా),दिया (दिया),diya|lighter|diwali
+diyas-6-pcs,Diyas 6 Pcs,Diya (దియా) 6 పీసెస్,दिया (दिया) 6 पीस,diyas|6 pieces|diwali
+dolly8901777888995,,,,
+dolly8901777976999,,,,
+dosa-batter804879328513,Dosa Batter,Idli (ఇడ్లి) పదార్థం,इडली पादार्थ,dosa batter|idli|south indian
+dosa-rice-10-lb,Dosa Rice 10 Lb,Dosa Rice (డోసా రైస్) 10 లబ్బులు,डोसा राइस (डोसा राइस) 10 लब,dosa rice|10 lbs|south indian
+double-cake,Double Cake,Double Cake (డబుల్ కేక్),डबल केक (डबल केक),double cake|cake|dessert
+double-hourse-matta-rice,Double Horse Matta Rice,Double Horse Matta Rice (డబుల్ హార్స్ మట్టా రైస్),डबल हॉर्स मट्टा राइस (डबल हॉर्स मट्टा राइस),double horse matta rice|south indian rice
+drumstick664648729053,Drumstick,Pasupu (పసుపు),Haldi (हल्दी),drumstick|haldi|pasupu|powder
+dry-amla051179531062,Dry Amla,Amla (అమ్లా),Amla (अम्ला),dry amla|amla|fruit
+dry-mix837654132333,Dry Mix,Pasupu (పసుపు),Mishran (मिश्रण),dry mix|mishran|pasupu
+dum-ka-masala,Dum Ka Masala,Dum Ka Masala (డుమ్ కా మసాల),Dum Ka Masala (डुम का मसाला),dum ka masala|dum masala|masala
+dunar-ritz-basmati-10-lb,Dunar Ritz Basmati,Dunar Ritz Basmati (డునార్ రిట్జ్ బసమతి),Dunar Ritz Basmati (डुनार रिट्ज बासमती),dunar ritz basmati|basmati|rice
+eastern-chettinad-chicken-masala,Eastern Chettinad Chicken Masala,తూర్పు చెట్టినాడ్ చికెన్ మసాల (తూర్పు చెట్టినాడ్ చికెన్ మసాల),पूर्वी चेट्टीनाड चिकन मसाला (पूर्वी चेट्टीनाड चिकन मसाल),eastern chettinad chicken masala|chettinad chicken masala|chicken masala
+eastern-meat-masala,Eastern Meat Masala,తూర్పు మాంసం మసాల (తూర్పు మాంసం మసాల),पूर्वी मांस मसाला (पूर्वी मांस मसाल),eastern meat masala|meat masala|mutton masala
+eastern-meat-masala-1,Eastern Meat Masala 1,తూర్పు మాంసం మసాల 1 (తూర్పు మాంసం మసాల),पूर्वी मांस मसाला 1 (पूर्वी मांस मसाला),eastern meat masala 1|meat masala 1|mutton masala 1
+eastern-mutton-masala,Eastern Mutton Masala,తూర్పు మాంసం మసాల (తూర్పు మాంసం మసాల),पूर्वी मांस मसाला (पूर्वी मांस मसाल),eastern mutton masala|mutton masala|mutton masala
+eastern-pav-bhaji-masala,Eastern Pav Bhaji Masala,తూర్పు పవ్ భాజీ మసాల (తూర్పు పవ్ భాజీ మసాల),पूर्वी पाव भाजी मसाला (पूर्वी पाव भाजी मसाल),eastern pav bhaji masala|pav bhaji masala|pav masala
+easy-butter-chicken-ready-gravy-mix,Butter Chicken Ready Gravy Mix,Pasupu (పసుపు) | బటర్ చికెన్ రేడీ గ్రవీ మిక్స్,हल्दी (हल्दी) | बटर चिकन रेडी ग्रेवी मिश्र,butter chicken|haldi|pasupu|powder
+easy-mutton-mughlai-ready-gravy-mix,Mutton Mughlai Ready Gravy Mix,Pasupu (పసుపు) | మాంగోలై రేడీ గ్రవీ మిక్స్,हल्दी (हल्दी) | मांगोलाई रेडी ग्रेवी मिश्र,mutton|mangoli|pasupu|powder
+easy-paneer-tikka-ready-gravy-mix,Paneer Tikka Ready Gravy Mix,Pasupu (పసుపు) | పనీర్ టిక్కా రేడీ గ్రవీ మిక్స్,हल्दी (हल्दी) | पनीर टिक्का रेडी ग्रेवी मिश्र,paneer|tikka|pasupu|powder
+easy-zz-chicken-curry,Easy ZZ Chicken Curry,చికెన్ కర్రీ (చికెన్ కర్రీ),हल्दी (हल्दी) | चिकन कर्री,chicken|chicken curry|easy zz
+easy-zz-paneer-tikka,Easy ZZ Paneer Tikka,పనీర్ టిక్కా (పనీర్ టిక్కా),हल्दी (हल्दी) | पनीर टिक्का,paneer|tikka|easy zz
+ebm-gluco,Ebm Gluco,ఎబ్‌ఎం గ్లూకో (ఎబ్‌ఎం గ్లూకో),हल्दी (हल्दी) | एमबीई ग्लूको,ebm gluco|gluco|diabetic care
+eclaire,Eclaire,ఎక్లేర్ (ఎక్లేర్),हल्दी (हल्दी),eclaire|eclair|cake
+edible-gum,Edible Gum,ఆహార గుమ (ఆహార గుమ),हल्दी (हल्दी) | खाने का गुम,edible gum|gum|chewing gum
+eegplant,Eggplant,ఆకుపప్పు (ఆకుపప్పు),हल्दी (हल्दी) | अंकुरपल,eggplant|eggplant curry|brinjal
+egg-curry,Egg Curry,మామిడి కర్రీ (మామిడి కర్రీ),हल्दी (हल्दी) | अंडा कर्री,egg curry|egg|curry
+egg-yellow-powder,Egg Yellow Powder,Pasupu (పసుపు),Haldi (हल्दी),egg yellow powder|haldi|pasupu|turmeric
+eggless-fruit-cake,Eggless Fruit Cake,Eggless Fruit Cake (మినపప్పు కేక్),Eggless Fruit Cake (मिठाई केक),eggless fruit cake|fruit cake|cake
+elachi-paan,Elachi Paan,Elachi Paan (ఎలాచి పాన),Elachi Paan (एलाची पान),elachi paan|betel nut|paan
+elaichi8966000002029,Elaichi,Elaichi (ఎలాచి),Elaichi (एलाची),elaichi|betel nut|paan
+elaihi-shrikhand,Elaihi Shrikhand,Elaihi Shrikhand (ఎలాయిహి శ్రీకంద),Elaihi Shrikhand (एलायी श्रीकंड),elaihi shrikhand|yogurt|dessert
+elayada,Elayada,Elayada (ఎలయాడ),Elayada (एलायाड),elayada|fruit|dessert
+elonga-extra-basmati-rice-10-lb,Elonga Extra Basmati Rice 10 Lb,Elonga Extra Basmati Rice (10 లబ్బసు),Elonga Extra Basmati Rice (10 लब्स),elonga extra basmati rice|basmati rice|rice
+energy-portal-bloom-6-pcs,Energy Portal Bloom 6 Pcs,Energy Portal Bloom (6 సెట్లు),Energy Portal Bloom (6 सेट),energy portal bloom|flower|decor
+eno-lemon-flavour,Eno Lemon Flavour,Eno Lemon Flavour (నెనో లెమన్ ఫ్లేవర్),Eno Lemon Flavour (एनो लेमन फ्लेवर),eno lemon flavour|lemon flavour|flavour
+eno-regular,Eno Regular,Eno Regular (నెనో రెగ్యులర్),Eno Regular (एनो रेगुलर),eno regular|flavour|food
+eve-chicken-masala,Eve Chicken Masala,Pasupu (పసుపు),Haldi (हल्दी),chicken masala|masala|pasupu|haldi
+everest-chat-masala,Everest Chat Masala,Chaat (చాట),Chaat Masala (चाट मसाला),chat masala|masala|chaat|everest
+everest-chhole-masala,Everest Chhole Masala,Chhole (చోళ్),Chhole Masala (चोले मसाला),chhole masala|masala|chhole|everest
+everest-dry-mango-powder,Everest Dry Mango Powder,Aam (ఆమ్),Aam Ka Powder (आम का पाउडर),mango powder|dry mango powder|aam|everest
+everest-jaljira,Everest Jaljira,Jaljira (జల్జీర),Jaljira (जलजीर),jaljira|everest|masala
+everest-kashmirilal,Everest Kashmirilal,Kashmiri (కాశ్మీరీ),Kashmiri (काश्मीरी),kashmiri|everest|masala
+everest-pani-puri-masala-1,Everest Pani Puri Masala 1,Pani Puri (పాని పురి),Pani Puri Masala (पानी पुरी मसाला),pani puri masala|masala|pani puri|everest
+everest-pav-bhaji-masala,Everest Pav Bhaji Masala,Pav Bhaji (పవ్ భజీ),Pav Bhaji Masala (पाव भाजी मसाला),pav bhaji masala|masala|pav bhaji|everest
+everest-royal-garam-masala,Everest Royal Garam Masala,Garam Masala (గరమ मसాల),Royal Garam Masala (रॉयल गरम मसाला),garam masala|royal garam masala|everest
+everest-shahi-biryani-masala,Everest Shahi Biryani Masala,Shahi Biryani (షాహి బిర్యానీ),Shahi Biryani Masala (शाही बिरयानी मसाला),shahi biryani masala|masala|shahi biryani|everest
+everest-tea-masala,Everest Tea Masala,Pasupu (పసుపు),Haldi (हल्दी),"masala,tea,everest"
+everyday,Everyday,Rogam (రోగం),Rogan (रोगन),"everyday,health,wellness"
+extra-long-basmati-rice-10-lb,Extra Long Basmati Rice 10 Lb,Basa (బాసా),Basa (बासा),"basmati,rice,extra long"
+extra-long-grain-rice,Extra Long Grain Rice,Basa (బాసా),Basa (बासा),"basmati,rice,extra long"
+fafda,Fafda,Fafda (ఫాఫ్డా),Fafda (फाफड़ा),"fafड़ा,snacks,street food"
+falafels-ready-to-eat,Falafels Ready to Eat,Falafel (ఫలాఫెల్),Falafel (फलाफेल),"falafel,ready to eat,snacks"
+falooda-kulfi-1,Falooda Kulfi 1,Falooda (ఫాలూడా),Falooda (फालूदा),"falooda,kulfi,dessert"
+falooda8443678716248,Falooda 8443678716248,Falooda (ఫాలూడా),Falooda (फालूदा),"falooda, dessert"
+falsa,Falsa,Falsa (ఫాల్సా),Falsa (फाल्सा),"falsa,fruit,vegetable"
+famous-beater,Famous Beater,Famous Beater (ప్రసిద్ధ బీటర్),Famous Beater (प्रसिद्ध बीटर),"beater, mixer, kitchen appliance"
+famous-premium-vegetable-fruit-cutter,Vegetable Fruit Cutter,Vegge (వెగ్గ),Shakkar (शकर),vegetable fruit cutter|shakkar|veggie
+fancy-mug,Fancy Mug,Rasoi (రసోయి),Sundar Mug (सुंदर म्युग),fancy mug|rasoi|sundar mug
+fanta-can,Fanta Can,Fanta (ఫాంటా),Fanta (फांटा),fanta|fanta can|fruit juice
+feb,Feb,Feb (ఫిబ్రవరి),Feb (फेब्रवरी),feb|february
+felza-oil,Felza Oil,Felza (ఫెల్జా),Felza (फेल्जा),felza oil|sunflower oil
+felza-pure-sunflower-oil,Felza Pure Sunflower Oil,Felza (ఫెల్జా) సూర్యకంద తైలం,Felza (फेल्जा) सूर्यकण्ड तेल,felza pure sunflower oil|sunflower oil|sunflower oil
+feni-lacha,Feni Lacha,Feni (ఫెని) లాచా (లాచా),Feni (फेनी) लाचा (लाचा),feni lacha|feni|lacha
+fennel-powder,Fennel Powder,Sonth (సొంత) పొడి,Sonth (सोंथ) पाउडर,fennel powder|sonth powder|fenel
+fig-roll,Fig Roll,Figs (ఫిగ్స) రోల్,Figs (फिग्स) रोल,fig roll|figs|fruit roll
+filza,Filza,Filza (ఫిల్జా),Filza (फिल्जा),filza|filza powder|filza oil
+fine-sev,Fine Sev,Pasupu (పసుపు),Pasupu (पसुपु),fine sev|pasupu|sev
+fish-cutlet,Fish Cutlet,Machchili Cutlet (మచ్చిలి కట్లెట్),Machchili Cutlet (मछली कटलेट),fish cutlet|machchili cutlet|fish|cutlet
+fize,Fize,Fize (ఫైజ్),Fize (फिज),fize|fiz|sev
+floor-spinners-8-pcs,Floor Spinners 8 PCS,Mandapam (మండపం) Spinners (స్పిన్నర్స్) 8 PCS (ఎనిమిది),Mandapam (मंडप) Spinners (स्पिनर्स) 8 PCS (आठ),floor spinners|mandapam spinners|8 pcs
+flower-pot-6-pcs,Flower Pot 6 PCS,Gulmohar (గుల్మోహర్) Pot (పోట్) 6 PCS (ఆరు),Gulmohar (गुलमोहर) Pot (पोट) 6 PCS (छह),flower pot|gulmohar pot|6 pcs
+food-colour-orange,Food Colour Orange,Aarambhik (ఆరంభిక) Rangulu (రంగులు) Orange (నిర్బాలం),Aarambhik (आरंभिक) Rangulu (रंगुल) Orange (निर्वाल),food colour|orange|food colour orange
+food-colour-red,Food Colour Red,Aarambhik (ఆరంభిక) Rangulu (రంగులు) Red (నిర్బాలం),Aarambhik (आरंभिक) Rangulu (रंगुल) Red (निर्वाल),food colour|red|food colour red
+fppd-color,FPPD Colour,FPPD (ఎఫ్‌పిపిడి) Rangulu (రంగులు),FPPD (एफपीपीडी) रंगुल (रंगुल),fppd colour|fppd|food colour
+fresh-garlic,Fresh Garlic,Ela (ఎలా) Vepakura (వేపకూరు),Ela (एला) वेपकूरा (वेपकूरा),fresh garlic|ela|vepakura
+fresh-lychee,Fresh Lychee,Ela (ఎలా) లీచీ (లీచీ),Ela (एला) लीची (लीची),fresh lychee|ela|lychee
+fresh-peanut,Fresh Peanut,Pasupu (పసుపు),పసుపు (Pasupu),peanut|fresh|snack|nut
+fresh-samosa,Fresh Samosa,Pakka Vada (పక్క వడా),फ्रेश सामोसा (Fresh Samosa),samosa|fresh|snack|pakka vada
+fresh-vada-pav,Fresh Vada Pav,Vada Pav (వడా పవ్),फ्रेश वड़ा पाव (Fresh Vada Pav),vada pav|fresh|street food|snack
+fried-chops-tooba,Fried Chops Tooba,Chops Tooba (చోప్స్ టూబా),फ्राइड चॉप्स टूबा (Fried Chops Tooba),fried|chops|tooba|snack
+fried-onion-1,Fried Onion 1,Vepu (వేపు),फ्राइड नारियल (Fried Onion),onion|fried|snack|vepu
+fries,Fries,Pesarattu (పెసరట్టు),फ्राई्स (Fries),fries|snack|fried|pesarattu
+frooti-pack,Frooti Pack,Frooti (ఫ్రూటీ),फ्रूटी पैक (Frooti Pack),frooti|fruit|juice|pack
+frooti8902579104016,Frooti 8902579104016,Frooti (ఫ్రూటీ),फ्रूटी 8902579104016 (Frooti 8902579104016),frooti|fruit|juice|pack
+frozen-samber,Frozen Sambhar,Sambhar (సంభార్),फ्रोज़न सांभर (Frozen Sambhar),sambhar|frozen|vegetable|snack
+frozen-veg-masala-patties,Frozen Veg Masala Patties,Vegetable Masala Patties (వేగిటేబుల్ మసాలా పాటీస్),फ्रोज़न वेज मसाला पैटी (Frozen Veg Masala Patties),frozen|veg|masala|patties
+fruit-cake6291007904659,Fruit Cake,Fruit Cake (ఫ్రూట్ కేక్),Fruit Cake (फ्रूट केक),fruit cake|cake|fruit|snack
+frying-pan-20cm,Frying Pan,Frying Pan (వార్సింగ్ ప్యాన్),Frying Pan (वार्सिंग पैन),frying pan|pan|cooking|utensil
+fun-nuggets,Fun Nuggets,Fun Nuggets (ఎన్జయిన్డ్స్),Fun Nuggets (एंजाइन्ड्स),fun nuggets|nuggets|snack|food
+gachak,Gachak,Gachak (గచ్చక్),Gachak (गच्चक),gachak|gachak|gachak|powder
+garam-masala-1,Garam Masala,Garam Masala (గరం మసాలా),Garam Masala (गरम मसाला),garam masala|masala|spice|garam masala
+garam-masala6291103750167,Garam Masala,Garam Masala (గరం మసాలా),Garam Masala (गरम मसाला),garam masala|masala|spice|garam masala
+garam-masala8904083519430,Garam Masala,Garam Masala (గరం మసాలా),Garam Masala (गरम मसाला),garam masala|masala|spice|garam masala
 garlic,Garlic,Vellulli,Lahsun,garlic|lahsun|vellulli
+garlic-naan,Garlic Naan,Garlic Naan (గర్లిక్ నాన్),Garlic Naan (गर्लिक नान),garlic naan|naan|garlic|bread
+garlic-powder,Garlic Powder,Garlic Powder (గర్లిక్ పవర్డర్),Garlic Powder (गर्लिक पावर्डर),garlic powder|garlic|spice|powder
+garvi-gujarat-3-in-one-puri,Garvi Gujarat 3-in-One Puri,Garvi Gujarat 3-in-One Puri (గర్వి గుజరాత్ 3-ఇన్-ఓన్ పురి),Garvi Gujarat 3-in-One Puri (गर्वी गुजरात 3-इन-ओन पुरी),garvi gujarat|gujarat|puri|3-in-one
+garvi-gujarat-3-in-one-puri-1,Garvi Gujarat 3 in One Puri,Garvi Gujarat 3 in One Puri (గార్వి గుజరాత్ 3 ఇన్ ఒన్ పురి),Garvi Gujarat 3 in One Puri (गर्वी गुजरात 3 इन वन पुरी),garvi gujarat 3 in one puri|puri|gujarati snack
+garvi-gujarat-bhakarwadi,Garvi Gujarat Bhakarwadi,Garvi Gujarat Bhakarwadi (గార్వి గుజరాత్ భాకర్‌వాడి),Garvi Gujarat Bhakarwadi (गर्वी गुजरात भाकरवाडी),garvi gujarat bhakarwadi|bhakarwadi|gujarati snack
+garvi-gujarat-bhel-mix723246199016,Garvi Gujarat Bhel Mix,Garvi Gujarat Bhel Mix (గార్వి గుజరాత్ భెల్ మిక్స్),Garvi Gujarat Bhel Mix (गर्वी गुजरात भेल मिक्स),garvi gujarat bhel mix|bhel mix|gujarati snack
+garvi-gujarat-bhel-sev,Garvi Gujarat Bhel Sev,Garvi Gujarat Bhel Sev (గార్వి గుజరాత్ భెల్ సేవ్),Garvi Gujarat Bhel Sev (गर्वी गुजरात भेल सेव),garvi gujarat bhel sev|bhel sev|gujarati snack
+garvi-gujarat-bikaneri-sev7232462233464,Garvi Gujarat Bikaneri Sev,Garvi Gujarat Bikaneri Sev (గార్వి గుజరాత్ బికానేరీ సేవ్),Garvi Gujarat Bikaneri Sev (गर्वी गुजरात बिकानेरी सेव),garvi gujarat bikaneri sev|bikaneri sev|gujarati snack
+garvi-gujarat-dry-kachori,Garvi Gujarat Dry Kachori,Garvi Gujarat Dry Kachori (గార్వి గుజరాత్ డ్రై కచోరి),Garvi Gujarat Dry Kachori (गर्वी गुजरात ड्राई कचोरी),garvi gujarat dry kachori|dry kachori|gujarati snack
+garvi-gujarat-dry-samosa,Garvi Gujarat Dry Samosa,Garvi Gujarat Dry Samosa (గార్వి గుజరాత్ డ్రై సమోసా),Garvi Gujarat Dry Samosa (गर्वी गुजरात ड्राई सामोसा),garvi gujarat dry samosa|dry samosa|gujarati snack
+garvi-gujarat-farari-chevda-red-1,Garvi Gujarat Farari Chevda Red 1,Garvi Gujarat Farari Chevda Red 1 (గార్వి గుజరాత్ ఫారారీ చేవ్డా రెడ్ 1),Garvi Gujarat Farari Chevda Red 1 (गर्वी गुजरात फारारी चेवड़ा रेड 1),garvi gujarat farari chevda red 1|farari chevda red 1|gujarati snack
+garvi-gujarat-jamnagari-gathiya,Garvi Gujarat Jamnagari Gathiya,Garvi Gujarat Jamnagari Gathiya (గార్వి గుజరాత్ జమ్నాగరీ గఠియా),Garvi Gujarat Jamnagari Gathiya (गर्वी गुजरात जामनागरी गठिया),garvi gujarat jamnagari gathiya|jamnagari gathiya|gujarati snack
+garvi-gujarat-jamnagri-ganthia,Jamnagri Ganthia,Pasupu (పసుపు),Haldi (हल्दी),jamnagri ganthia|haldi|pasupu|powder
+garvi-gujarat-nadiadi-mix,Nadiadi Mix,Nadiadi (నదియాది),Nadiadi (नदियादी),nadiadi mix|haldi|ganthia
+garvi-gujarat-ratlami-sev,Ratlami Sev,Ratlami Sev (రత్లమి సేవ),Ratlami Sev (रत्लमी सेव),ratlami sev|haldi|ganthia
+garvi-gujarat-roasted-poha-chevda,Roasted Poha Chevda,Roasted Poha Chevda (రోస్ట్ పోహా చేవ్దా),Roasted Poha Chevda (रोस्ट पोहा चेवड़ा),roasted poha chevda|haldi|ganthia
+garvi-gujarat-sing-bhujiya,Sing Bhujiya,Sing Bhujiya (సింగ్ భుజీయ),Sing Bhujiya (सिंग भुजिया),sing bhujiya|haldi|ganthia
+garvi-gujrat-fafda-gathia,Fafda Gathia,Fafda Gathia (ఫాఫ్డా గాఠియ),Fafda Gathia (फाफड़ा गाथिय),fafड़ा गाथिय|हल्दी|गांठिया
+gashar-churna,Gashar Churna,Gashar Churna (గశర్ చుర్ణ),Gashar Churna (गशर चुर्ना),gashar churna|haldi|ganthia
+gathering-of-saffron843603074012,Gathering of Saffron,Gathering of Saffron (సఫైద సంగ్రహం),Gathering of Saffron (सफेद संग्रह),saffron|हल्दी|सफेद
+gharana-chakri,Gharana Chakri,Gharana Chakri (ఘరణ చక్రి),Gharana Chakri (घराणा चक्री),gharana chakri|हल्दी|घराणा
+gharana-jalapeno-chakri,Gharana Jalapeno Chakri,Gharana Jalapeno Chakri (ఘరణ జలపెనో చక్రి),Gharana Jalapeno Chakri (घराणा जलापेनो चक्री),gharana jalapeno chakri|हल्दी|घराणा
+gharana-sweet-shakkar-para,Gharana Sweet Shakkar Para,ఘరానా స్వీట్ శక్కర పరా (ఘరానా శక్కర పరా),घराना स्वीट शकर परा (घराना शकर परा),gharana sweet shakkar para|shakkar para|sweet
+ghasitarams-chum-chum,Ghasitarams Chum Chum,ఘసితరామ్స్ చుమ్ చుమ్ (ఘసితరామ్స్ చుమ్),घसितराम्स चुम चुम (घसितराम्स चुम),ghasitarams chum chum|ghasitarams chum|chum chum
 ghee,Clarified Butter,Neyyi (నెయ్యి),Ghee (घी),ghee|neyyi|clarified-butter
 ginger,Ginger,Allam,Adrak,ginger|adrak|allam
+ginger-1,Ginger 1,ఆది ఇనుమడి (ఆది ఇనుమడి),आदि इंमड़ी (आदि इंमड़ी),ginger|ginger 1|adhi inumdi
+ginger-chai,Ginger Chai,ఇనుమడి చై (ఇనుమడి చై),इंमड़ी चाय (इंमड़ी चाय),ginger chai|ginger chai|inumdi chai
+ginger-tea,Ginger Tea,ఇనుమడి తీ (ఇనుమడి తీ),इंमड़ी ती (इंमड़ी ती),ginger tea|ginger tea|inumdi tee
+gits-bombay-halwa-mix,Gits Bombay Halwa Mix,గిట్స్ బొంబాయి హాల్వా మిక్స్ (గిట్స్ బొంబాయి హాల్వా మిక్స్),गिट्स बॉम्बे हलवा मिक्स (गिट्स बॉम्बे हलवा मिक्स),gits bombay halwa mix|gits halwa mix|bombay halwa mix
+gits-dhoka-mix,Gits Dhoka Mix,గిట్స్ ధోకా మిక్స్ (గిట్స్ ధోకా మిక్స్),गिट्स धोखा मिक्स (गिट्स धोखा मिक्स),gits dhoka mix|gits dhoka|dhoka mix
+gits-dosai-mix,Gits Dosai Mix,గిట్స్ దోసై మిక్స్ (గిట్స్ దోసై మిక్స్),गिट्स दोसाई मिक्स (गिट्स दोसाई मिक्स),gits dosai mix|gits dosai|dosai mix
+gits-gulab-jamun-mix,Gits Gulab Jamun Mix,గిట్స్ గులాబ్ జామ్యూన్ మిక్స్ (గిట్స్ గులాబ్ జామ్యూన్ మిక్స్),गिट्स गुलाब जामुन मिक्स (गिट्स गुलाब जामुन मिक्स),gits gulab jamun mix|gits gulab jamun|gulab jamun mix
+gits-jilebi-mix,Gits Jilebi Mix,గిట్స్ జీలెబి మిక్స్ (గిట్స్ జీలెబి మిక్స్),गिट्स जिलेबी मिक्स (गिट्स जिलेबी मिक्स),gits jilebi mix|gits jilebi|jilebi mix
+gits-kalakand-mix,Gits Kalakand Mix,Pasupu (పసుపు),हल्दी (हल्दी),kalakand mix|gits|pasupu|powder
+gits-medu-wada-mix,Gits Medu Wada Mix,Medu Wada (మెడు వాడ),मेदू वाडा (मेदू वाडा),medu wada mix|gits|medu wada|wada
+gits-nylon-khaman-dhokla-mix,Gits Nylon Khaman Dhokla Mix,Khaman Dhokla (ఖమన్ ధోక్లా),खमान धोकला (खमान धोकला),khaman dhokla mix|gits|khaman dhokla|nylon
+gits-pakora-mix,Gits Pakora Mix,Pakora (పాకోర),पाकोड़ा (पाकोड़ा),pakora mix|gits|pakora|fritter
+gits-phirni-mix,Gits Phirni Mix,Phirni (ఫిర్నీ),फिरनी (फिरनी),phirni mix|gits|phirni|kheer
+gits-rava-dosa-mix,Gits Rava Dosa Mix,Rava Dosa (రవ్ డోస),रवा डोसा (रवा डोसा),rava dosa mix|gits|rava dosa|idli
+gits-rava-idli-mix8901155109216,Gits Rava Idli Mix,Rava Idli (రవ్ ఇడ్లి),रवा इडली (रवा इडली),rava idli mix|gits|rava idli|idli
+gits-uttappam-mix,Gits Uttappam Mix,Uttappam (ఉత్తప్పం),उत्तप्पम (उत्तप्पम),uttappam mix|gits|uttappam|pancake
+glucose,Glucose,గ్లూకోస్ (గ్లూకోస్),ग्लूकोज (ग्लूकोज),glucose|sugar|glukos
+gobhi-paratha8904063281159,Gobhi Paratha,Gobhi Paratha (గోభి పరాథ),गोभी पराठा (गोभी पराठा),gobhi paratha|gobhi|paratha|flatbread
+gobi-paaaratha,Gobi Paratha,Gobi (గోబి) పారాథా (పారాథా),गोभी पाराठा (गोभी पाराठा),gobi|paratha|indian flatbread
+godhvari-sona-masoori-rice,Godhvari Sona Masoori Rice,గోధవరి సోనా మసూరి చవరి (గోధవరి చవరి),गोधवारी सोना मसूरी चावल (गोधवारी चावल),godhvari|sona masoori rice|indian basmati rice
+godrej-anoop-hair-oil,Godrej Anoop Hair Oil,గోడ్రేజ్ అనూప్ హెర్ ఆయిల్ (గోడ్రేజ్ హెర్ ఆయిల్),गोड्रेज़ अनूप हेयर ऑयल (गोड्रेज़ हेयर ऑयल),godrej|anoop hair oil|hair care
+godrej-hand-wash,Godrej Hand Wash,గోడ్రేజ్ హండ్ వాష్ (గోడ్రేజ్ హండ్ వాష్),गोड्रेज़ हाथ वाश (गोड्रेज़ हाथ वाश),godrej|hand wash|hand soap
+godrej-no-1-soap,Godrej No.1 Soap,గోడ్రేజ్ నాంబర్ 1 సోప్ (గోడ్రేజ్ సోప్),गोड्रेज़ नंबर 1 साबुन (गोड्रेज़ साबुन),godrej|no 1 soap|soap
+gola-gola-bar,Gola Gola Bar,గోల గోల బార్ (గోల గోల బార్),गोला गोला बार (गोला गोला बार),gola gola|bar|snack
+gold-seal-basmati-rice,Gold Seal Basmati Rice,గోల్ సీల్ బసమతి చవరి (గోల్ సీల్ చవరి),गोल सील बासमती चावल (गोल सील चावल),gold seal|basmati rice|indian basmati rice
+gold-sparklers-10-12-boxes-each-8-pcs,Gold Sparklers 10-12 Boxes Each 8 Pcs,గోల్ స్పార్క్లర్స్ 10-12 బాక్సులు ప్రతి 8 పీస్ (గోల్ స్పార్క్లర్స్),गोल स्पार्कलर्स 10-12 बॉक्स प्रति 8 पीस (गोल स्पार्कलर्स),gold sparklers|chocolate|snack
+gold-sparklers-14-6-boxes-each-8-pcs,Gold Sparklers 14-6 Boxes Each 8 Pcs,గోల్ స్పార్క్లర్స్ 14-6 బాక్సులు ప్రతి 8 పీస్ (గోల్ స్పార్క్లర్స్),गोल स्पार्कलर्स 14-6 बॉक्स प्रति 8 पीस (गोल स्पार्कलर्स),gold sparklers|chocolate|snack
+golden-mix,Golden Mix,గోల్డన్ మిక్స్ (గోల్డన్ మిక్స్),गोल्डन मिश्र (गोल्डन मिश्र),golden mix|snack|chocolate
+golden-raisins-2,Golden Raisins,Sugandh (సుగంధ) రేసిన్స్,सुगंधी रेसिन्स,golden raisins|sugandh|raisins
+golden-raisins051179194052,Golden Raisins,Sugandh (సుగంధ) రేసిన్స్,सुगंधी रेसिन्स,golden raisins|sugandh|raisins
+gongura-pickle-without-garlic,Gongura Pickle (Garlic Free),గొంగురు చట్ని (మసాలా),गोंगुरा चटनी (मसाला),gongura pickle|gongura|masala
+good-day-pista-almond,Good Day Pista Almond,గుడ్ డే పిస్టా అల్మండ్,गुड डे पिस्ता अल्मंड,good day pista almond|pista almond|almond
+gooday,Gooday,గుడ్ డే,गुड डे,gooday|good day|gud day
+goya,Goya,గోయా,गोया,goya|goya chickpeas|chickpeas
+goya-chick-peas,Goya Chick Peas,గోయా చిక్ పీస్,गोया चिक पीस,goya chickpeas|goya|chickpeas
+goya-chick-peas041331024198,Goya Chick Peas,గోయా చిక్ పీస్,गोया चिक पीस,goya chickpeas|goya|chickpeas
+goya-chick-peas041331024600,Goya Chick Peas,గోయా చిక్ పీస్,गोया चिक पीस,goya chickpeas|goya|chickpeas
+goya-chick-peas041331124225,Goya Chick Peas,గోయా చిక్ పీస్,गोया चिक पीस,goya chickpeas|goya|chickpeas
+grab-bag,Grab Bag,గ్రాబ్ బ్యాగ్ (గ్రాబ్ బ్యాగ్),ग्रैब बैग (ग्रैब बैग),grab bag|shopping bag|grocery bag
+gram-flour,Gram Flour,బార్లీ మినుములు (బార్లీ మినుములు),बार्ली मीनू (बार्ली मीनू),gram flour|barley flour|chickpea flour
+gram-flour-1,Gram Flour,బార్లీ మినుములు (బార్లీ మినుములు),बार्ली मीनू (बार्ली मीनू),gram flour|barley flour|chickpea flour
+grand-extra-long-basmati-rice-10-lb,Grand Extra Long Basmati Rice (10 lbs),గ్రాండ్ ఎక్స్ట్రా లాంగ్ బస్మతి చావళ్లు (10 లబ్బులు) (గ్రాండ్ ఎక్స్ట్రా లాంగ్ బస్మతి చావళ్లు),ग्रांड एक्सट्रा लॉन्ग बासमती चावल (10 किलो) (ग्रांड एक्सट्रा लॉन्ग बासमती चावल),basmati rice|grand basmati rice|extra long basmati rice
+grater-multi-purpose,Grater Multi-Purpose,గ్రేటర్ మల్టీ పరిపూర్ణం (గ్రేటర్),ग्रेटर मुल्टीपurpose (ग्रेटर),grater|multi-purpose grater|food grater
+green-beans,Green Beans,హిందీ పంటలు (హిందీ పంటలు),हरी मटर (हरी मटर),green beans|green beans|green beans
+green-chilli-pickle,Green Chilli Pickle,హిందీ చిల్లి పిండి (హిందీ చిల్లి పిండి),हरी मिर्च की चटनी (हरी मिर्च की चटनी),green chilli pickle|green chilli|pickle
+green-chilli011433157827,Green Chilli,హిందీ చిల్లి (హిందీ చిల్లి),हरी मिर्च (हरी मिर्च),green chilli|green chilli|green chilli
+green-garlic011433160797,Green Garlic,హిందీ కాయి (హిందీ కాయి),हरी लहसुन (हरी लहसुन),green garlic|green garlic|green garlic
+green-mango-1,Green Mango,హిందీ మాంగో (హిందీ మాంగో),हरी आम (हरी आम),green mango|green mango|green mango
+green-papaya,Green Papaya,Eru (ఏరు),पपीता (पपीता),green-papaya|papaya|fruit
+green-peas,Green Peas,Pesaragalu (పెసరగలు),हरी मटर (हरी मटर),green-peas|peas|matar
+green-pista-1,Green Pistachio,Iddilime (ఇడ్లిమీ),हरी पिस्ता (हरी पिस्ता),green-pista-1|pistachio|green-nuts
+green-squash,Green Squash,Chakka (చక్క),हरी गourd (हरी गourd),green-squash|squash|gourd
+groceries,Groceries,Atha (అథ),खाद्य सामग्री (खाद्य सामग्री),groceries|food|grocer
+ground-flower-bloom-20-pcs,Ground Flower Bloom (20 pieces),Pusa (పుసా),भूमि फूल (भूमि फूल),ground-flower-bloom-20-pcs|flower|bloom
 gud,Jaggery,Bellam,Gud,jaggery|gud|bellam
+gud-jlabi,Gud Jlabi,Gud Jlabi (గుడ్ జలబీ),गुड़ जलाबी (गुड़ जलाबी),gud-jlabi|gud|jlabi
+gulab-jammun-1,Gulab Jammun,Gulab Jammun (గులాబ్ జమ్మూన్),गुलाब जमुन (गुलाब जमुन),gulab-jammun-1|gulab|jamun
+gulab-jammun-500g,Gulab Jammun (500g),Gulab Jammun (500g) (గులాబ్ జమ్మూన్ 500g),गुलाब जमुन (500g) (गुलाब जमुन 500g),gulab-jammun-500g|gulab|jamun|500g
+gulab-premium-dhoop-sticks,Gulab Premium Dhoop Sticks,Gulab Premium Dhoop Sticks (గులాబ్ ప్రీమియం ధూప్ స్టిక్స్),गुलाब प्रीमियम धूप स्टिक्स (गुलाब प्रीमियम धूप स्टिक्स),gulab-premium-dhoop-sticks|gulab|premium|dhoop
+guru-whole-curd,Guru Whole Curd,Pasupu (పసుపు),Haldi (हल्दी),guru whole curd|curd|yogurt
+guvar-bean,Guvar Bean,Guvar (గువర్),Guvar (गुवर),guvar bean|guvar|green bean
+hal-cornflakes-mix,Hal Cornflakes Mix,Hal (हल),Hal (हल),hal cornflakes mix|hal cornflakes|hal
 haldi,Turmeric,Pasupu,Haldi,turmeric|haldi|pasupu
+haldiram-cheese-naan,Haldiram Cheese Naan,Haldiram (हलदीराम),Haldiram (हलदीराम),haldiram cheese naan|haldiram cheese|cheese naan
+haldiram-dhoda-burfi,Haldiram Dhoda Burfi,Haldiram (हलदीराम),Haldiram (हलदीराम),haldiram dhoda burfi|haldiram dhoda|dhoda burfi
+haldiram-gobi-paratha,Haldiram Gobi Paratha,Haldiram (हलदीराम),Haldiram (हलदीराम),haldiram gobi paratha|haldiram gobi|gobi paratha
+haldiram-gol-mathri,Haldiram Gol Mathri,Haldiram (हलदीराम),Haldiram (हलदीराम),haldiram gol mathri|haldiram gol|gol mathri
+haldiram-methi-puri,Haldiram Methi Puri,Haldiram (हलदीराम),Haldiram (हलदीराम),haldiram methi puri|haldiram methi|methi puri
+haldiram-moti-chor-ladoo,Haldiram Moti Chor Ladoo,Haldiram (हलदीराम),Haldiram (हलदीराम),haldiram moti chor ladoo|haldiram moti|moti chor ladoo
+haldiram-nut-cracker,Haldiram Nut Cracker,Haldiram (हलदीराम),Haldiram (हलदीराम),haldiram nut cracker|haldiram nut|nut cracker
+haldiram-panner-paratha,Panner Paratha,Panner Paratha (పానెర్ పరాఠa),पैनर पराठा,panner-paratha|haldiram|paratha|indian-flatbread
+haldiram-pudina-paratha,Pudina Paratha,Pudina Paratha (పుదినా పరాఠa),पुदीना पराठा,pudina-paratha|haldiram|paratha|indian-flatbread
+haldiram-s-lemon-bhel,Lemon Bhel,Lemon Bhel (లీమన్ భెల్),लीमन भेल,lemon-bhel|haldiram|bhel| indian-snack
+haldiram-s-rajma-raseela,Rajma Raseela,Rajma Raseela (రాజ్మా రసీలా),राजमा रसीला,rajma-raseela|haldiram|rajma|chana masala
+haldiram-s-sugar-rewari,Sugar Rewari,Sugar Rewari (సుగర్ రేవారి),सुगर रेवारी,sugar-rewari|haldiram|gur|sweet
+haldiram-tikoni-mathi,Tikoni Mathi,Tikoni Mathi (తికోని మాథి),तिकोनी माथी,tikoni-mathi|haldiram|mathi| indian-snack
+haldiram-wrap,Wrap,Wrap (వర్ప్),वर्प,wrap|haldiram|flatbread| indian-snack
+haldirams-ajwain-paratha,Ajwain Paratha,Ajwain Paratha (అజ్వైన పరాఠa),अजवाइन पराठा,ajwain-paratha|haldirams|ajwain|flatbread
+haldirams-all-in-one,All In One,All In One (అల్లిన్ ఒన్),अल्ल-इन-ओन,all-in-one|haldirams|mixed-snack
+haldirams-allo-mutter,Allo Mutter,Allo Mutter (అల్లో ముత్తర),अल्लो मटर,allo-mutter|haldirams|aloo-mutter|chana masala
+haldirams-aloo-bhujia,Haldiram's Aloo Bhujia,Pasupu (పసుపు),हल्दी राम्स आलू भुजिया,haldirams-aloo-bhujia|aloo|bhujia|pasupu
+haldirams-aloo-bhujia871265510029,Haldiram's Aloo Bhujia,Pasupu (పసుపు),हल्दी राम्स आलू भुजिया,haldirams-aloo-bhujia|aloo|bhujia|pasupu
+haldirams-aloo-paratha,Haldiram's Aloo Paratha,Pasupu (పసుపు),हल्दी राम्स आलू पराठा,haldirams-aloo-paratha|aloo|paratha|pasupu
+haldirams-amritsari-kulcha,Haldiram's Amritsari Kulcha,Pasupu (పసుపు),हल्दी राम्स अमृतसरी कुलचा,haldirams-amritsari-kulcha|amritsari|kulcha|pasupu
+haldirams-bajra-roti,Haldiram's Bajra Roti,Pasupu (పసుపు),हल्दी राम्स बाजरा रोटी,haldirams-bajra-roti|bajra|roti|pasupu
+haldirams-bhel-mix,Haldiram's Bhel Mix,Pasupu (పసుపు),हल्दी राम्स भेल मिश्र,haldirams-bhel-mix|bhel|mix|pasupu
+haldirams-bhelpuri871265502628,Haldiram's Bhelpuri,Pasupu (పసుపు),हल्दी राम्स भेलपुरी,haldirams-bhelpuri|bhelpuri|pasupu
+haldirams-bhujia,Haldiram's Bhujia,Pasupu (పసుపు),हल्दी राम्स भुजिया,haldirams-bhujia|bhujia|pasupu
+haldirams-bhujia871265510012,Haldiram's Bhujia,Pasupu (పసుపు),हल्दी राम्स भुजिया,haldirams-bhujia|bhujia|pasupu
+haldirams-bombay-mix,Haldiram's Bombay Mix,Pasupu (పసుపు),हल्दी राम्स बॉम्बे मिश्र,haldirams-bombay-mix|bombay|mix|pasupu
+haldirams-chai-puri,Haldiram's Chai Puri,హల్దీరామ్స్ చై పురి (హల్దీరామ్స్ చై పురి),हल्दीराम्स चाय पुरी (हल्दीराम्स चाय पुरी),haldirams chai|puri|chana dal|snacks
+haldirams-chana-dal,Haldiram's Chana Dal,హల్దీరామ్స్ చనా దాల్ (హల్దీరామ్స్ చనా దాల్),हल्दीराम्स चना दाल (हल्दीराम्स चना दाल),haldirams chana dal|snacks|chana dal
+haldirams-chana-jor-garam,Haldiram's Chana Jor Garam,హల్దీరామ్స్ చనా జోర్ గారం (హల్దీరామ్స్ చనా జోర్ గారం),हल्दीराम्स चना जोर गरम (हल्दीराम्स चना जोर गरम),haldirams chana jor garam|snacks|chana jor garam
+haldirams-cheese-naan-frozen,Haldiram's Cheese Naan Frozen,హల్దీరామ్స్ చీజ్ నాన్ ఫ్రీజర్ (హల్దీరామ్స్ చీజ్ నాన్ ఫ్రీజర్),हल्दीराम्स चीज़ नान फ्रीज़र (हल्दीराम्स चीज़ नान फ्रीज़र),haldirams cheese naan frozen|snacks|cheese naan
+haldirams-chilli-chatak-lachha,Haldiram's Chilli Chatak Lachha,హల్దీరామ్స్ చిల్లీ చటక్ లచ్చ (హల్దీరామ్స్ చిల్లీ చటక్ లచ్చ),हल्दीराम्स चिल्ली चाटक लच्छा (हल्दीराम्स चिल्ली चाटक लच्छा),haldirams chilli chatak lachha|snacks|chilli chatak lachha
+haldirams-chilli-pattaka,Haldiram's Chilli Pattaka,హల్దీరామ్స్ చిల్లీ పట్టక (హల్దీరామ్స్ చిల్లీ పట్టక),हल्दीराम्स चिल्ली पट्टका (हल्दीराम्स चिल्ली पट्टका),haldirams chilli pattaka|snacks|chilli pattaka
+haldirams-cornflakes-mixture,Haldiram's Cornflakes Mixture,హల్దీరామ్స్ కార్న్‌ఫ్లేక్స్ మిశ్రమం (హల్దీరామ్స్ కార్న్‌ఫ్లేక్స్ మిశ్రమం),हल्दीराम्स कॉर्नफ्लेक्स मिश्रण (हल्दीराम्स कॉर्नफ्लेक्स मिश्रण),haldirams cornflakes mixture|snacks|cornflakes
+haldirams-dahi-bhalla,Haldiram's Dahi Bhalla,హల్దీరామ్స్ దహి భల్ల (హల్దీరామ్స్ దహి భల్ల),हल्दीराम्स दही भल्ला (हल्दीराम्स दही भल्ला),haldirams dahi bhalla|snacks|dahi bhalla
+haldirams-dal-biji,Haldiram's Dal Biji,హల్దీరామ్స్ దాల్ బీజి (హల్దీరామ్స్ దాల్ బీజి),हल्दीराम्स दाल बीजी (हल्दीराम्स दाल बीजी),haldirams dal biji|snacks|dal biji
+haldirams-dal-makhani,Dal Makhani,దాల్ మఖాని (దాల్ మఖానీ),दाल मखनी (दाल मखनी),dal makhani|haldirams|makhani|dal
+haldirams-dilli-style-chhole,Dilli Style Chhole,దిల్లీ సైల్ చోలే (దిల్లీ సైల్ చోలే),दिल्ली स्टाइल चोले (दिल्ली स्टाइल चोले),dilli style chhole|haldirams|chhole|chana masala
+haldirams-falahari-mixture,Falahari Mixture,ఫలహరి మిశ్రమం (ఫలహరి మిశ్రమం),फलहरी मिश्रण (फलहरी मिश्रण),falahari mixture|haldirams|mixture|snack
+haldirams-hara-chiwda,Hara Chiwda,హర చివ్దా (హర చివ్దా),हर चिवड़ा (हर चिवड़ा),hara chiwda|haldirams|chivda|snack
+haldirams-homestyle-paratha,Homestyle Paratha,హోమ్‌స్టైల్ పరాఠా (హోమ్‌స్టైల్ పరాఠా),होमस्टाइल पाराठा (होमस्टाइल पाराठा),homestyle paratha|haldirams|paratha|flatbread
+haldirams-hyderabadi-biryani,Hyderabadi Biryani,హైదరాబాద్ బిర్యాణి (హైదరాబాద్ బిర్యాణి),हैदराबाद बिरयानी (हैदराबाद बिरयानी),hyderabadi biryani|haldirams|biryani|rice dish
+haldirams-kadhi-pakoda,Kadhi Pakoda,కాఢి పకోడా (కాఢి పకోడా),कढ़ी पकोड़ा (कढ़ी पकोड़ा),kadhi pakoda|haldirams|pakoda|snack
+haldirams-kaju-mixture,Kaju Mixture,కాజు మిశ్రమం (కాజు మిశ్రమం),काजू मिश्रण (काजू मिश्रण),kaju mixture|haldirams|mixture|snack
+haldirams-kashmiri-mixture,Kashmiri Mixture,కాశ్మీరీ మిశ్రమం (కాశ్మీరీ మిశ్రమం),कश्मीरी मिश्रण (कश्मीरी मिश्रण),kashmiri mixture|haldirams|mixture|snack
+haldirams-kashmiri-mixture871265510067,Kashmiri Mixture,కాశ్మీరీ మిశ్రమం (కాశ్మీరీ మిశ్రమం),कश्मीरी मिश्रण (कश्मीरी मिश्रण),kashmiri mixture|haldirams|mixture|snack
+haldirams-khatta-meetha,Haldiram's Khatta Meetha,Pasupu (పసుపు),हल्दी (खट्टा मीठा),haldirams|khatta|meetha|pasupu
+haldirams-lachcha-paratha,Haldiram's Lachcha Paratha,Muli Paratha (ములి),हल्दी (लच्चा पराठा),haldirams|lachcha|paratha|muli
+haldirams-mathri,Haldiram's Mathri,Pasupu (పసుపు),हल्दी (माथरी),haldirams|pasupu|mathri
+haldirams-methi-sev,Haldiram's Methi Sev,Methi Sev (మेथी सेव),हल्दी (मेथी सेव),haldirams|methi|sev
+haldirams-mint-lachha,Haldiram's Mint Lachha,Mint Lachha (మింట),हल्दी (मिंट लच्छा),haldirams|mint|lachha
+haldirams-mix-veg-paratha,Haldiram's Mix Veg Paratha,Muli Paratha (ములి),हल्दी (मिश्र वेज पराठा),haldirams|mix|veg|paratha|muli
+haldirams-moong-dal,Haldiram's Moong Dal,Moong Dal (మొగడి దాల్),हल्दी (मूंग दाल),haldirams|moongdal
+haldirams-moong-dal-masala,Haldiram's Moong Dal Masala,Moong Dal Masala (మొగడి దాల్ మసాలా),हल्दी (मूंग दाल मसाला),haldirams|moongdal|masala
+haldirams-muli-paratha,Haldiram's Muli Paratha,Muli Paratha (ములి),हल्दी (मुली पराठा),haldirams|muli|paratha
+haldirams-mutter-kachori,Haldiram's Mutter Kachori,Methi Sev (మेथी सेव),हल्दी (मटर कचोरी),haldirams|methi|sev|mutter
+haldirams-navrattan,Haldiram's Navrattan,Pasupu (పసుపు),हल्दी राम्स नवरतन,haldirams-navrattan|navrattan|pasupu|turmeric
+haldirams-navrattan871265510043,Haldiram's Navrattan,Pasupu (పసుపు),हल्दी राम्स नवरतन,haldirams-navrattan|navrattan|pasupu|turmeric
+haldirams-nimbu-masala,Haldiram's Nimbu Masala,Nimbu (నింబు) Masala (మసాలా),हल्दी राम्स नींबू मसाला,haldirams-nimbu-masala|nimbu masala|cucumber masala
+haldirams-nut-cracker,Haldiram's Nut Cracker,Bijuli (బిజులి) (గాంధీ బిరుదు),हल्दी राम्स नट क्रैकर,haldirams-nut-cracker|nut cracker|gandhi
+haldirams-nut-crackers,Haldiram's Nut Crackers,Bijuli (బిజులి) (గాంధీ బిరుదు),हल्दी राम्स नट क्रैकर्स,haldirams-nut-crackers|nut crackers|gandhi
+haldirams-palak-paneer,Haldiram's Palak Paneer,Palak Paneer (పాలక్ పనీర్),हल्दी राम्स पालक पनीर,haldirams-palak-paneer|palak paneer|spinach paneer
+haldirams-panchrattan,Haldiram's Panchratan,Panchratan (పంచరతన్),हल्दी राम्स पंचरतन,haldirams-panchrattan|panchrattan|five spices
+haldirams-paneer-makhani,Haldiram's Paneer Makhani,Paneer Makhani (పనీర్ మఖానీ),हल्दी राम्स पनीर मखानी,haldirams-paneer-makhani|paneer makhani|paneer in cream sauce
+haldirams-paneer-paratha,Haldiram's Paneer Paratha,Paneer Paratha (పనీర్ పరాథ),हल्दी राम्स पनीर पराठा,haldirams-paneer-paratha|paneer paratha|paneer in flatbread
+haldirams-paneer-tikka,Haldiram's Paneer Tikka,Paneer Tikka (పనీర్ టిక్కా),हल्दी राम्स पनीर टिक्का,haldirams-paneer-tikka|paneer tikka|paneer in yogurt marinade
+haldirams-panipuri,Panipuri,పనిపురి (పనిపురి),पनिपुरी (पनिपुरी),panipuri|haldirams|streetfood|snack
+haldirams-pao-bhaji,Pao Bhaji,పావ్ భజీ (పావ్),पाव भाजी (पाव),pao bhaji|haldirams|pav bhaji|streetfood
+haldirams-pav-bhaji,Pav Bhaji,పవ్ భజీ (పవ్),पाव भाजी (पाव),pav bhaji|haldirams|pav|streetfood
+haldirams-plain-bhujia,Plain Bhujia,సాధారణ భుజియా (భుజియా),सादा भुजिया (भुजिया),plain bhujia|haldirams|snack|chutney
+haldirams-punjabi-choley,Punjabi Choley,పంజాబీ చోలీ (చోలీ),पंजाबी चोली (चोली),punjabi choley|haldirams|choley|snack
+haldirams-punjabi-tadka,Punjabi Tadka,పంజాబీ తాడకా (తాడకా),पंजाबी तड़का (तड़का),punjabi tadka|haldirams|tadka|snack
+haldirams-rajma-raseela,Rajma Raseela,రాజ్మా రాసీలా (రాజ్మా),राजमा रासीला (राजमा),rajma raseela|haldirams|rajma|curry
+haldirams-rajma-wt-jeera-rice,Rajma with Jeera Rice,రాజ్మా వెల్లువ బార్లీ చావల్ (రాజ్మా),राजमा वेल्लू वेरी चावल (राजमा),rajma with jeera rice|haldirams|rajma|rice
+haldirams-sambar,Sambar,సంబార్ (సంబార్),संबर (संबर),sambar|haldirams|lentil curry
+haldirams-samosa,Samosa,సమోసా (సమోసా),समोसा (समोसा),samosa|haldirams|snack|fried
+haldirams-yellow-dal-tadka,Haldiram's Yellow Dal Tadka,Pasupu (పసుపు),हल्दी राम्स पीला दाल टड़का,haldiram yellow dal tadka turmeric
+haldirams-yellow-dal-tadka871265100411,Haldiram's Yellow Dal Tadka,Pasupu (పసుపు),हल्दी राम्स पीला दाल टड़का,haldiram yellow dal tadka turmeric
+haleem-whole,Whole Haleem,హలీం (హలీం),खली मिला,haleem whole
+hands-mango-flavored-coconut-milk,Hands Mango Flavored Coconut Milk,హెండ్స్ మాంగో ఫ్లావర్డ్ కొకోనట్ మీల్,हैंड्स मांगो फ्लेवर्ड कोकोनट मिल्क,hands mango flavored coconut milk
+hands-strawberry-flavored-coconut-milk,Hands Strawberry Flavored Coconut Milk,హెండ్స్ స్ట్రావ్‌బెరీ ఫ్లావర్డ్ కొకోనట్ మీల్,हैंड्स स्ट्रॉबेरी फ्लेवर्ड कोकोनट मिल्क,hands strawberry flavored coconut milk
+handva,Handva,హండ్వా (హండ్వా),हंडवा,handva
+happy-boom-top-gun,Happy Boom Top Gun,హాపీ బూమ్ టాప్ గన్,हैप्पी बूम टॉप गन,happy boom top gun
+happy-diwali-10-pcs,Happy Diwali 10 Pcs,హాపీ దీపావళి 10 పీస్,हैप्पी दिवाली 10 पीस,happy diwali 10 pieces
+har-rooz-basmati-rice-10-lb,Har Roz Basmati Rice 10 Lb,హార్ రూజ్ బసమతి చావళి 10 లబ్బులు,हर रोज़ बासमती चावल 10 लब,har rooz basmati rice 10 lbs
+health-mix,Health Mix,హెల్త్ మిక్స్,स्वास्थ्य मिश्र,health mix
+hearty-oats,Hearty Oats,Pasupu (పసుపు),Pasupu (पसुपु),oats|hearty|breakfast
+hearty-oats-1,Hearty Oats,Pasupu (పసుపు),Pasupu (पसुपु),oats|hearty|breakfast
+heavy-cream-1,Heavy Cream,Gur (గుర్),Gur (गुर),cream|heavy|dairy
+heavy-starch,Heavy Starch,Bhavya (భవ్య),Bhavya (भव्य),starch|heavy|flour
+hem,Hem,Hem (హెమ),Hem (हेम),hem|hem-dhoop|incense
+hem-dhoop-sticks,Hem Dhoop Sticks,Hem Dhoop (హెమ ధూప),Hem Dhoop (हेम धूप),hem-dhoop|hem|incense
+hem-vanilla-incense-sticks,Hem Vanilla Incense Sticks,Hem Vanila Dhoop (హెమ వనిల ధూప),Hem Vanila Dhoop (हेम वनिला धूप),hem-vanilla|hem|incense
+herbi-arjunarishta-dietary-supplement-450-ml,Herbi Arjunarishta Dietary Supplement 450ml,Herbi Arjunarishta (హెర్బి ఆర్జునారిష్ఠ),Herbi Arjunarishta (हेर्बी आर्जुनारिष्ठ),arjunarishta|herbi|dietary|supplement
+herbi-nagkesar,Herbi Nagkesar,Herbi Nagkesar (హెర్బి నాగకేశర),Herbi Nagkesar (हेर्बी नागकेशर),nagkesar|herbi|oil|capsule
+herbi-shampoo-355-ml,Herbi Shampoo 355ml,Herbi Shampoo (హెర్బి షామ్పు),Herbi Shampoo (हेर्बी शैम्पू),shampoo|herbi|haircare
+herbicare-neem-powder,Neem Powder,Neem (నేమ్),Neem (नीम),neem powder|herbicare|neem
+hesh-sandal-face-pack,Sandalwood Face Pack,Sandalu (సందలు),Sandalwood (संदल),sandalwood|face pack|hesh
+hesh-tulsi-powder,Tulsi Powder,Tulasi (తులసి),Tulsi (तुलसी),tulsi powder|hesh|tulsi
+hide-seek-1,Hide & Seek Ladoo,Hide & Seek Ladoo (హైడ్ & సీక్),Hide & Seek Ladoo (हाइड एंड सीक),hide & seek ladoo|hide seek
+himalaya-besan-ladoo,Besan Ladoo,Besan Ladoo (బెసన్),Besan Ladoo (बेसन),besan ladoo|himalaya|besan
+himalaya-kaju-katli651539992023,Kaju Katli,Kaju Katli (కజు కట్లీ),Kaju Katli (काजू कटली),kaju katli|himalaya|kaju
+himalaya-milk-cake651539992016,Milk Cake,Milk Cake (మాంసపు కేక్),Milk Cake (मांसपु केक),milk cake|himalaya|milk
+himalaya-motichur-ladoo,Motichur Ladoo,Motichur Ladoo (మోటిచూర్),Motichur Ladoo (मोटिचूर),motichur ladoo|himalaya|motichur
+himalaya-tulasi-respiratory-wellness,Tulasi Respiratory Wellness,Tulasi Respiratory Wellness (తులసి శ్వాస సంరక్షణ),Tulasi Respiratory Wellness (तुलसी श्वास संरक्षण),tulasi respiratory wellness|himalaya|tulasi
+himalayan-salt-mantra,Himalayan Salt,Himalayan Salt (హిమాలయన్ సల్ట్),Himalayan Salt (हिमालयन साल्ट),himalayan salt|himalaya|salt
+himalya-coctal-samosa,Himalayan Coconut Samosa,Himalaya Coconut Samosa (హిమాలయ కొకోట సమోసా),हिमालय कोकोट सामोसा,himalayan coconut|samosa|indian snack
+holi-clr,Holi Color,హోలీ కలర్ (హోలీ రంగు),होली रंग,holi color|diwali decoration
+home-style,Home Style,హోమ్ స్టైల్ (ఇండియన్ హోమ్ కుక్క),होम स्टाइल,indian home|cooking style
+horas-gram,Horas Gram,హోరస్ గ్రామ్ (హోరస్ బీన్),होरस ग्राम,horas gram|gram lentil
+horlicks-1,Horlicks 1,హార్లిక్స్ 1 (హార్లిక్స్ బీన్),हार्लिक्स 1,horlicks|malnutrition|child nutrition
+hot-hot,Hot Hot,హాట్ హాట్ (వేడి వేడి),हॉट हॉट,hot|spicy|food
+hot-wex,Hot Wex,హాట్ వెక్స్ (హాట్ వెక్స్),हॉट वेक्स,hot|wax|beauty
+hyderabad-mix,Hyderabad Mix,హైదరాబాద్ మిక్స్ (హైదరాబాద్ మిశ్రమం),हैदराबाद मिश्र,hyderabad mix|indian mix|snack
+hyderabadi-mixed-pickle,Hyderabadi Mixed Pickle,హైదరాబాదీ మిక్స్ పిచ్చకులు (హైదరాబాదీ మిక్స్ పిచ్చకులు),हैदराबादी मिश्र पिकल,hyderabadi mixed pickle|indian pickle|snack
+ice-cream,Ice Cream,ఆయిస్ క్రీం (ఆయిస్ క్రీం),आइस क्रीम,ice cream|dessert|sweet
+ice-cream8901777968048,Ice Cream,Ice Cream (ఆస్ట్),Ice Cream (आस्ट),ice cream|cream|dessert|snack
+idhayam,Idhayam,Idhayam (ఇద్యామ్),Idhayam (इद्याम),idhayam|idli|rice|south indian
+idhayam-1,Idhayam 1,Idhayam 1 (ఇద్యామ్ 1),Idhayam 1 (इद्याम 1),idhayam 1|idli|rice|south indian
+idhayam-5-ltr,Idhayam 5 Ltr,Idhayam 5 Ltr (ఇద్యామ్ 5 లీటర్లు),Idhayam 5 Ltr (इद्याम 5 लीटर),idhayam 5ltr|idli|rice|south indian
+idhayam-authentic-kerala-mixture-12oz,Idhayam Authentic Kerala Mixture 12oz,Idhayam Authentic Kerala Mixture 12oz (ఇద్యామ్ అధికృత కేరళ మిశ్రమం 12 ఆంస్),Idhayam Authentic Kerala Mixture 12oz (इद्याम अधिकृत केरल मिश्रण 12 ओज़),idhayam kerala mixture|idli|rice|south indian
+idhayam-madras-mixture-snacks-340-gms,Idhayam Madras Mixture Snacks 340gms,Idhayam Madras Mixture Snacks 340gms (ఇద్యామ్ మద్రాస్ మిశ్రమం స్నాక్స్ 340gమ్స్),Idhayam Madras Mixture Snacks 340gms (इद्याम मद्रास मिश्रण स्नैक्स 340ग्राम),idhayam madras mixture|idli|rice|south indian
+idhayam-plain-boondhi-340g,Idhayam Plain Boondhi 340g,Idhayam Plain Boondhi 340g (ఇద్యామ్ ప్లేన్ బౌండి 340g),Idhayam Plain Boondhi 340g (इद्याम प्लेन बौंडी 340ग्राम),idhayam boondhi|idli|rice|south indian
+idhayam-sunflower-oil-2-liter,Idhayam Sunflower Oil 2 Liter,Idhayam Sunflower Oil 2 Liter (ఇద్యామ్ సున్‌ఫ్లవర్ ఎండ్ 2 లీటర్లు),Idhayam Sunflower Oil 2 Liter (इद्याम सुनफ्लावर एंड 2 लीटर),idhayam sunflower oil|idli|rice|south indian
+idli-rava-1,Idli Rava 1,Idli Rava 1 (ఇడ్లి రవా 1),Idli Rava 1 (इडली रवा 1),idli rava|idli|rice|south indian
+idli-rice-10-lb,Idli Rice 10 Lb,Idli Rice 10 Lb (ఇడ్లి రైస్ 10 పౌండ్లు),Idli Rice 10 Lb (इडली राइस 10 पाउंड),idli rice|idli|rice|south indian
+idli-rice-20-lb,Idli Rice,Idli Rice (ఇడ్లి రసం),इडली राइस,"idli rice, indian rice, basmati rice"
+idli-rice051179262164,Idli Rice,Idli Rice (ఇడ్లి రసం),इडली राइस,"idli rice, indian rice, basmati rice"
+idly-rava,Idly Rava,Idly Rava (ఇడ్లై రవా),इडली रवा,"idly rava, indian rava, semolina"
+idly-value-pack,Idly Value Pack,Idly Value Pack (ఇడ్లై వాల్యూ ప్యాక్),इडली वैल्यू पैक,"idly value pack, indian idly, semolina"
+ilk-rusk,Ilk Rusk,Ilk Rusk (ఇల్క్ రస్క్),इल्क रस्क,"ilk rusk, indian rusk, wheat rusk"
+india-gate-basmati-excel-rice-10-lb,India Gate Basmati Excel Rice,India Gate Basmati Excel Rice (భారతీయ గేట్ బస్మతి ఎక్సెల్ రసం),भारतीय गेट बासमती एक्सेल राइस,"basmati rice, india gate, indian rice"
+india-gate-basmati-rice,India Gate Basmati Rice,India Gate Basmati Rice (భారతీయ గేట్ బస్మతి రసం),भारतीय गेट बासमती राइस,"basmati rice, india gate, indian rice"
+india-gate-classic,India Gate Classic,India Gate Classic (భారతీయ గేట్ క్లాసిక్),भारतीय गेट क्लासिक,"india gate, indian rice, classic"
+india-s-nature-extra-long-basmati-rice-10-lb,India S Nature Extra Long Basmati Rice,India S Nature Extra Long Basmati Rice (భారతీయ్ ఎస్ నేచర్ ఎక్స్ట్రా లాంగ్ బస్మతి రసం),भारतीय एस नेचर एक्स्ट्रा लॉन्ग बासमती राइस,"basmati rice, india s nature, indian rice"
+india-s-nature-sona-masoori-20-lb,India S Nature Sona Masoori Rice,India S Nature Sona Masoori Rice (భారతీయ్ ఎస్ నేచర్ సోన మాసూరి రసం),भारतीय एस नेचर सोना मासूरी राइस,"sona masoori rice, india s nature, indian rice"
+indian-squash,Indian Squash,ఇండియన్ స్క్వాష్ (ఇండియన్ స్క్వాష్),भारतीय गन्ना (भारतीय गन्ना),indian squash|ganna|squash
+indigo752926387245,Indigo,ఇండిగో (ఇండిగో),इंदिगो (इंदिगो),indigo|indigo dye|indigo plant
+insta-strong,Insta Strong,ఇస్టా స్టరంగ్ (ఇస్టా స్టరంగ్),इंस्टा स्ट्रॉन्ग (इंस्टा स्ट्रॉन्ग),insta strong|protein powder|muscle builder
+iodex89003978,Iodex,ఐడెక్స్ (ఐడెక్స్),आइडेक्स (आइडेक्स),iodex|iodine|thyroid support
+isabol,Isabol,ఇసాబోల్ (ఇసాబోల్),इजाबोल (इजाबोल),isabol|weight loss|fat burner
+iyengar-hot-bisi-bele-bath-mix,Iyengar Hot Bisi Bele Bath Mix,ఇయెంగర్ హాట్ బిసి బేలే బాట్ మిక్స్ (ఇయెంగర్ హాట్ బిసి బేలే బాట్ మిక్స్),इयेंगर हॉट बिसी बेले बाथ मिक्स (इयेंगर हॉट बिसी बेले बाथ मिक्स),iyengar hot|bisi bele bath|south indian recipe
+iyengar-hot-hot-vangibath-mix-200-gms,Iyengar Hot Hot Vangibath Mix 200gms,ఇయెంగర్ హాట్ హాట్ వాంగిబాట్ మిక్స్ 200గ్రామ్స్ (ఇయెంగర్ హాట్ హాట్ వాంగిబాట్ మిక్స్ 200గ్రామ్స్),इयेंगर हॉट हॉट वांगीबाथ मिक्स 200ग्राम (इयेंगर हॉट हॉट वांगीबाथ मिक्स 200ग्राम),iyengar hot|vangibath mix|south indian recipe
+iyengar-hot-puliyogare-gujju,Iyengar Hot Puliyogare Gujju,ఇయెంగర్ హాట్ పులియోగరే గుజ్జు (ఇయెంగర్ హాట్ పులియోగరే గుజ్జు),इयेंगर हॉट पुलियोगरे गुज्जू (इयेंगर हॉट पुलियोगरे गुज्जू),iyengar hot|puliyogare|south indian recipe
+iyengar-hot-rasam-powder,Iyengar Hot Rasam Powder,ఇయెంగర్ హాట్ రాసం పౌడర్ (ఇయెంగర్ హాట్ రాసం పౌడర్),इयेंगर हॉट रासम पाउडर (इयेंगर हॉट रासम पाउडर),iyengar hot|rasam powder|south indian recipe
+iyengar-hot-vangibath-mix,Iyengar Hot Vangibath Mix,ఇయెంగర్ హాట్ వాంగిబాట్ మిక్స్ (ఇయెంగర్ హాట్ వాంగిబాట్ మిక్స్),इयेंगर हॉट वांगीबाथ मिक्स (इयेंगर हॉट वांगीबाथ मिक्स),iyengar hot|vangibath mix|south indian recipe
+jabsons-gajak-1,Gajar (Carrot),Gajar (గజ్జర్),Gajar (गाजर),gajar|carrot|gajar powder
+jabsons-peanut-spicy-mas,Peanut Masala,Peanut Masala (పెన్ను మసాలా),Peanut Masala (पेनट मसाला),peanut masala|peanut|masala
+jabsons-r-chana,R Chana (Rajma Chana),R Chana (ఆర్ చనా),R Chana (राजमा चना),rajma chana|r chana|rajma
+jabsons-roasted-chana,Roasted Chana,Roasted Chana (రోస్ట్ చనా),Roasted Chana (रोस्ट चना),roasted chana|chana|roasted
+jabsons-roasted-chana-200-gms,Roasted Chana 200g,Roasted Chana 200g (రోస్ట్ చనా 200g),Roasted Chana 200g (रोस्ट चना 200g),roasted chana 200g|chana|roasted
+jabsons-roasted-chana-400-gms,Roasted Chana 400g,Roasted Chana 400g (రోస్ట్ చనా 400g),Roasted Chana 400g (रोस्ट चना 400g),roasted chana 400g|chana|roasted
+jack-furit,Jackfruit,Jackfruit (జాక్ ఫరిట్),Jackfruit (जैक फेरिट),jackfruit|jackfruit seeds|jackfruit
+jackfruit-seeds,Jackfruit Seeds,Jackfruit Seeds (జాక్ ఫరిట్ బీజాలు),Jackfruit Seeds (जैक फेरिट बीज),jackfruit seeds|jackfruit|jackfruit
 jaggery,Jaggery,Bellam (బెల్లం),Gud (गुड़),jaggery|gud|bellam
+jaggery-ball-1,Jaggery Ball,Jaggery Ball (జగ్గరీ బాల్),Jaggery Ball (जग्गरी बॉल),jaggery ball|jaggery|jaggery
+jaggry011433153058,Jaggery,Jaggery (జగ్గరీ),Jaggery (जग्गरी),jaggery|jaggery ball|jaggery
+jaggry011433160025,Jaggery,Jaggery (జగ్గర్య),चीनी (चीनी),jaggery|chini|gud|jagery
+jaggry723246285634,Jaggery,Jaggery (జగ్గర్య),चीनी (चीनी),jaggery|chini|gud|jagery
+jai-hanuman-havan-samagri,Jai Hanuman Havan Samagri,Jai Hanuman Havan Samagri (జై హనుమాన్ హవన్ సమాగ్రి),जय हनुमान हवन सामग्री,jai-hanuman-havan-samagri|hanuman|havan|samagri
+jain-food-chocolate-burfi-frozen,Jain Food Chocolate Burfi Frozen,Jain Food Chocolate Burfi Frozen (జైన ఆహార చోక్లేట్ బర్ఫి ఫ్రీజర్),जैन खाना चॉकलेट बर्फी फ्रिज,jain-food-chocolate-burfi-frozen|jain-food|chocolate|burfi|frozen
+jain-foods-cashews-mild-spiced,Jain Foods Cashews Mild Spiced,Jain Foods Cashews Mild Spiced (జైన ఆహారాలు కాశవ్వలు స్వాదించిన),जैन खाना कशव वाले मीठे मसालेदार,jain-foods-cashews-mild-spiced|jain-foods|cashews|mild-spiced
+jain-foods-delhi-mix,Jain Foods Delhi Mix,Jain Foods Delhi Mix (జైన ఆహారాలు ఢిల్లీ మిశ్రమం),जैन खाना दिल्ली मिश्रण,jain-foods-delhi-mix|jain-foods|delhi-mix
+jain-foods-masala-kachori,Jain Foods Masala Kachori,Jain Foods Masala Kachori (జైన ఆహారాలు మసాలా కచోరి),जैन खाना मसाला कचोरी,jain-foods-masala-kachori|jain-foods|masala-kachori
+jalani-jaljira,Jalani Jaljira,Jalani Jaljira (జలాని జల్జీరా),जलानी जलजीरा,jalani-jaljira|jalani|jaljira
+jalapeno-samosa8901552023603,Jalapeno Samosa,Jalapeno Samosa (జలాపెనో సమోసా),जलापेनो सामोसा,jalapeno-samosa|jalapeno|samosa
+jamun,Jamun,Jamun (జామున్),जामुन,jamun|jamun
+janthikalu,Janthikalu,Janthikalu (జంతికలు),Janthikalu (जंतिकल),janthikalu|janthi|kala|powder
+jasmine-oil-for-puja,Jasmine Oil for Puja,Jasmin (జాస్మిన్) తీగ (తీగ),Jasmin (जास्मिन) तेल (तेल),jasmine oil|puja|agarbatti|oil
 jeera,Cumin Seeds,Jilakarra,Jeera,cumin|jeera|jilakarra
+jeera-cookie,Jeera Cookie,Jeera (जीरा) కోకీ (కోకీ),Jeera (जीरा) कुकी (कुकी),jeera cookie|jeera|cookie
+jeera-puri,Jeera Puri,Jeera (जीरा) पुरी (पुरी),Jeera (जीरा) पुरी (पुरी),jeera puri|jeera|purri
+jhalmuri,Jhalmuri,Jhalmuri (ఝాల్మూరి),Jhalmuri (झाल्मूरी),jhalmuri|jhalmuri|snack
 jilakarra,Cumin Seeds,Jilakarra,Jeera,cumin|jeera|jilakarra
+jin-jan-britannia,Jin Jan Britannia,Jin Jan (జిన్ జాన్) బ్రిటానియా (బ్రిటానియా),Jin Jan (जिन जान) ब्रिटानिया (ब्रिटानिया),jin jan britannia|jin jan|britannia
+jintan,Jintan,Jintan (జింటన్),Jintan (जिंटान),jintan|jintan|tea
+johnsons-baby-shampoo,Johnson's Baby Shampoo,Johnson's (జॉन్సన్స్) బేబీ షామ్పు (షామ్పు),Johnson's (जॉन्सन्स) बेबी शैम्पू (शैम्पू),johnsons baby shampoo|johnsons|baby shampoo
+jowar-dhani-big,Jowar Dhani Big,Jowar (జోవార్) ధాని బిగ్ (ధాని),Jowar (जोवार) धानी बिग (धानी),jowar dhani big|jowar|dhani|big
+joy-tamarind-concentrate,Joy Tamarind Concentrate,Joy (జయ్) తామరందు కాంసెన్ట్రేట్ (తామరందు),Joy (जय) तamarind कॉन्सेंट्रेट (तामरिंद),joy tamarind concentrate|joy|tamarind|concentrate
+jug,Jug,జుగ్ (జుగ్),जुग (जुग),"jug,water bottle"
+jumbo-peanuts,Jumbo Peanuts,జంబో పెన్నియట్స్ (జంబో పెన్నియట్స్),जumbo मूंगफली (जumbo मूंगफली),"jumbo peanuts,peanuts"
+jwar-flour8904083514374,Jwar Flour,జ్వార్ అటా (జ్వార్ అటా),ज्वार आटा (ज्वार आटा),"jwar flour,atta"
+kabab-naan,Kabab Naan,కబాబ్ నాన్ (కబాబ్ నాన్),कबाब नान (कबाब नान),"kabab naan,naan bread"
+kabab-rolls,Kabab Rolls,కబాబ్ రోల్స్ (కబాబ్ రోల్స్),कबाब रोल्स (कबाब रोल्स),"kabab rolls,meat rolls"
+kabasura-kudineer-powder,Kabasura Kudineer Powder,కబసూర కుడినీర్ పౌడర్ (కబసూర కుడినీర్ పౌడర్),कबसूर कुडीनीर पाउडर (कबसूर कुडीनीर पाउडर),"kabasura kudineer powder,kudineer powder"
+kabuli-chana-7lb,Kabuli Chana 7lb,కబులి చానా 7లీటర్స్ (కబులి చానా 7లీటర్స్),कबुली चना ७ लीटर (कबुली चना ७ लीटर),"kabuli chana 7lb,kabuli chana"
+kabuli-chana723246181172,Kabuli Chana 723246181172,కబులి చానా 723246181172 (కబులి చానా 723246181172),कबुली चना 723246181172 (कबुली चना 723246181172),"kabuli chana 723246181172,kabuli chana"
+kabuli-chana723246232034,Kabuli Chana 723246232034,కబులి చానా 723246232034 (కబులి చానా 723246232034),कबुली चना 723246232034 (कबुली चना 723246232034),"kabuli chana 723246232034,kabuli chana"
+kadhi,Kadhi,కఢి (కఢి),कढ़ी (कढ़ी),"kadhi,curry"
+kadhi-chawal,Kadhi Chawal,కడ్హి చావాల్ (కడ్హి చావాల్),कड़ही चावल (कड़ही चावल),kadhi|chawal|south indian|curry
+kadhi807522006837,Kadhi,కడ్హి (కడ్హి),कड़ही (कड़ही),kadhi|curry|south indian
+kailash-jeevan,Kailash Jeevan,कैलाश जीवन (कैलाश जीवन),कैलाश जीवन (कैलाश जीवन),kailash|jeevan|energy drink
+kaju-draksh,Kaju Draksh,काजू द्राक्ष (काजू द्राक्ष),काजू द्राक्ष (काजू द्राक्ष),kaju|draksh|cashew
+kaju-draksh-icecream,Kaju Draksh Icecream,काजू द्राक्ष आइस्क्रीम (काजू द्राक्ष आइस्क्रीम),काजू द्राक्ष आइस्क्रीम (काजू द्राक्ष आइस्क्रीम),kaju|draksh|icecream|cashew
+kaju-gunjiya,Kaju Gunjiya,काजू गुंजिया (काजू गुंजिया),काजू गुंजिया (काजू गुंजिया),kaju|gunjiya|cashew
+kaju-katli8901777992173,Kaju Katli,काजू कटली (काजू कटली),काजू कटली (काजू कटली),kaju|katli|cashew
+kaju-pista,Kaju Pista,काजू पिस्ता (काजू पिस्ता),काजू पिस्ता (काजू पिस्ता),kaju|pista|cashew
+kala-chana-1,Kala Chana,काला चना (काला चना),काला चना (काला चना),kala chana|black chickpea|chana
+kala-chana723246181028,Kala Chana,काला चना (काला चना),काला चना (काला चना),kala chana|black chickpea|chana
+kala-chana7232461810352,Black Chickpeas,Kala Chana (కలా చానా),काली चना (काली चना),black chickpeas|chana|kala chana
+kalijeera-9lb,Fenugreek Leaves,Kaleera (కలీరా),केलीरा (केलीरा),fenugreek leaves|kaleera|kasoori methi
+kalijiri,Kasoori Methi,Kaleeri (కలీరి),कसूरी मेथी (कसूरी मेथी),kasoori methi|fenugreek leaves|kaleeri
+kanha-copper-bottle,Copper Bottle,Kanha (కన్హ),कन्हा (कन्हा),copper bottle|kanha|metal bottle
+kanthil-1,Kanthil,Kanthil (కంతిల),कंथिल (कंथिल),kanthil|kanthil powder|kanthil spice
+kappalandi-masala,Kappalandi Masala,Kappalandi (కప్పలాండి) మసాలా,कप्पलांडी मसाला (कप्पलांडी मसाला),kappalandi masala|kappalandi|masala
+karachi8908004010822,Karachi,Kari (కరి),कारी (कारी),kari|karachi|chili
+karahi-2,Karahi,Kari (కరి),कारी (कारी),kari|karahi|chili
+karahi-3,Karahi,Kari (కరి),कारी (कारी),kari|karahi|chili
+karaila,Karaila,Kari (కరి),कारी (कारी),kari|karaila|chili
+karela,Bitter Gourd,కరేల (కరేల),केला (केला),"bitter gourd,karela,veggie"
+karela-mathi,Bitter Gourd and Mathi,కరేల మఠి (కరేల),केला और मठी (केला),"bitter gourd and mathi,karela-mathi,veggie"
+karwa-chauth-pooja-samagri-kit,Karwa Chauth Pooja Samagri Kit,కర్వా చౌథ్ పూజా సమాగ్రి కిట్ (కర్వా),कर्वा चौथ पूजा सामग्री किट (कर्वा),"karwa chauth pooja samagri kit,karwa chauth,puja kit"
+kashmiri-mix8904063253194,Kashmiri Mix,కాశ్మీరీ మిక్స్ (కాశ్మీరీ),कश्मीरी मिश्र (कश्मीरी),"kashmiri mix,kashmiri,spice mix"
+kati-roll,Kati Roll,కాటి రోల్ (కాటి),कटी रोल (कटी),"kati roll,kati,paratha roll"
+kati-roll011433160261,Kati Roll,కాటి రోల్ (కాటి),कटी रोल (कटी),"kati roll,kati,paratha roll"
+katora-bowl,Katora Bowl,కాటోరా బౌల్ (కాటోరా),कटरा बाउल (कटरा),"katora bowl,katora,ceramic bowl"
+kawan-chapatti,Kawan Chapatti,కావన్ చపాతి (కావన్),कावन चपाती (कावन),"kawan chapatti,kawan,flatbread"
+kawan-onion-bulk-paratha,Kawan Onion Bulk Paratha,కావన్ ఒండ్రోనియం బుల్క్ పరాఠా (కావన్),कावन Onion Bulk पराठा (कावन),"kawan onion bulk paratha,kawan onion,paratha"
+kawan-plain-paratha,Kawan Plain Paratha,కావన్ ప్లేన్ పరాఠా (కావన్),कावन प्लेन पराठा (कावन),"kawan plain paratha,kawan plain,paratha"
+kawan-whole-wheat-chapathi,Whole Wheat Chapathi,Pasupu (పసుపు),साबुत आटा चपाती,whole wheat chapathi|pasupu|chapathi|indian flatbread
+kawan-whole-wheat-paratha,Whole Wheat Paratha,Pasupu (పసుపు),साबुत आटा पराठा,whole wheat paratha|pasupu|paratha|indian flatbread
+kayam-tablet,Kayam Tablet,Kayam (కయం),कयाम टैबलेट,kayam tablet|kayam|indian medicine
+kcb-badam-khatie,KCB Badam Khatie,KCB Badam (కెస్‌బి బాదం),कीबी बादाम खाती,kcb badam khatie|kcb badam|indian snack
+kcb-bakar-khani,KCB Bakar Khani,KCB Bakar (కెస్‌బి బకర్),कीबी बकर खानी,kcb bakar khani|kcb bakar|indian snack
+kcb-cake-rusk-no-egg,KCB Cake Rusk No Egg,KCB Cake Rusk (కెస్‌బి కేక్ రస్క్),कीबी केक रस्क नो अंडा,kcb cake rusk no egg|kcb cake rusk|indian snack
+kcb-cake-rusk-with-fennel-seeds,KCB Cake Rusk With Fennel Seeds,KCB Cake Rusk (కెస్‌బి కేక్ రస్క్),कीबी केक रस्क फेनेल सीड्स से,kcb cake rusk with fennel seeds|kcb cake rusk|indian snack
+kcb-cashew-khatie,KCB Cashew Khatie,KCB Cashew (కెస్‌బి కేశవ),कीबी केशव खाती,kcb cashew khatie|kcb cashew|indian snack
+kcb-coconut-buiscuts,KCB Coconut Buiscuts,KCB Coconut (కెస్‌బి కోకో),कीबी कोको बिस्कुट,kcb coconut buiscuts|kcb coconut|indian snack
+kcb-crunchy-tea-rusk,KCB Crunchy Tea Rusk,KCB Tea Rusk (కెస్‌బి టీ రస్క్),कीबी टी रस्क क्रंची,kcb crunchy tea rusk|kcb tea rusk|indian snack
+kcb-elaichi-khatie,Ginger Powder,Elachi (ఎలాచి),Elachi (एलाची),ginger powder|elaichi|khatie
+kcb-jeera-cookies,Jeera Cookies,Jeera (జీర),Jeera (जीरा),jeera cookies|jeera|cookies
+kcb-morning-tea-toast,Morning Tea Toast,Morning Tea (మారణ్ చా,Morning Tea (सुबह का चाय),morning tea|morning tea toast|morning tea|toast
+kcb-mumbai-pav,Mumbai Pav,Mumbai Pav (ముంబయి పవ్),Mumbai Pav (मुंबई पाव),mumbai pav|mumbai pav|pav
+kcb-pakori,Pakori,Pakori (పకోరి),Pakori (पकोरी),pakori|pakori|pakori
+kcb-peanut-pista-cookies,Peanut Pista Cookies,Peanut Pista (పెన్నట్ పిస్ట),Peanut Pista (पेनट पिस्ता),peanut pista cookies|peanut pista|peanut cookies|pista cookies
+kcb-pista-khatie,Pista Khatie,Pista Khatie (పిస్టా ఖాటీ),Pista Khatie (पिस्ता खाती),pista khatie|pista khatie|pista khatie
+kcb-special-cake-rusk,Special Cake Rusk,Special Cake (విశేష కేక్),Special Cake (विशेष केक),special cake|cake|rusk|cake rusk
+kerala-chicken-curry,Kerala Chicken Curry,Kerala Chicken (కేరళ చికెన్ కరీ),Kerala Chicken (केरला चिकन कुरी),kerala chicken curry|kerala chicken|chicken curry|chicken
+kerala-kuthari-matta-rice-10-lb,Kerala Kuthari Matta Rice (10 lbs),Kerala Kuthari Matta (కేరళ కుతారి మట్ట),Kerala Kuthari Matta (केरला कुतारी मट्टा),kerala kuthari matta rice|kerala kuthari matta|matta rice|10 lbs
+kerala-kuthari-matta-rice-10-lb-1,Kuthari Matta Rice,Pasupu (పసుపు),हल्दी (हल्दी),kuthari matta rice|haldi|pasupu
+kerala-mixture,Kerala Mixture,కేరళ మిశ్రమం (కేరళ మిశ్రమం),केरला मिश्रण (केरला मिश्रण),kerala mixture|kerala
+kerala-seeds-bittee-melon-seeds,Kerala Seeds Bittee Melon Seeds,కేరళ బిట్టీ మెలోన్ బీజాలు (కేరళ బిట్టీ మెలోన్ బీజాలు),केरला बिट्टी मेलोन बीज (केरला बिट्टी मेलोन बीज),kerala seeds bittee melon seeds|kerala
+kesar,Kesar,केसर (केसर),केसर (केसर),kesar|kesar powder
+kesar-pista-kingcone,Kesar Pista Kingcone,केसर पिस्ता किंगकोन (केसर पिस्ता किंगकोन),केसर पिस्ता किंगकोन (केसर पिस्ता किंगकोन),kesar pista kingcone|kesar
+kfi-achari-mango,KFI Achari Mango,केऎफआई अचारी मांगो (केऎफआई अचारी मांगो),केऎफआई अचारी मांगो (केऎफआई अचारी मांगो),kfi achari mango|kfi
+kfi-mint-chutney,KFI Mint Chutney,केऎफआई पुदीना चटनी (केऎफआई पुदीना चटनी),केऎफआई पुदीना चटनी (केऎफआई पुदीना चटनी),kfi mint chutney|kfi
+khari,Khari,खारी (खारी),खारी (खारी),khari|khari sing
+khari-sing,Khari Sing,खारी सिंग (खारी सिंग),खारी सिंग (खारी सिंग),khari sing|khari
+khasta-kachori,Khasta Kachori,खस्ता कचोरी (खस्ता कचोरी),खस्ता कचोरी (खस्ता कचोरी),khasta kachori|khasta
+khatti-meethi-chutny,Mint Chutney,మింట్ (మింట్) చూట్నీ,मिंट (मिंट) चटनी,mint chutney|mint|chutney
+khazana-1,Khazana,खजाना,खजाना,khazana|khazana store
+khazana-organic-brown-sona-masuri-rice-10-lb,Organic Brown Sona Masuri Rice,వృద్ధాయితీ బ్రाउన్ సోనా మసూరి చర్బ,वृधायिती ब्राउन सोना मसूरी चावल,organic brown rice|sona masuri rice|brown rice
+khazana-smoked-basmati-rice-10-lb,Smoked Basmati Rice,బ్యాస్మతి చేసిన బస్మతి చర్బ,बेसमती की धूमी चावल,smoked basmati rice|basmati rice|smoked rice
+khoya-burfi,Khoya Burfi,खोया बर्फी,खोया बर्फी,khoya burfi|khoya|burfi
+kidney-beans051179101357,Kidney Beans,కిడ్నీ పనిసార్లు,किडनी बीन्स,kidney beans|kidney beans|kidney beans
+kidny-beans051179101371,Kidney Beans,కిడ్నీ పనిసార్లు,किडनी बीन्स,kidney beans|kidney beans|kidney beans
+kissan-mix-fruit-jam,Kissan Mix Fruit Jam,किसान मिश्रित फल जैम,किसान मिश्रित फल जैम,kissan mix fruit jam|kissan fruit jam|fruit jam
+kitchen-king,Kitchen King,किचन किंग,किचन किंग,kitchen king|kitchen king|kitchen king
+kitchenware,Kitchenware,किचन वेयर,किचन वेयर,kitchenware|kitchenware|kitchenware
+knorr-thai,Thai Curry Paste,Thaai (తై),Thai Masala,thaicurrypaste|masalathai
+kohinoor-basmati-rice-1,Basmati Rice 1 lb,బస్మతి రైస్ (బస్మతి రైస్),बसमता चावल 1 पाउंड,basmatirice|basmati|rice
+kohinoor-basmati-rice-4-lb,Basmati Rice 4 lb,బస్మతి రైస్ 4 లబ్బీలు (బస్మతి రైస్),बसमता चावल 4 पाउंड,basmatirice|basmati|rice
+kohinoor-everyday-basmati-rice-10-lb,Basmati Rice 10 lb,బస్మతి రైస్ 10 లబ్బీలు (బస్మతి రైస్),बसमता चावल 10 पाउंड,basmatirice|basmati|rice
+kohinoor-extra-long-basmati-rice810347001659,Extra Long Basmati Rice,బస్మతి రైస్ (బస్మతి రైస్),बसमता चावल (बसमता चावल),basmatirice|basmati|basmatirice
+kohinoor-platinum-basmati-rce-jar,Platinum Basmati Rice Jar,బస్మతి రైస్ (బస్మతి రైస్),बसमता चावल (बसमता चावल),basmatirice|basmati|basmatirice
+kohinoor-super-basmati,Super Basmati,బస్మతి (బస్మతి),बसमता चावल (बसमता चावल),basmatirice|basmati|basmatirice
+kohinoor-super-basmati-rice-jar,Super Basmati Rice Jar,బస్మతి రైస్ (బస్మతి రైస్),बसमता चावल (बसमता चावल),basmatirice|basmati|basmatirice
+kohinoorauthentic-bas,Authentic Basmati,బస్మతి (బస్మతి),बसमता चावल (बसमता चावल),basmatirice|basmati|basmatirice
+kol-fish,Fish,మీన (మీన),मछली (मछली),fish|meeen
+kolhapuri-jaggary-yellow,Yellow Jaggery,Pasupu (పసుపు),सफेद चीनी (सफेद चीनी),yellow jaggery|pasupu|chini
+kolhapuri-onion-garlic-masala,Kolhapuri Onion Garlic Masala,కొల్లపూరి పప్పు మసాలా (కొల్లపూరి పప్పు మసాలా),कोल्हापूरी प्याज-लहसुन मसाला (कोल्हापूरी प्याज-लहसुन मसाला),kolhapuri onion garlic masala|paplu masala|pyaz lahsun masala
+kontos-pocketless-pita-nan,Pocketless Pita Nan,కంటోస్ పొక్కిట్ నాన్ (కంటోస్ పొక్కిట్ నాన్),कंटोस पॉकेटलेस पिटा नान (कंटोस पॉकेटलेस पिटा नान),kontos pocketless pita nan|pocketless pita|nan
+kontos-roghani-nan,Roghani Nan,కంటోస్ రోఘాని నాన్ (కంటోస్ రోఘాని నాన్),कंटोस रोहगनी नान (कंटोस रोहगनी नान),kontos roghani nan|roghani nan|roghani
+kontos-tandoori-nan,Tandoori Nan,కంటోస్ టాండూరి నాన్ (కంటోస్ టాండూరి నాన్),कंटोस टांडूरी नान (कंटोस टांडूरी नान),kontos tandoori nan|tandoori nan|tandoori
+kopra-pak,Kopra Pak,కోప్రా పాక్ (కోప్రా పాక్),कोप्रा पाक (कोप्रा पाक),kopra pak|copra pak|ghee pak
+kozhukkatta,Kozhukkatta,కొజ్జుక్కట్ట (కొజ్జుక్కట్ట),कोज़ुक्कट्टा (कोज़ुक्कट्टा),kozhukkatta|kozhukkattu|kozhukkattu
+ksdhi-chawal,KSDHI Chawal,కెఎసడిహి చావాల్ (కెఎసడిహి చావాల్),केऎएसडीएचआई चावल (केऎएसडीएचआई चावल),ksdhi chawal|ksdhi|chawal
+kulfi,Kulfi,కుల్ఫి (కుల్ఫి),कुल्फी (कुल्फी),kulfi|kulfie|kulfie
+kulfi-b-p-k-vadilal,Kulfi B.P.K. Vadilal,కుల్ఫి బిపికె వాడిలాల్ (కుల్ఫి బిపికె వాడిలాల్),कुल्फी बीपीके वादीलाल (कुल्फी बीपीके वादीलाल),kulfi bpk vadilal|kulfi bpk|vadilal kulfi
 milk,Milk & Dairy,Palu / Perugu,Doodh / Dahi,milk|dahi|perugu|doodh|dairy|paneer
 mustard,Mustard,Aavalu,Rai,mustard|rai|aavalu
 neyyi,Clarified Butter,Neyyi,Ghee,ghee|neyyi
