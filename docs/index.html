@@ -11,6 +11,19 @@
 </head>
 <body>
 
+  <div class="cookie-consent-banner" id="cookieConsentBanner" aria-live="polite">
+    <div class="cookie-consent-copy">
+      <div class="cookie-consent-heading">Anonymous analytics</div>
+      We only collect anonymous browser/device information and search terms to improve product discovery. We do not collect names, phone numbers, email addresses, or personal account data.
+    </div>
+    <div class="cookie-consent-actions">
+      <a href="privacy-policy.html" class="cookie-link">Privacy Policy</a>
+      <a href="cookie-policy.html" class="cookie-link">Cookie Policy</a>
+      <button id="rejectCookiesBtn" class="cookie-btn secondary" type="button">Reject</button>
+      <button id="acceptCookiesBtn" class="cookie-btn primary" type="button">Accept</button>
+    </div>
+  </div>
+
   <!-- Mobile App Frame Container -->
   <div class="app-container">
 
@@ -24,8 +37,10 @@
         </div>
       </div>
       <div class="header-right-group">
-        <div class="lang-badge-pill">
-          🌐 EN &bull; TE &bull; HI
+        <div class="lang-toggle-group" aria-label="Language toggles">
+          <button class="lang-toggle-btn active" data-lang="en" type="button">EN</button>
+          <button class="lang-toggle-btn" data-lang="te" type="button">TE</button>
+          <button class="lang-toggle-btn" data-lang="hi" type="button">HI</button>
         </div>
         <button class="menu-trigger-btn" id="menuToggleBtn" aria-label="Open Navigation Menu">☰</button>
       </div>
@@ -61,36 +76,43 @@
             <span class="drawer-item-icon">✨</span>
             <span>AI Assistant Nav</span>
           </button>
-          <button class="drawer-item" data-tab="adminView" id="menuAdminBtn">
-            <span class="drawer-item-icon">🔒</span>
-            <span id="menuAdminText">Staff Portal (Login)</span>
+          <button class="drawer-item" data-link="privacy-policy.html">
+            <span class="drawer-item-icon">🛡️</span>
+            <span>Privacy Policy</span>
+          </button>
+          <button class="drawer-item" data-link="cookie-policy.html">
+            <span class="drawer-item-icon">🍪</span>
+            <span>Cookie Policy</span>
           </button>
         </div>
 
         <div style="font-size: 0.72rem; color: var(--text-muted); padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center;">
-          Bharath Bazar Supermarket v2.7 &bull; Device Analytics Active
+          Bharath Bazar Supermarket v2.7 &bull; Anonymous Search Analytics
         </div>
       </nav>
     </div>
 
-    <!-- Touch Aisle Carousel (Below Header) -->
-    <div class="aisle-carousel" id="aisleCarousel">
-      <button class="aisle-pill active" data-aisle="all">All Aisles (8)</button>
-      <button class="aisle-pill" data-aisle="1">🌶️ Aisle 1: Spices</button>
-      <button class="aisle-pill" data-aisle="2">🌾 Aisle 2: Atta & Rice</button>
-      <button class="aisle-pill" data-aisle="3">❄️ Aisle 3: Frozen</button>
-      <button class="aisle-pill" data-aisle="4">🍬 Aisle 4: Snacks</button>
-      <button class="aisle-pill" data-aisle="5">🧈 Aisle 5: Dairy & Oils</button>
-      <button class="aisle-pill" data-aisle="6">🫙 Aisle 6: Pickles</button>
-      <button class="aisle-pill" data-aisle="7">☕ Aisle 7: Tea & Drinks</button>
-      <button class="aisle-pill" data-aisle="8">🧼 Aisle 8: Personal Care</button>
+    <!-- Aisle Selector (Dropdown) -->
+    <div class="aisle-select-wrap">
+      <label class="sr-only" for="aisleSelect">Filter by aisle</label>
+      <select id="aisleSelect" class="aisle-select" aria-label="Filter by aisle">
+        <option value="all">All Aisles (8)</option>
+        <option value="1">🌶️ Aisle 1: Spices</option>
+        <option value="2">🌾 Aisle 2: Atta & Rice</option>
+        <option value="3">❄️ Aisle 3: Frozen</option>
+        <option value="4">🍬 Aisle 4: Snacks</option>
+        <option value="5">🧈 Aisle 5: Dairy & Oils</option>
+        <option value="6">🫙 Aisle 6: Pickles</option>
+        <option value="7">☕ Aisle 7: Tea & Drinks</option>
+        <option value="8">🧼 Aisle 8: Personal Care</option>
+      </select>
     </div>
 
     <!-- VIEW 1: PRODUCTS LIST (SEARCH TAB) -->
     <main class="view-panel active-view" id="searchView">
       <div class="results-header">
         <span id="resultsCount">Loading products...</span>
-        <span id="totalBadge" style="color: var(--accent-amber); font-weight: 700;">2,312 Items</span>
+        <span id="totalBadge" style="color: var(--accent-amber); font-weight: 700;">Catalog</span>
       </div>
 
       <div class="product-list" id="productListContainer">
@@ -131,56 +153,13 @@
       </div>
     </section>
 
-    <!-- VIEW 4: PRIVATE STAFF & ADMIN PORTAL TAB -->
-    <section class="view-panel" id="adminView">
-      <div class="results-header">
-        <span style="font-weight: 700; font-size: 1rem; color: #FFF;">🔒 Staff Admin Portal & Analytics</span>
-        <button id="staffLogoutBtn" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #EF4444; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 6px; cursor: pointer;">
-          Logout
-        </button>
-      </div>
-
-      <!-- DEVICE & VISITOR ANALYTICS DASHBOARD -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.2rem; margin-bottom: 1rem;">
-        <h4 style="margin-bottom: 0.5rem; color: #4ADE80;">📱 Connected Device & Visitor Analytics</h4>
-        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.8rem;">
-          Anonymous device profiling tracks visitor OS, screen resolution, and return frequency without user login.
-        </p>
-        <div id="deviceAnalyticsContainer">
-          <!-- Dynamic Device Analytics -->
-        </div>
-      </div>
-
-      <!-- PRIVATE SEARCH KEYWORD ANALYTICS -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.2rem; margin-bottom: 1rem;">
-        <h4 style="margin-bottom: 0.5rem; color: var(--accent-amber);">📊 Most Searched Product Keywords</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.8rem;">Aggregated customer search terms:</p>
-        <ul id="analyticsList" style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
-          <!-- Dynamically loaded analytics -->
-        </ul>
-      </div>
-
-      <!-- LOCATION EDITOR LAUNCHER -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.2rem;">
-        <h4 style="margin-bottom: 0.5rem; color: var(--primary-saffron-light);">✏️ Update Product Location Override</h4>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.8rem;">
-          Authenticated staff can manually re-assign any product to a specific Aisle (1-8) and Rack (1-30).
-        </p>
-        <button id="quickEditBtn" class="btn-block" style="background: var(--bg-card-hover); border: 1px solid var(--border-color);">
-          ✏️ Edit Product Location Matrix
-        </button>
-      </div>
-    </section>
-
     <!-- FLOATING VIEWPORT BOTTOM ERGONOMIC SEARCH BAR -->
     <div class="bottom-sticky-search-wrapper" id="bottomSearchContainer">
-      <!-- Keyboard Dismiss Bar & Hint -->
+      <!-- Multilingual Hint Chips Bar -->
       <div class="keyboard-dismiss-bar">
         <span>Quick Suggestions:</span>
-        <button id="dismissKeyboardBtn" class="dismiss-btn-chip">Hide Keyboard ⌨️</button>
       </div>
 
-      <!-- Multilingual Hint Chips Bar -->
       <div class="lang-hint-bar" id="langHintBar">
         <span class="lang-chip" data-search="pasupu">Pasupu (Turmeric)</span>
         <span class="lang-chip" data-search="haldi">Haldi (Turmeric)</span>
@@ -193,78 +172,6 @@
 
     </div>
 
-  </div>
-
-  <!-- Staff Login Modal Sheet -->
-  <div class="modal-backdrop" id="loginModalSheet">
-    <div class="modal-sheet">
-      <div class="modal-header">
-        <h3 class="modal-title">🔐 Staff Admin Login</h3>
-        <button class="close-btn" id="closeLoginModalBtn">✕</button>
-      </div>
-
-      <form id="staffLoginForm">
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">
-          Please enter store credentials to access private Analytics and edit Product Locations.
-        </p>
-
-        <div class="form-group">
-          <label class="form-label">Username</label>
-          <input type="text" id="loginUsernameInput" class="form-input" placeholder="e.g. admin" required autocomplete="off">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input type="password" id="loginPasswordInput" class="form-input" placeholder="Enter password" required>
-        </div>
-
-        <div id="loginErrorMsg" style="color: #EF4444; font-size: 0.8rem; display: none; margin-top: 0.3rem;">
-          Invalid Username or Password! (Default: admin / bharath123)
-        </div>
-
-        <button type="submit" class="btn-block">Sign In</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Mobile Edit Location Modal Sheet (Staff Only) -->
-  <div class="modal-backdrop" id="editModalMobile">
-    <div class="modal-sheet">
-      <div class="modal-header">
-        <h3 class="modal-title">✏️ Update Product Location</h3>
-        <button class="close-btn" id="closeEditModalMobileBtn">✕</button>
-      </div>
-
-      <form id="editFormMobile">
-        <input type="hidden" id="editSlugMobile">
-
-        <div class="form-group">
-          <label class="form-label">Product Name</label>
-          <input type="text" id="editNameMobile" class="form-input" readonly style="opacity: 0.7;">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Select Store Aisle</label>
-          <select id="editAisleMobile" class="form-select">
-            <option value="1">Aisle 1: Spices & Masala</option>
-            <option value="2">Aisle 2: Atta, Rice & Grains</option>
-            <option value="3">Aisle 3: Frozen Foods</option>
-            <option value="4">Aisle 4: Snacks & Sweets</option>
-            <option value="5">Aisle 5: Dairy, Oils & Ghee</option>
-            <option value="6">Aisle 6: Pickles & Sauces</option>
-            <option value="7">Aisle 7: Tea & Beverages</option>
-            <option value="8">Aisle 8: Personal Care</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Shelf Rack Number (1 - 30)</label>
-          <input type="number" id="editRackMobile" class="form-input" min="1" max="30" required>
-        </div>
-
-        <button type="submit" class="btn-block">Save Location</button>
-      </form>
-    </div>
   </div>
 
   <script src="app.js"></script>

@@ -31,7 +31,7 @@ Repository:
 
 To keep developer scripts (`scripts/`) and raw data dumps (`data/`) separate from the production application, all web assets live inside the **`docs/`** directory:
 
-- **`docs/`**: Production Web Application (`index.html`, `index.css`, `app.js`, `product_names.json`, `multilingual_dictionary.csv`, `store_aisles.json`).
+- **`docs/`**: Production Web Application (`index.html`, `index.css`, `app.js`, `product_names.json`, `product_data.csv`, `store_aisles.json`).
 - **`scripts/`**: Data extraction and python scraper scripts (`get_product_names.py`, `scraper.py`).
 - **`data/`**: Raw product lists and backups (`product_names.txt`, `bharathbazar_products.json`).
 

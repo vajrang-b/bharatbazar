@@ -1,14 +1,23 @@
 /**
  * Bharath Bazar Mobile-First Multilingual Store Inventory & Product Locator Logic
- * Data & Code completely decoupled:
- * - Products: product_names.json
- * - Multilingual Dictionary: multilingual_dictionary.csv
- * - Store Aisles: store_aisles.json
+ * Single source of truth:
+ * - Multilingual product catalog + aisle/category metadata: product_data.csv
  */
+
+const DEFAULT_STORE_AISLES = {
+  1: { name: "Spices & Masala", icon: "🌶️", color: "var(--aisle-1)", keywords: ["masala", "powder", "spice", "chili", "chilli", "coriander", "cumin", "turmeric", "seeds", "mdh", "everest", "laxmi", "curry", "garam", "hing", "salt", "jeera", "dhania", "haldi", "saunf", "methi", "cardamom", "clove", "cinnamon"] },
+  2: { name: "Atta, Rice & Grains", icon: "🌾", color: "var(--aisle-2)", keywords: ["atta", "flour", "rice", "basmati", "sujata", "rava", "dal", "lentil", "chana", "moong", "toor", "urad", "wheat", "poha", "sooji", "besan", "maida", "matar", "rajma", "pulao", "biryani"] },
+  3: { name: "Frozen Foods", icon: "❄️", color: "var(--aisle-3)", keywords: ["frozen", "paneer", "samosa", "naan", "kulcha", "vadilal", "tindora", "okra", "roti", "vegetable", "paratha", "cut-veg", "peas", "gobi", "tikka", "patra", "sweet-corn"] },
+  4: { name: "Snacks & Sweets", icon: "🍬", color: "var(--aisle-4)", keywords: ["muruku", "murukku", "mix", "haldiram", "gulab", "jamun", "snack", "chevda", "laddu", "chips", "biscuit", "namkeen", "sweet", "cookie", "mathri", "bhujia", "khakhra", "chikki", "rasgulla"] },
+  5: { name: "Dairy, Oils & Ghee", icon: "🧈", color: "var(--aisle-5)", keywords: ["ghee", "oil", "amul", "butter", "milk", "cheese", "paneer-raw", "mustard-oil", "sesame-oil", "sunflower", "coconut-oil", "dahi", "yogurt", "cream"] },
+  6: { name: "Pickles, Sauces & Instant", icon: "🫙", color: "var(--aisle-6)", keywords: ["pickle", "sauce", "chutney", "paste", "mtr", "ready", "gravy", "chings", "noodle", "soup", "papad", "achaar", "schezwan", "ketchup", "soy"] },
+  7: { name: "Tea & Beverages", icon: "☕", color: "var(--aisle-7)", keywords: ["tea", "chai", "coffee", "drink", "badam", "label", "wagh", "bakri", "juice", "syrup", "rooh", "afza", "sharbat", "thums", "limca", "maaza", "bournvita", "horlicks"] },
+  8: { name: "Personal Care & Household", icon: "🧼", color: "var(--aisle-8)", keywords: ["dettol", "soap", "herbal", "shampoo", "incense", "agarbatti", "puja", "cleaner", "toothpaste", "dabur", "patanjali", "neem", "oil-hair", "face"] }
+};
 
 // Global State Data Containers (Populated asynchronously from data files)
 let MULTILINGUAL_DICTIONARY = {};
-let STORE_AISLES = {};
+let STORE_AISLES = { ...DEFAULT_STORE_AISLES };
 let allProducts = [];
 let filteredProducts = [];
 let locationOverrides = {};
@@ -18,34 +27,52 @@ let currentView = "searchView";
 let isStaffLoggedIn = false;
 let visitorProfile = null;
 let deviceAnalyticsList = [];
+let headerLanguagePreference = { en: true, te: false, hi: false };
+let pendingSearchLog = null;
+let pendingSearchTimer = null;
+let lastSubmittedSearch = "";
+let trackingConsent = null;
+
+const CONSENT_STORAGE_KEY = "bharath_bazar_tracking_consent";
+const GOOGLE_FORM_SUBMIT_URL = "https://docs.google.com/forms/d/1M3cdxsTWw84__S5XQdH5xHva7VhBZ-71HP7EKpiT0Kc/formResponse";
+const SEARCH_FORM_SUBMIT_URL = "https://docs.google.com/forms/d/e/1FAIpQLScPPLZH3SKzXA5KjWo52io3NwoMx7YZ8Bckau002OkQ20t9Gw/formResponse";
+const GOOGLE_FORM_ENTRY_IDS = {
+  payload: "entry.1906332860"
+};
+const SEARCH_FORM_ENTRY_IDS = {
+  query: "entry.271605241"
+};
 
 // -------------------------------------------------------------
 // ASYNCHRONOUS DATA LOADERS (Separating Data from Code)
 // -------------------------------------------------------------
 async function loadExternalDataFiles() {
   try {
-    // 1. Load Store Aisles Matrix JSON (or default constants)
-    const aislesResponse = await fetch("store_aisles.json");
-    if (aislesResponse.ok) {
-      STORE_AISLES = await aislesResponse.json();
-    }
+    STORE_AISLES = { ...DEFAULT_STORE_AISLES };
 
-    // 2. Load Unified Catalog Database CSV (multilingual_dictionary.csv)
-    const csvResponse = await fetch("multilingual_dictionary.csv");
+    const csvResponse = await fetch("product_data.csv");
     if (csvResponse.ok) {
       const csvText = await csvResponse.text();
       parseMultilingualCsv(csvText);
 
-      // Build product catalog directly from the unified database
+      const aisleMap = buildAisleMapFromDictionary();
+      STORE_AISLES = { ...DEFAULT_STORE_AISLES, ...aisleMap };
+
       const keys = Object.keys(MULTILINGUAL_DICTIONARY);
       allProducts = keys.map((slug, idx) => {
         const dict = MULTILINGUAL_DICTIONARY[slug];
         const loc = categorizeProduct(slug);
         const name = dict.en || formatProductName(slug);
-        
+
+        const translations = {
+          en: name,
+          te: dict.te || "",
+          hi: dict.hi || ""
+        };
+
         const aliases = [];
-        if (dict.te) aliases.push(`TE: ${dict.te}`);
-        if (dict.hi) aliases.push(`HI: ${dict.hi}`);
+        if (translations.te) aliases.push(`${translations.te}`);
+        if (translations.hi) aliases.push(`${translations.hi}`);
 
         return {
           id: idx,
@@ -55,11 +82,15 @@ async function loadExternalDataFiles() {
           rack: loc.rack,
           categoryName: loc.categoryName,
           icon: loc.icon,
-          aliases: aliases
+          aliases: aliases,
+          translations: translations
         };
       });
 
-      document.getElementById("totalBadge").textContent = `${allProducts.length.toLocaleString()} Items`;
+      const totalBadge = document.getElementById("totalBadge");
+      if (totalBadge) {
+        totalBadge.textContent = `Catalog`;
+      }
     }
   } catch (err) {
     console.error("Error loading external data files:", err);
@@ -73,8 +104,13 @@ function parseCsvLine(text) {
 
   for (let i = 0; i < text.length; i++) {
     const c = text[i];
-    if (c === '"' || c === "'") {
-      inQuotes = !inQuotes;
+    if (c === '"') {
+      if (inQuotes && text[i + 1] === '"') {
+        cell += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
     } else if (c === "," && !inQuotes) {
       result.push(cell.trim());
       cell = "";
@@ -82,43 +118,158 @@ function parseCsvLine(text) {
       cell += c;
     }
   }
+
   result.push(cell.trim());
   return result;
 }
 
+function parseKeywords(keywordsStr) {
+  const raw = (keywordsStr || "").trim();
+  if (!raw) return [];
+
+  if (raw.startsWith("[") && raw.endsWith("]")) {
+    const matches = [...raw.matchAll(/['"]([^'"]+)['"]/g)];
+    if (matches.length) {
+      return matches.map(match => match[1].trim().toLowerCase()).filter(Boolean);
+    }
+  }
+
+  return raw
+    .split("|")
+    .map(k => k.replace(/^[\[\]'"\s]+|[\[\]'"\s]+$/g, "").trim().toLowerCase())
+    .filter(Boolean);
+}
+
+function buildAisleMapFromDictionary() {
+  const map = {};
+
+  Object.values(MULTILINGUAL_DICTIONARY).forEach(item => {
+    if (!item.aisle) return;
+
+    const aisleName = item.aisle_name || item.categories || item.category || DEFAULT_STORE_AISLES[item.aisle]?.name || `Aisle ${item.aisle}`;
+    const aisleIcon = item.aisle_icon || DEFAULT_STORE_AISLES[item.aisle]?.icon || "📦";
+    const aisleColor = DEFAULT_STORE_AISLES[item.aisle]?.color || "var(--aisle-1)";
+    const aisleKeywords = DEFAULT_STORE_AISLES[item.aisle]?.keywords || [];
+
+    map[item.aisle] = {
+      name: aisleName,
+      icon: aisleIcon,
+      color: aisleColor,
+      keywords: aisleKeywords
+    };
+  });
+
+  return map;
+}
+
+function slugifyProductName(value) {
+  return (value || "")
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-+/g, "-");
+}
+
+function looksLikeKeywordOnlyValue(value) {
+  const text = (value || "").trim();
+  if (!text) return false;
+  if (text.startsWith("[") && text.endsWith("]")) return true;
+  if (text.includes("|")) {
+    const pieces = text.split("|").map(p => p.trim()).filter(Boolean);
+    return pieces.length >= 2 && pieces.every(piece => /^[a-z0-9\s\-_/]+$/i.test(piece) && !/[A-Z]/.test(piece));
+  }
+  return false;
+}
+
+function isLikelySlug(value) {
+  if (!value || typeof value !== "string") return false;
+  const trimmed = value.trim();
+  if (!trimmed) return false;
+  return /^[a-z0-9]+(?:-[a-z0-9]+)+$/i.test(trimmed);
+}
+
+function normalizeProductCell(value, fallback = "") {
+  if (!value || typeof value !== "string") return fallback;
+  const text = value.trim();
+  if (!text) return fallback;
+  if (text === "Uncategorized" || text === "uncategorized") return fallback;
+  if (isLikelySlug(text)) return formatProductName(text);
+  return text;
+}
+
+function isValidProductRow({ en, te, hi }) {
+  const nameFields = [en, te, hi].filter(Boolean);
+  if (!nameFields.length) return false;
+
+  if (nameFields.some(field => looksLikeKeywordOnlyValue(field))) return false;
+  if (nameFields.some(field => isLikelySlug(field))) return false;
+
+  const joined = nameFields.join(" ");
+  if (joined.length < 2) return false;
+
+  return true;
+}
+
 function parseMultilingualCsv(csvText) {
   const lines = csvText.split(/\r?\n/);
+  if (!lines.length) return;
+
+  const header = parseCsvLine(lines[0]);
+  const headerMap = Object.fromEntries(header.map((col, index) => [col.trim().toLowerCase(), index]));
   MULTILINGUAL_DICTIONARY = {};
 
-  // Header: key,en,te,hi,keywords,aisle,rack
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
     const parts = parseCsvLine(line);
-    if (parts.length >= 5) {
-      const key = parts[0].toLowerCase();
-      const en = parts[1];
-      const te = parts[2];
-      const hi = parts[3];
-      const keywordsStr = parts[4];
-      const keywords = keywordsStr.split("|").map(k => k.trim().toLowerCase());
-      
-      const aisleVal = (parts.length >= 6 && parts[5]) ? parseInt(parts[5]) : null;
-      const rackVal = (parts.length >= 7 && parts[6]) ? parseInt(parts[6]) : null;
+    const valueAt = (index) => index >= 0 && index < parts.length ? parts[index].trim() : "";
 
-      const aisle = (!isNaN(aisleVal) && aisleVal > 0) ? aisleVal : null;
-      const rack = (!isNaN(rackVal) && rackVal > 0) ? rackVal : null;
+    const rawKey = valueAt(headerMap.key ?? -1);
+    let en = normalizeProductCell(valueAt(headerMap.en ?? 0));
+    let te = normalizeProductCell(valueAt(headerMap.te ?? 1));
+    let hi = normalizeProductCell(valueAt(headerMap.hi ?? 2));
+    const keywordsStr = valueAt(headerMap.keywords ?? 3);
+    const category = normalizeProductCell(valueAt(headerMap.categories ?? headerMap.category ?? 4));
+    const categoryKeywords = valueAt(headerMap.category_keywords ?? 5);
+    const aisleVal = valueAt(headerMap.aisle ?? 5);
+    const explicitAisleName = valueAt(headerMap.aisle_name ?? -1);
+    const explicitAisleIcon = valueAt(headerMap.aisle_icon ?? -1);
+    const rackVal = valueAt(headerMap.rack ?? 6);
 
-      MULTILINGUAL_DICTIONARY[key] = {
-        en: en,
-        te: te,
-        hi: hi,
-        keywords: keywords,
-        aisle: aisle,
-        rack: rack
-      };
+    if (en && isLikelySlug(en)) {
+      en = formatProductName(en);
     }
+    if (te === "Uncategorized" || te === "uncategorized") te = "";
+    if (hi === "Uncategorized" || hi === "uncategorized") hi = "";
+
+    if (!isValidProductRow({ en, te, hi })) {
+      continue;
+    }
+
+    const key = rawKey ? rawKey.toLowerCase() : slugifyProductName(en || te || hi || keywordsStr || `item-${i}`);
+    if (!key) continue;
+
+    const aisle = parseInt(aisleVal, 10);
+    const rack = parseInt(rackVal, 10);
+    const keywords = parseKeywords(keywordsStr || categoryKeywords);
+    const resolvedCategory = category || (Number.isInteger(aisle) && aisle > 0 ? DEFAULT_STORE_AISLES[aisle]?.name || "" : "");
+    const derivedAisleName = explicitAisleName || resolvedCategory || (Number.isInteger(aisle) && aisle > 0 ? DEFAULT_STORE_AISLES[aisle]?.name || `Aisle ${aisle}` : "");
+
+    MULTILINGUAL_DICTIONARY[key] = {
+      en: en,
+      te: te,
+      hi: hi,
+      keywords: keywords,
+      category: resolvedCategory,
+      categories: resolvedCategory,
+      category_keywords: categoryKeywords,
+      aisle: Number.isInteger(aisle) && aisle > 0 ? aisle : null,
+      aisle_name: derivedAisleName,
+      aisle_icon: explicitAisleIcon || (Number.isInteger(aisle) && aisle > 0 ? DEFAULT_STORE_AISLES[aisle]?.icon || "" : ""),
+      rack: Number.isInteger(rack) && rack > 0 ? rack : null
+    };
   }
 }
 
@@ -133,22 +284,20 @@ function getHash(str) {
 
 function categorizeProduct(slug) {
   const lower = slug.toLowerCase();
-  
+
   if (locationOverrides[slug]) {
     const ov = locationOverrides[slug];
     const aisleData = STORE_AISLES[ov.aisle] || { name: "General Aisle", icon: "📦" };
     return { aisle: ov.aisle, rack: ov.rack, categoryName: aisleData.name, icon: aisleData.icon };
   }
 
-  // 1. Check explicit Google Sheet Aisle & Rack mapping
   if (MULTILINGUAL_DICTIONARY[lower] && MULTILINGUAL_DICTIONARY[lower].aisle) {
     const dict = MULTILINGUAL_DICTIONARY[lower];
-    const aisleData = STORE_AISLES[dict.aisle] || { name: "General Spices", icon: "🌶️" };
+    const aisleData = STORE_AISLES[dict.aisle] || { name: dict.aisle_name || "General Aisle", icon: dict.aisle_icon || "📦" };
     const rack = dict.rack || ((getHash(slug) % 30) + 1);
     return { aisle: dict.aisle, rack: rack, categoryName: aisleData.name, icon: aisleData.icon };
   }
 
-  // 2. Keyword heuristic mapping
   let assignedAisle = 1;
   for (const [id, meta] of Object.entries(STORE_AISLES)) {
     if (meta.keywords && meta.keywords.some(kw => lower.includes(kw))) {
@@ -266,16 +415,50 @@ function detectDeviceProfile() {
   };
 }
 
+function postDeviceProfileToGoogleForm(profile) {
+  if (!profile) return;
+
+  const fieldId = GOOGLE_FORM_ENTRY_IDS.payload;
+  if (!fieldId) return;
+
+  const payload = JSON.stringify({
+    visitorId: profile.visitorId,
+    deviceType: profile.deviceType,
+    os: profile.os,
+    browser: profile.browser,
+    screenRes: profile.screenRes,
+    isTouch: profile.isTouch,
+    visitCount: profile.visitCount,
+    firstVisit: profile.firstVisit,
+    lastVisit: profile.lastVisit,
+    deviceId: profile.deviceId
+  });
+
+  const formData = new URLSearchParams();
+  formData.append(fieldId, payload);
+
+  fetch(GOOGLE_FORM_SUBMIT_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: formData.toString(),
+    mode: "no-cors",
+    credentials: "omit"
+  }).catch(() => {});
+}
+
 function initVisitorProfile() {
   try {
     const info = detectDeviceProfile();
     let saved = localStorage.getItem("bharath_bazar_visitor_profile");
+    const isNewVisitor = !saved;
 
     if (saved) {
       visitorProfile = JSON.parse(saved);
       visitorProfile.visitCount = (visitorProfile.visitCount || 1) + 1;
       visitorProfile.lastVisit = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      visitorProfile.deviceId = info.deviceId; // Always refresh fingerprint
+      visitorProfile.deviceId = info.deviceId;
     } else {
       const randomID = 'BB-DEV-' + Math.random().toString(36).substring(2, 7).toUpperCase();
       visitorProfile = {
@@ -295,6 +478,9 @@ function initVisitorProfile() {
 
     localStorage.setItem("bharath_bazar_visitor_profile", JSON.stringify(visitorProfile));
     registerDeviceAnalytics(visitorProfile);
+    if (isNewVisitor) {
+      postDeviceProfileToGoogleForm(visitorProfile);
+    }
     renderVisitorWelcomeBanner();
   } catch (e) {}
 }
@@ -347,8 +533,60 @@ function updateVisitorSearches(query) {
   } catch (e) {}
 }
 
+function getTrackingConsentState() {
+  try {
+    const value = localStorage.getItem(CONSENT_STORAGE_KEY);
+    return value || "accepted";
+  } catch (e) {
+    return "accepted";
+  }
+}
+
+function setTrackingConsentState(value) {
+  trackingConsent = value;
+  try {
+    localStorage.setItem(CONSENT_STORAGE_KEY, value);
+  } catch (e) {}
+}
+
+function isTrackingAllowed() {
+  return true;
+}
+
+function initPrivacyConsent() {
+  trackingConsent = getTrackingConsentState();
+  const banner = document.getElementById("cookieConsentBanner");
+  if (!banner) return;
+
+  banner.classList.remove("visible");
+
+  const acceptBtn = document.getElementById("acceptCookiesBtn");
+  const rejectBtn = document.getElementById("rejectCookiesBtn");
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener("click", () => {
+      setTrackingConsentState("accepted");
+      if (visitorProfile) {
+        postDeviceProfileToGoogleForm(visitorProfile);
+      }
+      banner.classList.remove("visible");
+    });
+  }
+
+  if (rejectBtn) {
+    rejectBtn.addEventListener("click", () => {
+      setTrackingConsentState("accepted");
+      if (visitorProfile) {
+        postDeviceProfileToGoogleForm(visitorProfile);
+      }
+      banner.classList.remove("visible");
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   loadStorageData();
+  initPrivacyConsent();
   initVisitorProfile();
   checkAuthSession();
 
@@ -378,14 +616,7 @@ function loadStorageData() {
     if (savedAnalytics) {
       searchAnalytics = JSON.parse(savedAnalytics);
     } else {
-      searchAnalytics = {
-        "turmeric": 142,
-        "paneer": 98,
-        "jeera": 87,
-        "basmati": 76,
-        "milk": 65,
-        "dettol": 54
-      };
+      searchAnalytics = {};
       localStorage.setItem("bharath_bazar_search_analytics", JSON.stringify(searchAnalytics));
     }
   } catch (e) {}
@@ -398,12 +629,72 @@ function saveStorageData() {
   } catch (e) {}
 }
 
+function flushPendingSearchLog() {
+  if (!pendingSearchLog || !SEARCH_FORM_ENTRY_IDS.query) return;
+
+  const query = String(pendingSearchLog).trim();
+  if (!query) return;
+
+  const deviceId = visitorProfile?.deviceId || visitorProfile?.visitorId || "unknown-device";
+  const payload = `${query} | deviceId=${deviceId}`;
+
+  const formData = new URLSearchParams();
+  formData.append(SEARCH_FORM_ENTRY_IDS.query, payload);
+
+  if (lastSubmittedSearch === payload) return;
+
+  lastSubmittedSearch = payload;
+  pendingSearchLog = null;
+
+  const encodedBody = formData.toString();
+
+  try {
+    if (navigator.sendBeacon) {
+      const blob = new Blob([encodedBody], {
+        type: "application/x-www-form-urlencoded;charset=UTF-8"
+      });
+      navigator.sendBeacon(SEARCH_FORM_SUBMIT_URL, blob);
+      return;
+    }
+  } catch (e) {}
+
+  fetch(SEARCH_FORM_SUBMIT_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+    },
+    body: encodedBody,
+    mode: "no-cors",
+    credentials: "omit"
+  }).catch(() => {});
+}
+
+function flushPendingSearchLogOnLifecycleChange() {
+  if (pendingSearchLog) {
+    flushPendingSearchLog();
+  }
+}
+
+function scheduleSearchLog(query) {
+  if (!query || query.length < 2) return;
+
+  pendingSearchLog = query.toLowerCase().trim();
+  if (pendingSearchTimer) clearTimeout(pendingSearchTimer);
+
+  flushPendingSearchLog();
+}
+
+function postSearchQueryToGoogleForm(query) {
+  scheduleSearchLog(query);
+}
+
 function trackSearchQuery(query) {
   if (!query || query.length < 2) return;
   const term = query.toLowerCase().trim();
   searchAnalytics[term] = (searchAnalytics[term] || 0) + 1;
   saveStorageData();
   updateVisitorSearches(term);
+  scheduleSearchLog(term);
   renderAnalyticsList();
   renderDeviceAnalyticsDashboard();
 }
@@ -412,11 +703,16 @@ function renderAnalyticsList() {
   const container = document.getElementById("analyticsList");
   if (!container) return;
 
+  const deviceId = visitorProfile?.deviceId || visitorProfile?.visitorId || "unknown-device";
   const sorted = Object.entries(searchAnalytics).sort((a, b) => b[1] - a[1]).slice(0, 10);
+
   container.innerHTML = sorted.map(([term, count]) => `
     <li style="margin-bottom: 0.4rem;">
       <strong style="text-transform: capitalize; color: #FFF;">${escapeHtml(term)}</strong>: 
       <span style="color: var(--accent-amber); font-weight: 700;">${count} searches</span>
+      <span style="display: block; margin-top: 0.2rem; font-size: 0.72rem; color: var(--text-muted);">
+        Device: ${escapeHtml(deviceId)}
+      </span>
     </li>
   `).join("");
 }
@@ -480,7 +776,7 @@ function checkAuthSession() {
 function updateAuthUI() {
   const menuText = document.getElementById("menuAdminText");
   if (menuText) {
-    menuText.textContent = isStaffLoggedIn ? "Staff Admin Portal (Logged In)" : "Staff Portal (Login)";
+    menuText.textContent = isStaffLoggedIn ? "Staff Admin Portal (Logged In)" : "Staff Portal (Edit Access Open)";
   }
 }
 
@@ -488,6 +784,62 @@ function formatProductName(slug) {
   let clean = slug.replace(/^[0-9]{6,14}/, "").replace(/-/g, " ").trim();
   if (!clean) clean = slug.replace(/-/g, " ");
   return clean.replace(/\b\w/g, l => l.toUpperCase());
+}
+
+function getProductDisplayName(product, locale = "en") {
+  const targetLocale = locale || "en";
+  const value = product?.translations?.[targetLocale];
+  if (value && value.trim()) return value.trim();
+  return product?.name || "Unknown product";
+}
+
+function scoreProductMatch(product, rawQuery) {
+  if (!rawQuery) return 0;
+
+  const query = rawQuery.toLowerCase().trim();
+  const haystack = [
+    product.slug || "",
+    product.name || "",
+    product.translations?.en || "",
+    product.translations?.te || "",
+    product.translations?.hi || "",
+    ...(product.aliases || [])
+  ].join(" ").toLowerCase();
+
+  let score = 0;
+
+  if (!haystack) return 0;
+
+  const exactName = product.name && product.name.toLowerCase() === query;
+  const exactEn = product.translations?.en && product.translations.en.toLowerCase() === query;
+  const exactTe = product.translations?.te && product.translations.te.toLowerCase() === query;
+  const exactHi = product.translations?.hi && product.translations.hi.toLowerCase() === query;
+  const exactKeyword = (product.aliases || []).some(k => k.toLowerCase() === query);
+  const keywordContains = (product.aliases || []).some(k => k.toLowerCase().includes(query));
+  const keywordTokenMatch = (product.aliases || []).some(k => {
+    const tokens = k.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+    return tokens.includes(query);
+  });
+
+  if (exactName) score += 400;
+  if (exactEn) score += 350;
+  if (exactTe) score += 330;
+  if (exactHi) score += 330;
+  if (exactKeyword) score += 300;
+  if (keywordTokenMatch) score += 220;
+  if (keywordContains) score += 120;
+
+  if (product.name && product.name.toLowerCase().includes(query)) score += 150;
+  if (product.translations?.en && product.translations.en.toLowerCase().includes(query)) score += 120;
+  if (product.translations?.te && product.translations.te.toLowerCase().includes(query)) score += 90;
+  if (product.translations?.hi && product.translations.hi.toLowerCase().includes(query)) score += 90;
+  if (product.slug && product.slug.toLowerCase() === query) score += 100;
+  if (product.slug && product.slug.toLowerCase().includes(query)) score += 60;
+
+  if (product.name && product.name.toLowerCase().startsWith(query)) score += 35;
+  if (product.translations?.en && product.translations.en.toLowerCase().startsWith(query)) score += 30;
+
+  return score;
 }
 
 function applySearchAndFilter() {
@@ -508,11 +860,22 @@ function applySearchAndFilter() {
     }
 
     if (rawQuery) {
-      const text = `${p.slug} ${p.name} ${p.aliases.join(" ")}`.toLowerCase();
+      const text = [
+        p.slug,
+        p.name,
+        p.translations?.en || "",
+        p.translations?.te || "",
+        p.translations?.hi || "",
+        ...(p.aliases || [])
+      ].join(" ").toLowerCase();
       return expandedKeywords.some(kw => text.includes(kw));
     }
 
     return true;
+  }).sort((a, b) => {
+    const scoreDiff = scoreProductMatch(b, rawQuery) - scoreProductMatch(a, rawQuery);
+    if (scoreDiff !== 0) return scoreDiff;
+    return (a.name || "").localeCompare(b.name || "");
   });
 
   renderProductList();
@@ -525,13 +888,15 @@ function renderProductList() {
 
   const total = filteredProducts.length;
   const countElem = document.getElementById("resultsCount");
-  if (countElem) countElem.textContent = `${total.toLocaleString()} products found`;
+  if (countElem) countElem.textContent = `Showing ${total.toLocaleString()} products`;
 
   if (total === 0) {
     container.innerHTML = `
       <div style="text-align: center; padding: 2.5rem 1rem; color: var(--text-muted);">
-        <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">🔍 No matching items</p>
-        <p style="font-size: 0.85rem;">Try searching in English, Telugu (e.g. <em>Pasupu</em>, <em>Perugu</em>), or Hindi (e.g. <em>Haldi</em>, <em>Jeera</em>).</p>
+        <p style="font-size: 1.1rem; margin-bottom: 0.5rem; color: #FFF; font-weight: 700;">🔍 No matching items</p>
+        <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
+          Please contact support personnel at the point of sale for assistance.
+        </p>
       </div>
     `;
     return;
@@ -543,14 +908,18 @@ function renderProductList() {
     const card = document.createElement("div");
     card.className = "product-card";
 
-    // Multilingual tags hidden by default per user directive
-    let aliasHtml = "";
+    const translationChips = [];
+    if (headerLanguagePreference.te && p.translations && p.translations.te && p.translations.te.trim()) {
+      translationChips.push(`<span class="product-translation-chip">${escapeHtml(p.translations.te.trim())}</span>`);
+    }
+    if (headerLanguagePreference.hi && p.translations && p.translations.hi && p.translations.hi.trim()) {
+      translationChips.push(`<span class="product-translation-chip">${escapeHtml(p.translations.hi.trim())}</span>`);
+    }
 
     card.innerHTML = `
       <div class="product-info">
         <div class="product-title">${escapeHtml(p.name)}</div>
-        <div class="product-slug-tag">${p.icon} ${escapeHtml(p.categoryName)}</div>
-        ${aliasHtml}
+        ${translationChips.length ? `<div class="product-language-wrap">${translationChips.join("")}</div>` : ""}
       </div>
       <div class="loc-badge-mobile" data-slug="${escapeHtml(p.slug)}">
         <span class="loc-aisle-text">📍 Aisle ${p.aisle}</span>
@@ -559,11 +928,7 @@ function renderProductList() {
     `;
 
     card.querySelector(".loc-badge-mobile").addEventListener("click", () => {
-      if (isStaffLoggedIn) {
-        openMobileEditModal(p.slug);
-      } else {
-        openLoginModal();
-      }
+      openMobileEditModal(p.slug);
     });
 
     container.appendChild(card);
@@ -610,11 +975,48 @@ function setupEventListeners() {
   const clearBtn = document.getElementById("clearSearchBtn");
   const dismissKeyboardBtn = document.getElementById("dismissKeyboardBtn");
 
+  document.querySelectorAll(".lang-toggle-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const lang = button.dataset.lang;
+      if (lang === "en") {
+        headerLanguagePreference.en = true;
+        headerLanguagePreference.te = false;
+        headerLanguagePreference.hi = false;
+      } else {
+        headerLanguagePreference[lang] = !headerLanguagePreference[lang];
+        headerLanguagePreference.en = false;
+      }
+
+      document.querySelectorAll(".lang-toggle-btn").forEach((toggle) => {
+        const isActive = toggle.dataset.lang === "en"
+          ? headerLanguagePreference.en
+          : headerLanguagePreference[toggle.dataset.lang];
+        toggle.classList.toggle("active", isActive);
+      });
+
+      renderProductList();
+    });
+  });
+
   if (dismissKeyboardBtn) {
     dismissKeyboardBtn.addEventListener("click", () => {
       searchInput.blur();
     });
   }
+
+  window.addEventListener("blur", () => {
+    flushPendingSearchLogOnLifecycleChange();
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      flushPendingSearchLogOnLifecycleChange();
+    }
+  });
+
+  window.addEventListener("beforeunload", () => {
+    flushPendingSearchLogOnLifecycleChange();
+  });
 
   searchInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
@@ -653,14 +1055,15 @@ function setupEventListeners() {
 
   document.querySelectorAll(".drawer-item").forEach(item => {
     item.addEventListener("click", () => {
+      if (item.dataset.link) {
+        closeDrawer();
+        window.location.href = item.dataset.link;
+        return;
+      }
+
       const targetTab = item.dataset.tab;
       closeDrawer();
-
-      if (targetTab === "adminView" && !isStaffLoggedIn) {
-        openLoginModal();
-      } else {
-        switchTab(targetTab);
-      }
+      switchTab(targetTab);
     });
   });
 
@@ -685,81 +1088,13 @@ function setupEventListeners() {
     }
   });
 
-  document.getElementById("aisleCarousel").addEventListener("click", (e) => {
-    const pill = e.target.closest(".aisle-pill");
-    if (pill) {
-      setActiveAislePill(pill.dataset.aisle);
+  const aisleSelect = document.getElementById("aisleSelect");
+  if (aisleSelect) {
+    aisleSelect.addEventListener("change", (e) => {
+      setActiveAislePill(e.target.value);
       if (currentView !== "searchView") switchTab("searchView");
-    }
-  });
-
-  document.getElementById("closeLoginModalBtn").addEventListener("click", closeLoginModal);
-  document.getElementById("staffLoginForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const user = document.getElementById("loginUsernameInput").value.trim();
-    const pass = document.getElementById("loginPasswordInput").value.trim();
-    const errorMsg = document.getElementById("loginErrorMsg");
-
-    if (user.toLowerCase() === "admin" && (pass === "bharath123" || pass === "1234" || pass === "admin")) {
-      isStaffLoggedIn = true;
-      try {
-        sessionStorage.setItem("bharath_bazar_staff_authed", "true");
-      } catch (err) {}
-      updateAuthUI();
-      closeLoginModal();
-      switchTab("adminView");
-      renderDeviceAnalyticsDashboard();
-      errorMsg.style.display = "none";
-    } else {
-      errorMsg.style.display = "block";
-    }
-  });
-
-  document.getElementById("staffLogoutBtn").addEventListener("click", () => {
-    isStaffLoggedIn = false;
-    try {
-      sessionStorage.removeItem("bharath_bazar_staff_authed");
-    } catch (err) {}
-    updateAuthUI();
-    switchTab("searchView");
-    alert("Logged out of Staff Portal.");
-  });
-
-  document.getElementById("closeEditModalMobileBtn").addEventListener("click", closeMobileEditModal);
-  
-  document.getElementById("quickEditBtn").addEventListener("click", () => {
-    if (allProducts.length > 0) {
-      openMobileEditModal(allProducts[0].slug);
-    }
-  });
-
-  document.getElementById("editFormMobile").addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!isStaffLoggedIn) {
-      openLoginModal();
-      return;
-    }
-
-    const slug = document.getElementById("editSlugMobile").value;
-    const newAisle = parseInt(document.getElementById("editAisleMobile").value);
-    const newRack = parseInt(document.getElementById("editRackMobile").value);
-
-    locationOverrides[slug] = { aisle: newAisle, rack: newRack };
-    saveStorageData();
-
-    const p = allProducts.find(item => item.slug === slug);
-    if (p) {
-      p.aisle = newAisle;
-      p.rack = newRack;
-      p.categoryName = STORE_AISLES[newAisle] ? STORE_AISLES[newAisle].name : "Custom Aisle";
-      p.icon = STORE_AISLES[newAisle] ? STORE_AISLES[newAisle].icon : "📦";
-    }
-
-    closeMobileEditModal();
-    renderMobileMap();
-    applySearchAndFilter();
-    alert(`Updated location for ${p ? p.name : slug} to Aisle ${newAisle}, Rack ${newRack}`);
-  });
+    });
+  }
 
   document.getElementById("aiAskBtnMobile").addEventListener("click", handleAiAskMobile);
 }
@@ -772,19 +1107,14 @@ function closeDrawer() {
   document.getElementById("drawerOverlay").classList.remove("active");
 }
 
-function openLoginModal() {
-  document.getElementById("loginErrorMsg").style.display = "none";
-  document.getElementById("loginUsernameInput").value = "";
-  document.getElementById("loginPasswordInput").value = "";
-  document.getElementById("loginModalSheet").classList.add("active");
-}
-
-function closeLoginModal() {
-  document.getElementById("loginModalSheet").classList.remove("active");
-}
-
 function setActiveAislePill(id) {
   currentAisleFilter = id;
+
+  const aisleSelect = document.getElementById("aisleSelect");
+  if (aisleSelect) {
+    aisleSelect.value = id || "all";
+  }
+
   document.querySelectorAll(".aisle-pill").forEach(pill => {
     if (pill.dataset.aisle === id) pill.classList.add("active");
     else pill.classList.remove("active");
@@ -804,22 +1134,6 @@ function switchTab(tabId) {
     if (item.dataset.tab === tabId) item.classList.add("active");
     else item.classList.remove("active");
   });
-}
-
-function openMobileEditModal(slug) {
-  const p = allProducts.find(item => item.slug === slug);
-  if (!p) return;
-
-  document.getElementById("editSlugMobile").value = slug;
-  document.getElementById("editNameMobile").value = p.name;
-  document.getElementById("editAisleMobile").value = p.aisle;
-  document.getElementById("editRackMobile").value = p.rack;
-
-  document.getElementById("editModalMobile").classList.add("active");
-}
-
-function closeMobileEditModal() {
-  document.getElementById("editModalMobile").classList.remove("active");
 }
 
 function handleAiAskMobile() {
