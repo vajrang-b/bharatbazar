@@ -19,10 +19,25 @@ A sleek, mobile-first internal store locator web application for **Bharath Bazar
 
 ---
 
-## 🌐 Live Demo & Hosting
+## 🌐 Live Demo & GitHub Pages Hosting
 
 Hosted on GitHub Pages:
 🔗 **https://vajrang-b.github.io/bharatbazar/**
 
 Repository:
 🐙 **https://github.com/vajrang-b/bharatbazar**
+
+### 📁 Directory Structure & Deployment (`/docs`)
+
+To keep developer scripts (`scripts/`) and raw data dumps (`data/`) separate from the production application, all web assets live inside the **`docs/`** directory:
+
+- **`docs/`**: Production Web Application (`index.html`, `index.css`, `app.js`, `product_names.json`, `multilingual_dictionary.csv`, `store_aisles.json`).
+- **`scripts/`**: Data extraction and python scraper scripts (`get_product_names.py`, `scraper.py`).
+- **`data/`**: Raw product lists and backups (`product_names.txt`, `bharathbazar_products.json`).
+
+#### Enabling GitHub Pages from `/docs`:
+1. Go to **Settings** ➔ **Pages** in your GitHub repository.
+2. Under **Build and deployment** ➔ **Branch**:
+   - Select **`main`** branch
+   - Select **`/docs`** folder
+3. Click **Save**.

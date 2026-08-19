@@ -1,0 +1,31 @@
+key,en,te,hi,keywords
+turmeric,Turmeric,Pasupu (పసుపు),Haldi (हल्दी),turmeric|haldi|pasupu
+haldi,Turmeric,Pasupu,Haldi,turmeric|haldi|pasupu
+pasupu,Turmeric,Pasupu,Haldi,turmeric|haldi|pasupu
+cumin,Cumin Seeds,Jilakarra (జిలకర),Jeera (जीरा),cumin|jeera|jilakarra
+jeera,Cumin Seeds,Jilakarra,Jeera,cumin|jeera|jilakarra
+jilakarra,Cumin Seeds,Jilakarra,Jeera,cumin|jeera|jilakarra
+coriander,Coriander,Dhaniyalu / Kotthimera,Dhania,coriander|dhania|dhaniyalu|kotthimera
+dhania,Coriander,Dhaniyalu,Dhania,coriander|dhania|dhaniyalu
+dhaniyalu,Coriander,Dhaniyalu,Dhania,coriander|dhania|dhaniyalu
+curd,Yogurt / Curd,Perugu (పెరుగు),Dahi (दही),curd|yogurt|dahi|perugu|milk
+dahi,Yogurt / Curd,Perugu,Dahi,curd|yogurt|dahi|perugu|milk
+perugu,Yogurt / Curd,Perugu,Dahi,curd|yogurt|dahi|perugu|milk
+milk,Milk & Dairy,Palu / Perugu,Doodh / Dahi,milk|dahi|perugu|doodh|dairy|paneer
+ghee,Clarified Butter,Neyyi (నెయ్యి),Ghee (घी),ghee|neyyi|clarified-butter
+neyyi,Clarified Butter,Neyyi,Ghee,ghee|neyyi
+rice,Rice / Basmati,Biyyam (బియ్యం),Chawal (चावल),rice|basmati|chawal|biyyam
+chawal,Rice,Biyyam,Chawal,rice|chawal|biyyam
+biyyam,Rice,Biyyam,Chawal,rice|biyyam|chawal
+atta,Wheat Flour,Godhumapindi,Atta,atta|flour|godhumapindi
+sugar,Sugar,Panchadara / Chakkera,Chini,sugar|chini|panchadara|chakkera
+chini,Sugar,Panchadara,Chini,sugar|chini|panchadara
+panchadara,Sugar,Panchadara,Chini,sugar|panchadara|chini
+jaggery,Jaggery,Bellam (బెల్లం),Gud (गुड़),jaggery|gud|bellam
+gud,Jaggery,Bellam,Gud,jaggery|gud|bellam
+bellam,Jaggery,Bellam,Gud,jaggery|bellam|gud
+garlic,Garlic,Vellulli,Lahsun,garlic|lahsun|vellulli
+onion,Onion,Ullipaya / Erragaddalu,Pyaz,onion|pyaz|ullipaya|erragaddalu
+ginger,Ginger,Allam,Adrak,ginger|adrak|allam
+mustard,Mustard,Aavalu,Rai,mustard|rai|aavalu
+paneer,Cottage Cheese,Paneer,Paneer,paneer|cottage-cheese

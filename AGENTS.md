@@ -19,14 +19,21 @@ This project is a high-performance, mobile-first web application designed for in
 
 ```
 bharathbazar/
-├── index.html            # Mobile-first single page app structure & bottom nav
-├── index.css             # Dark theme design system (Saffron #E65100 & Emerald #1B5E20)
-├── app.js                # Multilingual search engine, aisle categorizer & modals
-├── product_names.json    # JSON database of 2,312 product slugs
-├── product_names.txt     # Raw text file listing product slugs
-├── get_product_names.py  # Python Wayback Machine CDX API scraper script
-├── AGENTS.md             # This agent documentation file
-└── README.md             # Project README & GitHub Pages deployment instructions
+├── docs/                       # Production Web App (Hosted via GitHub Pages /docs)
+│   ├── index.html              # Mobile SPA structure & bottom sticky navigation
+│   ├── index.css               # Dark theme design system (Saffron #E65100 & Emerald #1B5E20)
+│   ├── app.js                  # Modular UI application controller logic
+│   ├── product_names.json      # Production JSON database of 2,312 product slugs
+│   ├── multilingual_dictionary.csv # Decoupled regional language dictionary
+│   └── store_aisles.json       # Decoupled store aisle & rack matrix configuration
+├── scripts/                    # Automation & Scraping Tooling
+│   ├── get_product_names.py    # Python Wayback Machine CDX API scraper script
+│   └── scraper.py              # Extended product detail scraper
+├── data/                       # Raw Data Artifacts & Backups
+│   ├── product_names.txt       # Raw text file listing product slugs
+│   └── bharathbazar_products.json # Sample product detail JSON dump
+├── AGENTS.md                   # AI Agent architecture guide & reference
+└── README.md                   # Project README & GitHub Pages deployment instructions
 ```
 
 ---
