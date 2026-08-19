@@ -2,25 +2,29 @@
 """
 Bharath Bazar Google Sheets Live Sync Script
 =============================================
-Fetches live data from public Google Sheet (Sheet 1) via Google Visualization API,
-sanitizes barcode IDs, and updates docs/multilingual_dictionary.csv, docs/product_names.json, and data/product_names.txt.
+Fetches live data from public Google Sheet (Sheet 1) via Google Visualization CSV endpoint,
+saves a copy to data/google_sheet_export.csv, sanitizes barcode IDs, and updates 
+docs/multilingual_dictionary.csv (with explicit Aisle & Rack columns), 
+docs/product_names.json, and data/product_names.txt.
 
 Google Sheet URL:
 https://docs.google.com/spreadsheets/d/1FfX4peTRN4RwfAQabV1jbogbQXESOTauEVyQHjaGJhA/edit?usp=sharing
 """
 
 import os
+import io
 import json
 import csv
 import re
 import urllib.request
 
 SPREADSHEET_ID = "1FfX4peTRN4RwfAQabV1jbogbQXESOTauEVyQHjaGJhA"
-GVIZ_URL = f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/gviz/tq?tqx=out:json"
+GVIZ_CSV_URL = f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/gviz/tq?tqx=out:csv"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 
+RAW_EXPORT_PATH = os.path.join(PROJECT_ROOT, "data", "google_sheet_export.csv")
 CSV_PATH = os.path.join(PROJECT_ROOT, "docs", "multilingual_dictionary.csv")
 JSON_PATH = os.path.join(PROJECT_ROOT, "docs", "product_names.json")
 TXT_PATH = os.path.join(PROJECT_ROOT, "data", "product_names.txt")
@@ -51,58 +55,52 @@ def clean_title(t):
     t = re.sub(r"^\d+[-\s]*", "", t)
     return t.strip()
 
-def fetch_google_sheet_rows():
+def fetch_and_save_raw_csv():
     print(f"📡 Fetching live data from Google Sheet ({SPREADSHEET_ID})...")
-    req = urllib.request.Request(GVIZ_URL, headers={"User-Agent": "Mozilla/5.0"})
+    req = urllib.request.Request(GVIZ_CSV_URL, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req) as resp:
-        raw = resp.read().decode("utf-8")
+        csv_bytes = resp.read()
     
-    start = raw.find("{")
-    end = raw.rfind("}")
-    data = json.loads(raw[start:end+1])
+    os.makedirs(os.path.dirname(RAW_EXPORT_PATH), exist_ok=True)
+    with open(RAW_EXPORT_PATH, "wb") as f:
+        f.write(csv_bytes)
+    print(f"📥 Saved raw Google Sheet download to: {RAW_EXPORT_PATH}")
     
-    table_rows = data.get("table", {}).get("rows", [])
-    parsed_rows = []
-    
-    for r in table_rows:
-        cells = r.get("c", [])
-        row_vals = [c.get("v") if c else "" for c in cells]
-        row_vals = [v for v in row_vals if v is not None]
-        
-        # Locate product key cell (key is slug string e.g. 'turmeric' or '24-mantra-garam-masala')
-        key, en, te, hi, kw = "", "", "", "", ""
-        
-        for idx, val in enumerate(row_vals):
-            val_str = str(val).strip()
-            if not val_str or val_str.replace('.', '').isdigit():
-                continue
-            
-            # Check if this cell is a slug key
-            if re.match(r"^[a-zA-Z0-9\-_]+$", val_str) and idx + 3 < len(row_vals):
-                key = val_str
-                en = str(row_vals[idx+1]).strip()
-                te = str(row_vals[idx+2]).strip()
-                hi = str(row_vals[idx+3]).strip()
-                if idx + 4 < len(row_vals):
-                    kw = str(row_vals[idx+4]).strip()
-                break
-        
-        if key:
-            parsed_rows.append((key, en, te, hi, kw))
-            
-    print(f"✅ Downloaded {len(parsed_rows)} entries from Google Sheet.")
-    return parsed_rows
+    return csv_bytes.decode("utf-8")
 
 def main():
-    sheet_entries = fetch_google_sheet_rows()
-    if not sheet_entries:
-        print("⚠️ Warning: No valid entries fetched from Google Sheet.")
-        return
+    csv_text = fetch_and_save_raw_csv()
+    reader = csv.reader(io.StringIO(csv_text))
+    header = next(reader, None)
     
     dict_map = {}
+    total_parsed = 0
     
-    # 1. Parse and sanitize entries
-    for key_raw, en_raw, te_raw, hi_raw, kw_raw in sheet_entries:
+    for row in reader:
+        if not row:
+            continue
+        total_parsed += 1
+        
+        # Expected Header: ['asile', 'Rack number', 'key', 'en', 'te', 'hi', 'keywords']
+        if len(row) >= 7:
+            aisle_raw = row[0].strip()
+            rack_raw = row[1].strip()
+            key_raw = row[2].strip()
+            en_raw = row[3].strip()
+            te_raw = row[4].strip()
+            hi_raw = row[5].strip()
+            kw_raw = row[6].strip()
+        elif len(row) >= 5:
+            aisle_raw = ""
+            rack_raw = ""
+            key_raw = row[0].strip()
+            en_raw = row[1].strip()
+            te_raw = row[2].strip()
+            hi_raw = row[3].strip()
+            kw_raw = row[4].strip()
+        else:
+            continue
+            
         k = clean_slug(key_raw)
         if not k:
             continue
@@ -110,19 +108,22 @@ def main():
         te = te_raw.strip()
         hi = hi_raw.strip()
         kw = kw_raw.strip()
-        dict_map[k] = [k, en, te, hi, kw]
+        aisle = aisle_raw if aisle_raw.isdigit() else ""
+        rack = rack_raw if rack_raw.isdigit() else ""
         
+        dict_map[k] = [k, en, te, hi, kw, aisle, rack]
+
     dict_rows = list(dict_map.values())
     dict_rows.sort(key=lambda x: x[0])
     
-    # 2. Write to docs/multilingual_dictionary.csv
+    # Write to docs/multilingual_dictionary.csv with 7 columns
     with open(CSV_PATH, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["key", "en", "te", "hi", "keywords"])
+        writer.writerow(["key", "en", "te", "hi", "keywords", "aisle", "rack"])
         writer.writerows(dict_rows)
-    print(f"💾 Saved {len(dict_rows)} clean entries to {CSV_PATH}.")
+    print(f"💾 Saved {len(dict_rows)} clean entries with Aisle & Rack data to {CSV_PATH}.")
 
-    # 3. Merge new keys into docs/product_names.json and data/product_names.txt
+    # Merge new keys into docs/product_names.json and data/product_names.txt
     if os.path.exists(JSON_PATH):
         with open(JSON_PATH, "r", encoding="utf-8") as f:
             slugs = json.load(f)

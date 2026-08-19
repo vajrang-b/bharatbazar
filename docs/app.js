@@ -68,7 +68,7 @@ function parseMultilingualCsv(csvText) {
   const lines = csvText.split(/\r?\n/);
   MULTILINGUAL_DICTIONARY = {};
 
-  // Skip header line (key,en,te,hi,keywords)
+  // Header: key,en,te,hi,keywords,aisle,rack
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
@@ -79,14 +79,19 @@ function parseMultilingualCsv(csvText) {
       const en = parts[1].trim();
       const te = parts[2].trim();
       const hi = parts[3].trim();
-      const keywordsStr = parts.slice(4).join(","); // Rejoin keywords if pipe separated
+      const keywordsStr = parts[4].trim();
       const keywords = keywordsStr.split("|").map(k => k.trim().toLowerCase());
+      
+      const aisle = (parts.length >= 6 && parts[5].trim()) ? parseInt(parts[5].trim()) : null;
+      const rack = (parts.length >= 7 && parts[6].trim()) ? parseInt(parts[6].trim()) : null;
 
       MULTILINGUAL_DICTIONARY[key] = {
         en: en,
         te: te,
         hi: hi,
-        keywords: keywords
+        keywords: keywords,
+        aisle: aisle,
+        rack: rack
       };
     }
   }
@@ -110,6 +115,15 @@ function categorizeProduct(slug) {
     return { aisle: ov.aisle, rack: ov.rack, categoryName: aisleData.name, icon: aisleData.icon };
   }
 
+  // 1. Check explicit Google Sheet Aisle & Rack mapping
+  if (MULTILINGUAL_DICTIONARY[lower] && MULTILINGUAL_DICTIONARY[lower].aisle) {
+    const dict = MULTILINGUAL_DICTIONARY[lower];
+    const aisleData = STORE_AISLES[dict.aisle] || { name: "General Spices", icon: "🌶️" };
+    const rack = dict.rack || ((getHash(slug) % 30) + 1);
+    return { aisle: dict.aisle, rack: rack, categoryName: aisleData.name, icon: aisleData.icon };
+  }
+
+  // 2. Keyword heuristic mapping
   let assignedAisle = 1;
   for (const [id, meta] of Object.entries(STORE_AISLES)) {
     if (meta.keywords && meta.keywords.some(kw => lower.includes(kw))) {
