@@ -24,27 +24,29 @@ let deviceAnalyticsList = [];
 // -------------------------------------------------------------
 async function loadExternalDataFiles() {
   try {
-    // 1. Load Multilingual Dictionary CSV
-    const csvResponse = await fetch("multilingual_dictionary.csv");
-    if (csvResponse.ok) {
-      const csvText = await csvResponse.text();
-      parseMultilingualCsv(csvText);
-    }
-
-    // 2. Load Store Aisles Matrix JSON
+    // 1. Load Store Aisles Matrix JSON (or default constants)
     const aislesResponse = await fetch("store_aisles.json");
     if (aislesResponse.ok) {
       STORE_AISLES = await aislesResponse.json();
     }
 
-    // 3. Load Product Names JSON
-    const prodResponse = await fetch("product_names.json");
-    if (prodResponse.ok) {
-      const rawSlugs = await prodResponse.json();
-      allProducts = rawSlugs.map((slug, idx) => {
+    // 2. Load Unified Catalog Database CSV (multilingual_dictionary.csv)
+    const csvResponse = await fetch("multilingual_dictionary.csv");
+    if (csvResponse.ok) {
+      const csvText = await csvResponse.text();
+      parseMultilingualCsv(csvText);
+
+      // Build product catalog directly from the unified database
+      const keys = Object.keys(MULTILINGUAL_DICTIONARY);
+      allProducts = keys.map((slug, idx) => {
+        const dict = MULTILINGUAL_DICTIONARY[slug];
         const loc = categorizeProduct(slug);
-        const name = formatProductName(slug);
-        const aliases = getMultilingualAliases(slug, name);
+        const name = dict.en || formatProductName(slug);
+        
+        const aliases = [];
+        if (dict.te) aliases.push(`TE: ${dict.te}`);
+        if (dict.hi) aliases.push(`HI: ${dict.hi}`);
+
         return {
           id: idx,
           slug: slug,
@@ -458,12 +460,8 @@ function renderProductList() {
     const card = document.createElement("div");
     card.className = "product-card";
 
+    // Multilingual tags hidden by default per user directive
     let aliasHtml = "";
-    if (p.aliases.length > 0) {
-      aliasHtml = `<div class="product-multilingual-tags">
-        ${p.aliases.map(a => `<span class="alias-chip">${escapeHtml(a)}</span>`).join("")}
-      </div>`;
-    }
 
     card.innerHTML = `
       <div class="product-info">
