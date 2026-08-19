@@ -343,7 +343,7 @@ body {
 }
 
 .product-multilingual-tags {
-  display: flex;
+  display: none; /* Hidden by default per user request; functionality retained behind scenes */
   gap: 0.25rem;
   flex-wrap: wrap;
   margin-top: 0.15rem;
