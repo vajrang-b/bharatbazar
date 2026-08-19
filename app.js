@@ -1,6 +1,7 @@
 /**
  * Bharath Bazar Mobile-First Multilingual Store Inventory & Product Locator Logic
- * Supports English, Telugu, and Hindi search transliterations.
+ * Supports English, Telugu, and Hindi search transliterations, Viewport Bottom Search,
+ * Smooth Keyboard Handling, and Anonymous Device & Visitor Profile Analytics.
  */
 
 // Multilingual Search Alias Dictionary (English, Hindi, Telugu)
@@ -17,9 +18,10 @@ const MULTILINGUAL_DICTIONARY = {
   "dhania": { en: "Coriander", te: "Dhaniyalu", hi: "Dhania", keywords: ["coriander", "dhania", "dhaniyalu"] },
   "dhaniyalu": { en: "Coriander", te: "Dhaniyalu", hi: "Dhania", keywords: ["coriander", "dhania", "dhaniyalu"] },
 
-  "curd": { en: "Yogurt / Curd", te: "Perugu (పెరుగు)", hi: "Dahi (दही)", keywords: ["curd", "yogurt", "dahi", "perugu"] },
-  "dahi": { en: "Yogurt / Curd", te: "Perugu", hi: "Dahi", keywords: ["curd", "yogurt", "dahi", "perugu"] },
-  "perugu": { en: "Yogurt / Curd", te: "Perugu", hi: "Dahi", keywords: ["curd", "yogurt", "dahi", "perugu"] },
+  "curd": { en: "Yogurt / Curd", te: "Perugu (పెరుగు)", hi: "Dahi (दही)", keywords: ["curd", "yogurt", "dahi", "perugu", "milk"] },
+  "dahi": { en: "Yogurt / Curd", te: "Perugu", hi: "Dahi", keywords: ["curd", "yogurt", "dahi", "perugu", "milk"] },
+  "perugu": { en: "Yogurt / Curd", te: "Perugu", hi: "Dahi", keywords: ["curd", "yogurt", "dahi", "perugu", "milk"] },
+  "milk": { en: "Milk & Dairy", te: "Palu / Perugu", hi: "Doodh / Dahi", keywords: ["milk", "dahi", "perugu", "doodh", "dairy", "paneer"] },
 
   "ghee": { en: "Clarified Butter", te: "Neyyi (నెయ్యి)", hi: "Ghee (घी)", keywords: ["ghee", "neyyi", "clarified-butter"] },
   "neyyi": { en: "Clarified Butter", te: "Neyyi", hi: "Ghee", keywords: ["ghee", "neyyi"] },
@@ -61,8 +63,12 @@ const STORE_AISLES = {
 let allProducts = [];
 let filteredProducts = [];
 let locationOverrides = {};
+let searchAnalytics = {};
 let currentAisleFilter = "all";
 let currentView = "searchView";
+let isStaffLoggedIn = false;
+let visitorProfile = null;
+let deviceAnalyticsList = [];
 
 function getHash(str) {
   let hash = 0;
@@ -73,7 +79,6 @@ function getHash(str) {
   return Math.abs(hash);
 }
 
-// Categorize product into Aisle and Rack (1-30)
 function categorizeProduct(slug) {
   const lower = slug.toLowerCase();
   
@@ -94,7 +99,6 @@ function categorizeProduct(slug) {
   return { aisle: assignedAisle, rack: rack, categoryName: STORE_AISLES[assignedAisle].name, icon: STORE_AISLES[assignedAisle].icon };
 }
 
-// Match multilingual aliases
 function getMultilingualAliases(slug, name) {
   const text = `${slug} ${name}`.toLowerCase();
   const aliases = [];
@@ -110,25 +114,249 @@ function getMultilingualAliases(slug, name) {
   return aliases;
 }
 
+// Anonymous Device Profiler
+function detectDeviceProfile() {
+  const ua = navigator.userAgent;
+  let deviceType = "Desktop";
+  if (/mobile/i.test(ua)) deviceType = "Mobile";
+  if (/ipad|tablet/i.test(ua)) deviceType = "Tablet";
+
+  let os = "Unknown OS";
+  if (/android/i.test(ua)) os = "Android";
+  else if (/iphone|ipad|ipod/i.test(ua)) os = "iOS";
+  else if (/macintosh/i.test(ua)) os = "macOS";
+  else if (/windows/i.test(ua)) os = "Windows";
+  else if (/linux/i.test(ua)) os = "Linux";
+
+  let browser = "Browser";
+  if (/chrome|crios/i.test(ua)) browser = "Chrome";
+  else if (/safari/i.test(ua) && !/chrome/i.test(ua)) browser = "Safari";
+  else if (/firefox/i.test(ua)) browser = "Firefox";
+
+  const screenRes = `${window.screen.width}x${window.screen.height}`;
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  return {
+    deviceType,
+    os,
+    browser,
+    screenRes,
+    isTouch
+  };
+}
+
+function initVisitorProfile() {
+  try {
+    const info = detectDeviceProfile();
+    let saved = localStorage.getItem("bharath_bazar_visitor_profile");
+
+    if (saved) {
+      visitorProfile = JSON.parse(saved);
+      visitorProfile.visitCount = (visitorProfile.visitCount || 1) + 1;
+      visitorProfile.lastVisit = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    } else {
+      const randomID = 'BB-DEV-' + Math.random().toString(36).substring(2, 7).toUpperCase();
+      visitorProfile = {
+        visitorId: randomID,
+        deviceType: info.deviceType,
+        os: info.os,
+        browser: info.browser,
+        screenRes: info.screenRes,
+        isTouch: info.isTouch,
+        firstVisit: new Date().toLocaleDateString(),
+        lastVisit: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        visitCount: 1,
+        recentSearches: []
+      };
+    }
+
+    localStorage.setItem("bharath_bazar_visitor_profile", JSON.stringify(visitorProfile));
+    registerDeviceAnalytics(visitorProfile);
+    renderVisitorWelcomeBanner();
+  } catch (e) {}
+}
+
+function registerDeviceAnalytics(profile) {
+  try {
+    let savedLog = localStorage.getItem("bharath_bazar_device_log");
+    let devices = savedLog ? JSON.parse(savedLog) : [];
+
+    const existingIdx = devices.findIndex(d => d.visitorId === profile.visitorId);
+    if (existingIdx >= 0) {
+      devices[existingIdx] = profile;
+    } else {
+      devices.push(profile);
+    }
+
+    localStorage.setItem("bharath_bazar_device_log", JSON.stringify(devices));
+    deviceAnalyticsList = devices;
+  } catch (e) {}
+}
+
+function renderVisitorWelcomeBanner() {
+  if (!visitorProfile) return;
+
+  const hintBar = document.getElementById("langHintBar");
+  if (!hintBar) return;
+
+  if (visitorProfile.recentSearches && visitorProfile.recentSearches.length > 0) {
+    const recentChips = visitorProfile.recentSearches.slice(0, 3).map(s => 
+      `<span class="lang-chip" data-search="${escapeHtml(s)}" style="border-color: var(--primary-saffron); color: #FFF; background: rgba(230, 81, 0, 0.25);">⭐ ${escapeHtml(s)}</span>`
+    ).join("");
+    
+    hintBar.insertAdjacentHTML("afterbegin", recentChips);
+  }
+}
+
+function updateVisitorSearches(query) {
+  if (!visitorProfile || !query || query.length < 2) return;
+  const q = query.toLowerCase().trim();
+  
+  if (!visitorProfile.recentSearches) visitorProfile.recentSearches = [];
+  
+  visitorProfile.recentSearches = visitorProfile.recentSearches.filter(s => s !== q);
+  visitorProfile.recentSearches.unshift(q);
+  visitorProfile.recentSearches = visitorProfile.recentSearches.slice(0, 5);
+
+  try {
+    localStorage.setItem("bharath_bazar_visitor_profile", JSON.stringify(visitorProfile));
+    registerDeviceAnalytics(visitorProfile);
+  } catch (e) {}
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
-  loadLocationOverrides();
+  loadStorageData();
+  initVisitorProfile();
+  checkAuthSession();
   await loadProductData();
   setupEventListeners();
   renderMobileMap();
   applySearchAndFilter();
+  renderAnalyticsList();
+  renderDeviceAnalyticsDashboard();
+
+  // Gentle auto-focus without forcing scroll layout jump
+  setTimeout(() => {
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+      searchInput.focus({ preventScroll: true });
+    }
+  }, 300);
 });
 
-function loadLocationOverrides() {
+function loadStorageData() {
   try {
-    const saved = localStorage.getItem("bharath_bazar_location_overrides");
-    if (saved) locationOverrides = JSON.parse(saved);
+    const savedLoc = localStorage.getItem("bharath_bazar_location_overrides");
+    if (savedLoc) locationOverrides = JSON.parse(savedLoc);
+
+    const savedAnalytics = localStorage.getItem("bharath_bazar_search_analytics");
+    if (savedAnalytics) {
+      searchAnalytics = JSON.parse(savedAnalytics);
+    } else {
+      searchAnalytics = {
+        "turmeric": 142,
+        "paneer": 98,
+        "jeera": 87,
+        "basmati": 76,
+        "milk": 65,
+        "dettol": 54
+      };
+      localStorage.setItem("bharath_bazar_search_analytics", JSON.stringify(searchAnalytics));
+    }
   } catch (e) {}
 }
 
-function saveLocationOverrides() {
+function saveStorageData() {
   try {
     localStorage.setItem("bharath_bazar_location_overrides", JSON.stringify(locationOverrides));
+    localStorage.setItem("bharath_bazar_search_analytics", JSON.stringify(searchAnalytics));
   } catch (e) {}
+}
+
+function trackSearchQuery(query) {
+  if (!query || query.length < 2) return;
+  const term = query.toLowerCase().trim();
+  searchAnalytics[term] = (searchAnalytics[term] || 0) + 1;
+  saveStorageData();
+  updateVisitorSearches(term);
+  renderAnalyticsList();
+  renderDeviceAnalyticsDashboard();
+}
+
+function renderAnalyticsList() {
+  const container = document.getElementById("analyticsList");
+  if (!container) return;
+
+  const sorted = Object.entries(searchAnalytics).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  container.innerHTML = sorted.map(([term, count]) => `
+    <li style="margin-bottom: 0.4rem;">
+      <strong style="text-transform: capitalize; color: #FFF;">${escapeHtml(term)}</strong>: 
+      <span style="color: var(--accent-amber); font-weight: 700;">${count} searches</span>
+    </li>
+  `).join("");
+}
+
+function renderDeviceAnalyticsDashboard() {
+  const container = document.getElementById("deviceAnalyticsContainer");
+  if (!container) return;
+
+  let savedLog = localStorage.getItem("bharath_bazar_device_log");
+  let devices = savedLog ? JSON.parse(savedLog) : [];
+
+  if (devices.length === 0 && visitorProfile) {
+    devices = [visitorProfile];
+  }
+
+  let html = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1rem;">
+      <div style="background: rgba(11, 15, 25, 0.7); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.8rem; text-align: center;">
+        <div style="font-size: 1.4rem; font-weight: 700; color: #4ADE80;">${devices.length}</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted);">Unique Devices</div>
+      </div>
+      <div style="background: rgba(11, 15, 25, 0.7); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.8rem; text-align: center;">
+        <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-amber);">${visitorProfile ? visitorProfile.visitorId : 'BB-DEV-1'}</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted);">Current Device ID</div>
+      </div>
+    </div>
+    
+    <div style="font-size: 0.8rem; font-weight: 700; color: #FFF; margin-bottom: 0.5rem;">📱 Connected Visitor Devices Table:</div>
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+  `;
+
+  devices.forEach(d => {
+    const recentStr = d.recentSearches && d.recentSearches.length > 0 ? d.recentSearches.join(", ") : "None yet";
+    html += `
+      <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; font-size: 0.78rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+          <span style="font-weight: 700; color: var(--primary-saffron-light);">🔑 ${d.visitorId} (${d.deviceType})</span>
+          <span style="color: #4ADE80; font-size: 0.72rem;">Visits: ${d.visitCount}</span>
+        </div>
+        <div style="color: var(--text-secondary); margin-bottom: 0.2rem;">
+          📱 <strong>OS/Browser:</strong> ${d.os} (${d.browser}) &bull; ${d.screenRes}
+        </div>
+        <div style="color: var(--text-muted); font-size: 0.72rem;">
+          ⭐ <strong>Recent Searches:</strong> ${escapeHtml(recentStr)}
+        </div>
+      </div>
+    `;
+  });
+
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+function checkAuthSession() {
+  try {
+    isStaffLoggedIn = sessionStorage.getItem("bharath_bazar_staff_authed") === "true";
+    updateAuthUI();
+  } catch (e) {}
+}
+
+function updateAuthUI() {
+  const menuText = document.getElementById("menuAdminText");
+  if (menuText) {
+    menuText.textContent = isStaffLoggedIn ? "Staff Admin Portal (Logged In)" : "Staff Portal (Login)";
+  }
 }
 
 async function loadProductData() {
@@ -165,11 +393,9 @@ function formatProductName(slug) {
   return clean.replace(/\b\w/g, l => l.toUpperCase());
 }
 
-// Search and Filter Logic
 function applySearchAndFilter() {
   const rawQuery = document.getElementById("searchInput").value.trim().toLowerCase();
   
-  // Resolve multilingual synonyms for query
   let expandedKeywords = [rawQuery];
   if (rawQuery) {
     for (const [key, item] of Object.entries(MULTILINGUAL_DICTIONARY)) {
@@ -180,12 +406,10 @@ function applySearchAndFilter() {
   }
 
   filteredProducts = allProducts.filter(p => {
-    // Aisle filter
     if (currentAisleFilter !== "all" && p.aisle !== parseInt(currentAisleFilter)) {
       return false;
     }
 
-    // Search query filter
     if (rawQuery) {
       const text = `${p.slug} ${p.name} ${p.aliases.join(" ")}`.toLowerCase();
       return expandedKeywords.some(kw => text.includes(kw));
@@ -197,7 +421,6 @@ function applySearchAndFilter() {
   renderProductList();
 }
 
-// Render Mobile Cards
 function renderProductList() {
   const container = document.getElementById("productListContainer");
   container.innerHTML = "";
@@ -215,7 +438,6 @@ function renderProductList() {
     return;
   }
 
-  // Display top 80 products for fast mobile performance
   const displayItems = filteredProducts.slice(0, 80);
 
   displayItems.forEach(p => {
@@ -241,16 +463,18 @@ function renderProductList() {
       </div>
     `;
 
-    // Click to edit
     card.querySelector(".loc-badge-mobile").addEventListener("click", () => {
-      openMobileEditModal(p.slug);
+      if (isStaffLoggedIn) {
+        openMobileEditModal(p.slug);
+      } else {
+        openLoginModal();
+      }
     });
 
     container.appendChild(card);
   });
 }
 
-// Render Mobile Store Map
 function renderMobileMap() {
   const container = document.getElementById("mobileMapContainer");
   container.innerHTML = "";
@@ -283,50 +507,132 @@ function renderMobileMap() {
   });
 }
 
-// Setup Mobile Event Listeners
+let searchDebounceTimer = null;
+
 function setupEventListeners() {
-  // Mobile Search Input
   const searchInput = document.getElementById("searchInput");
   const clearBtn = document.getElementById("clearSearchBtn");
+  const dismissKeyboardBtn = document.getElementById("dismissKeyboardBtn");
+
+  // CRITICAL FIX: REMOVED window 'scroll' blur listener that was prematurely closing the mobile keyboard!
+  // Keyboard will only be blurred on explicit action (Dismiss button, Enter key, or suggestion chip tap).
+
+  if (dismissKeyboardBtn) {
+    dismissKeyboardBtn.addEventListener("click", () => {
+      searchInput.blur();
+    });
+  }
+
+  // Enter key dismisses virtual keyboard cleanly
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      searchInput.blur();
+    }
+  });
 
   searchInput.addEventListener("input", () => {
-    clearBtn.style.display = searchInput.value ? "block" : "none";
+    const val = searchInput.value;
+    clearBtn.style.display = val ? "block" : "none";
+
+    if (val && currentView !== "searchView") {
+      switchTab("searchView");
+    }
+
     applySearchAndFilter();
+
+    clearTimeout(searchDebounceTimer);
+    searchDebounceTimer = setTimeout(() => {
+      trackSearchQuery(val);
+    }, 600);
   });
 
   clearBtn.addEventListener("click", () => {
     searchInput.value = "";
     clearBtn.style.display = "none";
     applySearchAndFilter();
+    searchInput.focus({ preventScroll: true });
   });
 
-  // Multilingual Hint Chips
+  document.getElementById("menuToggleBtn").addEventListener("click", openDrawer);
+  document.getElementById("closeDrawerBtn").addEventListener("click", closeDrawer);
+  document.getElementById("drawerOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "drawerOverlay") closeDrawer();
+  });
+
+  document.querySelectorAll(".drawer-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const targetTab = item.dataset.tab;
+      closeDrawer();
+
+      if (targetTab === "adminView" && !isStaffLoggedIn) {
+        openLoginModal();
+      } else {
+        switchTab(targetTab);
+      }
+    });
+  });
+
+  document.getElementById("brandHomeBtn").addEventListener("click", () => {
+    searchInput.value = "";
+    clearBtn.style.display = "none";
+    setActiveAislePill("all");
+    switchTab("searchView");
+    searchInput.focus({ preventScroll: true });
+  });
+
   document.getElementById("langHintBar").addEventListener("click", (e) => {
     const chip = e.target.closest(".lang-chip");
     if (chip) {
-      searchInput.value = chip.dataset.search;
+      const query = chip.dataset.search;
+      searchInput.value = query;
       clearBtn.style.display = "block";
       switchTab("searchView");
       applySearchAndFilter();
+      trackSearchQuery(query);
+      searchInput.blur();
     }
   });
 
-  // Aisle Carousel Pills
   document.getElementById("aisleCarousel").addEventListener("click", (e) => {
     const pill = e.target.closest(".aisle-pill");
     if (pill) {
       setActiveAislePill(pill.dataset.aisle);
+      if (currentView !== "searchView") switchTab("searchView");
     }
   });
 
-  // Bottom Navigation Tabs
-  document.querySelectorAll(".bottom-nav .nav-item").forEach(item => {
-    item.addEventListener("click", () => {
-      switchTab(item.dataset.tab);
-    });
+  document.getElementById("closeLoginModalBtn").addEventListener("click", closeLoginModal);
+  document.getElementById("staffLoginForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const user = document.getElementById("loginUsernameInput").value.trim();
+    const pass = document.getElementById("loginPasswordInput").value.trim();
+    const errorMsg = document.getElementById("loginErrorMsg");
+
+    if (user.toLowerCase() === "admin" && (pass === "bharath123" || pass === "1234" || pass === "admin")) {
+      isStaffLoggedIn = true;
+      try {
+        sessionStorage.setItem("bharath_bazar_staff_authed", "true");
+      } catch (err) {}
+      updateAuthUI();
+      closeLoginModal();
+      switchTab("adminView");
+      renderDeviceAnalyticsDashboard();
+      errorMsg.style.display = "none";
+    } else {
+      errorMsg.style.display = "block";
+    }
   });
 
-  // Mobile Edit Modal
+  document.getElementById("staffLogoutBtn").addEventListener("click", () => {
+    isStaffLoggedIn = false;
+    try {
+      sessionStorage.removeItem("bharath_bazar_staff_authed");
+    } catch (err) {}
+    updateAuthUI();
+    switchTab("searchView");
+    alert("Logged out of Staff Portal.");
+  });
+
   document.getElementById("closeEditModalMobileBtn").addEventListener("click", closeMobileEditModal);
   
   document.getElementById("quickEditBtn").addEventListener("click", () => {
@@ -337,9 +643,8 @@ function setupEventListeners() {
 
   document.getElementById("editFormMobile").addEventListener("submit", (e) => {
     e.preventDefault();
-    const pin = document.getElementById("staffPinInput").value;
-    if (pin !== "1234") {
-      alert("Invalid Security PIN! Default PIN is 1234");
+    if (!isStaffLoggedIn) {
+      openLoginModal();
       return;
     }
 
@@ -348,7 +653,7 @@ function setupEventListeners() {
     const newRack = parseInt(document.getElementById("editRackMobile").value);
 
     locationOverrides[slug] = { aisle: newAisle, rack: newRack };
-    saveLocationOverrides();
+    saveStorageData();
 
     const p = allProducts.find(item => item.slug === slug);
     if (p) {
@@ -364,8 +669,26 @@ function setupEventListeners() {
     alert(`Updated location for ${p ? p.name : slug} to Aisle ${newAisle}, Rack ${newRack}`);
   });
 
-  // Mobile AI Navigator
   document.getElementById("aiAskBtnMobile").addEventListener("click", handleAiAskMobile);
+}
+
+function openDrawer() {
+  document.getElementById("drawerOverlay").classList.add("active");
+}
+
+function closeDrawer() {
+  document.getElementById("drawerOverlay").classList.remove("active");
+}
+
+function openLoginModal() {
+  document.getElementById("loginErrorMsg").style.display = "none";
+  document.getElementById("loginUsernameInput").value = "";
+  document.getElementById("loginPasswordInput").value = "";
+  document.getElementById("loginModalSheet").classList.add("active");
+}
+
+function closeLoginModal() {
+  document.getElementById("loginModalSheet").classList.remove("active");
 }
 
 function setActiveAislePill(id) {
@@ -379,12 +702,13 @@ function setActiveAislePill(id) {
 
 function switchTab(tabId) {
   currentView = tabId;
+
   document.querySelectorAll(".view-panel").forEach(panel => {
     if (panel.id === tabId) panel.classList.add("active-view");
     else panel.classList.remove("active-view");
   });
 
-  document.querySelectorAll(".bottom-nav .nav-item").forEach(item => {
+  document.querySelectorAll(".drawer-item").forEach(item => {
     if (item.dataset.tab === tabId) item.classList.add("active");
     else item.classList.remove("active");
   });
@@ -398,7 +722,6 @@ function openMobileEditModal(slug) {
   document.getElementById("editNameMobile").value = p.name;
   document.getElementById("editAisleMobile").value = p.aisle;
   document.getElementById("editRackMobile").value = p.rack;
-  document.getElementById("staffPinInput").value = "";
 
   document.getElementById("editModalMobile").classList.add("active");
 }
@@ -416,7 +739,11 @@ function handleAiAskMobile() {
     return;
   }
 
-  const matches = allProducts.filter(p => p.name.toLowerCase().includes(query) || p.slug.toLowerCase().includes(query) || p.aliases.some(a => a.toLowerCase().includes(query)));
+  const matches = allProducts.filter(p => {
+    return p.name.toLowerCase().includes(query) || 
+           p.slug.toLowerCase().includes(query) || 
+           p.aliases.some(a => a.toLowerCase().includes(query));
+  });
 
   if (matches.length === 0) {
     box.innerHTML = `🤖 <strong>AI Navigator:</strong> No products matching "<em>${escapeHtml(query)}</em>" found.`;
