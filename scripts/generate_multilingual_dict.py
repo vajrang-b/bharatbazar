@@ -4,18 +4,19 @@ Bharath Bazar Automated Multilingual Pipeline
 ========================================================================================
 Complete End-to-End Pipeline:
   1. Reads product catalog slugs from docs/product_names.json.
-  2. Stage 1 (Generation): Generates initial Telugu & Hindi transliterations via llama3.1:8b (or qwen2.5-coder).
-  3. Stage 2 (Validation): Audits & verifies translations using DeepSeek-R1 32B reasoning engine.
-  4. Stage 3 (Persistence): Writes final verified entries into docs/multilingual_dictionary.csv.
+  2. Normalizes slugs by stripping numeric UPC/ID barcode prefixes (e.g. 011433151474tindora-bulk -> tindora-bulk).
+  3. Stage 1 (Generation): Generates initial Telugu & Hindi transliterations via llama3.1:8b (or qwen2.5-coder).
+  4. Stage 2 (Validation): Audits & verifies translations using DeepSeek-R1 32B reasoning engine.
+  5. Stage 3 (Persistence): Writes final verified entries into docs/multilingual_dictionary.csv.
 
 Usage:
     # Run full automated pipeline across all items:
     python3 scripts/generate_multilingual_dict.py
 
-    # Run fast generation mode without DeepSeek audit wait:
+    # Fast mode (skips DeepSeek reasoning wait):
     python3 scripts/generate_multilingual_dict.py --fast
 
-    # Run pipeline on a sample of 10 items:
+    # Sample test:
     python3 scripts/generate_multilingual_dict.py --max-items 10
 """
 
@@ -23,6 +24,7 @@ import os
 import sys
 import json
 import csv
+import re
 import argparse
 import urllib.request
 import urllib.error
@@ -44,7 +46,8 @@ Given a list of product slugs, provide Telugu and Hindi transliterations and sea
 CRITICAL RULES:
 1. Translate ONLY what the product name specifies.
 2. DO NOT use generic filler words like "Pasupu" or "Haldi" UNLESS the product is explicitly turmeric.
-3. Return ONLY a valid JSON array of objects with keys: "key", "en", "te", "hi", "keywords".
+3. Strip any numeric barcode prefixes from titles (e.g. "011433151474 Tindora Bulk" -> "Tindora Bulk").
+4. Return ONLY a valid JSON array of objects with keys: "key", "en", "te", "hi", "keywords".
 No Markdown codeblocks or commentary outside JSON.
 """
 
@@ -54,11 +57,37 @@ Review and validate the following candidate product transliterations for etymolo
 AUDIT INSTRUCTIONS:
 1. Check English title, Telugu script/transliteration, and Hindi script/transliteration.
 2. Fix any typos or incorrect terms (e.g. remove "pasupu" if product is not turmeric).
-3. Return ONLY a valid JSON array of audited objects with exact keys ("key", "en", "te", "hi", "keywords"). No text outside JSON.
+3. Ensure keys and titles have NO numeric barcode IDs (e.g. key must be "tindora-bulk", NOT "011433151474tindora-bulk").
+4. Return ONLY a valid JSON array of audited objects with exact keys ("key", "en", "te", "hi", "keywords"). No text outside JSON.
 
 Candidate Entries To Audit:
 {entries_json}
 """
+
+def clean_slug(s):
+    if not s or not isinstance(s, str):
+        return ""
+    s = s.strip()
+    if s.isdigit():
+        return ""
+    if s.startswith('24-mantra') or s.startswith('50-50'):
+        return s.lower()
+    
+    # 1. Strip leading barcode numbers
+    s = re.sub(r'^\d+[-\s]*', '', s)
+    # 2. Strip trailing long barcode numbers
+    s = re.sub(r'[-\s]*\d{5,}$', '', s)
+    s = re.sub(r'([a-zA-Z]+)\d{5,}$', r'\1', s)
+    s = s.strip('-').lower()
+    return s
+
+def clean_title(t):
+    if not t or not isinstance(t, str):
+        return ""
+    if t.startswith('24 Mantra') or t.startswith('50-50'):
+        return t
+    t = re.sub(r'^\d+[-\s]*', '', t)
+    return t.strip()
 
 def query_ollama(model_name, prompt, timeout=600):
     url = f"{OLLAMA_URL}/api/generate"
@@ -118,10 +147,12 @@ def load_existing_dictionary():
             header = next(reader, None)
             for row in reader:
                 if row and len(row) >= 5:
-                    key = row[0].strip().lower()
+                    key = clean_slug(row[0])
+                    if not key:
+                        continue
                     existing[key] = {
                         "key": key,
-                        "en": row[1].strip(),
+                        "en": clean_title(row[1]),
                         "te": row[2].strip(),
                         "hi": row[3].strip(),
                         "keywords": row[4].strip()
@@ -130,12 +161,19 @@ def load_existing_dictionary():
 
 def save_dictionary_to_csv(dictionary_map):
     os.makedirs(os.path.dirname(DICTIONARY_CSV_PATH), exist_ok=True)
+    rows = []
+    for item in dictionary_map.values():
+        k = clean_slug(item["key"])
+        if not k:
+            continue
+        rows.append([k, clean_title(item["en"]), item["te"], item["hi"], item["keywords"]])
+    
+    rows.sort(key=lambda x: x[0])
     with open(DICTIONARY_CSV_PATH, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(["key", "en", "te", "hi", "keywords"])
-        for item in sorted(dictionary_map.values(), key=lambda x: x["key"]):
-            writer.writerow([item["key"], item["en"], item["te"], item["hi"], item["keywords"]])
-    print(f"💾 Updated {len(dictionary_map)} entries in {DICTIONARY_CSV_PATH}.")
+        writer.writerows(rows)
+    print(f"💾 Updated {len(rows)} entries in {DICTIONARY_CSV_PATH}.")
 
 def run_automated_pipeline(gen_model, val_model, batch_size=5, max_items=None, fast_mode=False):
     """Executes 3-Stage Pipeline: Read -> Generate -> DeepSeek Validate -> Write CSV."""
@@ -153,10 +191,19 @@ def run_automated_pipeline(gen_model, val_model, batch_size=5, max_items=None, f
         sys.exit(1)
 
     with open(PRODUCT_NAMES_PATH, "r", encoding="utf-8") as f:
-        slugs = json.load(f)
+        raw_slugs = json.load(f)
+
+    # Sanitize slugs
+    slugs = []
+    seen = set()
+    for s in raw_slugs:
+        cs = clean_slug(s)
+        if cs and cs not in seen:
+            seen.add(cs)
+            slugs.append(cs)
 
     dictionary_map = load_existing_dictionary()
-    unprocessed = [s for s in slugs if s.lower() not in dictionary_map]
+    unprocessed = [s for s in slugs if s not in dictionary_map]
     print(f"Total catalog slugs: {len(slugs)} | Existing verified entries: {len(dictionary_map)} | Unprocessed: {len(unprocessed)}")
 
     if max_items:
@@ -188,7 +235,7 @@ def run_automated_pipeline(gen_model, val_model, batch_size=5, max_items=None, f
 
         final_entries = candidates
 
-        # --- STAGE 2: DEEPSEEK-R1 VALIDATION (IF NOT FAST MODE) ---
+        # --- STAGE 2: DEEPSEEK-R1 VALIDATION ---
         if not fast_mode:
             print(f"  🧠 Step 2: Validating etymology & accuracy via DeepSeek-R1 '{val_model}'...")
             try:
@@ -204,10 +251,12 @@ def run_automated_pipeline(gen_model, val_model, batch_size=5, max_items=None, f
         added_count = 0
         for entry in final_entries:
             if isinstance(entry, dict) and "key" in entry:
-                key = str(entry["key"]).strip().lower()
+                key = clean_slug(entry["key"])
+                if not key:
+                    continue
                 dictionary_map[key] = {
                     "key": key,
-                    "en": str(entry.get("en", "")),
+                    "en": clean_title(entry.get("en", "")),
                     "te": str(entry.get("te", "")),
                     "hi": str(entry.get("hi", "")),
                     "keywords": str(entry.get("keywords", key))
