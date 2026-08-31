@@ -3,7 +3,7 @@ name: Sync Google Sheet to CSV
 on:
   # Run on a schedule (every 1 hour)
   schedule:
-    - cron: '0 * * * *'  # Every 1 hours
+    - cron: '0 */6 * * *'  # Every 1 hours
   
   # Allow manual trigger from GitHub Actions UI
   workflow_dispatch:
