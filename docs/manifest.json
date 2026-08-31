@@ -1,0 +1,62 @@
+{
+  "name": "Bharath Bazar - Mobile Store Locator",
+  "short_name": "Bharath Bazar",
+  "description": "Find products quickly in Bharath Bazar supermarket. Works offline with multilingual support.",
+  "start_url": "/bharatbazar/",
+  "scope": "/bharatbazar/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B0F19",
+  "theme_color": "#E65100",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23E65100' width='192' height='192'/><text x='96' y='120' font-size='120' text-anchor='middle' fill='white' font-weight='bold'>🛒</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23E65100' width='192' height='192'/><text x='96' y='120' font-size='120' text-anchor='middle' fill='white' font-weight='bold'>🛒</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%230B0F19' width='540' height='720'/><text x='270' y='300' font-size='100' text-anchor='middle' fill='%23E65100' font-weight='bold'>Bharath Bazar</text><text x='270' y='400' font-size='40' text-anchor='middle' fill='%231B5E20'>Store Locator</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["shopping", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Search Products",
+      "short_name": "Search",
+      "description": "Quickly search for products in the store",
+      "url": "/bharatbazar/?tab=search",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><circle cx='48' cy='48' r='40' fill='%231B5E20'/><text x='48' y='60' font-size='50' text-anchor='middle' fill='white'>🔍</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "View Store Map",
+      "short_name": "Map",
+      "description": "View store aisles and layout",
+      "url": "/bharatbazar/?tab=map",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><circle cx='48' cy='48' r='40' fill='%231B5E20'/><text x='48' y='60' font-size='50' text-anchor='middle' fill='white'>🗺️</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

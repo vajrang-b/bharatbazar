@@ -4,6 +4,32 @@
  * - Multilingual product catalog + aisle/category metadata: product_data.csv
  */
 
+// ========================================
+// SERVICE WORKER REGISTRATION (Offline Support)
+// ========================================
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("sw.js")
+      .then((registration) => {
+        console.log("[App] Service Worker registered:", registration);
+
+        // Check for updates periodically (every 5 minutes)
+        setInterval(() => {
+          registration.update();
+        }, 5 * 60 * 1000);
+      })
+      .catch((error) => {
+        console.warn("[App] Service Worker registration failed:", error);
+      });
+  });
+
+  // Listen for service worker updates
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    console.log("[App] Service Worker controller changed - updates available");
+  });
+}
+
 const DEFAULT_STORE_AISLES = {
   1: { name: "Spices & Masala", icon: "🌶️", color: "var(--aisle-1)", keywords: ["masala", "powder", "spice", "chili", "chilli", "coriander", "cumin", "turmeric", "seeds", "mdh", "everest", "laxmi", "curry", "garam", "hing", "salt", "jeera", "dhania", "haldi", "saunf", "methi", "cardamom", "clove", "cinnamon"] },
   2: { name: "Atta, Rice & Grains", icon: "🌾", color: "var(--aisle-2)", keywords: ["atta", "flour", "rice", "basmati", "sujata", "rava", "dal", "lentil", "chana", "moong", "toor", "urad", "wheat", "poha", "sooji", "besan", "maida", "matar", "rajma", "pulao", "biryani"] },
