@@ -8,7 +8,7 @@
  * - Fonts/Images: Cache only (rarely change)
  */
 
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const CACHE_NAMES = {
   STATIC: `bharath-bazar-static-${CACHE_VERSION}`,
   DATA: `bharath-bazar-data-${CACHE_VERSION}`,

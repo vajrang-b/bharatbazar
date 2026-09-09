@@ -277,8 +277,10 @@ function parseMultilingualCsv(csvText) {
     const key = rawKey ? rawKey.toLowerCase() : slugifyProductName(en || te || hi || keywordsStr || `item-${i}`);
     if (!key) continue;
 
-    const aisle = parseInt(aisleVal, 10);
-    const rack = parseInt(rackVal, 10);
+    const aisleDigits = (aisleVal || "").toString().replace(/\D+/g, "");
+    const rackDigits = (rackVal || "").toString().replace(/\D+/g, "");
+    const aisle = aisleDigits ? parseInt(aisleDigits, 10) : NaN;
+    const rack = rackDigits ? parseInt(rackDigits, 10) : NaN;
     const keywords = parseKeywords(keywordsStr || categoryKeywords);
     const resolvedCategory = category || (Number.isInteger(aisle) && aisle > 0 ? DEFAULT_STORE_AISLES[aisle]?.name || "" : "");
     const derivedAisleName = explicitAisleName || resolvedCategory || (Number.isInteger(aisle) && aisle > 0 ? DEFAULT_STORE_AISLES[aisle]?.name || `Aisle ${aisle}` : "");
