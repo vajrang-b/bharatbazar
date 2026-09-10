@@ -278,9 +278,10 @@ function parseMultilingualCsv(csvText) {
     if (!key) continue;
 
     const aisleDigits = (aisleVal || "").toString().replace(/\D+/g, "");
-    const rackDigits = (rackVal || "").toString().replace(/\D+/g, "");
     const aisle = aisleDigits ? parseInt(aisleDigits, 10) : NaN;
-    const rack = rackDigits ? parseInt(rackDigits, 10) : NaN;
+    const rawRack = (rackVal || "").trim();
+    const isInvalidRack = !rawRack || rawRack.toLowerCase() === "n/a" || rawRack.toLowerCase() === "rack number";
+    const rack = isInvalidRack ? null : rawRack;
     const keywords = parseKeywords(keywordsStr || categoryKeywords);
     const resolvedCategory = category || (Number.isInteger(aisle) && aisle > 0 ? DEFAULT_STORE_AISLES[aisle]?.name || "" : "");
     const derivedAisleName = explicitAisleName || resolvedCategory || (Number.isInteger(aisle) && aisle > 0 ? DEFAULT_STORE_AISLES[aisle]?.name || `Aisle ${aisle}` : "");
@@ -296,9 +297,19 @@ function parseMultilingualCsv(csvText) {
       aisle: Number.isInteger(aisle) && aisle > 0 ? aisle : null,
       aisle_name: derivedAisleName,
       aisle_icon: explicitAisleIcon || (Number.isInteger(aisle) && aisle > 0 ? DEFAULT_STORE_AISLES[aisle]?.icon || "" : ""),
-      rack: Number.isInteger(rack) && rack > 0 ? rack : null
+      rack: rack
     };
   }
+}
+
+function formatLocationRack(rack) {
+  if (rack === null || rack === undefined) return "";
+  const s = String(rack).trim();
+  if (!s) return "";
+  if (/^\d+$/.test(s)) {
+    return `Rack ${s}`;
+  }
+  return s;
 }
 
 function getHash(str) {
@@ -951,7 +962,7 @@ function renderProductList() {
       </div>
       <div class="loc-badge-mobile" data-slug="${escapeHtml(p.slug)}">
         <span class="loc-aisle-text">📍 Aisle ${p.aisle}</span>
-        <span class="loc-rack-text">Rack ${p.rack}</span>
+        <span class="loc-rack-text">${escapeHtml(formatLocationRack(p.rack))}</span>
       </div>
     `;
 
@@ -1185,7 +1196,7 @@ function handleAiAskMobile() {
     const top = matches.slice(0, 3);
     let html = `🤖 <strong>AI Navigator:</strong> Found ${matches.length} item(s):<br><ul style="margin-top: 0.4rem; padding-left: 1rem;">`;
     top.forEach(m => {
-      html += `<li style="margin-bottom: 0.3rem;"><strong>${escapeHtml(m.name)}</strong> ➔ <span style="color: var(--accent-amber); font-weight: bold;">📍 Aisle ${m.aisle} (${m.categoryName}) - Rack ${m.rack}</span></li>`;
+      html += `<li style="margin-bottom: 0.3rem;"><strong>${escapeHtml(m.name)}</strong> ➔ <span style="color: var(--accent-amber); font-weight: bold;">📍 Aisle ${m.aisle} (${m.categoryName}) - ${escapeHtml(formatLocationRack(m.rack))}</span></li>`;
     });
     html += `</ul>`;
     box.innerHTML = html;

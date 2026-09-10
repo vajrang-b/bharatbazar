@@ -66,6 +66,15 @@ function clearShoppingList() {
 // 3. RENDER SHOPPING LIST UI
 // ================================================================
 
+function formatLocationRackText(rack) {
+  if (typeof formatLocationRack === "function") return formatLocationRack(rack);
+  if (rack === null || rack === undefined) return "";
+  const s = String(rack).trim();
+  if (!s) return "";
+  if (/^\d+$/.test(s)) return `Rack ${s}`;
+  return s;
+}
+
 /**
  * Render shopping list in UI
  */
@@ -104,7 +113,7 @@ function renderShoppingList() {
             <div style="font-weight: 500; font-size: 0.95rem;">${product}</div>
             <small style="color: ${location ? "var(--secondary-emerald)" : "var(--accent-red)"};">
               ${status}
-              ${location ? `- Aisle ${location.aisle}, Rack ${location.rack}` : ""}
+              ${location ? `- Aisle ${location.aisle}, ${formatLocationRackText(location.rack)}` : ""}
             </small>
           </div>
           <button 
@@ -301,7 +310,7 @@ function displayTurnByTurn(route) {
             </div>
             <div>
               <div style="font-weight: 600;">
-                ${item.aisleIcon} Aisle ${item.aisle} - Rack ${item.rack}
+                ${item.aisleIcon} Aisle ${item.aisle} - ${formatLocationRackText(item.rack)}
               </div>
               <small style="color: var(--text-muted);">${item.aisleName}</small>
             </div>
@@ -348,7 +357,7 @@ function drawRouteVisualization(route) {
     if (aisles[aisle]) {
       visualization += `${icon} Aisle ${aisle}\n`;
       aisles[aisle].forEach(item => {
-        visualization += `   → Step ${item.index + 1}: Rack ${item.rack}\n`;
+        visualization += `   → Step ${item.index + 1}: ${formatLocationRackText(item.rack)}\n`;
       });
     }
   }

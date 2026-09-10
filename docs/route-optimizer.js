@@ -52,6 +52,12 @@ function getProductLocation(productName) {
   return null;
 }
 
+function getNumericRack(rack) {
+  if (rack === null || rack === undefined) return 0;
+  const match = String(rack).match(/\d+/);
+  return match ? parseInt(match[0], 10) : 0;
+}
+
 /**
  * Format product data for route calculation
  */
@@ -61,7 +67,8 @@ function formatProductLocation(product) {
     slug: product.slug,
     name: product.name,
     aisle: parseInt(product.aisle) || 0,
-    rack: parseInt(product.rack) || 0,
+    rack: product.rack,
+    rackNumber: getNumericRack(product.rack),
     categoryName: product.categoryName || "",
     icon: product.icon || "📦",
     confidence: 100 // Can be lowered for fuzzy matches
@@ -88,7 +95,7 @@ function calculateRouteLinearSweep(locations) {
 
   // Filter out invalid locations
   const validLocations = locations.filter(
-    loc => loc && loc.aisle && !isNaN(loc.rack)
+    loc => loc && loc.aisle && loc.rack !== null && loc.rack !== undefined
   );
 
   // Group by aisle
@@ -101,7 +108,7 @@ function calculateRouteLinearSweep(locations) {
 
   // Sort racks within each aisle (ascending order)
   Object.keys(byAisle).forEach(aisle => {
-    byAisle[aisle].sort((a, b) => parseInt(a.rack) - parseInt(b.rack));
+    byAisle[aisle].sort((a, b) => getNumericRack(a.rack) - getNumericRack(b.rack));
   });
 
   // Build route: traverse aisles in order
@@ -132,7 +139,7 @@ function calculateRouteNearestNeighbor(
   if (!locations || locations.length === 0) return [];
 
   const validLocations = locations.filter(
-    loc => loc && loc.aisle && !isNaN(loc.rack)
+    loc => loc && loc.aisle && loc.rack !== null && loc.rack !== undefined
   );
   if (validLocations.length === 0) return [];
 
@@ -196,7 +203,7 @@ function calculateDistance(from, to, weights = {}) {
     parseInt(from.aisle) - parseInt(to.aisle)
   );
   const rackDiff = Math.abs(
-    parseInt(from.rack) - parseInt(to.rack)
+    getNumericRack(from.rack) - getNumericRack(to.rack)
   );
 
   return aisleDiff * aisleWeight + rackDiff * rackWeight;
