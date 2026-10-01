@@ -14,7 +14,7 @@ from pathlib import Path
 from urllib import request, error
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-CSV_PATH = PROJECT_ROOT / "docs" / "product_data.csv"
+CSV_PATH = PROJECT_ROOT / "docs" / "json" / "product_data.csv"
 
 CATEGORY_MAP = {
     1: "Spices & Masala",

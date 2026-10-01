@@ -8,8 +8,7 @@
   <title>Bharath Bazar - Mobile Store Location Finder</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23E65100' width='100' height='100'/><text x='50' y='75' font-size='80' text-anchor='middle' fill='white' font-weight='bold'>🛒</text></svg>">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23E65100' width='180' height='180' rx='40'/><text x='90' y='135' font-size='120' text-anchor='middle' fill='white' font-weight='bold'>🛒</text></svg>">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -77,22 +76,35 @@
             <span class="drawer-item-icon">🗺️</span>
             <span>Store Map & Aisles</span>
           </button>
+          <button class="drawer-item" data-tab="routeView">
+            <span class="drawer-item-icon">🧭</span>
+            <span>Route Optimizer</span>
+          </button>
           <button class="drawer-item" data-tab="aiView">
             <span class="drawer-item-icon">✨</span>
             <span>AI Assistant Nav</span>
           </button>
-          <button class="drawer-item" data-link="privacy-policy.html">
-            <span class="drawer-item-icon">🛡️</span>
-            <span>Privacy Policy</span>
-          </button>
-          <button class="drawer-item" data-link="cookie-policy.html">
-            <span class="drawer-item-icon">🍪</span>
-            <span>Cookie Policy</span>
+          <button class="drawer-item" data-tab="insightsView">
+            <span class="drawer-item-icon">📊</span>
+            <span>Search Insights</span>
           </button>
         </div>
 
-        <div style="font-size: 0.72rem; color: var(--text-muted); padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center;">
-          Bharath Bazar Supermarket v2.7 &bull; Anonymous Search Analytics
+        <!-- Bottom Navigation Policy Links & Footer -->
+        <div style="font-size: 0.72rem; color: var(--text-muted); padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center; line-height: 1.6;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem;">
+            <a href="privacy-policy.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+              <span>🛡️ Privacy Policy</span>
+            </a>
+            <span style="opacity: 0.4;">&bull;</span>
+            <a href="cookie-policy.html" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+              <span>🍪 Cookie Policy</span>
+            </a>
+          </div>
+          <div>Bharath Bazar Supermarket v2.7</div>
+          <div style="margin-top: 0.35rem; color: var(--text-secondary);">
+            Site developed by <a href="https://qaiki.com" target="_blank" rel="noopener noreferrer" style="color: #34D399; font-weight: 700; text-decoration: none;">qaiki.com</a>
+          </div>
         </div>
       </nav>
     </div>
@@ -120,6 +132,9 @@
         <span id="totalBadge" style="color: var(--accent-amber); font-weight: 700;">Catalog</span>
       </div>
 
+      <!-- "Showing results for X - you searched Y" (populated by the typo resolver) -->
+      <div class="search-correction-banner" id="searchCorrectionBanner" hidden></div>
+
       <div class="product-list" id="productListContainer">
         <!-- Dynamic mobile product cards -->
       </div>
@@ -127,14 +142,67 @@
 
     <!-- VIEW 2: STORE FLOORPLAN MAP TAB -->
     <section class="view-panel" id="mapView">
-      <div class="results-header">
-        <span style="font-weight: 700; font-size: 1rem; color: #FFF;">🗺️ Store Aisles & Layout</span>
+      <div class="results-header" style="justify-content: space-between; align-items: center;">
+        <span style="font-weight: 700; font-size: 1.05rem; color: #FFF;">🗺️ Interactive Store Map</span>
+        <div class="map-mode-toggle-group">
+          <button class="map-mode-btn active" id="btnMapFloorplan" type="button" title="Visual 2D Floorplan">2D Map</button>
+          <button class="map-mode-btn" id="btnMapList" type="button" title="Aisles List">List</button>
+        </div>
       </div>
-      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.8rem;">
-        Click any aisle row below to jump directly to its products list.
-      </p>
-      <div class="mobile-map-grid" id="mobileMapContainer">
+
+      <!-- Quick Aisle Filter Pills -->
+      <div class="map-quick-pills" id="mapQuickPills">
+        <button class="map-pill active" data-aisle="all" type="button">All Aisles</button>
+        <button class="map-pill" data-aisle="1" type="button">🌶️ A1</button>
+        <button class="map-pill" data-aisle="2" type="button">🌾 A2</button>
+        <button class="map-pill" data-aisle="3" type="button">❄️ A3</button>
+        <button class="map-pill" data-aisle="4" type="button">🍬 A4</button>
+        <button class="map-pill" data-aisle="5" type="button">🧈 A5</button>
+        <button class="map-pill" data-aisle="6" type="button">🫙 A6</button>
+        <button class="map-pill" data-aisle="7" type="button">☕ A7</button>
+        <button class="map-pill" data-aisle="8" type="button">🧼 A8</button>
+      </div>
+
+      <!-- Active Spotlight Banner (shown when a product or rack is selected) -->
+      <div class="map-spotlight-card" id="mapSpotlightCard" style="display: none;">
+        <div class="map-spotlight-content">
+          <div class="map-spotlight-icon" id="spotlightIcon">📍</div>
+          <div style="flex: 1;">
+            <div class="map-spotlight-title" id="spotlightTitle">Selected Location</div>
+            <div class="map-spotlight-subtitle" id="spotlightSubtitle">Aisle & Rack details</div>
+          </div>
+          <button class="map-spotlight-close" id="closeSpotlightBtn" type="button">✕</button>
+        </div>
+      </div>
+
+      <!-- 2D Interactive Floorplan Container -->
+      <div class="interactive-floorplan-wrapper" id="interactiveFloorplanWrapper">
+        <div class="floorplan-toolbar">
+          <span class="floorplan-legend-item"><span class="legend-dot" style="background: #E65100;"></span> Aisles</span>
+          <span class="floorplan-legend-item"><span class="legend-dot" style="background: #0288D1;"></span> Shelves 1-10</span>
+          <span class="floorplan-legend-item"><span class="legend-dot" style="background: #10B981;"></span> Walkways (Way)</span>
+          <span class="floorplan-legend-item"><span class="legend-dot" style="background: #F59E0B;"></span> Racks 1-62</span>
+        </div>
+        <div class="interactive-floorplan-canvas" id="interactiveFloorplanCanvas">
+          <!-- Dynamically generated SVG / DOM Store Floorplan -->
+        </div>
+      </div>
+
+      <!-- Aisle Directory List (Alternative view) -->
+      <div class="mobile-map-grid" id="mobileMapContainer" style="display: none;">
         <!-- 8 Aisle Rows generated by JS -->
+      </div>
+
+      <!-- Rack Detail Modal / Drawer -->
+      <div class="rack-detail-drawer" id="rackDetailDrawer" style="display: none;">
+        <div class="rack-drawer-header">
+          <div class="rack-drawer-title" id="drawerRackTitle">Aisle 1 &bull; Rack 1</div>
+          <button class="close-btn" id="closeRackDrawerBtn" type="button">✕</button>
+        </div>
+        <div class="rack-drawer-meta" id="drawerRackMeta">Shelf 1 &bull; Spices & Masala</div>
+        <div class="rack-drawer-products" id="drawerRackProducts">
+          <!-- Products in selected rack -->
+        </div>
       </div>
     </section>
 
@@ -158,6 +226,95 @@
       </div>
     </section>
 
+    <!-- VIEW 4: ROUTE OPTIMIZER TAB -->
+    <section class="view-panel" id="routeView">
+      <div class="results-header">
+        <span style="font-weight: 700; font-size: 1.05rem; color: #FFF;">🧭 Shopping Route Optimizer</span>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.1rem; margin-bottom: 1rem;">
+        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.6rem;">
+          Enter your shopping items (separated by commas or newlines) to get the most efficient path through the store aisles with zero backtracking.
+        </p>
+
+        <textarea id="routeItemsInput" class="form-input" rows="3" style="resize: vertical; font-size: 0.88rem; line-height: 1.4; margin-bottom: 0.6rem;" placeholder="e.g. Turmeric, Basmati Rice, Amul Ghee, Paneer, Garam Masala, Tea"></textarea>
+
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.7rem; align-items: center;">
+          <select id="routeAlgorithmSelect" class="form-select" style="padding: 0.55rem 0.8rem; font-size: 0.8rem; flex: 1;">
+            <option value="linear-sweep">Linear Sweep (Aisle 1 → 8 Order)</option>
+            <option value="cluster-sweep">Cluster Sweep (Group by Aisle)</option>
+          </select>
+          <button id="sampleRouteBtn" class="cookie-btn secondary" type="button" style="white-space: nowrap; font-size: 0.75rem; padding: 0.55rem 0.7rem;">+ Sample</button>
+        </div>
+
+        <button id="calculateRouteBtn" class="btn-block" style="margin-top: 0; background: linear-gradient(135deg, #10B981, #059669);">
+          🚀 Calculate Optimal Route
+        </button>
+      </div>
+
+      <!-- Route Statistics Banner -->
+      <div id="routeStatsBox" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: var(--radius-md); padding: 0.8rem 1rem; margin-bottom: 1rem;">
+        <div style="display: flex; justify-content: space-around; text-align: center;">
+          <div>
+            <div style="font-size: 1.15rem; font-weight: 700; color: #34D399;" id="routeStatTime">0 min</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Est. Time</div>
+          </div>
+          <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">
+            <div style="font-size: 1.15rem; font-weight: 700; color: #FFA726;" id="routeStatAisles">0</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Aisles Visited</div>
+          </div>
+          <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1rem;">
+            <div style="font-size: 1.15rem; font-weight: 700; color: #38BDF8;" id="routeStatCount">0</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted);">Items Found</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route Turn-by-Turn Item Checklist -->
+      <div id="routeStepsContainer" class="product-list">
+        <!-- Steps generated by JS -->
+      </div>
+    </section>
+
+    <!-- VIEW 5: SEARCH INSIGHTS TAB -->
+    <section class="view-panel" id="insightsView">
+      <div class="results-header">
+        <span style="font-weight: 700; font-size: 1.05rem; color: #FFF;">\U0001F4CA Search Insights</span>
+      </div>
+
+      <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+        Everything below comes from this device's own browser storage — nothing is fetched from a server.
+      </p>
+
+      <div class="insights-card">
+        <div class="insights-card-title">\U0001F525 Top Searches</div>
+        <ul class="insights-list" id="analyticsList">
+          <li style="color: var(--text-muted);">No searches recorded yet.</li>
+        </ul>
+      </div>
+
+      <div class="insights-card">
+        <div class="insights-card-title">\U0001F6AB Searches That Found Nothing</div>
+        <ul class="insights-list" id="noResultSearchList">
+          <li style="color: var(--text-muted);">No searches recorded yet.</li>
+        </ul>
+      </div>
+
+      <div class="insights-card">
+        <div class="insights-card-title">✏️ Most Common Misspellings</div>
+        <ul class="insights-list" id="typoSearchList">
+          <li style="color: var(--text-muted);">No corrected misspellings recorded yet.</li>
+        </ul>
+      </div>
+
+      <div class="insights-card">
+        <div class="insights-card-title">\U0001F4F1 Device Analytics</div>
+        <div id="deviceAnalyticsContainer">
+          <!-- Rendered by renderDeviceAnalyticsDashboard() -->
+        </div>
+      </div>
+    </section>
+
     <!-- FLOATING VIEWPORT BOTTOM ERGONOMIC SEARCH BAR -->
     <div class="bottom-sticky-search-wrapper" id="bottomSearchContainer">
       <!-- Multilingual Hint Chips Bar -->
@@ -173,12 +330,11 @@
         <span class="lang-chip" data-search="perugu">Perugu (Curd)</span>
         <span class="lang-chip" data-search="bellam">Bellam (Jaggery)</span>
       </div>
-
-
     </div>
 
   </div>
 
-  <script src="app.js"></script>
+  <script src="scripts/route-optimizer.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharath Bazar - 2D Store Map Visual Studio & Editor</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+  <style>
+    :root {
+      --bg-dark: #0A0E17;
+      --bg-card: #131B2A;
+      --bg-panel: #182234;
+      --primary-saffron: #E65100;
+      --primary-saffron-light: #FF9800;
+      --accent-emerald: #10B981;
+      --accent-cyan: #06B6D4;
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --border-color: rgba(148, 163, 184, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header & Toolbar */
+    header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.6rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      z-index: 50;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #FFF;
+    }
+
+    .brand-title span {
+      color: var(--primary-saffron-light);
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn {
+      padding: 0.45rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-panel);
+      color: #FFF;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      border-color: transparent;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #34D399, var(--accent-emerald));
+    }
+
+    .btn-saffron {
+      background: linear-gradient(135deg, var(--primary-saffron), var(--primary-saffron-light));
+      border-color: transparent;
+    }
+
+    /* Main Workspace */
+    .workspace {
+      display: flex;
+      flex: 1;
+      height: calc(100vh - 56px);
+      overflow: hidden;
+    }
+
+    /* Sidebar Controls */
+    .sidebar {
+      width: 320px;
+      background: var(--bg-card);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      flex-shrink: 0;
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    .panel-box {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.9rem;
+    }
+
+    .panel-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .form-group {
+      margin-bottom: 0.6rem;
+    }
+
+    .form-label {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.2rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      background: rgba(11, 15, 25, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: #FFF;
+      padding: 0.4rem 0.6rem;
+      font-size: 0.82rem;
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--primary-saffron);
+    }
+
+    /* Canvas Stage Area */
+    .canvas-stage {
+      flex: 1;
+      background: 
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+      background-size: 20px 20px;
+      background-color: var(--bg-dark);
+      overflow: auto;
+      position: relative;
+      padding: 2rem;
+      cursor: crosshair;
+    }
+
+    .canvas-board {
+      position: relative;
+      width: 1200px;
+      height: 900px;
+      background: rgba(19, 27, 42, 0.6);
+      border: 2px dashed rgba(148, 163, 184, 0.25);
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Draggable Item Blocks */
+    .map-element {
+      position: absolute;
+      border-radius: 8px;
+      padding: 0.6rem;
+      cursor: grab;
+      user-select: none;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      border: 2px solid transparent;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+
+    .map-element:active {
+      cursor: grabbing;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      z-index: 100 !important;
+    }
+
+    .map-element.selected {
+      border-color: #FFA726 !important;
+      box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.4), 0 8px 24px rgba(0,0,0,0.6) !important;
+      z-index: 90;
+    }
+
+    .element-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #FFF;
+      pointer-events: none;
+      margin-bottom: 0.3rem;
+    }
+
+    .element-badge {
+      font-size: 0.62rem;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      font-weight: 700;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .element-meta {
+      font-size: 0.68rem;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10B981;
+      color: #FFF;
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      display: none;
+      z-index: 999;
+      animation: slideInUp 0.25s ease;
+    }
+
+    @keyframes slideInUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Rich Interactive Floorplan Elements matching Live Store Map */
+    .fp-rack-cell {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 3px;
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 2px 1px;
+      min-width: 14px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .cell-a8 { background: #2563EB; color: #FFF; border-color: #1D4ED8; }
+    .cell-a7 { background: #0D9488; color: #FFF; border-color: #0F766E; }
+    .cell-a4 { background: #DC2626; color: #FFF; border-color: #B91C1C; }
+    .cell-a3 { background: #EA580C; color: #FFF; border-color: #C2410C; }
+    .cell-a2 { background: #CA8A04; color: #FFF; border-color: #A16207; }
+    .cell-a1 { background: #16A34A; color: #FFF; border-color: #15803D; }
+    .cell-a5 { background: #D97706; color: #FFF; border-color: #B45309; }
+    .cell-a6 { background: #9333EA; color: #FFF; border-color: #7E22CE; }
+
+    .fp-rack-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14px, 1fr));
+      gap: 2px;
+      width: 100%;
+    }
+
+    .fp-rack-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1;
+    }
+
+    .fp-vertical-bays {
+      display: flex;
+      gap: 3px;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .fp-center-walkway-col {
+      width: 16px;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(16, 185, 129, 0.08),
+        rgba(16, 185, 129, 0.08) 4px,
+        rgba(16, 185, 129, 0.2) 4px,
+        rgba(16, 185, 129, 0.2) 8px
+      );
+      border: 1px dashed rgba(16, 185, 129, 0.4);
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 1px;
+      font-size: 0.52rem;
+      font-weight: 700;
+      color: #34D399;
+      pointer-events: none;
+    }
+
+    .fp-walkway-strip {
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(16, 185, 129, 0.08),
+        rgba(16, 185, 129, 0.08) 6px,
+        rgba(16, 185, 129, 0.18) 6px,
+        rgba(16, 185, 129, 0.18) 12px
+      );
+      border: 1px dashed rgba(16, 185, 129, 0.35);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: #34D399;
+      padding: 2px 4px;
+      margin: 2px 0;
+      pointer-events: none;
+    }
+
+    .fp-aisle4-passageway {
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(245, 158, 11, 0.15),
+        rgba(245, 158, 11, 0.15) 6px,
+        rgba(16, 185, 129, 0.2) 6px,
+        rgba(16, 185, 129, 0.2) 12px
+      );
+      border: 1px dashed #F59E0B;
+      border-radius: 3px;
+      padding: 2px 4px;
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: #FBBF24;
+      text-align: center;
+      margin: 2px 0;
+      pointer-events: none;
+    }
+
+    .fp-you-are-here-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(16, 185, 129, 0.25);
+      border: 1px solid #10B981;
+      color: #34D399;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 15px;
+      pointer-events: none;
+    }
+
+    .fp-pos-vertical-block {
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid #94A3B8;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #F8FAFC;
+      padding: 0.5rem 0.2rem;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      letter-spacing: 2px;
+      min-height: 80px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand-title">
+      <span>🗺️ Bharath Bazar</span> &bull; 2D Store Map Visual Studio
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn" id="btnSnapGrid" onclick="toggleSnapGrid()">🧲 Snap Grid: <strong id="snapStatus">ON</strong></button>
+      <button class="btn" id="btnReset" onclick="resetToDefault()">🔄 Reset Default</button>
+      <button class="btn btn-saffron" id="btnExportJson" onclick="exportJson()">📥 Download JSON</button>
+      <button class="btn btn-primary" id="btnSaveLive" onclick="saveToLiveApp()">💾 Save & Apply to Live App</button>
+      <button class="btn" onclick="window.close() || window.history.back()">✕ Exit</button>
+    </div>
+  </header>
+
+  <!-- Main Body -->
+  <div class="workspace">
+    <!-- Left Inspector Panel -->
+    <div class="sidebar">
+      <div class="panel-box">
+        <div class="panel-title">
+          <span>🛠️ Selected Element</span>
+          <span id="selectedIdBadge" style="color: var(--accent-cyan); font-size: 0.72rem;">None</span>
+        </div>
+        
+        <div id="inspectorForm" style="opacity: 0.5; pointer-events: none;">
+          <div class="form-group">
+            <label class="form-label">Element Label</label>
+            <input type="text" id="propLabel" class="form-input" onchange="updateSelectedProp('label', this.value)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sub-Title / Category</label>
+            <input type="text" id="propSubtitle" class="form-input" onchange="updateSelectedProp('subtitle', this.value)">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+            <div class="form-group">
+              <label class="form-label">Width (px)</label>
+              <input type="number" id="propWidth" class="form-input" step="10" onchange="updateSelectedProp('width', parseInt(this.value))">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Height (px)</label>
+              <input type="number" id="propHeight" class="form-input" step="10" onchange="updateSelectedProp('height', parseInt(this.value))">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+            <div class="form-group">
+              <label class="form-label">X Position (px)</label>
+              <input type="number" id="propX" class="form-input" step="10" onchange="updateSelectedProp('x', parseInt(this.value))">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Y Position (px)</label>
+              <input type="number" id="propY" class="form-input" step="10" onchange="updateSelectedProp('y', parseInt(this.value))">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Color Theme</label>
+            <input type="color" id="propColor" class="form-input" style="height: 36px; padding: 2px;" onchange="updateSelectedProp('color', this.value)">
+          </div>
+
+          <button class="btn" style="width: 100%; margin-top: 0.5rem; background: rgba(239, 68, 68, 0.15); border-color: #EF4444; color: #FCA5A5; font-weight: 700;" onclick="deleteSelectedElement()">
+            🗑️ Delete Selected Element
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Add Elements -->
+      <div class="panel-box">
+        <div class="panel-title">➕ Quick Add to Map</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+          <button class="btn" style="font-size: 0.75rem;" onclick="addNewAisle('vertical')">➕ Vertical Aisle</button>
+          <button class="btn" style="font-size: 0.75rem;" onclick="addNewAisle('horizontal')">➕ Horiz. Aisle</button>
+          <button class="btn" style="font-size: 0.75rem;" onclick="addNewWalkway()">🚶 Walkway Strip</button>
+          <button class="btn" style="font-size: 0.75rem;" onclick="addNewFacility('pos')">💳 POS Counter</button>
+        </div>
+      </div>
+
+      <!-- Store Instructions -->
+      <div class="panel-box" style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5;">
+        <strong style="color: #FFF;">💡 Tips:</strong>
+        <ul style="padding-left: 1rem; margin-top: 0.4rem;">
+          <li>Click & drag any aisle or walkway to reposition.</li>
+          <li>Select an element to edit dimensions, label, or color in the inspector.</li>
+          <li>Click <strong>"Save & Apply"</strong> to immediately update the main store locator web app.</li>
+        </ul>
+        <div style="margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.7rem;">
+          Site developed by <a href="https://qaiki.com" target="_blank" rel="noopener noreferrer" style="color: #34D399; font-weight: 700; text-decoration: none;">qaiki.com</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canvas Stage -->
+    <div class="canvas-stage" id="canvasStage">
+      <div class="canvas-board" id="canvasBoard">
+        <!-- Draggable elements dynamically populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toastMsg">✅ Store map saved successfully!</div>
+
+  <script>
+    // Initial Store Blueprint Layout Data
+    const DEFAULT_MAP_ELEMENTS = [
+      // Top Rear Walkway
+      { id: "way-rear", type: "walkway", label: "way • Rear Walkway (Connects Aisles 4, 3, 2)", subtitle: "Top Cross-Aisle Walkway", x: 620, y: 30, width: 420, height: 42, color: "#10B981", bg: "rgba(16, 185, 129, 0.18)" },
+      { id: "wall-a1-top", type: "barrier", label: "🚫 Closed Back Wall (Aisle 1)", subtitle: "Closed Rear Wall", x: 1050, y: 30, width: 110, height: 42, color: "#EF4444", bg: "rgba(239, 68, 68, 0.2)" },
+
+      // Horizontal Aisles (Left)
+      { id: "aisle-8", type: "aisle", label: "🧼 Asile 8: Personal Care & Household", subtitle: "Top: S5-1 (31→1) | Bottom: S6-10 (32→62)", x: 40, y: 100, width: 520, height: 130, color: "#3B82F6", bg: "rgba(59, 130, 246, 0.25)" },
+      { id: "aisle-7", type: "aisle", label: "☕ Asile 7: Tea & Beverages", subtitle: "Top: S5-1 (31→1) | Bottom: S6-10 (32→62)", x: 40, y: 250, width: 520, height: 130, color: "#0D9488", bg: "rgba(13, 148, 136, 0.25)" },
+      { id: "aisle-5", type: "aisle", label: "🧈 Aisle 5: Dairy, Oils & Ghee", subtitle: "Perimeter Bays (Racks 1-20)", x: 40, y: 400, width: 250, height: 90, color: "#F57C00", bg: "rgba(245, 124, 0, 0.25)" },
+      { id: "aisle-6", type: "aisle", label: "🫙 Aisle 6: Pickles & Sauces", subtitle: "Perimeter Bays (Racks 1-20)", x: 310, y: 400, width: 250, height: 90, color: "#8E24AA", bg: "rgba(142, 36, 170, 0.25)" },
+
+      // Passageway Corridor between Aisle 4 and Aisles 7 & 8
+      { id: "ramp-a4-78", type: "ramp", label: "⬅ way from aisle 4 to access 7,8 aisles ⬅", subtitle: "Connecting Passageway", x: 570, y: 170, width: 40, height: 140, color: "#F59E0B", bg: "rgba(245, 158, 11, 0.3)" },
+
+      // Vertical Aisles (Right)
+      { id: "aisle-4", type: "aisle", label: "🍬 Aisle 4: Snacks & Sweets", subtitle: "Left: S6-10 (31-61) | Right: S5-1 (31-1)", x: 620, y: 90, width: 130, height: 420, color: "#EF4444", bg: "rgba(239, 68, 68, 0.25)" },
+      { id: "aisle-3", type: "aisle", label: "❄️ Aisle 3: Frozen Foods", subtitle: "Left: S6-10 (31-61) | Right: S5-1 (31-1)", x: 765, y: 90, width: 130, height: 420, color: "#F97316", bg: "rgba(249, 115, 22, 0.25)" },
+      { id: "aisle-2", type: "aisle", label: "🌾 Aisle 2: Atta, Rice & Grains", subtitle: "Left: S6-10 (31-61) | Right: S5-1 (31-1)", x: 910, y: 90, width: 130, height: 420, color: "#EAB308", bg: "rgba(234, 179, 8, 0.25)" },
+      { id: "aisle-1", type: "aisle", label: "🌶️ Asile 1: Spices & Masala", subtitle: "Left: S6-10 (31-61) | Right: S5-1 (31-1)", x: 1055, y: 90, width: 110, height: 420, color: "#22C55E", bg: "rgba(34, 197, 94, 0.25)" },
+
+      // Front Walkway & Facilities
+      { id: "pos-counter", type: "pos", label: "💳 pos counter", subtitle: "Checkout Stations (Directly under A4 S10)", x: 620, y: 520, width: 130, height: 110, color: "#38BDF8", bg: "rgba(56, 189, 248, 0.25)" },
+      { id: "way-front", type: "walkway", label: "way • Main Front Walkway Corridor", subtitle: "Connects All Aisles, POS & Entrance", x: 40, y: 645, width: 1125, height: 45, color: "#10B981", bg: "rgba(16, 185, 129, 0.18)" },
+      { id: "main-entrance", type: "entrance", label: "🚪 main store entrance", subtitle: "Primary Customer Entrance & Foyer", x: 620, y: 705, width: 545, height: 130, color: "#A855F7", bg: "rgba(168, 85, 247, 0.2)" }
+    ];
+
+    let currentMapElements = [];
+    let selectedElementId = null;
+    let snapToGrid = true;
+    const GRID_SIZE = 10;
+
+    // Load elements from localStorage, store_map.json, or default blueprint
+    async function loadMapData() {
+      // 1. Try localStorage if valid non-empty array
+      const saved = localStorage.getItem("bharath_bazar_custom_store_map");
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            currentMapElements = parsed;
+            renderBoard();
+            return;
+          }
+        } catch (e) {
+          console.warn("Error parsing localStorage map:", e);
+        }
+      }
+
+      // 2. Try fetching store_map.json
+      try {
+        let resp = await fetch("json/store_map.json");
+        if (!resp.ok) resp = await fetch("store_map.json");
+        if (resp.ok) {
+          const data = await resp.json();
+          if (Array.isArray(data) && data.length > 0) {
+            currentMapElements = data;
+            renderBoard();
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn("Error fetching store_map.json:", err);
+      }
+
+      // 3. Fallback to DEFAULT_MAP_ELEMENTS
+      currentMapElements = JSON.parse(JSON.stringify(DEFAULT_MAP_ELEMENTS));
+      renderBoard();
+    }
+
+    function generateEditorRackCells(aId, startRk, endRk, step, cellClass) {
+      let res = "";
+      if (step > 0) {
+        for (let rk = startRk; rk <= endRk; rk += step) {
+          res += `<div class="fp-rack-cell ${cellClass}" title="Aisle ${aId} Rack ${rk}">${rk}</div>`;
+        }
+      } else {
+        for (let rk = startRk; rk >= endRk; rk += step) {
+          res += `<div class="fp-rack-cell ${cellClass}" title="Aisle ${aId} Rack ${rk}">${rk}</div>`;
+        }
+      }
+      return res;
+    }
+
+    // Render all elements onto canvas with identical visual fidelity to the live interactive map
+    function renderBoard() {
+      const board = document.getElementById("canvasBoard");
+      if (!board) return;
+      board.innerHTML = "";
+
+      if (!currentMapElements || currentMapElements.length === 0) {
+        currentMapElements = JSON.parse(JSON.stringify(DEFAULT_MAP_ELEMENTS));
+      }
+
+      currentMapElements.forEach(item => {
+        const el = document.createElement("div");
+        el.className = `map-element ${item.id === selectedElementId ? "selected" : ""}`;
+        el.id = `elem-${item.id}`;
+        el.style.left = `${item.x}px`;
+        el.style.top = `${item.y}px`;
+        el.style.width = `${item.width}px`;
+        el.style.minHeight = `${item.height}px`;
+        el.style.backgroundColor = item.bg || "rgba(30, 41, 59, 0.8)";
+        el.style.borderColor = item.color || "#94A3B8";
+
+        let innerContent = "";
+        const aId = item.id.replace(/^(aisle-|elem-)/, "").replace(/[^0-9]/g, "");
+
+        if (aId === "8" || item.id.includes("aisle-8")) {
+          innerContent = `
+            <div class="element-header">
+              <span>${item.label}</span>
+              <span class="element-badge" style="background: #2563EB;">AISLE 8</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2px; padding: 2px;">
+              <div class="fp-rack-row">${generateEditorRackCells("8", 31, 1, -1, "cell-a8")}</div>
+              <div class="fp-walkway-strip">way &bull; corridor</div>
+              <div class="fp-rack-row">${generateEditorRackCells("8", 32, 62, 1, "cell-a8")}</div>
+            </div>
+          `;
+        } else if (aId === "7" || item.id.includes("aisle-7")) {
+          innerContent = `
+            <div class="element-header">
+              <span>${item.label}</span>
+              <span class="element-badge" style="background: #0D9488;">AISLE 7</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2px; padding: 2px;">
+              <div class="fp-rack-row">${generateEditorRackCells("7", 31, 1, -1, "cell-a7")}</div>
+              <div class="fp-walkway-strip">way &bull; corridor</div>
+              <div class="fp-rack-row">${generateEditorRackCells("7", 32, 62, 1, "cell-a7")}</div>
+            </div>
+          `;
+        } else if (aId === "4" || item.id.includes("aisle-4")) {
+          innerContent = `
+            <div class="element-header" style="flex-direction: column; text-align: center;">
+              <span>${item.label}</span>
+            </div>
+            <div class="fp-vertical-bays" style="padding: 2px;">
+              <div class="fp-rack-col">${generateEditorRackCells("4", 31, 42, 1, "cell-a4")}</div>
+              <div class="fp-center-walkway-col"><span style="font-size: 0.5rem;">WAY</span></div>
+              <div class="fp-rack-col">${generateEditorRackCells("4", 31, 20, -1, "cell-a4")}</div>
+            </div>
+            <div class="fp-aisle4-passageway">⬅ way to access 7,8 aisles</div>
+            <div class="fp-vertical-bays" style="padding: 2px;">
+              <div class="fp-rack-col">${generateEditorRackCells("4", 43, 61, 1, "cell-a4")}</div>
+              <div class="fp-center-walkway-col"><span style="font-size: 0.5rem;">WAY</span></div>
+              <div class="fp-rack-col">${generateEditorRackCells("4", 19, 1, -1, "cell-a4")}</div>
+            </div>
+          `;
+        } else if (["1", "2", "3"].includes(aId) || (aId && ["1","2","3"].some(x => item.id.includes("aisle-" + x)))) {
+          const thisAisleId = aId || "1";
+          const cellClass = `cell-a${thisAisleId}`;
+          innerContent = `
+            <div class="element-header" style="flex-direction: column; text-align: center;">
+              <span>${item.label}</span>
+            </div>
+            <div class="fp-vertical-bays" style="padding: 2px;">
+              <div class="fp-rack-col">${generateEditorRackCells(thisAisleId, 31, 61, 1, cellClass)}</div>
+              <div class="fp-center-walkway-col"><span style="font-size: 0.5rem;">WAY</span></div>
+              <div class="fp-rack-col">${generateEditorRackCells(thisAisleId, 31, 1, -1, cellClass)}</div>
+            </div>
+          `;
+        } else if (["5", "6"].includes(aId) || item.id.includes("aisle-5") || item.id.includes("aisle-6")) {
+          const thisAisleId = aId || (item.id.includes("5") ? "5" : "6");
+          innerContent = `
+            <div class="element-header">
+              <span>${item.label}</span>
+              <span class="element-badge" style="background: ${thisAisleId === '5' ? '#D97706' : '#9333EA'};">AISLE ${thisAisleId}</span>
+            </div>
+            <div class="fp-rack-row" style="padding: 2px;">${generateEditorRackCells(thisAisleId, 1, 20, 1, `cell-a${thisAisleId}`)}</div>
+          `;
+        } else if (item.type === "pos" || item.id.includes("pos")) {
+          innerContent = `
+            <div style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+              <div class="element-badge" style="background: rgba(56, 189, 248, 0.3); color: #38BDF8;">CHECKOUT</div>
+              <div style="font-weight: 700; font-size: 0.8rem; color: #FFF;">💳 ${item.label}</div>
+              <div class="element-meta">${item.subtitle || ""}</div>
+            </div>
+          `;
+        } else if (item.type === "entrance" || item.id.includes("entrance")) {
+          innerContent = `
+            <div style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center;">
+              <div class="fp-you-are-here-badge">📍 YOU ARE HERE</div>
+              <div style="font-weight: 700; font-size: 0.95rem; color: #FFF;">🚪 ${item.label}</div>
+              <div class="element-meta" style="color: #E9D5FF;">${item.subtitle || "Primary Store Entrance"}</div>
+            </div>
+          `;
+        } else {
+          innerContent = `
+            <div class="element-header">
+              <span>${item.label}</span>
+              <span class="element-badge">${item.type.toUpperCase()}</span>
+            </div>
+            <div class="element-meta">${item.subtitle || ""}</div>
+          `;
+        }
+
+        el.innerHTML = innerContent;
+
+        // Click / Drag handlers
+        attachDragBehavior(el, item);
+        board.appendChild(el);
+      });
+    }
+
+    // Attach Drag Behavior
+    function attachDragBehavior(domElem, itemData) {
+      let isDragging = false;
+      let startX, startY, origX, origY;
+
+      domElem.addEventListener("mousedown", (e) => {
+        e.stopPropagation();
+        selectElement(itemData.id);
+
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        origX = itemData.x;
+        origY = itemData.y;
+
+        const onMouseMove = (moveEvent) => {
+          if (!isDragging) return;
+          const dx = moveEvent.clientX - startX;
+          const dy = moveEvent.clientY - startY;
+
+          let newX = origX + dx;
+          let newY = origY + dy;
+
+          if (snapToGrid) {
+            newX = Math.round(newX / GRID_SIZE) * GRID_SIZE;
+            newY = Math.round(newY / GRID_SIZE) * GRID_SIZE;
+          }
+
+          newX = Math.max(0, Math.min(newX, 1200 - itemData.width));
+          newY = Math.max(0, Math.min(newY, 900 - itemData.height));
+
+          itemData.x = newX;
+          itemData.y = newY;
+
+          domElem.style.left = `${newX}px`;
+          domElem.style.top = `${newY}px`;
+
+          // Update inspector if selected
+          if (selectedElementId === itemData.id) {
+            document.getElementById("propX").value = newX;
+            document.getElementById("propY").value = newY;
+          }
+        };
+
+        const onMouseUp = () => {
+          isDragging = false;
+          window.removeEventListener("mousemove", onMouseMove);
+          window.removeEventListener("mouseup", onMouseUp);
+        };
+
+        window.addEventListener("mousemove", onMouseMove);
+        window.addEventListener("mouseup", onMouseUp);
+      });
+    }
+
+    // Selection & Inspector
+    function selectElement(id) {
+      selectedElementId = id;
+      document.querySelectorAll(".map-element").forEach(el => el.classList.remove("selected"));
+
+      const activeDom = document.getElementById(`elem-${id}`);
+      if (activeDom) activeDom.classList.add("selected");
+
+      const item = currentMapElements.find(el => el.id === id);
+      const inspector = document.getElementById("inspectorForm");
+
+      if (item) {
+        inspector.style.opacity = "1";
+        inspector.style.pointerEvents = "auto";
+        document.getElementById("selectedIdBadge").textContent = item.id;
+        document.getElementById("propLabel").value = item.label || "";
+        document.getElementById("propSubtitle").value = item.subtitle || "";
+        document.getElementById("propWidth").value = item.width;
+        document.getElementById("propHeight").value = item.height;
+        document.getElementById("propX").value = item.x;
+        document.getElementById("propY").value = item.y;
+        document.getElementById("propColor").value = item.color || "#E65100";
+      } else {
+        inspector.style.opacity = "0.5";
+        inspector.style.pointerEvents = "none";
+        document.getElementById("selectedIdBadge").textContent = "None";
+      }
+    }
+
+    function updateSelectedProp(prop, val) {
+      if (!selectedElementId) return;
+      const item = currentMapElements.find(el => el.id === selectedElementId);
+      if (!item) return;
+
+      item[prop] = val;
+      if (prop === "color") {
+        item.bg = val + "33";
+      }
+      renderBoard();
+    }
+
+    function toggleSnapGrid() {
+      snapToGrid = !snapToGrid;
+      document.getElementById("snapStatus").textContent = snapToGrid ? "ON" : "OFF";
+    }
+
+    function addNewAisle(type) {
+      const id = "aisle-custom-" + Date.now().toString().slice(-4);
+      const isVert = (type === "vertical");
+      currentMapElements.push({
+        id: id,
+        type: "aisle",
+        label: `Custom ${isVert ? "Vertical" : "Horiz"} Aisle`,
+        subtitle: "Racks & Shelves",
+        x: 100,
+        y: 100,
+        width: isVert ? 130 : 400,
+        height: isVert ? 400 : 120,
+        color: "#FFA726",
+        bg: "rgba(255, 167, 38, 0.25)"
+      });
+      renderBoard();
+      selectElement(id);
+    }
+
+    function addNewWalkway() {
+      const id = "way-" + Date.now().toString().slice(-4);
+      currentMapElements.push({
+        id: id,
+        type: "walkway",
+        label: "way • Walking Corridor",
+        subtitle: "Walkway Pathway",
+        x: 100,
+        y: 200,
+        width: 300,
+        height: 40,
+        color: "#10B981",
+        bg: "rgba(16, 185, 129, 0.2)"
+      });
+      renderBoard();
+      selectElement(id);
+    }
+
+    function addNewFacility(type) {
+      const id = (type === "pos" ? "pos-" : "facility-") + Date.now().toString().slice(-4);
+      currentMapElements.push({
+        id: id,
+        type: type,
+        label: type === "pos" ? "💳 POS Counter" : "🚪 Store Entrance",
+        subtitle: "Store Facility",
+        x: 100,
+        y: 300,
+        width: 160,
+        height: 80,
+        color: type === "pos" ? "#38BDF8" : "#A855F7",
+        bg: type === "pos" ? "rgba(56, 189, 248, 0.25)" : "rgba(168, 85, 247, 0.25)"
+      });
+      renderBoard();
+      selectElement(id);
+    }
+
+    function resetToDefault() {
+      if (confirm("Reset store map layout to the default blueprint from Google Sheets?")) {
+        currentMapElements = JSON.parse(JSON.stringify(DEFAULT_MAP_ELEMENTS));
+        localStorage.removeItem("bharath_bazar_custom_store_map");
+        renderBoard();
+        showToast("🔄 Store map reset to default blueprint.");
+      }
+    }
+
+    function saveToLiveApp() {
+      localStorage.setItem("bharath_bazar_custom_store_map", JSON.stringify(currentMapElements));
+      showToast("💾 Store map layout saved to Live App!");
+    }
+
+    function exportJson() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(currentMapElements, null, 2));
+      const downloadAnchor = document.createElement("a");
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "custom_store_map.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      showToast("📥 custom_store_map.json downloaded!");
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById("toastMsg");
+      t.textContent = msg;
+      t.style.display = "block";
+      setTimeout(() => { t.style.display = "none"; }, 3000);
+    }
+
+    function deleteSelectedElement() {
+      if (!selectedElementId) return;
+      const item = currentMapElements.find(el => el.id === selectedElementId);
+      const name = item ? item.label : "element";
+      if (confirm(`Remove "${name}" from the store map?`)) {
+        currentMapElements = currentMapElements.filter(el => el.id !== selectedElementId);
+        selectedElementId = null;
+        renderBoard();
+        selectElement(null);
+        showToast(`🗑️ Removed "${name}"`);
+      }
+    }
+
+    // Keyboard shortcut to delete selected element
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Delete" || e.key === "Backspace") {
+        const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+        if (activeTag !== "input" && activeTag !== "textarea" && selectedElementId) {
+          e.preventDefault();
+          deleteSelectedElement();
+        }
+      }
+    });
+
+    // Deselect on empty canvas click
+    document.getElementById("canvasStage").addEventListener("click", (e) => {
+      if (e.target.id === "canvasStage" || e.target.id === "canvasBoard") {
+        selectElement(null);
+      }
+    });
+
+    // Initialize
+    loadMapData();
+  </script>
+</body>
+</html>

@@ -65,3 +65,9 @@ venv.bak/
 *.swp
 *.swo
 *.log
+
+# Generated search-log reports (contain raw deviceIds - never publish)
+reports/
+
+# Label Studio annotation exports (internal data, not part of the public site)
+docs/project-*.json

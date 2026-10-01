@@ -123,6 +123,7 @@ function calculateRouteLinearSweep(locations) {
 }
 
 /**
+/**
  * Algorithm 2: Nearest Neighbor (For scattered products)
  * - Start at entrance (Aisle 1, Rack 1)
  * - Always go to closest unvisited product
@@ -180,8 +181,6 @@ function calculateRouteNearestNeighbor(
  * @returns {Array} Optimized route
  */
 function calculateRouteClusterSweep(locations) {
-  // For linear store layout, this is equivalent to Linear Sweep
-  // But more flexible for complex layouts
   return calculateRouteLinearSweep(locations);
 }
 

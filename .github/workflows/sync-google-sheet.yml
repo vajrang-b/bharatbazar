@@ -1,9 +1,9 @@
 name: Sync Google Sheet to CSV
 
 on:
-  # Run on a schedule (every 1 hour)
+  # Run on a schedule (every 6 hours)
   schedule:
-    - cron: '0 */6 * * *'  # Every 1 hours
+    - cron: '0 */6 * * *'  # Every 6 hours
   
   # Allow manual trigger from GitHub Actions UI
   workflow_dispatch:
@@ -26,10 +26,10 @@ jobs:
       - name: Run Google Sheet sync
         run: python3 scripts/sync_google_sheet.py
       
-      - name: Check if CSV changed
+      - name: Check if files changed
         id: check_changes
         run: |
-          if git diff --quiet docs/product_data.csv; then
+          if git diff --quiet docs/json/product_data.csv docs/json/store_map.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -40,14 +40,14 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add docs/product_data.csv
-          git commit -m "🔄 Auto-sync: Update product data from Google Sheet [skip ci]"
+          git add docs/json/product_data.csv docs/json/store_map.json
+          git commit -m "🔄 Auto-sync: Update product data & store map from Google Sheet [skip ci]"
           git push
       
       - name: Notify sync status
         run: |
           if [ "${{ steps.check_changes.outputs.changed }}" = "true" ]; then
-            echo "CSV updated from Google Sheet and pushed to repository"
+            echo "CSV & Store Map updated from Google Sheet and pushed to repository"
           else
             echo "No changes detected in Google Sheet"
           fi

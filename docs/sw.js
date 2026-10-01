@@ -8,7 +8,7 @@
  * - Fonts/Images: Cache only (rarely change)
  */
 
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v5";
 const CACHE_NAMES = {
   STATIC: `bharath-bazar-static-${CACHE_VERSION}`,
   DATA: `bharath-bazar-data-${CACHE_VERSION}`,
@@ -19,15 +19,18 @@ const CACHE_NAMES = {
 const STATIC_ASSETS = [
   "/bharatbazar/",
   "/bharatbazar/index.html",
-  "/bharatbazar/index.css",
-  "/bharatbazar/app.js",
+  "/bharatbazar/css/index.css",
+  "/bharatbazar/scripts/app.js",
+  "/bharatbazar/scripts/route-optimizer.js",
   "/bharatbazar/privacy-policy.html",
   "/bharatbazar/cookie-policy.html",
+  "/bharatbazar/manifest.json",
 ];
 
 const DATA_ASSETS = [
-  "/bharatbazar/product_data.csv",
-  "/bharatbazar/store_aisles.json",
+  "/bharatbazar/json/product_data.csv",
+  "/bharatbazar/json/store_aisles.json",
+  "/bharatbazar/json/store_map.json",
 ];
 
 // Install event - cache essential files
